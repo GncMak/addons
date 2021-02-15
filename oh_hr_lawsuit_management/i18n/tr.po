@@ -1,0 +1,210 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* oh_hr_lawsuit_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-21 01:57+0000\n"
+"PO-Revision-Date: 2020-05-21 05:37+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_employee_legal_count
+msgid "# Legal Actions"
+msgstr "# Legal Actions"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.ui.view,arch_db:oh_hr_lawsuit_management.hr_lawsuit_form_view
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: oh_hr_lawsuit_management
+#: selection:hr.lawsuit,state:0
+msgid "Cancelled"
+msgstr "İptal Edildi"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_case_details
+#: model:ir.ui.view,arch_db:oh_hr_lawsuit_management.hr_lawsuit_form_view
+msgid "Case Details"
+msgstr "Özel ayrıntılar"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.actions.act_window,help:oh_hr_lawsuit_management.action_hr_lawsuit
+msgid "Click to Create a New Record."
+msgstr "Yeni bir kayıt oluşturmak için tıklayın."
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_name
+msgid "Code"
+msgstr "Kod"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_court_name
+msgid "Court Name"
+msgstr "Mahkeme Adı"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_requested_date
+msgid "Date"
+msgstr "Tarih"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: oh_hr_lawsuit_management
+#: selection:hr.lawsuit,state:0
+msgid "Draft"
+msgstr "Taslak"
+
+#. module: oh_hr_lawsuit_management
+#: selection:hr.lawsuit,party2:0
+#: model:ir.model,name:oh_hr_lawsuit_management.model_hr_employee
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_employee_id
+#: model:ir.ui.view,arch_db:oh_hr_lawsuit_management.hr_lawsuit_search_view
+msgid "Employee"
+msgstr "Personel"
+
+#. module: oh_hr_lawsuit_management
+#: selection:hr.lawsuit,state:0
+msgid "Failed"
+msgstr "Başarısız"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.ui.view,arch_db:oh_hr_lawsuit_management.hr_lawsuit_search_view
+msgid "Group By"
+msgstr "Grupla"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model,name:oh_hr_lawsuit_management.model_hr_lawsuit
+msgid "Hr Lawsuit Management"
+msgstr "Dava Yönetimi"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_id
+msgid "ID"
+msgstr "Kimlik"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_judge
+msgid "Judge"
+msgstr "Hakim"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.module.category,name:oh_hr_lawsuit_management.module_lawsuit_category
+msgid "Lawsuit"
+msgstr "Dava"
+
+#. module: oh_hr_lawsuit_management
+#: model:res.groups,name:oh_hr_lawsuit_management.lawsuit_group_manager
+msgid "Lawsuit Manager"
+msgstr "Dava Müdürü"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_lawyer
+msgid "Lawyer"
+msgstr "Avukat"
+
+#. module: oh_hr_lawsuit_management
+#: code:addons/oh_hr_lawsuit_management/models/legal_action.py:111
+#: code:addons/oh_hr_lawsuit_management/models/legal_action.py:122
+#: model:ir.ui.menu,name:oh_hr_lawsuit_management.hr_lawsuit_sub_menu
+#: model:ir.ui.view,arch_db:oh_hr_lawsuit_management.hr_lawsuit_form_view
+#: model:ir.ui.view,arch_db:oh_hr_lawsuit_management.hr_lawsuit_search_view
+#: model:ir.ui.view,arch_db:oh_hr_lawsuit_management.legal_hr_employee_inherit_form_view
+#, python-format
+msgid "Legal Actions"
+msgstr "Kanuni işlem"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.ui.menu,name:oh_hr_lawsuit_management.hr_lawsuit_menu
+msgid "Legal Department"
+msgstr "Hukuk Departmanı"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.actions.act_window,name:oh_hr_lawsuit_management.action_hr_lawsuit
+msgid "Legal Management"
+msgstr "Hukuk Departmanı"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.ui.view,arch_db:oh_hr_lawsuit_management.hr_lawsuit_form_view
+msgid "Loss"
+msgstr "Kayıp"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_party2_name
+msgid "Name"
+msgstr "İsim"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_party1
+msgid "Party 1"
+msgstr "1. Taraf"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_party2
+msgid "Party 2"
+msgstr "2. Taraf"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.ui.view,arch_db:oh_hr_lawsuit_management.hr_lawsuit_form_view
+msgid "Process"
+msgstr "Süreç"
+
+#. module: oh_hr_lawsuit_management
+#: selection:hr.lawsuit,state:0
+msgid "Running"
+msgstr "Çalışan"
+
+#. module: oh_hr_lawsuit_management
+#: model:ir.model.fields,field_description:oh_hr_lawsuit_management.field_hr_lawsuit_state
+#: model:ir.ui.view,arch_db:oh_hr_lawsuit_management.hr_lawsuit_search_view
+msgid "Status"
+msgstr "Durumu"
+
+#. module: oh_hr_lawsuit_management
+#: selection:hr.lawsuit,state:0
+#: model:ir.ui.view,arch_db:oh_hr_lawsuit_management.hr_lawsuit_form_view
+msgid "Won"
+msgstr "Kazanıldı"

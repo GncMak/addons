@@ -1,0 +1,44 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_multi_company
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-21 02:12+0000\n"
+"PO-Revision-Date: 2020-05-21 02:12+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_multi_company
+#: model:ir.model,name:hr_multi_company.model_hr_attendance
+msgid "Attendance"
+msgstr "Katılım"
+
+#. module: hr_multi_company
+#: model:ir.model.fields,field_description:hr_multi_company.field_hr_attendance_company_id
+#: model:ir.model.fields,field_description:hr_multi_company.field_hr_holidays_company_id
+#: model:ir.model.fields,field_description:hr_multi_company.field_hr_payslip_run_company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: hr_multi_company
+#: model:ir.model,name:hr_multi_company.model_hr_holidays
+msgid "Leave"
+msgstr "İzin"
+
+#. module: hr_multi_company
+#: model:ir.model,name:hr_multi_company.model_hr_payslip_run
+msgid "Payslip Batches"
+msgstr "Toplu Bordro"
+
+#. module: hr_multi_company
+#: model:ir.model,name:hr_multi_company.model_hr_salary_rule_category
+msgid "Salary Rule Category"
+msgstr "Ücret Kural Kategorisi"
+

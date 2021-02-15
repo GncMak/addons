@@ -1,0 +1,353 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_disciplinary_tracking
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-21 01:54+0000\n"
+"PO-Revision-Date: 2020-05-27 16:33+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_action
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.employee_disciplinary_form
+msgid "Action"
+msgstr "Ceza"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.actions.act_window,name:hr_disciplinary_tracking.action_category_action_view
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.category_action_view_tree
+msgid "Action Categories"
+msgstr "Ceza Kategorileri"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model,name:hr_disciplinary_tracking.model_action_category
+#: model:ir.ui.menu,name:hr_disciplinary_tracking.action_category_view
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.category_action_view_form
+msgid "Action Category"
+msgstr "Ceza Kategorisi"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_action_details
+#: model:ir.ui.menu,name:hr_disciplinary_tracking.disciplinary_action_view
+msgid "Action Details"
+msgstr "Ceza Detayı"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.employee_disciplinary_form
+msgid "Action Information"
+msgstr "Ceza Bilgisi"
+
+#. module: hr_disciplinary_tracking
+#: selection:disciplinary.action,state:0
+msgid "Action Validated"
+msgstr "Ceza Onaylandı"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_attachment_ids
+msgid "Attachments"
+msgstr "Ekler"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.employee_disciplinary_form
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: hr_disciplinary_tracking
+#: selection:disciplinary.action,state:0
+msgid "Cancelled"
+msgstr "İptal Edildi"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_action_category_code
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_discipline_category_code
+msgid "Code"
+msgstr "Kod"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_action_category_create_uid
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_create_uid
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_discipline_category_create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_action_category_create_date
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_create_date
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_discipline_category_create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_department_name
+msgid "Department"
+msgstr "Departman"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_action_category_description
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_discipline_category_description
+msgid "Details"
+msgstr "Detay"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model,name:hr_disciplinary_tracking.model_disciplinary_action
+#: model:ir.ui.menu,name:hr_disciplinary_tracking.disciplinary_action_create
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.employee_disciplinary_form
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.employee_disciplinary_tree
+msgid "Disciplinary Action"
+msgstr "Disiplin Cezası"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.actions.act_window,name:hr_disciplinary_tracking.action_disciplinary_action
+msgid "Disciplinary Action Creation"
+msgstr "Disiplin Cezası Oluşturma"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.actions.act_window,name:hr_disciplinary_tracking.action_disciplinary_action_view
+msgid "Disciplinary Action View"
+msgstr "Disiplin Cezası Görünümü"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.ui.menu,name:hr_disciplinary_tracking.disciplinary_action
+msgid "Disciplinary Actions"
+msgstr "Disiplin Cezaları"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.inherit_employee_form
+msgid "Discipline"
+msgstr "Disiplin"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.actions.act_window,name:hr_disciplinary_tracking.action_disciplinary_category_view
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.disciplinary_category_view_tree
+msgid "Discipline Categories"
+msgstr "Disiplin Kategorileri"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.ui.menu,name:hr_disciplinary_tracking.disciplinary_category_view
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.disciplinary_category_view_form
+msgid "Discipline Category"
+msgstr "Disiplin Kategorisi"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_action_category_display_name
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_display_name
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_discipline_category_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: hr_disciplinary_tracking
+#: selection:disciplinary.action,state:0
+msgid "Draft"
+msgstr "Taslak"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_employee_name
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.employee_disciplinary_form
+msgid "Employee"
+msgstr "Personel"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.employee_disciplinary_form
+msgid "Employee Information"
+msgstr "Personel Bilgileri"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,help:hr_disciplinary_tracking.field_disciplinary_action_attachment_ids
+msgid "Employee can submit any documents which supports their explanation"
+msgstr "Personel açıklamasını destekleyen her türlü dokümanı sunabilir"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,help:hr_disciplinary_tracking.field_disciplinary_action_explanation
+msgid "Employee have to give Explanationto manager about the violation of discipline"
+msgstr "Personel disiplinin ihlali hakkında yöneticiye açıklama yapmak zorundadır"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_explanation
+msgid "Explanation by Employee"
+msgstr "Personelin Açıklaması"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_action_category_id
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_id
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_discipline_category_id
+msgid "ID"
+msgstr "Kimlik"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_note
+msgid "Internal Note"
+msgstr "İç Not"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_joined_date
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.employee_disciplinary_form
+msgid "Joined Date"
+msgstr "Katılma Tarihi"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_action_category___last_update
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action___last_update
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_discipline_category___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_action_category_write_uid
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_write_uid
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_discipline_category_write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_action_category_write_date
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_write_date
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_discipline_category_write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_action_category_name
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_discipline_category_name
+msgid "Name"
+msgstr "İsim"
+
+#. module: hr_disciplinary_tracking
+#: code:addons/hr_disciplinary_tracking/models/disciplinary_action.py:44
+#, python-format
+msgid "New"
+msgstr "Yeni"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.employee_disciplinary_form
+msgid "Proceed"
+msgstr "İlerleme"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_read_only
+msgid "Read Only"
+msgstr "Sadece Oku"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_discipline_reason
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.employee_disciplinary_form
+msgid "Reason"
+msgstr "Sebep"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model,name:hr_disciplinary_tracking.model_discipline_category
+msgid "Reason Category"
+msgstr "Sebep Kategorisi"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_name
+msgid "Reference"
+msgstr "Referans"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.employee_disciplinary_form
+msgid "Set to Draft"
+msgstr "Taslak olarak ayarla"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_state
+msgid "State"
+msgstr "İl/Eyalet"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.employee_disciplinary_form
+msgid "Submit"
+msgstr "Gönder"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_suspension_letter
+msgid "Suspension Letter"
+msgstr "Askı Mektubu"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_termination_letter
+msgid "Termination Letter"
+msgstr "Fesih Mektupu"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.ui.view,arch_db:hr_disciplinary_tracking.employee_disciplinary_form
+msgid "Validate Action"
+msgstr "Ceza Doğrulama"
+
+#. module: hr_disciplinary_tracking
+#: selection:disciplinary.action,state:0
+msgid "Waiting Action"
+msgstr "Ceza Bekleniyor"
+
+#. module: hr_disciplinary_tracking
+#: selection:disciplinary.action,state:0
+msgid "Waiting Explanation"
+msgstr "Açıklama Bekleniyor"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_warning
+msgid "Warning"
+msgstr "Uyarı"
+
+#. module: hr_disciplinary_tracking
+#: model:ir.model.fields,field_description:hr_disciplinary_tracking.field_disciplinary_action_warning_letter
+msgid "Warning Letter"
+msgstr "Uyarı Mektubu"
+
+#. module: hr_disciplinary_tracking
+#: code:addons/hr_disciplinary_tracking/models/disciplinary_action.py:101
+#: code:addons/hr_disciplinary_tracking/models/disciplinary_action.py:107
+#, python-format
+msgid "You Can not edit a Validated Action !!"
+msgstr "Doğrulanmış Bir Cezayı Düzenleyemezsiniz !!"
+
+#. module: hr_disciplinary_tracking
+#: code:addons/hr_disciplinary_tracking/models/disciplinary_action.py:148
+#, python-format
+msgid "You have to fill up the  Action Information !!"
+msgstr "Ceza Bilgilerini doldurmalısınız!"
+
+#. module: hr_disciplinary_tracking
+#: code:addons/hr_disciplinary_tracking/models/disciplinary_action.py:137
+#, python-format
+msgid "You have to fill up the Suspension Letter in Action Information !!"
+msgstr "Ceza Bilgilerinde Askı Mektubu doldurmanız gerekiyor !!"
+
+#. module: hr_disciplinary_tracking
+#: code:addons/hr_disciplinary_tracking/models/disciplinary_action.py:141
+#, python-format
+msgid "You have to fill up the Termination Letter in  Action Information !!"
+msgstr "Ceza Bilgilerinde Fesih Mektubunu doldurmanız gerekmektedir !!"
+
+#. module: hr_disciplinary_tracking
+#: code:addons/hr_disciplinary_tracking/models/disciplinary_action.py:133
+#, python-format
+msgid "You have to fill up the Warning Letter in Action Information !!"
+msgstr "Ceza Bilgilerindeki Uyarı Mektubunu doldurmalısınız !!"
+
+#. module: hr_disciplinary_tracking
+#: code:addons/hr_disciplinary_tracking/models/disciplinary_action.py:129
+#, python-format
+msgid "You have to select an Action !!"
+msgstr "Bir ceza seçmelisiniz !!"
+
+#. module: hr_disciplinary_tracking
+#: code:addons/hr_disciplinary_tracking/models/disciplinary_action.py:156
+#, python-format
+msgid "You must give an explanation !!"
+msgstr "Bir açıklama yapmalısınız !!"
+
+#. module: hr_disciplinary_tracking
+#: code:addons/hr_disciplinary_tracking/models/disciplinary_action.py:158
+#, python-format
+msgid "Your explanation must contain at least 5 words   !!"
+msgstr "Açıklamanız en az 5 kelime içermelidir !!"

@@ -1,0 +1,309 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* oh_appraisal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-21 02:03+0000\n"
+"PO-Revision-Date: 2020-05-21 05:35+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 2.3.1\n"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,help:oh_appraisal.field_hr_appraisal_final_interview
+msgid "After sending survey link,you can schedule final interview date"
+msgstr "Anket bağlantısı gönderdikten sonra, son görüşme tarihini planlayabilirsiniz"
+
+#. module: oh_appraisal
+#: model:ir.ui.menu,name:oh_appraisal.menu_hr_appraisal_answers
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_form_view
+msgid "Answers"
+msgstr "Yanıtlar"
+
+#. module: oh_appraisal
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_kanban
+msgid "Answers:"
+msgstr "Yanıtlar:"
+
+#. module: oh_appraisal
+#: model:ir.actions.act_window,name:oh_appraisal.hr_appraisal_action_form
+#: model:ir.model,name:oh_appraisal.model_hr_appraisal
+#: model:ir.module.category,name:oh_appraisal.module_category_hr_appraisal
+#: model:ir.ui.menu,name:oh_appraisal.menu_hr_appraisal
+#: model:ir.ui.menu,name:oh_appraisal.menu_hr_appraisal_root
+msgid "Appraisal"
+msgstr "Değerlendirme"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_appraisal_deadline
+msgid "Appraisal Deadline"
+msgstr "Değerlendirme son tarihi"
+
+#. module: oh_appraisal
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_form_view
+msgid "Appraisal Form"
+msgstr "Değerlendirme Formu"
+
+#. module: oh_appraisal
+#: model:ir.model,name:oh_appraisal.model_hr_appraisal_stages
+msgid "Appraisal Stages"
+msgstr "Değerleme Aşamaları"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_survey_user_input_appraisal_id
+msgid "Appriasal id"
+msgstr "Değerleme kimliği"
+
+#. module: oh_appraisal
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_form_view
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_check_cancel
+msgid "Check Cancel"
+msgstr "Kontrol İptal"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_check_done
+msgid "Check Done"
+msgstr "Kontrol tamamlandı"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_check_draft
+msgid "Check Draft"
+msgstr "Taslağı Kontrol Et"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_check_sent
+msgid "Check Sent Mail"
+msgstr "Gönderilmiş Postaları Kontrol Et"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_hr_colloborator
+msgid "Collaborators"
+msgstr "İşbirlikçiler"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_hr_colleague
+msgid "Colleague"
+msgstr "Çalışma arkadaşı"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_color
+msgid "Color Index"
+msgstr "Renk İndeksi"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_tot_comp_survey
+msgid "Count Answers"
+msgstr "Yanıtları Say"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_tot_sent_survey
+msgid "Count Sent Questions"
+msgstr "Gönderilen Soruları Say"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_created_by
+msgid "Created By"
+msgstr "Oluşturan"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_create_uid
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_stages_create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_create_date
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_stages_create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: oh_appraisal
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_kanban
+msgid "Deadline:"
+msgstr "Bitiş tarihi:"
+
+#. module: oh_appraisal
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_kanban
+msgid "Delete"
+msgstr "Sil"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_display_name
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_stages_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: oh_appraisal
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_form_view
+msgid "Done"
+msgstr "Biten"
+
+#. module: oh_appraisal
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_kanban
+msgid "Edit"
+msgstr "Düzenle"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_emp_id
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_hr_emp
+#: model:res.groups,name:oh_appraisal.group_appraisal_employee
+msgid "Employee"
+msgstr "Personel"
+
+#. module: oh_appraisal
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_form_view
+msgid "Employee's Name"
+msgstr "Personel Adı"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_final_evaluation
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_form_view
+msgid "Final Evaluation"
+msgstr "Son Değerlendirme"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_final_interview
+msgid "Final Interview"
+msgstr "Son Görüşme"
+
+#. module: oh_appraisal
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_kanban
+msgid "Final Interview:"
+msgstr "Son Mülakat:"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_stages_fold
+msgid "Folded in Appraisal Pipeline"
+msgstr "Değerlendirme aşamaları"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_app_period_from
+msgid "From"
+msgstr "Tarihinden"
+
+#. module: oh_appraisal
+#: model:ir.module.category,description:oh_appraisal.module_category_hr_appraisal
+msgid "Helps to evaluate employees..."
+msgstr "Çalışanları değerlendirmeye yardımcı olur ..."
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_id
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_stages_id
+msgid "ID"
+msgstr "ID"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal___last_update
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_stages___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_stages_write_uid
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_stages_write_date
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_hr_manager
+#: model:res.groups,name:oh_appraisal.group_appraisal_manager
+msgid "Manager"
+msgstr "Yönetici"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_stages_name
+msgid "Name"
+msgstr "İsim"
+
+#. module: oh_appraisal
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_form_view
+msgid "Plan"
+msgstr "Plan"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_response_id
+msgid "Response"
+msgstr "Karşılık"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_emp_survey_id
+msgid "Select Appraisal Form"
+msgstr "Değerlendirme Formu Seçin"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_hr_colleague_id
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_hr_colloborator_id
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_hr_manager_id
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_form_view
+msgid "Select Appraisal Reviewer"
+msgstr "Değerlendirme Hakemini Seçin"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_colleague_survey_id
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_colloborator_survey_id
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_manager_survey_id
+msgid "Select Opinion Form"
+msgstr "Görüş Formunu Seçin"
+
+#. module: oh_appraisal
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_kanban
+msgid "Sent Questions:"
+msgstr "Gönderilen Sorular:"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_stages_sequence
+msgid "Sequence"
+msgstr "Sıra"
+
+#. module: oh_appraisal
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_form_view
+msgid "Set To Draft"
+msgstr "Taslağa Ayarla"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,field_description:oh_appraisal.field_hr_appraisal_state
+msgid "Stage"
+msgstr "Aşama"
+
+#. module: oh_appraisal
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_form_view
+msgid "Start Appraisal And Send Forms"
+msgstr "Değerlendirmeye Başla ve Form Gönder"
+
+#. module: oh_appraisal
+#: model:ir.model,name:oh_appraisal.model_survey_user_input
+msgid "Survey User Input"
+msgstr "Anket kullanıcı girişi"
+
+#. module: oh_appraisal
+#: model:ir.model.fields,help:oh_appraisal.field_hr_appraisal_stages_fold
+msgid "This stage is folded in the kanban view when there are no records in that stage to display."
+msgstr "Bu aşamada gösterilecek kayıt kalmadığında kanban görünümünde katlanmış aşamadır."
+
+#. module: oh_appraisal
+#: model:ir.ui.view,arch_db:oh_appraisal.hr_appraisal_kanban
+msgid "oe_kanban_text_red"
+msgstr "oe_kanban_text_red"

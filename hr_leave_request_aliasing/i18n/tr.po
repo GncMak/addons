@@ -1,0 +1,222 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_leave_request_aliasing
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-21 01:52+0000\n"
+"PO-Revision-Date: 2020-06-10 12:38+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 2.3.1\n"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid ""
+"<b>Note:</b> Set the same email address on your employee form(working email) than\n"
+"                            the one you use are your \"From:\". Otherwise, your\n"
+"                            leave request will not be accepted by email."
+msgstr ""
+"<b>Note:</b> Çalışan formunuzda (çalışan e-posta) aynı e-posta adresini ayarlayın\n"
+"                            kullandığınız \"Kimden:\". Aksi takdirde,\n"
+"                            izin isteği e-posta ile kabul edilmeyecektir."
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid "<strong class=\"text-info\">LEAVE REQUEST</strong> Free Description with Date From: and Date To:<strong class=\"text-primary\"/>"
+msgstr "<strong class=\"text-info\">İSTEK FORMU</strong> Tarih: ve Bitiş Tarihi:<strong class=\"text-primary\"/>"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid ""
+"<strong>Your email gateway is not configured.</strong> Please configure your email\n"
+"                            gateway from the Settings app, menu <i>General Settings</i>."
+msgstr ""
+"<strong>E-posta ağ geçidiniz yapılandırılmamış.</strong> Lütfen e-postanızı yapılandırın\n"
+"                            Ayarlar menüsünden ağ geçidi <i>Genel Ayarlar</i>."
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid ""
+"Also you need to set <strong class=\"text-primary\">Date From: and Date To:</strong>\n"
+"                            at the end of the body of your email."
+msgstr ""
+"Ayrıca ayarlamanız gerekir <strong class=\"text-primary\">Bitiş Tarihi: Bitiş Tarihi:</strong>\n"
+"                            e-postanızın gövdesinin sonunda."
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid "Congratulations, you're done!"
+msgstr "Tebrikler, bitirdiniz."
+
+#. module: hr_leave_request_aliasing
+#: model:ir.model.fields,field_description:hr_leave_request_aliasing.field_res_config_settings_alias_prefix
+#: model:ir.model.fields,help:hr_leave_request_aliasing.field_res_config_settings_alias_prefix
+msgid "Default Alias Name for Leave"
+msgstr "İzin İçin Varsayılan Takma Ad"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.view_hr_leave_configuration
+msgid "Domain"
+msgstr "Domain"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid "Don't hesitate to"
+msgstr "Çekinmeden"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.menu,name:hr_leave_request_aliasing.menu_hr_leave_global_settings
+msgid "Email Alias"
+msgstr "E-posta Takma Adı"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid "End"
+msgstr "Son"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid "From: Your Email"
+msgstr "From: Mail adresiniz"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid "Get Mobile"
+msgstr "Mobil Olun"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid "Have a wonderful day,<br/>- Cybrosys"
+msgstr "İyi günler,<br/>"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.model,name:hr_leave_request_aliasing.model_hr_holidays
+msgid "Leave"
+msgstr "İzin"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.view_hr_leave_configuration
+msgid "Leave Email Alias"
+msgstr "E-posta Takma Adından Ayrıl"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.menu,name:hr_leave_request_aliasing.menu_hr_holidays_conf
+msgid "Leave Types"
+msgstr "İzin Türleri"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.view_hr_leave_configuration
+msgid "Leaves"
+msgstr "İzinler"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.actions.act_window,name:hr_leave_request_aliasing.action_hr_general_config
+msgid "Leaves Config"
+msgstr "İzin konfigrasyonları"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid ""
+"Once your email gateway is configured, come back to this screen\n"
+"                            to setup the next steps."
+msgstr ""
+"E-posta ağ geçidiniz yapılandırıldıktan sonra bu ekrana geri dönün\n"
+"                            sonraki adımları ayarlamak için."
+
+#. module: hr_leave_request_aliasing
+#: model:ir.model,name:hr_leave_request_aliasing.model_web_planner
+msgid "Planner"
+msgstr "Planlayıcı"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.view_hr_leave_configuration
+msgid "Prefix"
+msgstr "Ön Ek"
+
+#. module: hr_leave_request_aliasing
+#: model:web.planner,tooltip_planner:hr_leave_request_aliasing.planner_hr_leave
+msgid "Send receipts by email to create leave request efficiently."
+msgstr "Verimli bir izin talebi oluşturmak için belgeleri e-posta ile gönderin."
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid "Setup"
+msgstr "Ayarlar"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid "Subject:"
+msgstr "Konu:"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid ""
+"The <strong class=\"text-info\">LEAVE REQUEST</strong> is mandatory and should be in the\n"
+"                            subject of your email. This\n"
+"                            will root the leave request automatically on your\n"
+"                            Odoo."
+msgstr ""
+"The <strong class=\"text-info\">İzin Talebi</strong> zorunludur ve e-posta konusunda olmalıdır.\n"
+"                           Bu, Odoo'nuzda otomatik olarak izin isteğinde bulunacaktır."
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid ""
+"To create leave request by email, send leave request by email with the following\n"
+"                            information:"
+msgstr ""
+"E-posta ile izin isteği oluşturmak için aşağıdakileri içeren e-posta ile izin isteği gönderin\n"
+"                            bilgi:"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid "To:"
+msgstr "Kime:"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid "We hope this feature helped you manage your leave request efficiently."
+msgstr "Bu özelliğin izin isteğinizi verimli bir şekilde yönetmenize yardımcı olmasını umuyoruz."
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.view_hr_leave_configuration
+msgid ""
+"You can setup a generic email alias to create\n"
+"                                incoming leave request easily. Write an email with the desired\n"
+"                                format to create leave request in one click.\n"
+"                                Format:- Start subject with 'LEAVE REQUEST'. After your mail content mention\n"
+"                                'Date From:' and 'Date To:'."
+msgstr ""
+"Oluşturmak için genel bir e-posta takma adı oluşturabilirsiniz\n"
+"                                Gelen izin talebi kolayca. İstediğiniz bir e-posta yazın\n"
+"                                biçiminde tek bir tıklamayla izin isteği oluşturun.\n"
+"                                Biçim: - Konuyu 'Ayrılma talebi' ile başlatın. Posta içeriğinizden sonra\n"
+"                                'Başlangıç ​​Tarihi: 've' Bitiş Tarihi:'."
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid "Your Email Address"
+msgstr "Mail adresleriniz"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.model,name:hr_leave_request_aliasing.model_res_config_settings
+msgid "res.config.settings"
+msgstr "res.config.settings"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid "send us an email"
+msgstr "bize bir e-posta gönderin"
+
+#. module: hr_leave_request_aliasing
+#: model:ir.ui.view,arch_db:hr_leave_request_aliasing.hr_leave_planner
+msgid "to describe<br/> your experience or to suggest improvements!"
+msgstr "ve deneyimlerinizle <br/> geliştirmeye yönelik önerilerinizi gönderin!"

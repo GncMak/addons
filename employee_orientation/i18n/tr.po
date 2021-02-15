@@ -1,0 +1,656 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* employee_orientation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-01 17:20+0000\n"
+"PO-Revision-Date: 2020-06-10 12:25+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 2.3.1\n"
+
+#. module: employee_orientation
+#: model:mail.template,body_html:employee_orientation.orientation_request_mailer
+msgid ""
+"\n"
+"                <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                    <p>Hello ${object.partner_id.name},</p>\n"
+"                    <p>Your are request to conduct orientation program listed below.</p>\n"
+"                    <p>Check Line: ${object.request_name}</p>\n"
+"                    <p>Employee: ${object.employee_id.name}</p>\n"
+"                    %if object.request_expected_date:\n"
+"                        <p>Expected Date: ${object.request_expected_date}</p>\n"
+"                    % endif\n"
+"                    <br/>\n"
+"                    <p>Thank you!</p>\n"
+"                    <br/>\n"
+"                    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"                    <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"                    <strong style=\"text-transform:uppercase;\">${object.company_id.name}</strong></h3>\n"
+"                    </div>\n"
+"                    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"                        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"                        ${object.company_id.partner_id.sudo().with_context(show_address=True, html_format=True).name_get()[0][1] | safe}\n"
+"                        </span>\n"
+"                        % if object.company_id.phone:\n"
+"                            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                                Phone:&nbsp; ${object.company_id.phone}\n"
+"                            </div>\n"
+"                        % endif\n"
+"                        % if object.company_id.website:\n"
+"                            <div>\n"
+"                                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
+"                            </div>\n"
+"                        %endif\n"
+"                        <p></p>\n"
+"                    </div>\n"
+"                </div>\n"
+"            \n"
+"            "
+msgstr ""
+"\n"
+"                <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                    <p>Merhaba ${object.partner_id.name},</p>\n"
+"                    <p>Aşağıda listelenen oryantasyon programını yürütme talebiniz.</p>\n"
+"                    <p>Kontrol alanı: ${object.request_name}</p>\n"
+"                    <p>Çalışan: ${object.employee_id.name}</p>\n"
+"                    %if object.request_expected_date:\n"
+"                        <p>Beklen tarih: ${object.request_expected_date}</p>\n"
+"                    % endif\n"
+"                    <br/>\n"
+"                    <p>Teşekkürler!</p>\n"
+"                    <br/>\n"
+"                    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"                    <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"                    <strong style=\"text-transform:uppercase;\">${object.company_id.name}</strong></h3>\n"
+"                    </div>\n"
+"                    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"                        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"                        ${object.company_id.partner_id.sudo().with_context(show_address=True, html_format=True).name_get()[0][1] | safe}\n"
+"                        </span>\n"
+"                        % if object.company_id.phone:\n"
+"                            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                                Phone:&nbsp; ${object.company_id.phone}\n"
+"                            </div>\n"
+"                        % endif\n"
+"                        % if object.company_id.website:\n"
+"                            <div>\n"
+"                                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
+"                            </div>\n"
+"                        %endif\n"
+"                        <p></p>\n"
+"                    </div>\n"
+"                </div>\n"
+"            \n"
+"            "
+
+#. module: employee_orientation
+#: model:mail.template,body_html:employee_orientation.orientation_training_mailer
+msgid ""
+"\n"
+"                <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                    <p>Hello ${object.program_convener.name},</p>\n"
+"                    <p>Your are request to conduct ${object.program_name} Training program for ${object.program_department.name} department\n"
+"                    % if object.from_date and object.to_date:\n"
+"                        from ${object.from_date} to ${object.to_date}\n"
+"                    % endif\n"
+"                    .</p>\n"
+"                    <br/>\n"
+"                    <p>Thank you!</p>\n"
+"                    <br/>\n"
+"                    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"                    <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"                    <strong style=\"text-transform:uppercase;\">${object.company_id.name}</strong></h3>\n"
+"                    </div>\n"
+"                    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"                        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"                        ${object.company_id.partner_id.sudo().with_context(show_address=True, html_format=True).name_get()[0][1] | safe}\n"
+"                        </span>\n"
+"                        % if object.company_id.phone:\n"
+"                            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                                Phone:&nbsp; ${object.company_id.phone}\n"
+"                            </div>\n"
+"                        % endif\n"
+"                        % if object.company_id.website:\n"
+"                            <div>\n"
+"                                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
+"                            </div>\n"
+"                        %endif\n"
+"                        <p></p>\n"
+"                    </div>\n"
+"                </div>\n"
+"            \n"
+"            "
+msgstr ""
+"\n"
+"                <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                    <p>Merhaba ${object.program_convener.name},</p>\n"
+"                    <p>Talep ettiğiniz ${object.program_name} Eğitim programı ${object.program_department.name} Departman\n"
+"                    % if object.from_date and object.to_date:\n"
+"                        from ${object.from_date} to ${object.to_date}\n"
+"                    % endif\n"
+"                    .</p>\n"
+"                    <br/>\n"
+"                    <p>Teşekkürler!</p>\n"
+"                    <br/>\n"
+"                    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"                    <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"                    <strong style=\"text-transform:uppercase;\">${object.company_id.name}</strong></h3>\n"
+"                    </div>\n"
+"                    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"                        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"                        ${object.company_id.partner_id.sudo().with_context(show_address=True, html_format=True).name_get()[0][1] | safe}\n"
+"                        </span>\n"
+"                        % if object.company_id.phone:\n"
+"                            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                                Phone:&nbsp; ${object.company_id.phone}\n"
+"                            </div>\n"
+"                        % endif\n"
+"                        % if object.company_id.website:\n"
+"                            <div>\n"
+"                                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
+"                            </div>\n"
+"                        %endif\n"
+"                        <p></p>\n"
+"                    </div>\n"
+"                </div>\n"
+"            \n"
+"            "
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_checklist_active
+msgid "Active"
+msgstr "Aktif"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_attachment_id_1
+msgid "Attachment"
+msgstr "Ek"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_orientation_form
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_force_complete_form
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_request_form
+#: selection:orientation.request,state:0
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_training_form
+msgid "Cancel Event"
+msgstr "Etkinliği İptal Et"
+
+#. module: employee_orientation
+#: selection:employee.orientation,state:0 selection:employee.training,state:0
+msgid "Canceled"
+msgstr "İptal edildi"
+
+#. module: employee_orientation
+#: model:ir.model,name:employee_orientation.model_orientation_checklist
+msgid "Checklist"
+msgstr "Kontrol Listesi"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_checklist_checklist_line_id
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_checklist_form
+msgid "Checklist Line"
+msgstr "Kontrol Listesi Satırı"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_checklist_form
+msgid "Checklist Lines"
+msgstr "Denetim Listesi Satırları"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_employee_company
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training_company_id
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_company_id
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_employee_company
+msgid "Company"
+msgstr "Şirket"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_request_form
+msgid "Complete"
+msgstr "Tamamlayınız"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_force_complete_form
+msgid "Complete Orientation"
+msgstr "Oryantasyonu Tamamlayın"
+
+#. module: employee_orientation
+#: selection:employee.orientation,state:0 selection:employee.training,state:0
+#: selection:orientation.request,state:0
+msgid "Completed"
+msgstr "Tamamlandı"
+
+#. module: employee_orientation
+#: code:addons/employee_orientation/models/employee_training.py:69
+#: code:addons/employee_orientation/models/orientation_checklist_request.py:54
+#, python-format
+msgid "Compose Email"
+msgstr "E-mail Oluştur"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_orientation_form
+msgid "Confirm"
+msgstr "Onayla"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_training_form
+msgid "Confirm Event"
+msgstr "Etkinliği Onayla"
+
+#. module: employee_orientation
+#: selection:employee.orientation,state:0 selection:employee.training,state:0
+msgid "Confirmed"
+msgstr "Onaylandı"
+
+#. module: employee_orientation
+#: model:ir.actions.act_window,help:employee_orientation.action_employee_orientation
+msgid "Create Employee Orientation."
+msgstr "Oryantasyon Oluşturma"
+
+#. module: employee_orientation
+#: model:ir.actions.act_window,help:employee_orientation.action_employee_training
+msgid "Create Employee Training Program."
+msgstr "Eğitim Programı Oluşturma"
+
+#. module: employee_orientation
+#: model:ir.actions.act_window,help:employee_orientation.action_checklist_line
+msgid "Create Orientation Checklists Lines."
+msgstr "Oryantasyon Kontrol Listesi Satırları Oluşturma"
+
+#. module: employee_orientation
+#: model:ir.actions.act_window,help:employee_orientation.action_orientation_checklist
+msgid "Create Orientation Checklists."
+msgstr "Oryantasyon Kontrol Listesi Oluşturma"
+
+#. module: employee_orientation
+#: model:ir.actions.act_window,help:employee_orientation.action_orientation_request
+msgid "Create Orientation Requests."
+msgstr "Oryantasyon Talepleri Oluşturma"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_checklist_line_create_uid
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_create_uid
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training_create_uid
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_checklist_create_uid
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_force_complete_create_uid
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_checklist_line_create_date
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_create_date
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training_create_date
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_checklist_create_date
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_force_complete_create_date
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_date
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_request_date
+msgid "Date"
+msgstr "Tarih"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training_date_from
+msgid "Date From"
+msgstr "Başlangıç Tarihi :"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training_date_to
+msgid "Date To"
+msgstr "Bitiş tarihi :"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_department
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training_program_department
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_checklist_checklist_department
+msgid "Department"
+msgstr "Departman"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_note_id
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training_note_id
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_note_id
+msgid "Description"
+msgstr "Açıklama"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_checklist_line_display_name
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_display_name
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training_display_name
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_checklist_display_name
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_force_complete_display_name
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_request_form
+msgid "Documents"
+msgstr "Dökümanlar"
+
+#. module: employee_orientation
+#: selection:employee.orientation,state:0
+msgid "Draft"
+msgstr "Taslak"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_employee_name
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_employee_id
+msgid "Employee"
+msgstr "Personel"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training_training_id
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_training_form
+msgid "Employee Details"
+msgstr "Çalışan Bilgileri"
+
+#. module: employee_orientation
+#: model:ir.actions.act_window,name:employee_orientation.action_employee_orientation
+#: model:ir.model,name:employee_orientation.model_employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_name
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_request_orientation
+#: model:ir.ui.menu,name:employee_orientation.menu_employee_orientation_child
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_orientation_form
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_orientation_search
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_orientation_tree
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_request_form
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_request_search
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_request_tree
+msgid "Employee Orientation"
+msgstr "Çalışan Oryantasyonu"
+
+#. module: employee_orientation
+#: model:ir.model,name:employee_orientation.model_orientation_request
+#: model:mail.template,subject:employee_orientation.orientation_request_mailer
+msgid "Employee Orientation Request"
+msgstr "Oryantasyon talebi"
+
+#. module: employee_orientation
+#: model:ir.model,name:employee_orientation.model_employee_training
+msgid "Employee Training"
+msgstr "Çalışan Eğitimi"
+
+#. module: employee_orientation
+#: model:ir.actions.act_window,name:employee_orientation.action_employee_training
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_training_form
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_training_search
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_training_tree
+msgid "Employee Training Program"
+msgstr "Eğitim Programı"
+
+#. module: employee_orientation
+#: model:mail.template,subject:employee_orientation.orientation_training_mailer
+msgid "Employee Training Request"
+msgstr "Eğitim Talebi"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_training_form
+msgid "Event Complete"
+msgstr "Etkinlik Tamamlandı"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_request_expected_date
+msgid "Expected Date"
+msgstr "Beklenen Tarih"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_force_complete_form
+msgid "Force Complete"
+msgstr "Tamamla"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_checklist_search
+msgid "Group By"
+msgstr "Grupla"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.checklist_line_search
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_orientation_search
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_training_search
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_request_search
+msgid "Group By..."
+msgstr "Gruplayan..."
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_checklist_line_id
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_id
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training_id
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_checklist_id
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_force_complete_id
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_id
+msgid "ID"
+msgstr "ID"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_job_id
+msgid "Job Title"
+msgstr "Ünvanı"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_checklist_line___last_update
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation___last_update
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training___last_update
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_checklist___last_update
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_force_complete___last_update
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_checklist_line_write_uid
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_write_uid
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training_write_uid
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_checklist_write_uid
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_force_complete_write_uid
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_checklist_line_write_date
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_write_date
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training_write_date
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_checklist_write_date
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_force_complete_write_date
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_parent_id
+msgid "Manager"
+msgstr "Yönetici"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_orientation_form
+msgid "Mark Done"
+msgstr "Tamamlandı"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_checklist_line_line_name
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_checklist_checklist_name
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_force_complete_name
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_request_name
+msgid "Name"
+msgstr "İsim"
+
+#. module: employee_orientation
+#: code:addons/employee_orientation/models/employee_orientation.py:11
+#: selection:employee.training,state:0 selection:orientation.request,state:0
+#, python-format
+msgid "New"
+msgstr "Yeni"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_orientation_form
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_training_form
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_request_form
+msgid "Notes"
+msgstr "Notlar"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_force_complete_orientation_id
+msgid "Orientation"
+msgstr "Oryantasyon"
+
+#. module: employee_orientation
+#: model:ir.actions.act_window,name:employee_orientation.action_orientation_checklist
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_orientation_id
+#: model:ir.ui.menu,name:employee_orientation.menu_orientation_checklist_config
+msgid "Orientation Checklist"
+msgstr "Oryantasyon Kontrol Listesi"
+
+#. module: employee_orientation
+#: model:ir.actions.act_window,name:employee_orientation.action_checklist_line
+#: model:ir.ui.menu,name:employee_orientation.menu_employee_orientation_config_line
+msgid "Orientation Checklist Line"
+msgstr "Oryantasyon Kontrol Satırları"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_checklist_form
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_checklist_search
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_checklist_tree
+msgid "Orientation Checklists"
+msgstr "Oryantasyon Kontrol Listeleri"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.checklist_line_search
+#: model:ir.ui.view,arch_db:employee_orientation.view_checklist_line_form
+#: model:ir.ui.view,arch_db:employee_orientation.view_checklist_line_tree
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_orientation_form
+msgid "Orientation Checklists Lines"
+msgstr "Oryantasyon Kontrol Satırları"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_force_complete_orientation_lines
+msgid "Orientation Lines"
+msgstr "Oryantasyon Hatları"
+
+#. module: employee_orientation
+#: model:ir.ui.menu,name:employee_orientation.menu_employee_orientation_config
+msgid "Orientation Program"
+msgstr "Oryantasyon Programı"
+
+#. module: employee_orientation
+#: model:ir.actions.act_window,name:employee_orientation.action_orientation_request
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_orientation_request
+#: model:ir.ui.menu,name:employee_orientation.menu_orientation_request
+msgid "Orientation Request"
+msgstr "Oryantasyon Talebi"
+
+#. module: employee_orientation
+#: model:ir.ui.menu,name:employee_orientation.menu_employee_orientation
+msgid "Orientations"
+msgstr "Oryantasyonlar"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_force_complete_form
+msgid "Pending Lines"
+msgstr "Bekleyen Satırlar"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_force_complete_form
+msgid "Please make sure that orientations programs are already done."
+msgstr "Lütfen oryantasyon programlarının yapıldığından emin olun."
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_request_search
+msgid "Request"
+msgstr "Talep"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_checklist_line_responsible_user
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_responsible_user
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training_program_convener
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_partner_id
+msgid "Responsible User"
+msgstr "Sorumlu"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.checklist_line_search
+msgid "ResponsibleUser"
+msgstr "Sorumlu Kullanıcı"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_training_form
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_request_form
+msgid "Send by Email"
+msgstr "E-posta ile Gönder"
+
+#. module: employee_orientation
+#: model:ir.model.fields,help:employee_orientation.field_orientation_checklist_active
+msgid "Set active to false to hide the Orientation Checklist without removing it."
+msgstr "Oryantasyon kontrol listesini kaldırmadan gizlemek için etkin olanı yanlış olarak ayarlayın."
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_orientation_state
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training_state
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_state
+msgid "Status"
+msgstr "Durumu"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_training_form
+msgid "Time Period"
+msgstr "Zaman Aralığı"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training_program_name
+#: model:ir.ui.menu,name:employee_orientation.menu_employee_training_child
+msgid "Training Program"
+msgstr "Eğitim Proğramı"
+
+#. module: employee_orientation
+#: model:ir.model,name:employee_orientation.model_checklist_line
+msgid "checklist.line"
+msgstr "checklist.line"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_orientation_search
+#: model:ir.ui.view,arch_db:employee_orientation.view_orientation_checklist_search
+msgid "department"
+msgstr "departman"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_orientation_form
+msgid "lines"
+msgstr "satırlar"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_training_search
+msgid "name"
+msgstr "isim"
+
+#. module: employee_orientation
+#: model:ir.model,name:employee_orientation.model_orientation_force_complete
+msgid "orientation.force.complete"
+msgstr "orientation.force.complete"
+
+#. module: employee_orientation
+#: model:ir.ui.view,arch_db:employee_orientation.view_employee_training_form
+msgid "to"
+msgstr "için"
+
+#. module: employee_orientation
+#: model:ir.model.fields,field_description:employee_orientation.field_employee_training_user_id
+#: model:ir.model.fields,field_description:employee_orientation.field_orientation_request_user_id
+msgid "users"
+msgstr "kullanıcılar"

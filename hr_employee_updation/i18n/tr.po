@@ -1,0 +1,256 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_employee_updation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-30 22:30+0000\n"
+"PO-Revision-Date: 2020-05-31 01:40+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: tr\n"
+"X-Generator: Poedit 2.3.1\n"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_id_attachment_id
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_passport_attachment_id
+msgid "Attachment"
+msgstr "Ek dosya"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_emergency_contact_relation
+msgid "Contact"
+msgstr "İletişim"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_family_member_contact
+msgid "Contact No"
+msgstr "İletişim Numarası"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,help:hr_employee_updation.field_hr_emergency_contact_number
+msgid "Contact Number"
+msgstr "İletişim Numarası"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_emergency_contact_create_uid
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_family_create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_emergency_contact_create_date
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_family_create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: hr_employee_updation
+#: selection:hr.employee.family,relation:0
+msgid "Daughter"
+msgstr "İlişki"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_emergency_contact_display_name
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_family_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_emergency_contact
+#: model:ir.ui.view,arch_db:hr_employee_updation.hr_employee_inherit_form_view
+msgid "Emergency Contact"
+msgstr "Acil İletişim"
+
+#. module: hr_employee_updation
+#: model:ir.model,name:hr_employee_updation.model_hr_employee
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_family_employee_id
+msgid "Employee"
+msgstr "Personel"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_emergency_contact_employee_obj
+msgid "Employee Obj"
+msgstr "Personel Obj"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_id_expiry_date
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_passport_expiry_date
+msgid "Expiry Date"
+msgstr "Son Kullanma Tarihi"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,help:hr_employee_updation.field_hr_employee_id_expiry_date
+msgid "Expiry date of Identification ID"
+msgstr "Kimlik sona erme tarihi"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,help:hr_employee_updation.field_hr_employee_passport_expiry_date
+msgid "Expiry date of Passport ID"
+msgstr "Pasaport sona erme tarihi"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_fam_ids
+#: model:ir.ui.view,arch_db:hr_employee_updation.hr_employee_inherit_form_view
+msgid "Family"
+msgstr "Aile"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,help:hr_employee_updation.field_hr_employee_fam_ids
+#: model:ir.ui.view,arch_db:hr_employee_updation.hr_employee_inherit_form_view
+msgid "Family Information"
+msgstr "Aile Bilgileri"
+
+#. module: hr_employee_updation
+#: selection:hr.employee.family,relation:0
+msgid "Father"
+msgstr "Baba"
+
+#. module: hr_employee_updation
+#: model:ir.model,name:hr_employee_updation.model_hr_emergency_contact
+msgid "HR Emergency Contact"
+msgstr "İK Acil İletişim"
+
+#. module: hr_employee_updation
+#: model:ir.actions.server,name:hr_employee_updation.employee_data_reminder_ir_actions_server
+#: model:ir.cron,cron_name:hr_employee_updation.employee_data_reminder
+#: model:ir.cron,name:hr_employee_updation.employee_data_reminder
+msgid "HR Employee Data Expiration"
+msgstr "İK Personel Verilerinin Sona Ermesi"
+
+#. module: hr_employee_updation
+#: model:ir.model,name:hr_employee_updation.model_hr_employee_family
+msgid "HR Employee Family"
+msgstr "İK Personel Ailesi"
+
+#. module: hr_employee_updation
+#: model:ir.ui.menu,name:hr_employee_updation.menu_hr_management
+msgid "HR Management"
+msgstr "İK Yönetimi"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_emergency_contact_id
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_family_id
+msgid "ID"
+msgstr "Kimlik"
+
+#. module: hr_employee_updation
+#: code:addons/hr_employee_updation/models/hr_employee.py:79
+#, python-format
+msgid "ID-%s Expired On %s"
+msgstr "Kimlik-%s Sona Erme Tarihi %s"
+
+#. module: hr_employee_updation
+#: model:ir.ui.view,arch_db:hr_employee_updation.hr_employee_inherit_form_view
+msgid "Identification ID"
+msgstr "Kimlik ID"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,help:hr_employee_updation.field_hr_employee_family_employee_ref
+msgid "If family member currently is an employee of same company, then please tick this field"
+msgstr "Aile üyesi şu anda aynı şirketin çalışanıysa, lütfen bu alanı işaretleyin"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_family_employee_ref
+msgid "Is Employee"
+msgstr "Personel mi?"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_joining_date
+msgid "Joining Date"
+msgstr "Giriş Tarihi"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_emergency_contact___last_update
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_family___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_emergency_contact_write_uid
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_family_write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_emergency_contact_write_date
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_family_write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_personal_mobile
+msgid "Mobile"
+msgstr "Mobil"
+
+#. module: hr_employee_updation
+#: selection:hr.employee.family,relation:0
+msgid "Mother"
+msgstr "Anne"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_family_member_name
+msgid "Name"
+msgstr "İsim"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_emergency_contact_number
+msgid "Number"
+msgstr "Numara"
+
+#. module: hr_employee_updation
+#: model:ir.ui.view,arch_db:hr_employee_updation.hr_employee_inherit_form_view
+msgid "Passport ID"
+msgstr "Pasaport ID"
+
+#. module: hr_employee_updation
+#: code:addons/hr_employee_updation/models/hr_employee.py:93
+#, python-format
+msgid "Passport-%s Expired On %s"
+msgstr "Pasaport-%s Sona Erme Tarihi %s"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,help:hr_employee_updation.field_hr_emergency_contact_relation
+#: model:ir.model.fields,help:hr_employee_updation.field_hr_employee_family_relation
+msgid "Relation with employee"
+msgstr "Personel ile İlişki"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,field_description:hr_employee_updation.field_hr_employee_family_relation
+msgid "Relationship"
+msgstr "İlişki"
+
+#. module: hr_employee_updation
+#: model:ir.ui.menu,name:hr_employee_updation.employee_report_menu
+msgid "Reports"
+msgstr "Raporlar"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,help:hr_employee_updation.field_hr_employee_family_employee_id
+msgid "Select corresponding Employee"
+msgstr "İlgili Personeli seçin"
+
+#. module: hr_employee_updation
+#: selection:hr.employee.family,relation:0
+msgid "Son"
+msgstr "Son"
+
+#. module: hr_employee_updation
+#: selection:hr.employee.family,relation:0
+msgid "Wife"
+msgstr "Eş"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,help:hr_employee_updation.field_hr_employee_passport_attachment_id
+msgid "You can attach the copy of Passport"
+msgstr "Pasaport kopyasını ekleyebilirsiniz"
+
+#. module: hr_employee_updation
+#: model:ir.model.fields,help:hr_employee_updation.field_hr_employee_id_attachment_id
+msgid "You can attach the copy of your Id"
+msgstr "Kimliğinizin kopyasını ekleyebilirsiniz"

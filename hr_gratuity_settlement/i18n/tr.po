@@ -1,0 +1,334 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_gratuity_settlement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-21 01:54+0000\n"
+"PO-Revision-Date: 2020-05-31 15:25+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 2.3.1\n"
+
+#. module: hr_gratuity_settlement
+#: code:addons/hr_gratuity_settlement/models/employee_gratuity.py:50
+#: code:addons/hr_gratuity_settlement/models/other_settlements.py:50
+#, python-format
+msgid "A Settlement request is already processed for this employee"
+msgstr "Bu çalışan için bir Masraf Yükleme isteği zaten işleniyor"
+
+#. module: hr_gratuity_settlement
+#: code:addons/hr_gratuity_settlement/models/employee_gratuity.py:98
+#: code:addons/hr_gratuity_settlement/models/other_settlements.py:95
+#, python-format
+msgid "Allowance value should be numeric !!"
+msgstr "Ödenek değer sayısal olmalıdır!!"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_gratuity_amount
+msgid "Amount Payable"
+msgstr "Ödenecek Tutar"
+
+#. module: hr_gratuity_settlement
+#: selection:hr.gratuity,state:0 selection:other.settlements,state:0
+msgid "Approved"
+msgstr "Onaylandı"
+
+#. module: hr_gratuity_settlement
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.employee_gratuity_form
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.other_settlements_form
+msgid "Calculate"
+msgstr "Hesapla"
+
+#. module: hr_gratuity_settlement
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.employee_gratuity_form
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.other_settlements_form
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: hr_gratuity_settlement
+#: selection:hr.gratuity,state:0 selection:other.settlements,state:0
+msgid "Cancelled"
+msgstr "İptal Edildi"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity_company_id
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity_create_uid
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_create_uid
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_settlement_reason_create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity_create_date
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_create_date
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_settlement_reason_create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity_currency_id
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_currency_id
+msgid "Currency"
+msgstr "Para Birimi"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity_allowance
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_allowance
+msgid "Dearness Allowance"
+msgstr "Değer Ödeneği"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_settlement_reason_description
+msgid "Description"
+msgstr "Açıklama"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity_display_name
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_display_name
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_settlement_reason_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: hr_gratuity_settlement
+#: selection:hr.gratuity,state:0 selection:other.settlements,state:0
+msgid "Draft"
+msgstr "Taslak"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity_employee_name
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_employee_name
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.employee_gratuity_form
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.other_settlements_form
+msgid "Employee"
+msgstr "Personel"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model,name:hr_gratuity_settlement.model_hr_gratuity
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.employee_gratuity_form
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.employee_gratuity_tree
+msgid "Employee Gratuity"
+msgstr "Personel İkramayesi"
+
+#. module: hr_gratuity_settlement
+#: model:ir.ui.menu,name:hr_gratuity_settlement.employee_gratuity
+#: model:ir.ui.menu,name:hr_gratuity_settlement.employee_settlement
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.other_settlements_form
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.other_settlements_tree
+msgid "Employee Settlements"
+msgstr "Personel Yerleşimleri"
+
+#. module: hr_gratuity_settlement
+#: code:addons/hr_gratuity_settlement/models/other_settlements.py:89
+#, python-format
+msgid "Employee Working Period is less than 1 Year"
+msgstr "Personel Çalışma Süresi 1 Yıldan Az"
+
+#. module: hr_gratuity_settlement
+#: code:addons/hr_gratuity_settlement/models/employee_gratuity.py:66
+#, python-format
+msgid "Employee Working Period is less than 5 Year"
+msgstr "Personel Çalışma Süresi 5 Yıldan Az"
+
+#. module: hr_gratuity_settlement
+#: model:ir.ui.menu,name:hr_gratuity_settlement.gratuity_creation
+msgid "Gratuity"
+msgstr "İkramiye"
+
+#. module: hr_gratuity_settlement
+#: model:ir.actions.act_window,name:hr_gratuity_settlement.action_view_pivot_gratuity
+msgid "Gratuity Analysis"
+msgstr "İkramiye Analizi"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity_gratuity_amount
+msgid "Gratuity Payable"
+msgstr "Ödenecek İkramiye"
+
+#. module: hr_gratuity_settlement
+#: model:ir.actions.act_window,name:hr_gratuity_settlement.action_employee_gratuity
+msgid "Gratuity Settlement"
+msgstr "İkramiye Yerleşimi"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,help:hr_gratuity_settlement.field_other_settlements_gratuity_amount
+msgid "Gratuity is calculated based on \t\t\t\t\t\t\tthe equation Last salary * Number of years of service * 15 / 26 "
+msgstr "İkramiyeler  \t\t\t\t\t\t\t Son maaş * Hizmet yılı sayısı * 15/26 denklemine göre hesaplanır."
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,help:hr_gratuity_settlement.field_hr_gratuity_gratuity_amount
+msgid "Gratuity is calculated based on the equation Last salary * Number of years of service * 15 / 26 "
+msgstr "İkramiye, Son maaş * Hizmet yılı sayısı * 15/26 denklemine göre hesaplanır."
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity_id
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_id
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_settlement_reason_id
+msgid "ID"
+msgstr "Kimlik"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity_joined_date
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_joined_date
+msgid "Joined Date"
+msgstr "Katılma Tarihi"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity___last_update
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements___last_update
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_settlement_reason___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity_last_month_salary
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_last_month_salary
+msgid "Last Salary"
+msgstr "Son Maaş"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity_write_uid
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_write_uid
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_settlement_reason_write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity_write_date
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_write_date
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_settlement_reason_write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: hr_gratuity_settlement
+#: code:addons/hr_gratuity_settlement/models/employee_gratuity.py:20
+#: code:addons/hr_gratuity_settlement/models/other_settlements.py:21
+#, python-format
+msgid "New"
+msgstr "Yeni"
+
+#. module: hr_gratuity_settlement
+#: code:addons/hr_gratuity_settlement/models/other_settlements.py:90
+#, python-format
+msgid "Only an Employee with minimum 1 years of working, will get the Settlement advantage"
+msgstr "Yalnızca en az 1 yıl çalışmış bir personel, Uzlaşma avantajı elde edecektir"
+
+#. module: hr_gratuity_settlement
+#: code:addons/hr_gratuity_settlement/models/employee_gratuity.py:67
+#, python-format
+msgid "Only an Employee with minimum 5 years of working, will get the Gratuity"
+msgstr "Yalnızca en az 5 yıl çalışmış bir personel, ikramiye kazanabilmektedir."
+
+#. module: hr_gratuity_settlement
+#: model:ir.ui.menu,name:hr_gratuity_settlement.settlement_creation
+msgid "Other Settlements"
+msgstr "Diğer Yerleşim Yerleri"
+
+#. module: hr_gratuity_settlement
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.gratuity_view_pivot
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.settlement_view_pivot
+msgid "Pivot View"
+msgstr "Pivot Görünüm"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_settlement_reason_settlement_reason
+msgid "Reason"
+msgstr "Sebep"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity_name
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_name
+msgid "Reference"
+msgstr "Referans"
+
+#. module: hr_gratuity_settlement
+#: model:ir.ui.menu,name:hr_gratuity_settlement.gratuity_pivot
+#: model:ir.ui.menu,name:hr_gratuity_settlement.settlement_pivot
+msgid "Report"
+msgstr "Raporlama"
+
+#. module: hr_gratuity_settlement
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.employee_gratuity_form
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.other_settlements_form
+msgid "Set to Draft"
+msgstr "Taslak olarak ayarla"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model,name:hr_gratuity_settlement.model_other_settlements
+msgid "Settlement"
+msgstr "Yerleşim"
+
+#. module: hr_gratuity_settlement
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.other_settlements_form
+msgid "Settlement Amount"
+msgstr "Yerleşim Miktarı"
+
+#. module: hr_gratuity_settlement
+#: model:ir.actions.act_window,name:hr_gratuity_settlement.action_view_pivot
+msgid "Settlement Analysis"
+msgstr "Yerleşim Yeri Analizi"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_reason
+msgid "Settlement Reason"
+msgstr "Yerleşim Nedeni"
+
+#. module: hr_gratuity_settlement
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.settlement_reason_form
+msgid "Settlement Reasons"
+msgstr "Yerleşim Nedenleri"
+
+#. module: hr_gratuity_settlement
+#: model:ir.actions.act_window,name:hr_gratuity_settlement.action_other_settlements
+msgid "Settlements"
+msgstr "Yerleşmeler"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity_state
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_state
+msgid "State"
+msgstr "İl/Eyalet"
+
+#. module: hr_gratuity_settlement
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.other_settlements_tree
+msgid "Total"
+msgstr "Toplam"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_hr_gratuity_worked_years
+#: model:ir.model.fields,field_description:hr_gratuity_settlement.field_other_settlements_worked_years
+msgid "Total Work Years"
+msgstr "Toplam Çalışma Yılı"
+
+#. module: hr_gratuity_settlement
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.employee_gratuity_tree
+msgid "Total amount"
+msgstr "Toplam Tutar"
+
+#. module: hr_gratuity_settlement
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.employee_gratuity_form
+#: model:ir.ui.view,arch_db:hr_gratuity_settlement.other_settlements_form
+msgid "Validate"
+msgstr "Doğrula"
+
+#. module: hr_gratuity_settlement
+#: selection:hr.gratuity,state:0 selection:other.settlements,state:0
+msgid "Validated"
+msgstr "Doğrulanmış"
+
+#. module: hr_gratuity_settlement
+#: model:ir.model,name:hr_gratuity_settlement.model_settlement_reason
+msgid "settlement.reason"
+msgstr "settlement.reason"

@@ -1,0 +1,238 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_reward_warning
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-21 02:19+0000\n"
+"PO-Revision-Date: 2020-05-21 05:29+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 2.3.1\n"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_employee_announcement_count
+msgid "# Announcements"
+msgstr "# Duyurular"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_announcement_type
+msgid "Announcement Type"
+msgstr "Duyuru Tipi"
+
+#. module: hr_reward_warning
+#: code:addons/hr_reward_warning/models/hr_employee.py:55
+#: code:addons/hr_reward_warning/models/hr_employee.py:65
+#: model:ir.actions.act_window,name:hr_reward_warning.action_hr_announcement
+#: model:ir.ui.menu,name:hr_reward_warning.hr_announcement
+#: model:ir.ui.menu,name:hr_reward_warning.hr_announcement_sub_menu
+#: model:ir.ui.view,arch_db:hr_reward_warning.announcement_inherit_form_view
+#: model:ir.ui.view,arch_db:hr_reward_warning.view_hr_announcement_form
+#: model:ir.ui.view,arch_db:hr_reward_warning.view_hr_announcement_search
+#, python-format
+msgid "Announcements"
+msgstr "Duyurular"
+
+#. module: hr_reward_warning
+#: model:ir.ui.view,arch_db:hr_reward_warning.view_hr_announcement_form
+msgid "Approve"
+msgstr "Onayla"
+
+#. module: hr_reward_warning
+#: selection:hr.announcement,state:0
+msgid "Approved"
+msgstr "Onaylandı"
+
+#. module: hr_reward_warning
+#: model:ir.ui.view,arch_db:hr_reward_warning.view_hr_announcement_search
+msgid "Approved Letters"
+msgstr "Onaylanmış evraklar"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_attachment_id
+msgid "Attachment"
+msgstr "Ek dosya"
+
+#. module: hr_reward_warning
+#: selection:hr.announcement,announcement_type:0
+msgid "By Department"
+msgstr "Bölüm tarafından"
+
+#. module: hr_reward_warning
+#: selection:hr.announcement,announcement_type:0
+msgid "By Employee"
+msgstr "Çalışan tarafından"
+
+#. module: hr_reward_warning
+#: selection:hr.announcement,announcement_type:0
+msgid "By Job Position"
+msgstr "İş Pozisyonuna Göre"
+
+#. module: hr_reward_warning
+#: model:ir.actions.act_window,help:hr_reward_warning.action_hr_announcement
+msgid "Click to Create a New Record."
+msgstr "Yeni bir kayıt oluşturmak için tıklayın."
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_name
+msgid "Code No:"
+msgstr "Kod No:"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_department_ids
+msgid "Departments"
+msgstr "Departmanlar"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: hr_reward_warning
+#: selection:hr.announcement,state:0
+msgid "Draft"
+msgstr "Taslak"
+
+#. module: hr_reward_warning
+#: model:ir.model,name:hr_reward_warning.model_hr_employee
+msgid "Employee"
+msgstr "Personel"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_employee_ids
+msgid "Employees"
+msgstr "Personeller"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_date_end
+msgid "End Date"
+msgstr "Bitiş Tarihi"
+
+#. module: hr_reward_warning
+#: model:ir.ui.view,arch_db:hr_reward_warning.view_hr_announcement_form
+msgid "General Announcement"
+msgstr "Genel Duyuru"
+
+#. module: hr_reward_warning
+#: model:ir.ui.view,arch_db:hr_reward_warning.view_hr_announcement_search
+msgid "General Announcements"
+msgstr "Genel Duyurular"
+
+#. module: hr_reward_warning
+#: model:ir.ui.view,arch_db:hr_reward_warning.view_hr_announcement_search
+msgid "Group By"
+msgstr "Grupla"
+
+#. module: hr_reward_warning
+#: model:ir.model,name:hr_reward_warning.model_hr_announcement
+msgid "HR Announcement"
+msgstr "İK Duyurusu"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_id
+msgid "ID"
+msgstr "ID"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_is_announcement
+msgid "Is general Announcement?"
+msgstr "Genel duyuru mu?"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_position_ids
+msgid "Job Positions"
+msgstr "İş Pozisyonları"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_announcement
+#: model:ir.ui.view,arch_db:hr_reward_warning.view_hr_announcement_form
+msgid "Letter"
+msgstr "Evrak"
+
+#. module: hr_reward_warning
+#: model:ir.ui.menu,name:hr_reward_warning.hr_official_announcement
+msgid "Official Announcements"
+msgstr "Resmi Duyurular"
+
+#. module: hr_reward_warning
+#: model:ir.ui.view,arch_db:hr_reward_warning.view_hr_announcement_form
+msgid "Refuse"
+msgstr "Reddet"
+
+#. module: hr_reward_warning
+#: selection:hr.announcement,state:0
+msgid "Refused"
+msgstr "Reddedildi"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_requested_date
+msgid "Requested Date"
+msgstr "Talep edilen tarih"
+
+#. module: hr_reward_warning
+#: model:ir.ui.view,arch_db:hr_reward_warning.view_hr_announcement_form
+msgid "Send For Approval"
+msgstr "Onay İçin Gönder"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_date_start
+msgid "Start Date"
+msgstr "Başlangıç Tarihi"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_state
+#: model:ir.ui.view,arch_db:hr_reward_warning.view_hr_announcement_search
+msgid "Status"
+msgstr "Durumu"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,field_description:hr_reward_warning.field_hr_announcement_announcement_reason
+msgid "Title"
+msgstr "Başlık"
+
+#. module: hr_reward_warning
+#: selection:hr.announcement,state:0
+msgid "Waiting For Approval"
+msgstr "Onay bekleniyor"
+
+#. module: hr_reward_warning
+#: model:ir.model.fields,help:hr_reward_warning.field_hr_announcement_attachment_id
+msgid "You can attach the copy of your Letter"
+msgstr "Evrakın kopyasını ekleyebilirsiniz"

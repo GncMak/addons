@@ -1,0 +1,215 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_insurance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-21 01:55+0000\n"
+"PO-Revision-Date: 2020-05-31 01:22+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 2.3.1\n"
+
+#. module: hr_insurance
+#: selection:hr.insurance,state:0
+msgid "Active"
+msgstr "Aktif"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_insurance_policy_note_field
+msgid "Comment"
+msgstr "Yorum"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_insurance_company_id
+#: model:ir.model.fields,field_description:hr_insurance.field_insurance_policy_company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_employee_insurance_percentage
+msgid "Company Percentage "
+msgstr "Şirket Yüzdesi"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_insurance_create_uid
+#: model:ir.model.fields,field_description:hr_insurance.field_insurance_policy_create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_insurance_create_date
+#: model:ir.model.fields,field_description:hr_insurance.field_insurance_policy_create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_insurance_date_from
+msgid "Date From"
+msgstr "Tarihi Itibaren"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_insurance_date_to
+msgid "Date To"
+msgstr "Tarih"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_insurance_display_name
+#: model:ir.model.fields,field_description:hr_insurance.field_insurance_policy_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: hr_insurance
+#: model:ir.model,name:hr_insurance.model_hr_employee
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_insurance_employee_id
+msgid "Employee"
+msgstr "Personel"
+
+#. module: hr_insurance
+#: model:ir.actions.act_window,name:hr_insurance.action_employee_insurance_details
+#: model:ir.ui.menu,name:hr_insurance.hr_employee_insurance_menu
+#: model:ir.ui.view,arch_db:hr_insurance.employee_insurance__details_form
+#: model:ir.ui.view,arch_db:hr_insurance.employee_insurance_details_tree
+msgid "Employee Insurance"
+msgstr "Personel Sigortası"
+
+#. module: hr_insurance
+#: selection:hr.insurance,state:0
+msgid "Expired"
+msgstr "Süresi Doldu"
+
+#. module: hr_insurance
+#: model:ir.ui.view,arch_db:hr_insurance.insurance_policy_details_form
+msgid "Extra Notes"
+msgstr "Ekstra Notlar"
+
+#. module: hr_insurance
+#: model:ir.model,name:hr_insurance.model_hr_insurance
+#: model:ir.ui.menu,name:hr_insurance.hr_insurance_main_menu
+msgid "HR Insurance"
+msgstr "İK Sigorta"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_insurance_id
+#: model:ir.model.fields,field_description:hr_insurance.field_insurance_policy_id
+msgid "ID"
+msgstr "Kimlik"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_employee_insurance
+#: model:ir.ui.view,arch_db:hr_insurance.hr_employee_insurance_form
+msgid "Insurance"
+msgstr "Sigorta"
+
+#. module: hr_insurance
+#: model:hr.salary.rule,name:hr_insurance.hr_payslip_rule_insurance
+msgid "Insurance Amount"
+msgstr "Sigorta Tutarı"
+
+#. module: hr_insurance
+#: model:ir.actions.act_window,name:hr_insurance.action_insurance_policy_management
+msgid "Insurance Policy "
+msgstr "Sigorta Poliçesi"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_insurance___last_update
+#: model:ir.model.fields,field_description:hr_insurance.field_insurance_policy___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_insurance_write_uid
+#: model:ir.model.fields,field_description:hr_insurance.field_insurance_policy_write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_insurance_write_date
+#: model:ir.model.fields,field_description:hr_insurance.field_insurance_policy_write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: hr_insurance
+#: selection:hr.insurance,policy_coverage:0
+msgid "Monthly"
+msgstr "Aylık"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_insurance_policy_name
+msgid "Name"
+msgstr "İsim"
+
+#. module: hr_insurance
+#: model:ir.model,name:hr_insurance.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Bordro"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_insurance_policy_id
+#: model:ir.ui.menu,name:hr_insurance.policy_management_menu
+msgid "Policy"
+msgstr "Poliçe"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_insurance_amount
+msgid "Policy Amount"
+msgstr "Poliçe Tutarı"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_insurance_policy_coverage
+msgid "Policy Coverage"
+msgstr "Poliçe Kapsamı"
+
+#. module: hr_insurance
+#: model:ir.ui.view,arch_db:hr_insurance.insurance_policy_details_form
+#: model:ir.ui.view,arch_db:hr_insurance.insurance_policy_details_tree
+msgid "Policy Details"
+msgstr "Poliçe Ayrıntıları"
+
+#. module: hr_insurance
+#: model:ir.ui.view,arch_db:hr_insurance.employee_insurance__details_form
+msgid "Policy Period"
+msgstr "Poliçe Dönemi"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_employee_deduced_amount_per_month
+msgid "Salary deduced per month"
+msgstr "Aylık Maaş"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_employee_deduced_amount_per_year
+msgid "Salary deduced per year"
+msgstr "Yıllık Maaş"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_insurance_state
+msgid "State"
+msgstr "İl/Eyalet"
+
+#. module: hr_insurance
+#: model:ir.model.fields,field_description:hr_insurance.field_hr_insurance_sum_insured
+msgid "Sum Insured"
+msgstr "Sigortalı Tutar"
+
+#. module: hr_insurance
+#: selection:hr.insurance,policy_coverage:0
+msgid "Yearly"
+msgstr "Yıllık"
+
+#. module: hr_insurance
+#: model:ir.actions.act_window,help:hr_insurance.action_employee_insurance_details
+#: model:ir.actions.act_window,help:hr_insurance.action_insurance_policy_management
+msgid "You have'nt created any policy yet."
+msgstr "Henüz herhangi bir poliçe oluşturmadınız."
+
+#. module: hr_insurance
+#: model:ir.model,name:hr_insurance.model_insurance_policy
+msgid "insurance.policy"
+msgstr "insurance.policy"

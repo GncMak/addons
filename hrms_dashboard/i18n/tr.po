@@ -1,0 +1,381 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hrms_dashboard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-21 01:38+0000\n"
+"PO-Revision-Date: 2020-05-27 13:59+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:27
+#, python-format
+msgid "Add job title"
+msgstr "İş unvanı ekle"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:53
+#, python-format
+msgid "Age"
+msgstr "Yaş"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:64
+#, python-format
+msgid "Ago"
+msgstr "Önce"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:374
+#, python-format
+msgid "Announcements"
+msgstr "Duyurular"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/js/hrms_dashboard.js:280
+#, python-format
+msgid "Applications"
+msgstr "Uygulamalar"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:306
+#, python-format
+msgid "Attrition Rate"
+msgstr "Yıpranma Oranı"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:140
+#: model:ir.actions.report,name:hrms_dashboard.action_report_broad_factor
+#: model:ir.model.fields,field_description:hrms_dashboard.field_hr_employee_broad_factor_broad_factor
+#: model:ir.ui.view,arch_db:hrms_dashboard.report_broadfactor
+#, python-format
+msgid "Broad Factor"
+msgstr "Geniş Faktör"
+
+#. module: hrms_dashboard
+#: model:ir.ui.view,arch_db:hrms_dashboard.report_broadfactor
+msgid "Broad Factor Report"
+msgstr "Geniş Faktör Raporu"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:156
+#, python-format
+msgid "Check In"
+msgstr "Giriş"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:164
+#, python-format
+msgid "Check out"
+msgstr "Çıkış"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/js/hrms_dashboard.js:155
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:127
+#, python-format
+msgid "Contracts"
+msgstr "Sözleşmeler"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:56
+#, python-format
+msgid "DOB"
+msgstr "DOB"
+
+#. module: hrms_dashboard
+#: model:ir.actions.client,name:hrms_dashboard.hr_action_dashboard
+#: model:ir.ui.menu,name:hrms_dashboard.menu_hrms_dashboard
+msgid "Dashboard"
+msgstr "Panel"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:68
+#, python-format
+msgid "Date"
+msgstr "Tarih"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:358
+#, python-format
+msgid "Date :"
+msgstr "Tarih :"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:247
+#, python-format
+msgid "Department Employees"
+msgstr "Departman Çalışanları"
+
+#. module: hrms_dashboard
+#: model:ir.model.fields,field_description:hrms_dashboard.field_hr_employee_broad_factor_display_name
+#: model:ir.model.fields,field_description:hrms_dashboard.field_report_hrms_dashboard_report_broadfactor_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: hrms_dashboard
+#: model:ir.model,name:hrms_dashboard.model_hr_employee
+#: model:ir.ui.view,arch_db:hrms_dashboard.report_broadfactor
+msgid "Employee"
+msgstr "Personel"
+
+#. module: hrms_dashboard
+#: model:ir.model,name:hrms_dashboard.model_hr_employee_broad_factor
+msgid "Employee Broadfactor"
+msgstr "Çalışan Geniş Faktörü"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/js/hrms_dashboard.js:134
+#, python-format
+msgid "Employee Payslips"
+msgstr "Çalışan Maaşları"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:415
+#, python-format
+msgid "Error : Could not find employee linked to user"
+msgstr "Hata: Kullanıcıya bağlı çalışan bulunamadı"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:38
+#, python-format
+msgid "Female"
+msgstr "Kadın"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:45
+#, python-format
+msgid "Gender"
+msgstr "Cinsiyet"
+
+#. module: hrms_dashboard
+#: model:ir.model.fields,field_description:hrms_dashboard.field_hr_employee_broad_factor_id
+#: model:ir.model.fields,field_description:hrms_dashboard.field_report_hrms_dashboard_report_broadfactor_id
+msgid "ID"
+msgstr "ID"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:231
+#, python-format
+msgid "Job Applications"
+msgstr "İş başvuruları"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:62
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:67
+#, python-format
+msgid "Joined"
+msgstr "Katılım"
+
+#. module: hrms_dashboard
+#: model:ir.model.fields,field_description:hrms_dashboard.field_hr_employee_broad_factor___last_update
+#: model:ir.model.fields,field_description:hrms_dashboard.field_report_hrms_dashboard_report_broadfactor___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/js/hrms_dashboard.js:240
+#, python-format
+msgid "Leave Allocation Request"
+msgstr "Tahsis Talebinden Ayrıl"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:221
+#, python-format
+msgid "Leave Allocation Requests"
+msgstr "Ayrılma Talepleri"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/js/hrms_dashboard.js:222
+#, python-format
+msgid "Leave Request"
+msgstr "Ayrılma İsteği"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:183
+#, python-format
+msgid "Leave Requests"
+msgstr "Ayrılma İstekleri"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/js/hrms_dashboard.js:204
+#, python-format
+msgid "Leaves Today"
+msgstr "Bugün ayrılıyor"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:34
+#, python-format
+msgid "Male"
+msgstr "Erkek"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:85
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:88
+#, python-format
+msgid "Mobile"
+msgstr "Mobil"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:293
+#, python-format
+msgid "Monthly Join/Resign Analysis"
+msgstr "Aylık Katılım / İstifa Analizi"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:262
+#, python-format
+msgid "Monthly Leave Analysis"
+msgstr "Aylık İzin Analizi"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:402
+#, python-format
+msgid "My Leave Analysis"
+msgstr "İzin Analizim"
+
+#. module: hrms_dashboard
+#: model:ir.model.fields,field_description:hrms_dashboard.field_hr_employee_broad_factor_name
+msgid "Name"
+msgstr "İsim"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:75
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:78
+#, python-format
+msgid "Nationality"
+msgstr "Milliyet"
+
+#. module: hrms_dashboard
+#: model:ir.model.fields,field_description:hrms_dashboard.field_hr_employee_broad_factor_no_of_days
+msgid "No Of Days"
+msgstr "Gün Sayısı"
+
+#. module: hrms_dashboard
+#: model:ir.model.fields,field_description:hrms_dashboard.field_hr_employee_broad_factor_no_of_occurrence
+msgid "No Of Occurrence"
+msgstr "Oluşum Sayısı"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:363
+#, python-format
+msgid "Online"
+msgstr "Online"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:40
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:42
+#, python-format
+msgid "Other"
+msgstr "Diğer"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:101
+#, python-format
+msgid "Payslips"
+msgstr "Maaş Bordroları"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:416
+#, python-format
+msgid "Please contact system admin for the setup"
+msgstr "Kurulum için lütfen sistem yöneticisine başvurun"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:206
+#, python-format
+msgid "This Month"
+msgstr "Bu ay"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/js/hrms_dashboard.js:184
+#, python-format
+msgid "This Month Leaves"
+msgstr "Bu ay bırakıyor"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/js/hrms_dashboard.js:259
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:114
+#, python-format
+msgid "Timesheets"
+msgstr "Zaman çizelgeleri"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:194
+#, python-format
+msgid "Today"
+msgstr "Bugün"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:320
+#, python-format
+msgid "Upcoming Birthdays"
+msgstr "Yaklaşan doğum günleri"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:346
+#, python-format
+msgid "Upcoming Events"
+msgstr "Yaklaşan etkinlikler"
+
+#. module: hrms_dashboard
+#. openerp-web
+#: code:addons/hrms_dashboard/static/src/xml/hrms_dashboard.xml:360
+#, python-format
+msgid "Venue :"
+msgstr "Yer:"
+
+#. module: hrms_dashboard
+#: model:ir.model,name:hrms_dashboard.model_report_hrms_dashboard_report_broadfactor
+msgid "report.hrms_dashboard.report_broadfactor"
+msgstr "report.hrms_dashboard.report_broadfactor"

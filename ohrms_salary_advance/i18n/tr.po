@@ -1,0 +1,300 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ohrms_salary_advance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-21 02:06+0000\n"
+"PO-Revision-Date: 2020-05-21 05:51+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 2.3.1\n"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_advance
+msgid "Advance"
+msgstr "Geliştirmek"
+
+#. module: ohrms_salary_advance
+#: model:hr.salary.rule,name:ohrms_salary_advance.hr_payslip_rule_advance
+#: model:ir.ui.menu,name:ohrms_salary_advance.parent_menu_salary_advance
+msgid "Advance Salary"
+msgstr "Ön ödeme"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_form
+msgid "Approve"
+msgstr "Onayla"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_filter
+#: selection:salary.advance,state:0
+msgid "Approved"
+msgstr "Onaylandı"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_filter
+msgid "Approved Requests"
+msgstr "Onaylanan İstekler"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_form
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: ohrms_salary_advance
+#: selection:salary.advance,state:0
+msgid "Cancelled"
+msgstr "İptal edildi"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_employee_contract_id
+msgid "Contract"
+msgstr "Sözleşme"
+
+#. module: ohrms_salary_advance
+#: model:ir.actions.act_window,help:ohrms_salary_advance.action_my_salary_advance
+#: model:ir.actions.act_window,help:ohrms_salary_advance.action_my_salary_advance_request_approved
+#: model:ir.actions.act_window,help:ohrms_salary_advance.action_salary_advance_to_approve
+msgid "Create Requests."
+msgstr "İstek Oluştur."
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_credit
+msgid "Credit Account"
+msgstr "Alacak Hesabı"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_currency_id
+msgid "Currency"
+msgstr "Para Birimi"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_date
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_filter
+msgid "Date"
+msgstr "Tarih"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_debit
+msgid "Debit Account"
+msgstr "Borç Hesabı"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_department
+msgid "Department"
+msgstr "Departman"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: ohrms_salary_advance
+#: selection:salary.advance,state:0
+msgid "Draft"
+msgstr "Taslak"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_employee_id
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_filter
+msgid "Employee"
+msgstr "Personel"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_exceed_condition
+msgid "Exceed than maximum"
+msgstr "Maksimumdan fazla"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_filter
+msgid "Group By"
+msgstr "Grupla"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_id
+msgid "ID"
+msgstr "ID"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_journal
+msgid "Journal"
+msgstr "Yevmiye"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_hr_payroll_structure_max_percent
+msgid "Max.Salary Advance Percentage"
+msgstr "Maksimum Kolay İlerleme Yüzdesi"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.menu,name:ohrms_salary_advance.menu_my_salary_advance_approved
+msgid "My Approved Salary Advance"
+msgstr "Onaylanan Maaş Avansım"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_filter
+msgid "My Requests"
+msgstr "Taleplerim"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_name
+msgid "Name"
+msgstr "İsim"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_filter
+msgid "New Requests"
+msgstr "Yeni İstekler"
+
+#. module: ohrms_salary_advance
+#: model:ir.model,name:ohrms_salary_advance.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Makbuz"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_payment_method
+msgid "Payment Method"
+msgstr "Ödeme Yöntemi"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_reason
+msgid "Reason"
+msgstr "Sebep"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_form
+msgid "Reject"
+msgstr "Reddet"
+
+#. module: ohrms_salary_advance
+#: selection:salary.advance,state:0
+msgid "Rejected"
+msgstr "Reddedildi"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.menu,name:ohrms_salary_advance.menu_my_salary_advance
+msgid "Request Salary Advance"
+msgstr "Maaş Avansı İste"
+
+#. module: ohrms_salary_advance
+#: code:addons/ohrms_salary_advance/models/salary_advance.py:115
+#, python-format
+msgid "Request can be done after \"%s\" Days From prevoius month salary"
+msgstr "Talep, \"% s\" Gün sonra yapılabilir. Önceki ay maaşından itibaren"
+
+#. module: ohrms_salary_advance
+#: model:ir.actions.act_window,name:ohrms_salary_advance.action_my_salary_advance
+#: model:ir.actions.act_window,name:ohrms_salary_advance.action_my_salary_advance_request_approved
+#: model:ir.actions.act_window,name:ohrms_salary_advance.action_salary_advance_to_approve
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_filter
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_form
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_tree
+msgid "Salary Advance"
+msgstr "Maaş Avansı"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.menu,name:ohrms_salary_advance.menu_salary_advance
+msgid "Salary Advance To Approve"
+msgstr "Onaylanacak Maaş Avansı"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_hr_payroll_structure_advance_date
+msgid "Salary Advance-After days"
+msgstr "Maaş Avansı-Gün Sonrası"
+
+#. module: ohrms_salary_advance
+#: model:ir.model,name:ohrms_salary_advance.model_hr_payroll_structure
+msgid "Salary Structure"
+msgstr "Ücret Yapısı"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_filter
+msgid "Search"
+msgstr "Arama"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_filter
+msgid "State"
+msgstr "İl/Eyalet"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,field_description:ohrms_salary_advance.field_salary_advance_state
+msgid "Status"
+msgstr "Durumu"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_form
+msgid "Submit"
+msgstr "Gönder"
+
+#. module: ohrms_salary_advance
+#: selection:salary.advance,state:0
+msgid "Submitted"
+msgstr "Gönderilen"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_filter
+msgid "Submitted Requests"
+msgstr "Gönderilen İstekler"
+
+#. module: ohrms_salary_advance
+#: model:ir.model.fields,help:ohrms_salary_advance.field_salary_advance_exceed_condition
+msgid "The Advance is greater than the maximum percentage in salary structure"
+msgstr "Avans, maaş yapısındaki maksimum yüzde oranından fazla"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_filter
+msgid "To Approve"
+msgstr "Onaylanacak"
+
+#. module: ohrms_salary_advance
+#: model:ir.ui.view,arch_db:ohrms_salary_advance.view_salary_advance_filter
+msgid "To Submit"
+msgstr "Gönderilecek"
+
+#. module: ohrms_salary_advance
+#: selection:salary.advance,state:0
+msgid "Waiting Approval"
+msgstr "Onaylama bekleniyor"
+
+#. module: ohrms_salary_advance
+#: model:ir.model,name:ohrms_salary_advance.model_salary_advance
+msgid "salary.advance"
+msgstr "salary.advance"

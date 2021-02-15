@@ -1,0 +1,175 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_reminder
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-21 02:02+0000\n"
+"PO-Revision-Date: 2020-05-21 05:57+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 2.3.1\n"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_active
+msgid "Active"
+msgstr "Aktif"
+
+#. module: hr_reminder
+#: model:ir.actions.act_window,help:hr_reminder.action_hr_reminder
+msgid "Click here to create new reminder."
+msgstr "Yeni hatırlatıcı oluşturmak için burayı tıklayın."
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_date_to
+msgid "End Date"
+msgstr "Bitiş Tarihi"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_model_field
+msgid "Field"
+msgstr "Alan"
+
+#. module: hr_reminder
+#: model:ir.ui.view,arch_db:hr_reminder.hr_reminder_form_view
+msgid "HR Reminder"
+msgstr "İK Hatırlatıcısı"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_id
+msgid "ID"
+msgstr "ID"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_model_name
+msgid "Model"
+msgstr "Model"
+
+#. module: hr_reminder
+#: model:ir.ui.view,arch_db:hr_reminder.hr_reminder_tree_view
+msgid "Pop-Up Reminder"
+msgstr "Pop-Up Hatırlatıcı"
+
+#. module: hr_reminder
+#: model:ir.ui.menu,name:hr_reminder.hr_reminder_menu
+#: model:ir.ui.menu,name:hr_reminder.reminder_menu_2
+msgid "Reminder"
+msgstr "Hatırlatma"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_reminder_active
+msgid "Reminder Active"
+msgstr "Hatırlatıcı Etkin"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_expiry_date
+msgid "Reminder Expiry Date"
+msgstr "Hatırlatma Bitiş Tarihi"
+
+#. module: hr_reminder
+#: model:ir.ui.view,arch_db:hr_reminder.hr_reminder_form_view
+msgid "Reminder Title..."
+msgstr "Hatırlatma Başlığı ..."
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_days_before
+msgid "Reminder before"
+msgstr "Daha önce hatırlatma"
+
+#. module: hr_reminder
+#: model:ir.actions.server,name:hr_reminder.ir_cron_scheduler_reminder_action_ir_actions_server
+#: model:ir.cron,cron_name:hr_reminder.ir_cron_scheduler_reminder_action
+#: model:ir.cron,name:hr_reminder.ir_cron_scheduler_reminder_action
+msgid "Reminder scheduler"
+msgstr "Hatırlatıcı zamanlayıcı"
+
+#. module: hr_reminder
+#. openerp-web
+#: code:addons/hr_reminder/static/src/xml/reminder_topbar.xml:7
+#: code:addons/hr_reminder/static/src/xml/reminder_topbar.xml:13
+#: model:ir.actions.act_window,name:hr_reminder.action_hr_reminder
+#, python-format
+msgid "Reminders"
+msgstr "Hatırlatmalar"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_search_by
+msgid "Search By"
+msgstr "Arama ölçütü"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_date_set
+msgid "Select Date"
+msgstr "Tarih seç"
+
+#. module: hr_reminder
+#: selection:hr.reminder,search_by:0
+msgid "Set Date"
+msgstr "Tarih ayarla"
+
+#. module: hr_reminder
+#: selection:hr.reminder,search_by:0
+msgid "Set Period"
+msgstr "Periyod Ayarla"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_date_from
+msgid "Start Date"
+msgstr "Başlangıç Tarihi"
+
+#. module: hr_reminder
+#: model:ir.model.fields,field_description:hr_reminder.field_hr_reminder_name
+msgid "Title"
+msgstr "Başlık"
+
+#. module: hr_reminder
+#: selection:hr.reminder,search_by:0
+msgid "Today"
+msgstr "Bugün"
+
+#. module: hr_reminder
+#: model:ir.model,name:hr_reminder.model_hr_reminder
+msgid "hr.reminder"
+msgstr "hr.reminder"

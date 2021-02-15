@@ -1,0 +1,344 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ohrms_loan
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-21 02:05+0000\n"
+"PO-Revision-Date: 2020-05-21 05:45+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 2.3.1\n"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_line_amount
+msgid "Amount"
+msgstr "Tutar"
+
+#. module: ohrms_loan
+#: model:ir.ui.view,arch_db:ohrms_loan.hr_loan_form_view
+msgid "Approve"
+msgstr "Onayla"
+
+#. module: ohrms_loan
+#: selection:hr.loan,state:0
+msgid "Approved"
+msgstr "Onaylandı"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_balance_amount
+msgid "Balance Amount"
+msgstr "Bakiye tutarı"
+
+#. module: ohrms_loan
+#: model:ir.ui.view,arch_db:ohrms_loan.hr_loan_form_view
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: ohrms_loan
+#: selection:hr.loan,state:0
+msgid "Canceled"
+msgstr "İptal edildi"
+
+#. module: ohrms_loan
+#: model:ir.actions.act_window,help:ohrms_loan.action_hr_loan_request
+msgid "Click to create a new Loan request."
+msgstr "Yeni bir Kredi talebi oluşturmak için tıklayın."
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: ohrms_loan
+#: model:ir.ui.view,arch_db:ohrms_loan.hr_loan_form_view
+msgid "Compute Installment"
+msgstr "Taksitlendirme"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_create_uid
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_line_create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_create_date
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_line_create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_currency_id
+msgid "Currency"
+msgstr "Para Birimi"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_date
+msgid "Date"
+msgstr "Tarih"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_department_id
+#: model:ir.ui.view,arch_db:ohrms_loan.view_loan_request_search_form
+msgid "Department"
+msgstr "Departman"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_display_name
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_line_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: ohrms_loan
+#: selection:hr.loan,state:0
+msgid "Draft"
+msgstr "Taslak"
+
+#. module: ohrms_loan
+#: model:ir.model,name:ohrms_loan.model_hr_employee
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_employee_id
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_line_employee_id
+#: model:ir.ui.view,arch_db:ohrms_loan.view_loan_request_search_form
+msgid "Employee"
+msgstr "Personel"
+
+#. module: ohrms_loan
+#: model:ir.ui.view,arch_db:ohrms_loan.view_loan_request_search_form
+msgid "Group By"
+msgstr "Grupla"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_id
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: ohrms_loan
+#: model:ir.model,name:ohrms_loan.model_hr_loan_line
+msgid "Installment Line"
+msgstr "Taksitlendirme planı"
+
+#. module: ohrms_loan
+#: model:ir.ui.view,arch_db:ohrms_loan.hr_loan_form_view
+msgid "Installments"
+msgstr "Taksitler"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_job_position
+msgid "Job Position"
+msgstr "İş Pozisyonu"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_journal_id
+msgid "Journal"
+msgstr "Yevmiye"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan___last_update
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_line___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_line_write_uid
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_line_write_date
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: ohrms_loan
+#: model:hr.salary.rule,name:ohrms_loan.hr_rule_loan
+#: model:ir.ui.view,arch_db:ohrms_loan.view_loan_request_search_form
+msgid "Loan"
+msgstr "Kredi"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_emp_account_id
+msgid "Loan Account"
+msgstr "Kredi hesabı"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_loan_amount
+msgid "Loan Amount"
+msgstr "Kredi miktarı"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_employee_loan_count
+msgid "Loan Count"
+msgstr "Kredi Sayısı"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_payslip_input_loan_line_id
+msgid "Loan Installment"
+msgstr "Kredi Taksitlendirme"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_loan_lines
+msgid "Loan Line"
+msgstr "Kredi planı"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_name
+msgid "Loan Name"
+msgstr "Kredi Adı"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_line_loan_id
+msgid "Loan Ref."
+msgstr "Kredi referansı"
+
+#. module: ohrms_loan
+#: model:ir.model,name:ohrms_loan.model_hr_loan
+#: model:ir.ui.view,arch_db:ohrms_loan.hr_loan_form_view
+msgid "Loan Request"
+msgstr "Kredi Talebi"
+
+#. module: ohrms_loan
+#: model:ir.actions.act_window,name:ohrms_loan.action_hr_loan_request
+#: model:ir.ui.menu,name:ohrms_loan.menu_base_hr_loan_request
+#: model:ir.ui.menu,name:ohrms_loan.menu_hr_loan_request
+#: model:ir.ui.view,arch_db:ohrms_loan.hr_loan_tree_view
+msgid "Loan Requests"
+msgstr "Kredi Talepleri"
+
+#. module: ohrms_loan
+#: model:ir.actions.act_window,name:ohrms_loan.act_hr_employee_loan_request
+#: model:ir.ui.view,arch_db:ohrms_loan.view_employee_form_loan_inherit
+msgid "Loans"
+msgstr "Krediler"
+
+#. module: ohrms_loan
+#: model:ir.ui.menu,name:ohrms_loan.menu_hr_loans_and_advances
+msgid "Loans And Advance"
+msgstr "Krediler ve Avans"
+
+#. module: ohrms_loan
+#: model:ir.ui.view,arch_db:ohrms_loan.view_loan_request_search_form
+msgid "My Loans"
+msgstr "Kredilerim"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_installment
+msgid "No Of Installments"
+msgstr "Taksit Sayısı"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_line_paid
+msgid "Paid"
+msgstr "Ödenmiş"
+
+#. module: ohrms_loan
+#: model:ir.model,name:ohrms_loan.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Makbuz"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_line_date
+msgid "Payment Date"
+msgstr "Ödeme Tarihi"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_payment_date
+msgid "Payment Start Date"
+msgstr "Ödeme Başlangıç ​​Tarihi"
+
+#. module: ohrms_loan
+#: model:ir.model,name:ohrms_loan.model_hr_payslip_input
+msgid "Payslip Input"
+msgstr "Bordro Girdisi"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_line_payslip_id
+msgid "Payslip Ref."
+msgstr "Ödeme makbuzu Ref."
+
+#. module: ohrms_loan
+#: code:addons/ohrms_loan/models/hr_loan.py:98
+#, python-format
+msgid "Please Compute installment."
+msgstr "Lütfen taksit hesaplayın."
+
+#. module: ohrms_loan
+#: model:ir.ui.view,arch_db:ohrms_loan.hr_loan_form_view
+msgid "Refuse"
+msgstr "Reddet"
+
+#. module: ohrms_loan
+#: selection:hr.loan,state:0
+msgid "Refused"
+msgstr "Reddedildi"
+
+#. module: ohrms_loan
+#: code:addons/ohrms_loan/models/hr_payroll.py:29
+#, python-format
+msgid "Salary Slip of %s for %s"
+msgstr "Salary Slip of %s for %s"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_state
+msgid "State"
+msgstr "İl/Eyalet"
+
+#. module: ohrms_loan
+#: model:ir.ui.view,arch_db:ohrms_loan.view_loan_request_search_form
+msgid "Status"
+msgstr "Durumu"
+
+#. module: ohrms_loan
+#: model:ir.ui.view,arch_db:ohrms_loan.hr_loan_form_view
+msgid "Submit"
+msgstr "Gönder"
+
+#. module: ohrms_loan
+#: selection:hr.loan,state:0
+msgid "Submitted"
+msgstr "Gönderilen"
+
+#. module: ohrms_loan
+#: code:addons/ohrms_loan/models/hr_loan.py:72
+#, python-format
+msgid "The employee has already a pending installment."
+msgstr "Çalışanın zaten bekleyen bir taksiti var."
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_total_amount
+msgid "Total Amount"
+msgstr "Toplam Tutar"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_total_paid_amount
+msgid "Total Paid Amount"
+msgstr "Toplam Ödenen Tutar"
+
+#. module: ohrms_loan
+#: model:ir.model.fields,field_description:ohrms_loan.field_hr_loan_treasury_account_id
+msgid "Treasury Account"
+msgstr "Hazine Hesabı"
+
+#. module: ohrms_loan
+#: model:ir.actions.act_window,help:ohrms_loan.action_hr_loan_request
+msgid "Use this menu to create loan requests."
+msgstr "Kredi talepleri oluşturmak için bu menüyü kullanın."
+
+#. module: ohrms_loan
+#: selection:hr.loan,state:0
+msgid "Waiting Approval"
+msgstr "Onaylama bekleniyor"
+
+#. module: ohrms_loan
+#: code:addons/ohrms_loan/models/hr_loan.py:96
+#, python-format
+msgid "You must Define a contract for employee."
+msgstr "Çalışan için bir sözleşme tanımlamalısınız."
