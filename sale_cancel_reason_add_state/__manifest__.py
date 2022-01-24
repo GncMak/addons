@@ -14,7 +14,7 @@
         ==================
         When a sale order is canceled, a reason must be given,
         it is chosen from a configured list. ''',
-    'depends': ['sale', 'sale_cancel_reason'],
+    'depends': ['sale', 'sale_cancel_reason','sale_order_cancel_reason'],
     'auto_install': False,
     'installable': True,
 }
