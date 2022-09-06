@@ -230,6 +230,19 @@ class BulutTahsilatSettings(models.Model):
                 item.get('partner').message_post(body='{}\n\n{}'.format(sub_firm_iban_add.StatusMessage, item))
             self._cr.commit()
 
+    def partner_iban_delete(self, data):
+        for item in data:
+            client = Client(self.service_url)
+            sub_firm_iban_add = client.service.SubFirmIBANDelete(self.username, self.password, self.firm_code, item.get('paymentExpCode', False), item.get('iban', False), item.get('bankCode', False))
+            if sub_firm_iban_add.StatusCode == 0:
+                item.get('partner').message_post(body=sub_firm_iban_add.StatusMessage)
+                item.get('bank_account').write({
+                    'bulut_sync': False
+                })
+            else:
+                item.get('partner').message_post(body='{}\n\n{}'.format(sub_firm_iban_add.StatusMessage, item))
+            self._cr.commit()
+
     def bank_payment_list_all(self, payment_status_type, start_date, end_date):
         service = Client(self.service_url)
         payment_lists = service.service.BankPaymentListAll(self.username, self.password, self.firm_code,

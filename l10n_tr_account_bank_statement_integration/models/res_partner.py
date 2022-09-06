@@ -30,11 +30,9 @@ class Partners(models.Model):
     def partner_iban_add(self):
         partners = self.env['res.partner'].search([('bank_account_count', '>', 0), ('is_company', '=', True)])
         data = []
-        s = partners.mapped('bank_ids').filtered(lambda x: not x.bulut_sync)
         for bank_account in partners.mapped('bank_ids').filtered(lambda x: not x.bulut_sync):
             if len(bank_account.acc_number) < 20 or len(bank_account.acc_number) > 35:
                 continue
-            # for bank_account in partner.bank_ids.filtered(lambda x: not x.bulut_sync):
             data_line = {
                 'company_id': bank_account.partner_id.company_id,
                 'bank_account': bank_account,
@@ -48,7 +46,7 @@ class Partners(models.Model):
         [res.setdefault(i['company_id'], []).append(i) for i in data]
         for company_id, items in res.items():
             if company_id.bulut_tahsilat_id:
-                company_id.bulut_tahsilat_id.partner_iban_add(items)
+                company_id.bulut_tahsilat_id.partner_iban_delete(items)
 
 
     def balance_payment_send(self):
