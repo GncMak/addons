@@ -138,6 +138,8 @@ class BulutTahsilatSettings(models.Model):
 
     @staticmethod
     def phone_number_replace(param, country):
+        if len(param) > 15:
+            return None
         phone_number = phonenumbers.parse(param, region=country.code)
         phone = str(phone_number.national_number)
         if len(phone) < 11:
