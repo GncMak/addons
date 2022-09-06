@@ -37,6 +37,7 @@ class Partners(models.Model):
             # for bank_account in partner.bank_ids.filtered(lambda x: not x.bulut_sync):
             data_line = {
                 'company_id': bank_account.partner_id.company_id,
+                'bank_account': bank_account,
                 'partner': bank_account.partner_id,
                 'paymentExpCode': bank_account.partner_id.bulut_sub_payment_exp_code,
                 'iban': bank_account.acc_number.replace(' ', ''),

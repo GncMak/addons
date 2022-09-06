@@ -223,12 +223,12 @@ class BulutTahsilatSettings(models.Model):
             sub_firm_iban_add = client.service.SubFirmIBANAddNew(self.username, self.password, self.firm_code, item.get('paymentExpCode', False), item.get('iban', False), item.get('bankCode', False))
             if sub_firm_iban_add.StatusCode == 0:
                 item.get('partner').message_post(body=sub_firm_iban_add.StatusMessage)
+                item.get('bank_account').write({
+                    'bulut_sync': True
+                })
             else:
                 item.get('partner').message_post(body='{}\n\n{}'.format(sub_firm_iban_add.StatusMessage, item))
             self._cr.commit()
-
-
-
 
     def bank_payment_list_all(self, payment_status_type, start_date, end_date):
         service = Client(self.service_url)
