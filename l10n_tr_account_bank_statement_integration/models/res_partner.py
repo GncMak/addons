@@ -25,6 +25,9 @@ class Partners(models.Model):
                 partner.company_id.bulut_tahsilat_id.sub_firm_add(partner)
 
     def balance_payment_send(self):
+        """
+        Müşterilerin Toplam borcu için ödeme lnki gönderme.
+        """
         for partner in self:
             request = ("SELECT * from ...")
             self.env.cr.execute(request)

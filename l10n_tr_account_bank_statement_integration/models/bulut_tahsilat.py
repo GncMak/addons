@@ -124,6 +124,7 @@ class BulutTahsilatSettings(models.Model):
     _name = 'bulut.tahsilat.service'
     _description = 'Bulut Tahsilat Integration Service'
 
+    name = fields.Char(string='Service Name')
     service_url = fields.Char(string='Service Url', help='', copy=False)
     username = fields.Char(string='Service Username', help='', copy=False)
     password = fields.Char(string='Service Password', help='', copy=False)
@@ -163,7 +164,7 @@ class BulutTahsilatSettings(models.Model):
         enum_status.__setitem__ = 'Active'
 
         contact_name = ''
-        partner_child = partner.child_ids.filtered(lambda x: x.type == 'contact')[0]
+        partner_child = partner.child_ids.filtered(lambda x: x.type == 'contact')[0] if partner.child_ids else None
         if partner_child:
             contact_name = partner_child.name
 
