@@ -179,7 +179,7 @@ class BulutTahsilatSettings(models.Model):
         sub_firm_model.TaxOffice = partner.tax_office_id.name if partner.tax_office_id else ''
         sub_firm_model.TaxNumber = partner.vat[2:]
         sub_firm_model.AuthPersName = ' '.join([name for name in contact_name.split()][0:len(contact_name.split()) - 1])
-        sub_firm_model.AuthPersSurname = contact_name.split()[len(contact_name.split()) - 1]
+        sub_firm_model.AuthPersSurname = contact_name.split()[len(contact_name.split()) - 1] if contact_name else None
         sub_firm_model.AuthPersGSM = (self.phone_number_replace(partner_child.phone, country) if partner_child.phone else None) if partner_child else None,
         sub_firm_model.AuthPersGenderID = '0'
         sub_firm_model.Status = enum_status.__setitem__
