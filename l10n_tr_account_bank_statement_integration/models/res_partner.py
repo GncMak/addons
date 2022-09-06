@@ -46,7 +46,8 @@ class Partners(models.Model):
         res = {}
         [res.setdefault(i['company_id'], []).append(i) for i in data]
         for company_id, items in res.items():
-            company_id.bulut_tahsilat_id.partner_iban_add(items)
+            if company_id.bulut_tahsilat_id:
+                company_id.bulut_tahsilat_id.partner_iban_add(items)
 
 
     def balance_payment_send(self):
