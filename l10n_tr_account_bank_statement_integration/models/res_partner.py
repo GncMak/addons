@@ -32,6 +32,8 @@ class Partners(models.Model):
         data = []
         s = partners.mapped('bank_ids').filtered(lambda x: not x.bulut_sync)
         for bank_account in partners.mapped('bank_ids').filtered(lambda x: not x.bulut_sync):
+            if len(bank_account.acc_number) < 20 and len(bank_account.acc_number) > 35:
+                continue
             # for bank_account in partner.bank_ids.filtered(lambda x: not x.bulut_sync):
             data_line = {
                 'company_id': bank_account.partner_id.company_id,
