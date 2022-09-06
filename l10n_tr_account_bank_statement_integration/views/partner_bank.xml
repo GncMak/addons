@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_partner_bank_bulut_tahsilat_form" model="ir.ui.view">
+        <field name="name">view.partner.bank.bulut.tahsilat.form</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='currency_id']" position="after">
+                <field name="bulut_sync"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

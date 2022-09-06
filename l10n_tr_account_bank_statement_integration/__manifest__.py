@@ -19,6 +19,7 @@
         'views/product_template.xml',
         'views/account_payment.xml',
         'views/account_invoice.xml',
+        'views/partner_bank.xml',
     ],
     'demo': [],
     'qweb': [],
