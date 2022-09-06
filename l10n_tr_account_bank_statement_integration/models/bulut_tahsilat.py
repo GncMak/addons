@@ -175,7 +175,7 @@ class BulutTahsilatSettings(models.Model):
             address=partner.street if not partner.street2 else partner.street + ' ' + partner.street)
         sub_firm_model.County = partner.city or ''
         sub_firm_model.CityID = str(int(partner.state_id.code)) if partner.state_id else '1'
-        sub_firm_model.Phone = self.phone_number_replace(partner.phone, country) or None
+        sub_firm_model.Phone = self.phone_number_replace(partner.phone, country) if partner.phone else None
         sub_firm_model.TaxOffice = partner.tax_office_id.name if partner.tax_office_id else ''
         sub_firm_model.TaxNumber = partner.vat[2:]
         sub_firm_model.AuthPersName = ' '.join([name for name in contact_name.split()][0:len(contact_name.split()) - 1])
