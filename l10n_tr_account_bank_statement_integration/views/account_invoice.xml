@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_invoice_bulut_tahsilat" model="ir.ui.view">
+        <field name="name">account.invoice.bulut.tahsilat</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="bulut_tahsilat_payment" type="object" string="Bulut Tahsilat Kredi Kartı Ödeme Linki" attrs="{'invisible':['|',('state', 'not in', ('open')), ('type', 'not in', ('out_invoice', 'out_refund'))]}" class="oe_highlight o_invoice_send" groups="base.group_user"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_partner_bulut_tahsilat_button" model="ir.ui.view">
+        <field name="name">res.partner.bulut.tahsilat.button</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button name="action_bulut_tahsilat_sub_firm" string="Bulut Tahsilat Sync" class="oe_highlight" type="object"/>
+                    <button name="balance_payment_send" string="Balance" class="oe_highlight" type="object"/>
+                </header>
+            </xpath>
+            <xpath expr="//field[@name='lang']" position="after">
+                <field name="bulut_sub_firm_id"/>
+                <field name="bulut_sub_firm_code"/>
+                <field name="bulut_sub_payment_exp_code"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

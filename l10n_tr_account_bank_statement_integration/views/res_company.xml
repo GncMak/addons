@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_res_company_bulut_tahsilat_form" model="ir.ui.view">
+        <field name="name">view.res.company.bulut.tahsilat.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='report_footer']" position="after">
+                <field name="bulut_tahsilat_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <menuitem id="menu_bulut_tahsilat" name="Bulut Tahsilat" parent="base.menu_administration" sequence="90"/>
+
+</odoo>

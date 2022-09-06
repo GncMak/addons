@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_journal_bulut_tahsilat" model="ir.ui.view">
+        <field name="name">account.journal.partner.bulut.tahsilat</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/notebook/page[3]" position="after">
+                <page name="bulut_tahsilat" string="Bulut Tahsilat" attrs="{'invisible': [('type', '!=', 'bank')]}">
+                    <group>
+                        <group>
+                            <field name="bulut_bank_code"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
