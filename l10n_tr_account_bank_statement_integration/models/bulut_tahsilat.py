@@ -140,12 +140,16 @@ class BulutTahsilatSettings(models.Model):
     def phone_number_replace(param, country):
         if len(param) > 15:
             return None
-        phone_number = phonenumbers.parse(param, region=country.code)
-        phone = str(phone_number.national_number)
-        if len(phone) < 11:
-            difference = ''.join(['0' for i in range(10 - len(phone))])
-            phone = '{}{}'.format(difference, phone)
-        return phone
+        try:
+            phone_number = phonenumbers.parse(param, region=country.code)
+            phone = str(phone_number.national_number)
+            if len(phone) < 11:
+                difference = ''.join(['0' for i in range(10 - len(phone))])
+                phone = '{}{}'.format(difference, phone)
+            return phone
+        except Exception as e:
+            _logger.error(_("Bulut Tahsilat,  Partner Phone Number Error") + '\n\n' + e)
+            return None
 
         # return '0{phone}'.format(phone=phone_number.national_number)
 
