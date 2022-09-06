@@ -14,6 +14,9 @@ class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
 
     def bulut_tahsilat_payment(self):
+        """
+        Fatura için Bulut Tahsilat sisteminde ödeme linki oluşturma
+        """
         self.ensure_one()
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
         if not self.reconciled and self.state == 'open':

@@ -19,6 +19,7 @@ class AccountPayment(models.Model):
         for bank_payment_line in bank_payment_lines:
             if self.search([('bulut_payment_id', '=', bank_payment_line.PaymentID)]):
                 continue
+
             if bank_payment_line.partner_id:
                 payment_type = 'inbound' if bank_payment_line.amount > 0 else 'outbound'
             else:

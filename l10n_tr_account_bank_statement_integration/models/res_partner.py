@@ -17,9 +17,15 @@ class Partners(models.Model):
     bulut_sub_payment_exp_code = fields.Char(string='Bulut Tahsilat Firma Payment Exp Code', help='')
 
     def bulut_tahsilat_sub_firm(self):
-        """"""
+        """
+        Bulut Tahsilat'a tüm müşteri/tedarikçi contact'ları ekliyoruz.
+        Her bir partneri bağlı olduğu company e göre gönderiyoruz.
+        """
+        # TODO : Company'ye bağlı olmayan partner'ları ne yapacağız_?
+
         partners = self.search([('is_company', '=', True), ('bulut_sub_firm_id', '=', False),
                                 ('company_id.bulut_tahsilat_id', '!=', False)])
+
         for partner in partners:
             partner.company_id.bulut_tahsilat_id.sub_firm_add(partner)
 
@@ -28,6 +34,9 @@ class Partners(models.Model):
         self.company_id.bulut_tahsilat_id.sub_firm_update(self)
 
     def partner_iban_add(self):
+        """
+        Partner'ların IBANlarını Bulut Tahsilata ekliyoruz.
+        """
         partners = self.env['res.partner'].search([('bank_account_count', '>', 0), ('is_company', '=', True)])
         data = []
         for bank_account in partners.mapped('bank_ids').filtered(lambda x: not x.bulut_sync):
@@ -39,15 +48,15 @@ class Partners(models.Model):
                 'partner': bank_account.partner_id,
                 'paymentExpCode': bank_account.partner_id.bulut_sub_payment_exp_code,
                 'iban': bank_account.acc_number.replace(' ', ''),
-                'bankCode': str(int(bank_account.acc_number.replace(' ', '')[4:9]))
+                'bankCode': str(int(bank_account.acc_number.replace(' ', '')[4:9]))  # Banka EFT_CODE'u IBAN'dan buluyoruz
             }
             data.append(data_line)
         res = {}
         [res.setdefault(i['company_id'], []).append(i) for i in data]
+        # MultiCompany durumunda her company'nin kendi bulut hesabındaki carilere ayrı ayrı işlem yapması için.
         for company_id, items in res.items():
             if company_id.bulut_tahsilat_id:
                 company_id.bulut_tahsilat_id.partner_iban_add(items)
-
 
     def balance_payment_send(self):
         """

@@ -14,5 +14,5 @@ class ResPartnerBank(models.Model):
     bulut_sync = fields.Boolean(string='Bulut Tahsilat Sync', default=False, copy=False, help='')
 
 
-class ReBank(models.Model):
-    _inherit = 'res.bank'
+# class ReBank(models.Model):
+#     _inherit = 'res.bank'
