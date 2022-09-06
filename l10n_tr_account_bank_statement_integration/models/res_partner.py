@@ -17,7 +17,7 @@ class Partners(models.Model):
     bulut_sub_payment_exp_code = fields.Char(string='Bulut Tahsilat Firma Payment Exp Code', help='')
 
     def action_bulut_tahsilat_sub_firm(self):
-        partners = self.search([('bulut_sub_firm_id', '=', False), ('company_type', '=', 'company')])
+        partners = self.search([('bulut_sub_firm_id', '=', False), ('company_type', '=', 'company'), ('company_id.bulut_tahsilat_id', '!=', False)])
         for partner in partners:
             if partner.bulut_sub_firm_id:
                 partner.company_id.bulut_tahsilat_id.sub_firm_update(partner)
