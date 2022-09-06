@@ -160,46 +160,47 @@ class BulutTahsilatSettings(models.Model):
         pass
 
     def sub_firm_add(self, partner):
-        service = Client(self.service_url)
-        sub_firm_model = service.factory.create('SubFirm')
-        enum_status = service.factory.create('EnumStatus')
-        enum_status.__setitem__ = 'Active'
+        if partner.company_id.bulut_tahsilat_id:
+            service = Client(self.service_url)
+            sub_firm_model = service.factory.create('SubFirm')
+            enum_status = service.factory.create('EnumStatus')
+            enum_status.__setitem__ = 'Active'
 
-        contact_name = ''
-        partner_child = partner.child_ids.filtered(lambda x: x.type == 'contact')[0] if partner.child_ids else None
-        if partner_child:
-            contact_name = partner_child.name
+            contact_name = ''
+            partner_child = partner.child_ids.filtered(lambda x: x.type == 'contact')[0] if partner.child_ids else None
+            if partner_child:
+                contact_name = partner_child.name
 
-        country = partner.country_id or self.env.user.company_id.country_id
+            country = partner.country_id or self.env.user.company_id.country_id
 
-        sub_firm_model.FirmName = partner.name
-        sub_firm_model.Address = '{address}'.format(
-            address=partner.street if not partner.street2 else partner.street + ' ' + partner.street)
-        sub_firm_model.County = partner.city or ''
-        sub_firm_model.CityID = str(int(partner.state_id.code)) if partner.state_id else '1'
-        sub_firm_model.Phone = self.phone_number_replace(partner.phone, country) if partner.phone else None
-        sub_firm_model.TaxOffice = partner.tax_office_id.name if partner.tax_office_id else ''
-        sub_firm_model.TaxNumber = partner.vat[2:]
-        sub_firm_model.AuthPersName = ' '.join([name for name in contact_name.split()][0:len(contact_name.split()) - 1])
-        sub_firm_model.AuthPersSurname = contact_name.split()[len(contact_name.split()) - 1] if contact_name else None
-        sub_firm_model.AuthPersGSM = (self.phone_number_replace(partner_child.phone, country) if partner_child.phone else None) if partner_child else None,
-        sub_firm_model.AuthPersGenderID = '0'
-        sub_firm_model.Status = enum_status.__setitem__
-        # sub_firm_model.Status = 'Active'
-        sub_firm_model.DealerCode = str(partner.id)
-        sub_firm_model.BusinessArea = partner.industry_id.name if partner.industry_id else ''
-        sub_firm_model.AccountingCode = '120' if partner.customer else '320'
-        sub_firm_model.ReservedField = ''
+            sub_firm_model.FirmName = partner.name
+            sub_firm_model.Address = '{address}'.format(
+                address=partner.street if not partner.street2 else partner.street + ' ' + partner.street)
+            sub_firm_model.County = partner.city or ''
+            sub_firm_model.CityID = str(int(partner.state_id.code)) if partner.state_id else '1'
+            sub_firm_model.Phone = self.phone_number_replace(partner.phone, country) if partner.phone else None
+            sub_firm_model.TaxOffice = partner.tax_office_id.name if partner.tax_office_id else ''
+            sub_firm_model.TaxNumber = partner.vat[2:]
+            sub_firm_model.AuthPersName = ' '.join([name for name in contact_name.split()][0:len(contact_name.split()) - 1])
+            sub_firm_model.AuthPersSurname = contact_name.split()[len(contact_name.split()) - 1] if contact_name else None
+            sub_firm_model.AuthPersGSM = (self.phone_number_replace(partner_child.phone, country) if partner_child.phone else None) if partner_child else None,
+            sub_firm_model.AuthPersGenderID = '0'
+            sub_firm_model.Status = enum_status.__setitem__
+            # sub_firm_model.Status = 'Active'
+            sub_firm_model.DealerCode = str(partner.id)
+            sub_firm_model.BusinessArea = partner.industry_id.name if partner.industry_id else ''
+            sub_firm_model.AccountingCode = '120' if partner.customer else '320'
+            sub_firm_model.ReservedField = ''
 
-        sub_firm_response = service.service.SubFirmAddNew(self.username, self.password, self.firm_code, sub_firm_model)
-        if sub_firm_response.StatusCode == 0:
-            partner.write({
-                'bulut_sub_firm_id': sub_firm_response['SubFirmReturn']['FirmID'],
-                'bulut_sub_firm_code': sub_firm_response['SubFirmReturn']['FirmCode'],
-                'bulut_sub_payment_exp_code': sub_firm_response['SubFirmReturn']['PaymentExpCode'],
-            })
-        else:
-            raise UserError(sub_firm_response.StatusMessage)
+            sub_firm_response = service.service.SubFirmAddNew(self.username, self.password, self.firm_code, sub_firm_model)
+            if sub_firm_response.StatusCode == 0:
+                partner.write({
+                    'bulut_sub_firm_id': sub_firm_response['SubFirmReturn']['FirmID'],
+                    'bulut_sub_firm_code': sub_firm_response['SubFirmReturn']['FirmCode'],
+                    'bulut_sub_payment_exp_code': sub_firm_response['SubFirmReturn']['PaymentExpCode'],
+                })
+            else:
+                raise UserError(sub_firm_response.StatusMessage)
 
     def sub_firm_list(self):
         service = Client(self.service_url)
