@@ -9,7 +9,7 @@
                 <page name="bulut_tahsilat" string="Bulut Tahsilat" attrs="{'invisible': [('type', '!=', 'bank')]}">
                     <group>
                         <group>
-                            <field name="bulut_bank_code"/>
+                            <field name="blocked_balance"/>
                         </group>
                     </group>
                 </page>

@@ -73,7 +73,7 @@ class BankPaymentList(models.Model):
                 transaction = Client.dict(transaction)
                 if self.search([('payment_id', '=', transaction.get('PaymentID', False))]):
                     continue
-                journal = self.env['account.journal'].search([('bulut_bank_code', '=', transaction.get('FirmBankCode', False))])
+                journal = self.env['account.journal'].search([('bank_account_id.acc_number', '=', str(transaction.get('FirmBankIBAN', False)).replace(' ',''))])
                 currency_id = self.env['res.currency'].search([('name', '=', transaction.get('AccountCurrencyCode', False))])
 
                 if transaction.get('SenderFirmID', False):
@@ -83,7 +83,7 @@ class BankPaymentList(models.Model):
                 else:
                     partner = None
 
-                if transaction.get('PaymentTypeExplantion', False) == '518':  # Masraf
+                if transaction.get('PaymentTypeID', False) == 518:  # Masraf
                     product = self.env['product.template'].search([('bulut_tahsilat_expense_code', '=', transaction.get('FunctionCode1', False))])
                 else:
                     product = None
@@ -95,7 +95,7 @@ class BankPaymentList(models.Model):
                     'amount': transaction.get('Amount', 0),
                     'currency_id': currency_id.id,
                     'partner_id': partner.id if partner else None,
-                    'product_id': product.product_tmpl_id if product else None,
+                    'product_id': product.id if product else None,
                     'note': '',
                     'state': 'draft',
                     'firm_bank_code': transaction.get('FirmBankCode', False),
@@ -216,6 +216,19 @@ class BulutTahsilatSettings(models.Model):
         firm_list = service.service.SubFirmList(self.username, self.password, self.firm_code)
         for i in firm_list:
             return
+
+    def partner_iban_add(self, data):
+        for item in data:
+            client = Client(self.service_url)
+            sub_firm_iban_add = client.service.SubFirmIBANAddNew(self.username, self.password, self.firm_code, item.get('paymentExpCode', False), item.get('iban', False), item.get('bankCode', False))
+            if sub_firm_iban_add.StatusCode == 0:
+                item.get('partner').message_post(body=sub_firm_iban_add.StatusMessage)
+            else:
+                item.get('partner').message_post(body='{}\n\n{}'.format(sub_firm_iban_add.StatusMessage, item))
+            self._cr.commit()
+
+
+
 
     def bank_payment_list_all(self, payment_status_type, start_date, end_date):
         service = Client(self.service_url)
