@@ -138,8 +138,9 @@ class BulutTahsilatSettings(models.Model):
 
     @staticmethod
     def phone_number_replace(param, country):
+        phone = None
         if len(param) > 15:
-            return None
+            return phone
         try:
             phone_number = phonenumbers.parse(param, region=country.code)
             phone = str(phone_number.national_number)
@@ -149,7 +150,8 @@ class BulutTahsilatSettings(models.Model):
             return phone
         except Exception as e:
             _logger.error(_("Bulut Tahsilat,  Partner Phone Number Error") + '\n\n' + e)
-            return None
+        finally:
+            return phone
 
         # return '0{phone}'.format(phone=phone_number.national_number)
 
@@ -181,7 +183,7 @@ class BulutTahsilatSettings(models.Model):
             sub_firm_model.Address = '{address}'.format(
                 address=partner.street if not partner.street2 else partner.street + ' ' + partner.street)
             sub_firm_model.County = partner.city or ''
-            sub_firm_model.CityID = str(int(partner.state_id.code)) if partner.state_id else '1'
+            sub_firm_model.CityID = str(int(partner.state_id.code)) if (partner.state_id and partner.country_id.id == partner.company_id.country_id.id) else '1'
             sub_firm_model.Phone = self.phone_number_replace(partner.phone, country) if partner.phone else None
             sub_firm_model.TaxOffice = partner.tax_office_id.name if partner.tax_office_id else ' '
             sub_firm_model.TaxNumber = partner.vat[2:] if partner.vat else ''

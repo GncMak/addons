@@ -19,10 +19,11 @@ class Partners(models.Model):
     def action_bulut_tahsilat_sub_firm(self):
         partners = self.search([('bulut_sub_firm_id', '=', False), ('company_type', '=', 'company'), ('company_id.bulut_tahsilat_id', '!=', False)])
         for partner in partners:
-            if partner.bulut_sub_firm_id:
-                partner.company_id.bulut_tahsilat_id.sub_firm_update(partner)
-            else:
-                partner.company_id.bulut_tahsilat_id.sub_firm_add(partner)
+            partner.company_id.bulut_tahsilat_id.sub_firm_add(partner)
+
+    def action_bulut_tahsilat_sub_firm_update(self):
+        self.ensure_one()
+        self.company_id.bulut_tahsilat_id.sub_firm_update(self)
 
     def balance_payment_send(self):
         """
