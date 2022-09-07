@@ -28,13 +28,14 @@ class Partners(models.Model):
                                 # ('company_id.bulut_tahsilat_id', '!=', False)
         bulut_tahsilat = self.env['bulut.tahsilat.service'].search([('state', '=', 'Active')])
         if len(bulut_tahsilat) > 1:
-            # MultiCompany de Bulut Tahsilatta her bir company için hesap tanımlanmış ve cariler ortak olmayacak ise
+            # MultiCompany, Bulut Tahsilatta her bir company için ayrı hesap tanımlanmış ve cariler ortak olmayacak ise
             # Her bir Company için carileri ayrı ayrı gönderiyoruz. Eğer Ortak kullanılacak ise "else" düşüp
-            # tek bir hesap altında gönderiyoruz. O yüzden yukarıdaki gruplamayı yaptık.
-            bulut_tahsilat.sub_firm_add(partners)
-        else:
+            # tek bir hesap altında gönderiyoruz.
             for partner in partners:
                 partner.company_id.bulut_tahsilat_id.sub_firm_add([partner])
+        else:
+            bulut_tahsilat.sub_firm_add(partners)
+
 
     def action_bulut_tahsilat_sub_firm_update(self):
         self.ensure_one()
