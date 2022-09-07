@@ -273,18 +273,18 @@ class BulutTahsilatSettings(models.Model):
                 item.get('partner').message_post(body='Bulut Tahsilat Partner IBAN Add Error Message: {}\n\n{}'.format(sub_firm_iban_add.StatusMessage, item))
             self._cr.commit()
 
-    def sub_firm_vkn_add(self, data):
-        for item in data:
-            client = Client(self.service_url)
-            response = client.service.SubFirmVKNAddNew(self.username, self.password, self.firm_code, item.get('paymentExpCode', False), item.get('vat', False))
-            if response.StatusCode == 0:
-                item.get('partner').message_post(body=response.StatusMessage)
-                item.get('partner').write({
-                    'bulut_sub_firm_vkn_id': response.SubFirmVKNID
-                })
-            else:
-                item.get('partner').message_post(body='{}\n\n{}'.format(response.StatusMessage, item))
-            self._cr.commit()
+    # def sub_firm_vkn_add(self, data):
+    #     for item in data:
+    #         client = Client(self.service_url)
+    #         response = client.service.SubFirmVKNAddNew(self.username, self.password, self.firm_code, item.get('paymentExpCode', False), item.get('vat', False))
+    #         if response.StatusCode == 0:
+    #             item.get('partner').message_post(body=response.StatusMessage)
+    #             item.get('partner').write({
+    #                 'bulut_sub_firm_vkn_id': response.SubFirmVKNID
+    #             })
+    #         else:
+    #             item.get('partner').message_post(body='{}\n\n{}'.format(response.StatusMessage, item))
+    #         self._cr.commit()
 
     def bank_payment_list_all(self, payment_status_type, start_date, end_date):
         service = Client(self.service_url)
