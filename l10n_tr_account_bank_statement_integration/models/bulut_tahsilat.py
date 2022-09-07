@@ -216,7 +216,7 @@ class BulutTahsilatSettings(models.Model):
             sub_firm_model.CityID = city_id
             sub_firm_model.Phone = self.phone_number_replace(partner.phone, country) if partner.phone else None
             sub_firm_model.TaxOffice = partner.tax_office_id.name if partner.tax_office_id else ' '
-            sub_firm_model.TaxNumber = partner.vat[2:] if partner.vat else ''
+            sub_firm_model.TaxNumber = (partner.vat[2:] if partner.vat.startswith('TR') else partner.vat) if partner.vat else ''
             sub_firm_model.AuthPersName = ' '.join([name for name in contact_name.split()][0:len(contact_name.split()) - 1])
             sub_firm_model.AuthPersSurname = contact_name.split()[len(contact_name.split()) - 1] if contact_name else None
             sub_firm_model.AuthPersGSM = (self.phone_number_replace(partner_child.phone, country) if partner_child.phone else None) if partner_child else None,
@@ -247,7 +247,7 @@ class BulutTahsilatSettings(models.Model):
         for i in firm_list:
             return
 
-    def partner_iban_add(self, data):
+    def sub_firm_iban_add(self, data):
         for item in data:
             client = Client(self.service_url)
             sub_firm_iban_add = client.service.SubFirmIBANAddNew(self.username, self.password, self.firm_code, item.get('paymentExpCode', False), item.get('iban', False), item.get('bankCode', False))
@@ -260,7 +260,7 @@ class BulutTahsilatSettings(models.Model):
                 item.get('partner').message_post(body='{}\n\n{}'.format(sub_firm_iban_add.StatusMessage, item))
             self._cr.commit()
 
-    def partner_iban_delete(self, data):
+    def sub_firm_iban_delete(self, data):
         for item in data:
             client = Client(self.service_url)
             sub_firm_iban_add = client.service.SubFirmIBANDelete(self.username, self.password, self.firm_code, item.get('paymentExpCode', False), item.get('iban', False), item.get('bankCode', False))
@@ -271,6 +271,19 @@ class BulutTahsilatSettings(models.Model):
                 })
             else:
                 item.get('partner').message_post(body='Bulut Tahsilat Partner IBAN Add Error Message: {}\n\n{}'.format(sub_firm_iban_add.StatusMessage, item))
+            self._cr.commit()
+
+    def sub_firm_vkn_add(self, data):
+        for item in data:
+            client = Client(self.service_url)
+            response = client.service.SubFirmVKNAddNew(self.username, self.password, self.firm_code, item.get('paymentExpCode', False), item.get('vat', False))
+            if response.StatusCode == 0:
+                item.get('partner').message_post(body=response.StatusMessage)
+                item.get('partner').write({
+                    'bulut_sub_firm_vkn_id': response.SubFirmVKNID
+                })
+            else:
+                item.get('partner').message_post(body='{}\n\n{}'.format(response.StatusMessage, item))
             self._cr.commit()
 
     def bank_payment_list_all(self, payment_status_type, start_date, end_date):

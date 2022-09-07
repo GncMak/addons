@@ -31,11 +31,23 @@
         <field name="active" eval="False"/>
     </record>
 
-        <record id="ir_cron_partner_iban_add" model="ir.cron">
+    <record id="ir_cron_partner_iban_add" model="ir.cron">
         <field name="name">Bulut Tahsilat Partner IBAN Add</field>
         <field name="model_id" ref="model_res_partner"/>
         <field name="state">code</field>
         <field name="code">model.partner_iban_add()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="active" eval="False"/>
+    </record>
+
+    <record id="ir_cron_partner_vkn_add" model="ir.cron">
+        <field name="name">Bulut Tahsilat Partner VKN Add</field>
+        <field name="model_id" ref="model_res_partner"/>
+        <field name="state">code</field>
+        <field name="code">model.partner_vkn_add()</field>
         <field name="interval_number">1</field>
         <field name="interval_type">days</field>
         <field name="numbercall">-1</field>
