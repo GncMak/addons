@@ -36,6 +36,8 @@ class BankPaymentList(models.Model):
     reference_number = fields.Char(string='Reference Number', copy=False)
     voucher_number = fields.Char(string='VoucherNumber', copy=False)
     branch_firm_id = fields.Char(string='BranchFirmID', copy=False)
+    payment_exp_code = fields.Char(string='PaymentExpCode', copy=False)
+    tax_number = fields.Char(string='TaxNumber', copy=False)
     branch_firm_name = fields.Char(string='BranchFirmName', copy=False)
     branch_firm_tax_number = fields.Char(string='BranchFirmTaxNumber', copy=False)
     account_type_id = fields.Char(string='AccountTypeID', copy=False)
@@ -61,15 +63,18 @@ class BankPaymentList(models.Model):
             last_bulut_payment_line = self.search([], order='date desc', limit=1)
             start_date = datetime.datetime.strptime(last_bulut_payment_line.date, '%Y-%m-%d').strftime(
                 '%Y-%m-%dT%H:%M:%S') if last_bulut_payment_line else (
-                        datetime.datetime.now() - datetime.timedelta(days=1)).strftime('%Y-%m-%dT%H:%M:%S')
+                        datetime.datetime.now() - datetime.timedelta(days=2)).strftime('%Y-%m-%dT%H:%M:%S')
             end_date = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
-            payment_lists = bulut_service.bank_payment_list_all(531, '2022-06-01T00:00:00', end_date)
-            # payment_lists = bulut_service.bank_payment_list_all(534, '2022-06-01T00:00:00',
-            #                                                     datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S'))
-            if not payment_lists:
-                continue
+            payment_list_534 = bulut_service.bank_payment_list_all(534, '2022-06-01T00:00:00', end_date)
+            payment_list_531 = bulut_service.bank_payment_list_all(531, '2022-06-01T00:00:00', end_date)
+            payment_list = [[item for item in payment_list_531] if payment_list_531 else None,
+                            [item for item in payment_list_534] if payment_list_534 else None]
+            # Eşleşmemeiş kayıtlar da olabileceği için hem eşleşen hem eşleşmeyenleri alıyoruz.
+            # Bu "eşleşme" Bulut Tahsilat tarafındaki bir statü. Odoo statuleri değil.
 
-            for transaction in payment_lists:
+            if not payment_list:
+                continue
+            for transaction in payment_list:
                 transaction = Client.dict(transaction)
                 if self.search([('payment_id', '=', transaction.get('PaymentID', False))]):
                     continue
@@ -79,9 +84,12 @@ class BankPaymentList(models.Model):
                     [('name', '=', transaction.get('AccountCurrencyCode', False))])
 
                 if transaction.get('SenderFirmID', False):
-                    partner = self.env['res.partner'].search([('bulut_sub_firm_id', '=', transaction.get('SenderFirmID', False))])
+                    partner = self.env['res.partner'].search(
+                        [('bulut_sub_firm_id', '=', transaction.get('SenderFirmID', False))])
                     if not partner:
-                        pass # vkn ye göre partnerde search. bulunursa, BulutTahsilata Partner Kaydı açılmalı, yok ise, BulutTahsilattan gelen veriye göre Partner oluşturulmalı.
+                        if transaction.get('SenderFirmBankIBAN', False):
+                            partner = self.env['res.partner.bank'].search(
+                                [('acc_number', '=', transaction.get('SenderFirmBankIBAN'))]).partner_id
                 else:
                     partner = None
 
@@ -111,6 +119,8 @@ class BankPaymentList(models.Model):
                     'sender_firm_id': transaction.get('SenderFirmID', False),
                     'reference_number': transaction.get('ReferenceNumber', False),
                     'voucher_number': transaction.get('VoucherNumber', False),
+                    'payment_exp_code': transaction.get('PaymentExpCode', False),
+                    'tax_number': transaction.get('TaxNumber', False),
                     'branch_firm_id': transaction.get('BranchFirmID', False),
                     'branch_firm_name': transaction.get('BranchFirmName', False),
                     'branch_firm_tax_number': transaction.get('BranchFirmTaxNumber', False),
@@ -120,7 +130,10 @@ class BankPaymentList(models.Model):
                     'balance_after_transaction': transaction.get('BalanceAfterTransaction', False),
                 })
                 self._cr.commit()
-                # payment_line.company_id.bulut_tahsilat_id.update_payment_status_info(payment_line)
+                if payment_line.payment_status_type_id == 531:
+                    payment_line.company_id.bulut_tahsilat_id.update_payment_status_info(payment_line)
+                if payment_line.payment_status_type_id == 534 and payment_line.payment_exp_code:
+                    payment_line.company_id.bulut_tahsilat_id.update_payment_status_info(payment_line)
 
     def payment_line_process(self):
         pass
@@ -324,20 +337,29 @@ class BulutTahsilatSettings(models.Model):
     def update_payment_status_info(self, bank_payment_line):
         service = Client(self.service_url)
         try:
-            # response = service.service.UpdatePaymentStatusInfoWithERPRefNo(self.username, self.password,
-            #                                                    self.firm_code, bank_payment_line.payment_id,
-            #                                                    531, bank_payment_line.id)
             response = service.service.UpdatePaymentStatusInfo(self.username, self.password,
                                                                self.firm_code, bank_payment_line.payment_id,
                                                                532)
-            # if response and response.StatusCode == 0:
-            #     bank_payment_line.update({'payment_status_type_id': 532})
-            # else:
-            #     bank_payment_line.update({'note': response.StatusMessage})
             if response == 'OK':
                 bank_payment_line.update({'payment_status_type_id': 532})
             else:
                 bank_payment_line.update({'note': response})
+            self._cr.commit()
+        except Exception as e:
+            bank_payment_line.update({'note': e})
+
+    def update_payment_status_info_with_exp_code(self, bank_payment_line):
+        service = Client(self.service_url)
+        try:
+            response = service.service.UpdatePaymentStatusInfoWithPaymentExpCode(self.username, self.password,
+                                                                                 self.firm_code,
+                                                                                 bank_payment_line.payment_id,
+                                                                                 bank_payment_line.payment_exp_code,
+                                                                                 532)
+            if response and response.StatusCode == 0:
+                bank_payment_line.update({'payment_status_type_id': 532})
+            else:
+                bank_payment_line.update({'note': response.StatusMessage})
             self._cr.commit()
         except Exception as e:
             bank_payment_line.update({'note': e})
