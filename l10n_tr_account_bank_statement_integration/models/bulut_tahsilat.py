@@ -67,8 +67,17 @@ class BankPaymentList(models.Model):
             end_date = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
             payment_list_534 = bulut_service.bank_payment_list_all(534, '2022-06-01T00:00:00', end_date)
             payment_list_531 = bulut_service.bank_payment_list_all(531, '2022-06-01T00:00:00', end_date)
-            payment_list = [[item for item in payment_list_531] if payment_list_531 else None,
-                            [item for item in payment_list_534] if payment_list_534 else None]
+
+            payment_list = []
+            if payment_list_534:
+                for i in payment_list_534:
+                    payment_list.append(i)
+            if payment_list_531:
+                for i in payment_list_531:
+                    payment_list.append(i)
+
+            # payment_list = [[item for item in payment_list_531] if payment_list_531 else None,
+            #                 [item for item in payment_list_534] if payment_list_534 else None]
             # Eşleşmemeiş kayıtlar da olabileceği için hem eşleşen hem eşleşmeyenleri alıyoruz.
             # Bu "eşleşme" Bulut Tahsilat tarafındaki bir statü. Odoo statuleri değil.
 
@@ -341,7 +350,10 @@ class BulutTahsilatSettings(models.Model):
                                                                self.firm_code, bank_payment_line.payment_id,
                                                                532)
             if response == 'OK':
-                bank_payment_line.update({'payment_status_type_id': 532})
+                bank_payment_line.update({
+                    'payment_status_type_id': 532,
+                    'payment_status_type_explantion': 'TAMAMLANDI'
+                })
             else:
                 bank_payment_line.update({'note': response})
             self._cr.commit()
@@ -357,7 +369,10 @@ class BulutTahsilatSettings(models.Model):
                                                                                  bank_payment_line.payment_exp_code,
                                                                                  532)
             if response and response.StatusCode == 0:
-                bank_payment_line.update({'payment_status_type_id': 532})
+                bank_payment_line.update({
+                    'payment_status_type_id': 532,
+                    'payment_status_type_explantion': 'TAMAMLANDI'
+                })
             else:
                 bank_payment_line.update({'note': response.StatusMessage})
             self._cr.commit()
