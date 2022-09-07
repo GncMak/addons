@@ -50,7 +50,7 @@
     <menuitem id="menu_bulut_tahsilat_payment_line_form" action="action_bulut_tahsilat_payment_line_form" name="Bulut Tahsilat Payment Line" parent="menu_bulut_tahsilat_service_main" sequence="10" groups="account.group_account_manager"/>
 
     <record id="ir_cron_bank_payment_line_add" model="ir.cron">
-        <field name="name">Bank Payment Line Add</field>
+        <field name="name">Bulut Bank Payment Line Add</field>
         <field name="model_id" ref="model_bulut_tahsilat_bank_payment_line"/>
         <field name="state">code</field>
         <field name="code">model.payment_line_add()</field>
