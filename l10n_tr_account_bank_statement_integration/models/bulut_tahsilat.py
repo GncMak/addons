@@ -123,19 +123,17 @@ class BankPaymentList(models.Model):
                 # payment_line.company_id.bulut_tahsilat_id.update_payment_status_info(payment_line)
 
     def payment_line_process(self):
-        for line in self.search([('state', '=', 'draft')]):
-            if line.product_id:
-                """
-                Create Expense
-                """
-                pass
-            else:
-                """"
-                Burada Kaldık...
-                """
-
-
-
+        pass
+        # for line in self.search([('state', '=', 'draft')]):
+        #     if line.product_id:
+        #         """
+        #         Create Expense
+        #         """
+        #         pass
+        #     else:
+        #         """"
+        #         Burada Kaldık...
+        #         """
 
 
 class BulutTahsilatSettings(models.Model):
