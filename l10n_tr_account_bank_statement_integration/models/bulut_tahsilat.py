@@ -155,7 +155,7 @@ class BulutTahsilatSettings(models.Model):
     @staticmethod
     def phone_number_replace(param, country):
         phone = None
-        if len(param) > 15:
+        if len(param) > 15:  # INFO: Telefon numarası yerine boşluk veya farklı dataların olmasından dolayı.
             return phone
         try:
             phone_number = phonenumbers.parse(param, region=country.code)
@@ -195,7 +195,7 @@ class BulutTahsilatSettings(models.Model):
 
             country = partner.country_id or self.env.user.company_id.country_id
 
-            try:  # İl/Eyalet Kodu 06 olması gerekirken Ankara veya 06378 gibi anlamsız datalar var. 
+            try:  # INFO:  İl/Eyalet Kodu 06 olması gerekirken Ankara veya 06378 gibi anlamsız datalar var.
                 city_id = str(int(partner.state_id.code)) if (partner.state_id and partner.country_id.id == partner.company_id.country_id.id) else '1'
             except:
                 pass
