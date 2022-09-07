@@ -210,8 +210,8 @@ class BulutTahsilatSettings(models.Model):
                 city_id = '1'
 
             sub_firm_model.FirmName = partner.name
-            sub_firm_model.Address = '{address}'.format(
-                address=partner.street if not partner.street2 else partner.street + ' ' + partner.street)
+            sub_firm_model.Address = ('{address}'.format(
+                address=partner.street if not partner.street2 else partner.street + ' ' + partner.street2)) if partner.street else None
             sub_firm_model.County = partner.city or ''
             sub_firm_model.CityID = city_id
             sub_firm_model.Phone = self.phone_number_replace(partner.phone, country) if partner.phone else None
