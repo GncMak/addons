@@ -189,7 +189,14 @@ class BulutTahsilatSettings(models.Model):
             enum_status.__setitem__ = 'Active'
 
             contact_name = ''
-            partner_child = partner.child_ids.filtered(lambda x: x.type == 'contact')[0] if partner.child_ids else None
+            partner_child = None
+            try:
+                partner_child = partner.mapped('child_ids').filtered(lambda x: x.type == 'contact')[0] if partner.child_ids else None
+            except:
+                pass
+            finally:
+                partner_child = None
+
             if partner_child:
                 contact_name = partner_child.name
 
