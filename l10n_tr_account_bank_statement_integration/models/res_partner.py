@@ -73,35 +73,35 @@ class Partners(models.Model):
             else:
                 services.bulut_tahsilat_id.sub_firm_iban_add(items)
 
-    # def partner_vkn_add(self):
-    #     """
-    #     Partner'ların VKNlarını Bulut Tahsilata ekliyoruz.
-    #     """
-    #     services = self.env['bulut.tahsilat.service'].search([('state', '=', 'Active')])
-    #
-    #     partners = self.env['res.partner'].search(
-    #         [('bulut_sub_firm_id', '!=', False), ('bulut_sub_firm_vkn_id', '=', False)])
-    #     data = []
-    #     for partner in partners:
-    #         data_line = {
-    #             'company_id': partner.company_id,
-    #             'partner': partner,
-    #             'paymentExpCode': partner.bulut_sub_payment_exp_code,
-    #             'vat': partner.vat[2:] if partner.vat.startswith('TR') else partner.vat
-    #         }
-    #         data.append(data_line)
-    #     res = {}
-    #     [res.setdefault(i['company_id'], []).append(i) for i in data]
-    #     # MultiCompany durumunda her company'nin kendi bulut hesabındaki carilere ayrı ayrı işlem yapması için.
-    #     for company_id, items in res.items():
-    #         if len(services) > 1:
-    #             # MultiCompany de Bulut Tahsilatta her bir company için hesap tanımlanmış ve cariler ortak olmayacak ise
-    #             # Her bir Company için carileri ayrı ayrı gönderiyoruz. Eğer Ortak kullanılacak ise "else" düşüp
-    #             # tek bir hesap altında gönderiyoruz. O yüzden yukarıdaki gruplamayı yaptık.
-    #             if company_id.bulut_tahsilat_id:
-    #                 company_id.bulut_tahsilat_id.sub_firm_vkn_add(items)
-    #         else:
-    #             services.sub_firm_vkn_add(items)
+    def partner_vkn_add(self):
+        """
+        Partner'ların VKNlarını Bulut Tahsilata ekliyoruz.
+        """
+        services = self.env['bulut.tahsilat.service'].search([('state', '=', 'Active')])
+
+        partners = self.env['res.partner'].search(
+            [('bulut_sub_firm_id', '!=', False), ('bulut_sub_firm_vkn_id', '=', False)])
+        data = []
+        for partner in partners:
+            data_line = {
+                'company_id': partner.company_id,
+                'partner': partner,
+                'paymentExpCode': partner.bulut_sub_payment_exp_code,
+                'vat': partner.vat[2:] if partner.vat.startswith('TR') else partner.vat
+            }
+            data.append(data_line)
+        res = {}
+        [res.setdefault(i['company_id'], []).append(i) for i in data]
+        # MultiCompany durumunda her company'nin kendi bulut hesabındaki carilere ayrı ayrı işlem yapması için.
+        for company_id, items in res.items():
+            if len(services) > 1:
+                # MultiCompany de Bulut Tahsilatta her bir company için hesap tanımlanmış ve cariler ortak olmayacak ise
+                # Her bir Company için carileri ayrı ayrı gönderiyoruz. Eğer Ortak kullanılacak ise "else" düşüp
+                # tek bir hesap altında gönderiyoruz. O yüzden yukarıdaki gruplamayı yaptık.
+                if company_id.bulut_tahsilat_id:
+                    company_id.bulut_tahsilat_id.sub_firm_vkn_add(items)
+            else:
+                services.sub_firm_vkn_add(items)
 
     def balance_payment_send(self):
         """
