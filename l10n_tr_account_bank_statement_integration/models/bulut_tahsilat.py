@@ -195,11 +195,18 @@ class BulutTahsilatSettings(models.Model):
 
             country = partner.country_id or self.env.user.company_id.country_id
 
+            try:  # İl/Eyalet Kodu 06 olması gerekirken Ankara veya 06378 gibi anlamsız datalar var. 
+                city_id = str(int(partner.state_id.code)) if (partner.state_id and partner.country_id.id == partner.company_id.country_id.id) else '1'
+            except:
+                pass
+            finally:
+                city_id = '1'
+
             sub_firm_model.FirmName = partner.name
             sub_firm_model.Address = '{address}'.format(
                 address=partner.street if not partner.street2 else partner.street + ' ' + partner.street)
             sub_firm_model.County = partner.city or ''
-            sub_firm_model.CityID = str(int(partner.state_id.code)) if (partner.state_id and partner.country_id.id == partner.company_id.country_id.id) else '1'
+            sub_firm_model.CityID = city_id
             sub_firm_model.Phone = self.phone_number_replace(partner.phone, country) if partner.phone else None
             sub_firm_model.TaxOffice = partner.tax_office_id.name if partner.tax_office_id else ' '
             sub_firm_model.TaxNumber = partner.vat[2:] if partner.vat else ''
