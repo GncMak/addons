@@ -21,13 +21,13 @@ class Partners(models.Model):
         Bulut Tahsilat'a tüm müşteri/tedarikçi contact'ları ekliyoruz.
         Her bir partneri bağlı olduğu company e göre gönderiyoruz.
         """
-        # TODO : Company'ye bağlı olmayan partner'ları ne yapacağız_?
 
-        partners = self.search([('is_company', '=', True), ('bulut_sub_firm_id', '=', False),
-                                ('company_id.bulut_tahsilat_id', '!=', False)])
-
-        for partner in partners:
-            partner.company_id.bulut_tahsilat_id.sub_firm_add(partner)
+        partners = self.search([('is_company', '=', True), ('bulut_sub_firm_id', '=', False)])
+                                # ('company_id.bulut_tahsilat_id', '!=', False)
+        bulut_tahsilat = self.env['bulut.tahsilat.service'].search([('state', '=', 'Active')])
+        bulut_tahsilat.sub_firm_add(partners)
+        # for partner in partners:
+        #     partner.company_id.bulut_tahsilat_id.sub_firm_add(partner)
 
     def action_bulut_tahsilat_sub_firm_update(self):
         self.ensure_one()
