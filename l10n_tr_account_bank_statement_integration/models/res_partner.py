@@ -25,7 +25,7 @@ class Partners(models.Model):
         """
 
         partners = self.search([('is_company', '=', True), ('bulut_sub_firm_id', '=', False), ('vat', '!=', False)])
-                                # ('company_id.bulut_tahsilat_id', '!=', False)
+        # ('company_id.bulut_tahsilat_id', '!=', False)
         bulut_tahsilat = self.env['bulut.tahsilat.service'].search([('state', '=', 'Active')])
         if len(bulut_tahsilat) > 1:
             # MultiCompany, Bulut Tahsilatta her bir company için ayrı hesap tanımlanmış ve cariler ortak olmayacak ise
@@ -72,7 +72,7 @@ class Partners(models.Model):
                 if company_id.bulut_tahsilat_id:
                     company_id.bulut_tahsilat_id.sub_firm_iban_add(items)
             else:
-                services.bulut_tahsilat_id.sub_firm_iban_add(items)
+                services.sub_firm_iban_add(items)
 
     def partner_vkn_add(self):
         """
