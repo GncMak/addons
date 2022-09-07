@@ -16,6 +16,7 @@ class Partners(models.Model):
     bulut_sub_firm_code = fields.Char(string='Bulut Tahsilat Firma Kodu', help='')
     bulut_sub_payment_exp_code = fields.Char(string='Bulut Tahsilat Firma Payment Exp Code', help='')
 
+    @api.multi
     def bulut_tahsilat_sub_firm(self):
         """
         Bulut Tahsilat'a tüm müşteri/tedarikçi contact'ları ekliyoruz.
