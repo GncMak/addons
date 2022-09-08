@@ -22,11 +22,12 @@ class BankPaymentList(models.Model):
     currency_id = fields.Many2one(comodel_name='res.currency', help='', readonly=True)
     payment_id = fields.Many2one(comodel_name='account.payment', string='Payment', copy=False, help='')
     expense_id = fields.Many2one(comodel_name='hr.expense', string='Expense')
+    name = fields.Char(string='Name', copy=False, help='')
     amount = fields.Monetary(digits=4, copy=False)
     date = fields.Date(required=True, copy=False, default=fields.Date.context_today, readonly=True)
     statement_line_id = fields.Many2one(comodel_name='account.bank.statement.line', string='Statement Line', copy=False)
     note = fields.Text(string='Notes', copy=False)
-    state = fields.Selection(selection=[('draft', 'Unconfirmed'), ('cancel', 'Cancelled'), ('confirm', 'Confirmed'), ('done', 'Done')], string='Status', readonly=True)
+    state = fields.Selection(selection=[('draft', 'Draft'), ('cancel', 'Cancelled'), ('done', 'Done')], string='Status', readonly=True)
     firm_bank_code = fields.Char(string='Bank Code')
     firm_bank_iban = fields.Char(string='Bank IBAN')
     bulut_payment_id = fields.Char(string='Bulut Payment Id', copy=False)
@@ -70,13 +71,13 @@ class BankPaymentList(models.Model):
                 '%Y-%m-%dT%H:%M:%S') if last_bulut_payment_line else (
                         datetime.datetime.now() - datetime.timedelta(days=2)).strftime('%Y-%m-%dT%H:%M:%S')
             end_date = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
-            payment_list_534 = bulut_service.bank_payment_list_all(534, '2022-06-01T00:00:00', end_date)
+            # payment_list_534 = bulut_service.bank_payment_list_all(534, '2022-06-01T00:00:00', end_date)
             # EŞLEŞME ler manuel yapılmalı.
             payment_list_531 = bulut_service.bank_payment_list_all(531, '2022-06-01T00:00:00', end_date)
 
             payment_list = []
-            if payment_list_534:
-                payment_list = payment_list + payment_list_534
+            # if payment_list_534:
+            #     payment_list = payment_list + payment_list_534
             if payment_list_531:
                 payment_list = payment_list + payment_list_531
             # INFO: Eşleşmemiş(534) kayıtlar da olabileceği için hem eşleşen hem eşleşmeyenleri alıyoruz.
@@ -113,6 +114,7 @@ class BankPaymentList(models.Model):
                 payment_line = self.create({
                     'journal_id': journal.id,
                     'company_id': journal.company_id.id,
+                    'name': '{}-{}'.format(transaction.get('PaymentID', ''), transaction.get('ReferenceNumber', '')),
                     'date': datetime.date.strftime(transaction.get('PaymentDate', datetime.datetime.now()), '%Y-%m-%d'),
                     'amount': transaction.get('Amount', 0),
                     'currency_id': currency_id.id,
@@ -151,30 +153,50 @@ class BankPaymentList(models.Model):
 
     def payment_line_process(self):
         for line in self.search([('state', '=', 'draft')]):
+            if not line.journal_id:
+                continue
             if line.payment_type_id != 518:
                 partner_type = False
                 if line.partner_id:
                     partner_type = 'supplier' if line.amount < 0 else 'customer'
 
+                destination_journal = self.env['account.journal'].search(
+                    [('bank_account_id.acc_number', '=', line.sender_firm_bank_iban),
+                     ('company_id', '=', line.company_id.id)])
+                if destination_journal:
+                    payment_type = 'transfer'
+                else:
+                    payment_type = line.amount > 0 and 'inbound' or 'outbound'
+
                 payment_methods = (line.amount > 0) and line.journal_id.inbound_payment_method_ids or line.journal_id.outbound_payment_method_ids
 
-                # TODO : senderfirmbankibank kontrol edilecek, eğer kendi firmalarımız ibanı ise o zaman transfer işlemi yapacağız.
-
-                payment = self.env['account.payment'].create({
-                    'payment_method_id': payment_methods and payment_methods[0].id or False,
-                    'payment_type': line.amount > 0 and 'inbound' or 'outbound',
-                    'partner_id': line.partner_id and line.partner_id.id or False,
+                pre_payment = {
+                    'payment_method_id': payment_methods and payment_methods[0].id or False,  # TODO:
+                    'payment_type': payment_type,
                     'partner_type': partner_type,
-                    'journal_id': self.statement_id.journal_id.id,
-                    'payment_date': self.date,
-                    'state': 'reconciled',
+                    'journal_id': line.journal_id.id,
+                    'payment_date': line.date,
+                    'state': 'draft',
                     'currency_id': line.currency_id.id,
                     'amount': abs(line.amount),
-                    'communication': self._get_communication(payment_methods[0] if payment_methods else False),
-                    'name': self.statement_id.name or _("Bank Statement %s") % self.date,
-                })
+                    'communication': line.explanation,
+                    'name': line.name
+                }
+
+                if destination_journal:
+                    pre_payment.update({
+                        'destination_journal_id': destination_journal.id
+                    })
+                if line.partner_id:
+                    pre_payment.update({
+                        'partner_id': line.partner_id.id,
+                    })
+
+                payment = self.env['account.payment'].create(pre_payment)
+                payment.post()
                 line.write({
-                    'payment_id': payment.id
+                    'payment_id': payment.id,
+                    'state': 'done'
                 })
             if line.payment_type_id == 518:
                 # TODO : Burada masraf işle diye bir buton çıkartacağız , (Önce ürün seçtireceğiz.)
