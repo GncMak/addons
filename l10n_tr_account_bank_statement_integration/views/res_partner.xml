@@ -15,6 +15,7 @@
                 <field name="bulut_sub_firm_id"/>
                 <field name="bulut_sub_firm_code"/>
                 <field name="bulut_sub_payment_exp_code"/>
+<!--                <field name="bulut_sub_firm_vkn_id"/>-->
             </xpath>
         </field>
     </record>
