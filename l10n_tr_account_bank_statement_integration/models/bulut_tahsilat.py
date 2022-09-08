@@ -70,13 +70,13 @@ class BankPaymentList(models.Model):
                 '%Y-%m-%dT%H:%M:%S') if last_bulut_payment_line else (
                         datetime.datetime.now() - datetime.timedelta(days=2)).strftime('%Y-%m-%dT%H:%M:%S')
             end_date = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
-            # payment_list_534 = bulut_service.bank_payment_list_all(534, '2022-06-01T00:00:00', end_date)
+            payment_list_534 = bulut_service.bank_payment_list_all(534, '2022-06-01T00:00:00', end_date)
             # EŞLEŞME ler manuel yapılmalı.
             payment_list_531 = bulut_service.bank_payment_list_all(531, '2022-06-01T00:00:00', end_date)
 
             payment_list = []
-            # if payment_list_534:
-            #     payment_list = payment_list + payment_list_534
+            if payment_list_534:
+                payment_list = payment_list + payment_list_534
             if payment_list_531:
                 payment_list = payment_list + payment_list_531
             # INFO: Eşleşmemiş(534) kayıtlar da olabileceği için hem eşleşen hem eşleşmeyenleri alıyoruz.
@@ -90,6 +90,8 @@ class BankPaymentList(models.Model):
                     continue
                 journal = self.env['account.journal'].search(
                     [('bank_account_id.acc_number', '=', str(transaction.get('FirmBankIBAN', False)).replace(' ', ''))])
+                if not journal or len(journal)>1:
+                    continue
                 currency_id = self.env['res.currency'].search(
                     [('name', '=', transaction.get('AccountCurrencyCode', False))])
 
