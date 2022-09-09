@@ -45,6 +45,63 @@
         </field>
     </record>
 
+    <record id="view_bulut_payment_line_form" model="ir.ui.view">
+        <field name="name">view.bulut.payment.line.form</field>
+        <field name="model">bulut.tahsilat.bank.payment.line</field>
+        <field name="arch" type="xml">
+            <form string="Views">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                    <button string="Expense Create" name="expense_create" class="oe_highlight" type="object" attrs="{'invisible': ['|',('payment_type_id','!=', 518), ('state', '!=', 'draft')]}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="company_id"/>
+                            <field name="state" readonly="0"/>
+                            <field name="date"/>
+                            <field name="journal_id"/>
+                        </group>
+                        <group>
+                            <field name="partner_id" attrs="{'invisible': [('payment_type_id','=', 518)]}"/>
+                            <field name="expense_id" attrs="{'invisible': [('payment_type_id','!=', 518)]}" />
+                            <field name="product_id" attrs="{'invisible': [('payment_type_id','!=', 518)]}" />
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <field name="payment_type_explantion"/>
+                            <field name="explanation"/>
+                            <field name="note"/>
+                        </group>
+                        <group>
+                            <field name="amount"/>
+                            <field name="currency_id"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <field name="payment_type_id"/>
+                            <field name="payment_status_type_explantion"/>
+                            <field name="payment_status_type_id"/>
+                            <field name="payment_status_type_explantion"/>
+                        </group>
+                        <group>
+                            <field name="reference_number"/>
+                            <field name="function_code1"/>
+                            <field name="function_code2"/>
+                            <field name="balance_after_transaction"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
     <menuitem id="menu_bulut_tahsilat_service" name="Bulut Tahsilat Service" parent="menu_bulut_tahsilat" action="action_bulut_tahsilat_service" sequence="20"/>
     <menuitem id="menu_bulut_tahsilat_service_main" name="Bulut Tahsilat Service" parent="account.menu_finance" sequence="30"/>
     <menuitem id="menu_bulut_tahsilat_payment_line_form" action="action_bulut_tahsilat_payment_line_form" name="Bulut Tahsilat Payment Line" parent="menu_bulut_tahsilat_service_main" sequence="10" groups="account.group_account_manager"/>
