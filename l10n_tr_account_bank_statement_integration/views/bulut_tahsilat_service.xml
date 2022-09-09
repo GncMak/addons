@@ -53,6 +53,7 @@
                 <header>
                     <field name="state" widget="statusbar"/>
                     <button string="Expense Create" name="expense_create" class="oe_highlight" type="object" attrs="{'invisible': ['|','|',('payment_type_id','!=', 518), ('state', '!=', 'draft'), ('expense_id', '!=', False)]}"/>
+<!--                    <button string="Account Move Create" name="account_move_create" class="oe_highlight" type="object" attrs="{'invisible': ['|','|','|',('payment_type_id','=', 518),('partner_id','!=', False), ('state', '!=', 'draft'), ('move_id', '!=', False)]}"/>-->
                 </header>
                 <sheet>
                     <group>
@@ -93,6 +94,10 @@
                             <field name="expense_id" attrs="{'invisible': [('payment_type_id','!=', 518)]}" readonly="1"/>
                             <field name="product_id" attrs="{'invisible': [('payment_type_id','!=', 518)]}" domain="[('can_be_expensed', '=', True)]"/>
                         </group>
+<!--                         <group>-->
+<!--                            <field name="move_id" readonly="1"/>-->
+<!--                            <field name="account_id"/>-->
+<!--                        </group>-->
                     </group>
 
                     <group>

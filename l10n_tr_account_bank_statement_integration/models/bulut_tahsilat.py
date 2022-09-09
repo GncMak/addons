@@ -23,6 +23,8 @@ class BankPaymentList(models.Model):
     currency_id = fields.Many2one(comodel_name='res.currency', help='', readonly=True)
     payment_id = fields.Many2one(comodel_name='account.payment', string='Payment', copy=False, help='')
     expense_id = fields.Many2one(comodel_name='hr.expense', string='Expense')
+    account_id = fields.Many2one(comodel_name='account.account', string='Account', copy=False, help='')
+    move_id = fields.Many2one(comodel_name='account.move', string='Account Move', copy='False', help='')
     name = fields.Char(string='Name', copy=False, help='')
     amount = fields.Monetary(digits=4, copy=False)
     date = fields.Date(required=True, copy=False, default=fields.Date.context_today, readonly=True)
@@ -255,6 +257,10 @@ class BankPaymentList(models.Model):
         expense.submit_expenses()
         # expense.approve_expense_sheets()
         # expense.action_sheet_move_create()
+
+    def account_move_create(self):
+        # TODO:
+        pass
 
 
 class BulutTahsilatSettings(models.Model):
