@@ -98,14 +98,20 @@ class BankPaymentList(models.Model):
                 currency_id = self.env['res.currency'].search(
                     [('name', '=', transaction.get('AccountCurrencyCode', False))])
 
-                partner = None
-                if transaction.get('SenderFirmID', False):
+                # if transaction.get('SenderFirmID', False):
+                partner = self.env['res.partner'].search(
+                    [('bulut_sub_firm_id', '=', str(transaction.get('SenderFirmID', False)))]) if transaction.get(
+                    'SenderFirmID', False) else None
+                if not partner:
+
                     partner = self.env['res.partner'].search(
-                        [('bulut_sub_firm_id', '=', transaction.get('SenderFirmID', False))])
-                    if not partner:
-                        if transaction.get('SenderFirmBankIBAN', False):
-                            partner = self.env['res.partner.bank'].search(
-                                [('acc_number', '=', transaction.get('SenderFirmBankIBAN'))]).partner_id
+                        [('bulut_sub_firm_code', '=', transaction.get('SenderFirmCode', False))]) if transaction.get(
+                        'SenderFirmCode', False) else None
+                if not partner:
+                    # if transaction.get('SenderFirmBankIBAN', False):
+                    partner = self.env['res.partner.bank'].search(
+                        [('acc_number', '=', transaction.get('SenderFirmBankIBAN'))]).partner_id if transaction.get(
+                        'SenderFirmBankIBAN') else None
 
                 if transaction.get('PaymentTypeID', False) == 518:  # Masraf
                     product = self.env['product.template'].search(
