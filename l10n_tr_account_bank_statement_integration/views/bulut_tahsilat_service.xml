@@ -56,7 +56,7 @@
                 </header>
                 <sheet>
                     <group>
-                        <group>
+                        <group string="Head">
                             <field name="company_id"/>
                             <field name="state" readonly="0"/>
                             <field name="date"/>
@@ -64,7 +64,7 @@
                         </group>
                         <group>
                             <field name="partner_id" attrs="{'invisible': [('payment_type_id','=', 518)]}"/>
-                            <field name="expense_id" attrs="{'invisible': [('payment_type_id','!=', 518)]}" />
+                            <field name="expense_id" attrs="{'invisible': [('payment_type_id','!=', 518)]}" readonly="1"/>
                             <field name="product_id" attrs="{'invisible': [('payment_type_id','!=', 518)]}" />
                         </group>
                     </group>
@@ -80,6 +80,20 @@
                             <field name="currency_id"/>
                         </group>
                     </group>
+
+<!--                    <group>-->
+<!--                        <group string="Partner">-->
+<!--                            <field name="sender_firm_name"/>-->
+<!--                            <field name="sender_firm_id"/>-->
+<!--                            <field name="sender_firm_code"/>-->
+<!--                            <field name="sender_firm_bank_iban"/>-->
+<!--                        </group>-->
+<!--                        <group>-->
+
+<!--                        </group>-->
+<!--                    </group>-->
+
+
 
                     <group>
                         <group>

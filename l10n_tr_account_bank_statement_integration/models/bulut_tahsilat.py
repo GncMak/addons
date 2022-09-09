@@ -37,6 +37,7 @@ class BankPaymentList(models.Model):
     payment_type_explantion = fields.Char(string='Payment Type Explantion')
     payment_status_type_id = fields.Integer(string='Payment Status Type ID')
     payment_status_type_explantion = fields.Char(string='Payment Status Type Explantion')
+    sender_firm_name = fields.Char(string='Sender Firm Name', copy=False)
     sender_firm_id = fields.Char(string='Sender Firm Id', copy=False)
     sender_firm_code = fields.Char(string='Sender Firm Code', copy=False)
     sender_firm_bank_iban = fields.Char(string='Sender Firm Bank IBAN', copy=False)
@@ -131,6 +132,7 @@ class BankPaymentList(models.Model):
                     'payment_type_explantion': transaction.get('PaymentTypeExplantion', False),
                     'payment_status_type_id': transaction.get('PaymentStatusTypeID', False),
                     'payment_status_type_explantion': transaction.get('PaymentStatusTypeExplantion', False),
+                    'sender_firm_name': transaction.get('SenderFirmName', False),
                     'sender_firm_id': transaction.get('SenderFirmID', False),
                     'sender_firm_code': transaction.get('SenderFirmCode', False),
                     'sender_firm_bank_iban': transaction.get('SenderFirmBankIBAN', False),
