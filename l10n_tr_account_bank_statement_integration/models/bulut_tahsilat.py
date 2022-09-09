@@ -7,6 +7,7 @@ import datetime, io, uuid, json, requests, logging, phonenumbers
 from suds import *
 from suds.client import Client
 from suds.plugin import MessagePlugin
+from odoo import SUPERUSER_ID
 
 _logger = logging.getLogger(__name__)
 
@@ -232,7 +233,7 @@ class BankPaymentList(models.Model):
         expense = self.env['hr.expense'].create({
             'name': self.explanation,
             'date': self.date,
-            # 'employee_id': self.employee.id,
+            # 'employee_id': SUPERUSER_ID,
             'product_id': self.product_id.id,
             'unit_amount': abs(self.amount),
             'quantity': 1,
@@ -243,10 +244,9 @@ class BankPaymentList(models.Model):
         self.write({
             'expense_id': expense.id
         })
-        # expense.submit_expenses()
+        expense.submit_expenses()
         # expense.approve_expense_sheets()
         # expense.action_sheet_move_create()
-        pass
 
 
 class BulutTahsilatSettings(models.Model):
