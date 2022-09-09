@@ -153,6 +153,8 @@ class BankPaymentList(models.Model):
 
     def payment_line_process(self):
         for line in self.search([('state', '=', 'draft')]):
+            # TODO: Eğer Partner ve destination_journal boş olursa o zaman kredi/senet/Çek vs ödemesi gibi bir şeydir.
+            # TODO: Bu durumda, yevmiye fişi oluşturmak mantıklı. (Sormak lazım)
             if not line.journal_id:
                 continue
             if line.payment_type_id != 518:
