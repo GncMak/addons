@@ -211,34 +211,9 @@ class BankPaymentList(models.Model):
                     'payment_id': payment.id,
                     'state': 'done'
                 })
-            if line.payment_type_id == 518:
-                # TODO : Burada masraf işle diye bir buton çıkartacağız , (Önce ürün seçtireceğiz.)
-                pass
-            # if line.product_id and line.amount < 0:
-            #     """
-            #     Create Expense
-            #     """
-            #     expense = self.env['hr.expense'].create({
-            #         'name': line.explanation,
-            #         'date': line.date,
-            #         # 'employee_id': self.employee.id,
-            #         'product_id': line.product_id.id,
-            #         'unit_amount': abs(line.amount),
-            #         'quantity': 1,
-            #         # 'sheet_id': self.expense_sheet.id,
-            #         # 'sale_order_id': self.sale_order.id,
-            #         # 'analytic_account_id': self.sale_order.analytic_account_id.id,
-            #     })
-            #     line.write({
-            #         'expense_id': expense.id
-            #     })
-            #     pass
-            # else:
-            #     """"
-            #     Burada Kaldık...
-            #     """
 
     def expense_create(self):
+        # TODO: Check
         self.ensure_one()
         expense = self.env['hr.expense'].create({
             'name': self.explanation,
@@ -252,7 +227,8 @@ class BankPaymentList(models.Model):
             # 'sheet_id': self.expense_sheet.id,
             })
         self.write({
-            'expense_id': expense.id
+            'expense_id': expense.id,
+            'state': 'done'
         })
         expense.submit_expenses()
         # expense.approve_expense_sheets()
@@ -260,7 +236,14 @@ class BankPaymentList(models.Model):
 
     def account_move_create(self):
         # TODO:
-        pass
+        move_id = self.env['account.move'].create({
+
+        })
+        self.write({
+            'move_id': move_id.id,
+            'state': 'done'
+        })
+
 
 
 class BulutTahsilatSettings(models.Model):
