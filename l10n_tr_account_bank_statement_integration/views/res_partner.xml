@@ -8,7 +8,7 @@
             <xpath expr="//sheet" position="before">
                 <header>
                     <button name="action_bulut_tahsilat_sub_firm_update" string="Bulut Tahsilat Sync" class="oe_highlight" type="object" attrs="{'invisible':[('bulut_sub_firm_id','=', False)]}"/>
-                    <button name="balance_payment_send" string="Balance" class="oe_highlight" type="object"/>
+                    <button name="balance_payment_send" string="Balance Send" class="oe_highlight" type="object"/>
                 </header>
             </xpath>
             <xpath expr="//field[@name='lang']" position="after">

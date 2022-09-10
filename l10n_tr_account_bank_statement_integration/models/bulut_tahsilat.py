@@ -245,7 +245,6 @@ class BankPaymentList(models.Model):
         })
 
 
-
 class BulutTahsilatSettings(models.Model):
     _name = 'bulut.tahsilat.service'
     _description = 'Bulut Tahsilat Integration Service'
