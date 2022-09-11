@@ -52,7 +52,7 @@
             <form string="Views">
                 <header>
                     <field name="state" widget="statusbar"/>
-                    <button string="Expense Create" name="expense_create" class="oe_highlight" type="object" attrs="{'invisible': ['|','|',('payment_type_id','!=', 518), ('state', '!=', 'draft'), ('expense_id', '!=', False)]}"/>
+<!--                    <button string="Expense Create" name="expense_create" class="oe_highlight" type="object" attrs="{'invisible': ['|','|',('payment_type_id','!=', 518), ('state', '!=', 'draft'), ('expense_id', '!=', False)]}"/>-->
                     <button string="Account Move Create" name="account_move_create" class="oe_highlight" type="object" attrs="{'invisible': ['|','|','|',('payment_type_id','=', 518),('partner_id','!=', False), ('state', '!=', 'draft'), ('move_id', '!=', False)]}"/>
                 </header>
                 <sheet>
@@ -91,7 +91,7 @@
                             <field name="sender_firm_bank_iban" attrs="{'invisible': [('payment_type_id','=', 518)]}" readonly="1"/>
                         </group>
                         <group>
-<!--                            <field name="expense_id" attrs="{'invisible': [('payment_type_id','!=', 518)]}" readonly="1"/>-->
+<!--                            <field name="expense_id" attrs="{'invisible': [('payment_type_id','!=', 518)]}" readonly="1" />-->
 <!--                            <field name="product_id" attrs="{'invisible': [('payment_type_id','!=', 518)]}" domain="[('can_be_expensed', '=', True)]"/>-->
                         </group>
                          <group>
