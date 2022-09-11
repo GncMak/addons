@@ -267,6 +267,7 @@ class BulutTahsilatSettings(models.Model):
         if len(param) > 15:  # INFO: Telefon numarası yerine boşluk veya farklı dataların olmasından dolayı.
             return phone
         try:
+            param = param.replace('-', '')
             phone_number = phonenumbers.parse(param, region=country.code)
             phone = str(phone_number.national_number)
             if len(phone) < 11:
@@ -311,12 +312,11 @@ class BulutTahsilatSettings(models.Model):
 
             country = partner.country_id or self.env.user.company_id.country_id
 
+            city_id = '1'
             try:  # INFO:  İl/Eyalet Kodu 06 olması gerekirken Ankara veya 06378 gibi anlamsız datalar var.
                 city_id = str(int(partner.state_id.code)) if (partner.state_id and partner.country_id.id == partner.company_id.country_id.id) else '1'
             except:
                 pass
-            finally:
-                city_id = '1'
 
             sub_firm_model.FirmName = partner.name
             sub_firm_model.Address = ('{address}'.format(
@@ -325,7 +325,7 @@ class BulutTahsilatSettings(models.Model):
             sub_firm_model.CityID = city_id
             sub_firm_model.Phone = self.phone_number_replace(partner.phone, country) if partner.phone else None
             sub_firm_model.TaxOffice = partner.tax_office_id.name if partner.tax_office_id else ' '
-            sub_firm_model.TaxNumber = (partner.vat[2:] if partner.vat.startswith('TR') else partner.vat) if partner.vat else ''
+            sub_firm_model.TaxNumber = (partner.vat[2:] if partner.vat.lower().startswith('tr') else partner.vat) if partner.vat else ''
             sub_firm_model.AuthPersName = ' '.join([name for name in contact_name.split()][0:len(contact_name.split()) - 1])
             sub_firm_model.AuthPersSurname = contact_name.split()[len(contact_name.split()) - 1] if contact_name else None
             sub_firm_model.AuthPersGSM = (self.phone_number_replace(partner_child.phone, country) if partner_child.phone else None) if partner_child else None,

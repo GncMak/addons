@@ -24,7 +24,8 @@ class Partners(models.Model):
         Her bir partneri bağlı olduğu company e göre gönderiyoruz.
         """
 
-        partners = self.search([('is_company', '=', True), ('bulut_sub_firm_id', '=', False), ('vat', '!=', False)])
+        partners = self.search([('is_company', '=', True), ('bulut_sub_firm_id', '=', False), ('vat', '!=', False),
+                                ('parent_id', '=', False)])
         # ('company_id.bulut_tahsilat_id', '!=', False)
         bulut_tahsilat = self.env['bulut.tahsilat.service'].search([('state', '=', 'Active')])
         if len(bulut_tahsilat) > 1:
