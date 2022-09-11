@@ -1,2 +1,7 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 access_bulut_tahsilat_service_manager,access.bulut.tahsilat.service.manager,model_bulut_tahsilat_service,account.group_account_manager,1,1,1,1
+access_bulut_tahsilat_service_user,access.bulut.tahsilat.service.user,model_bulut_tahsilat_service,account.group_account_invoice,1,1,1,1
+access_bulut_tahsilat_service_hr_user,access.bulut.tahsilat.service.hr.user,model_bulut_tahsilat_service,hr.group_hr_user,1,0,0,0
+access_bulut_tahsilat_bank_payment_line_manager,access.bulut.tahsilat.bank.payment.line.manager,model_bulut_tahsilat_bank_payment_line,account.group_account_invoice,1,1,1,1
+access_bulut_tahsilat_bank_payment_line_user,access.bulut.tahsilat.bank.payment.line.user,model_bulut_tahsilat_bank_payment_line,account.group_account_manager,1,1,1,1
+access_bulut_tahsilat_bank_payment_line_hr_user,access.bulut.tahsilat.bank.payment.line.hr.user,model_bulut_tahsilat_bank_payment_line,hr.group_hr_user,1,0,0,0
