@@ -17,6 +17,14 @@ class Partners(models.Model):
     bulut_sub_payment_exp_code = fields.Char(string='Bulut Tahsilat Firma Payment Exp Code', help='')
     bulut_sub_firm_vkn_id = fields.Integer(string='SubFirmVKNID')
 
+    def bulut_tahsilat_sync(self):
+        self.ensure_one()
+        bulut_tahsilat = self.env['bulut.tahsilat.service'].search([('state', '=', 'Active')])
+        if self.company_id and self.company_id.bulut_tahsilat_id:
+            self.company_id.bulut_tahsilat_id.sub_firm_add([self])
+        elif bulut_tahsilat:
+            bulut_tahsilat.sub_firm_add(self)
+
     @api.multi
     def bulut_tahsilat_sub_firm(self):
         """
