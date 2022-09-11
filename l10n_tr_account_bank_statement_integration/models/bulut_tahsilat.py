@@ -236,6 +236,7 @@ class BankPaymentList(models.Model):
 
     def account_move_create(self):
         # TODO:
+        pass
         move_id = self.env['account.move'].create({
 
         })
