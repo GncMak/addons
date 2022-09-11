@@ -105,6 +105,7 @@ class Partners(models.Model):
                 services.sub_firm_vkn_add(items)
 
     def balance_payment_send(self):
+        pass
         """
         Müşterilerin Toplam borcu için ödeme linki gönderme.
         """
