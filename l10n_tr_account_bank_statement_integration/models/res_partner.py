@@ -45,7 +45,6 @@ class Partners(models.Model):
         else:
             bulut_tahsilat.sub_firm_add(partners)
 
-
     def action_bulut_tahsilat_sub_firm_update(self):
         self.ensure_one()
         self.company_id.bulut_tahsilat_id.sub_firm_update(self)
@@ -59,7 +58,7 @@ class Partners(models.Model):
         partners = self.env['res.partner'].search([('bulut_sub_firm_id', '!=', False)])
         data = []
         for bank_account in partners.mapped('bank_ids').filtered(lambda x: not x.bulut_sync):
-            if len(bank_account.acc_number) < 20 or len(bank_account.acc_number) > 35:
+            if len(bank_account.acc_number) < 20 or len(bank_account.acc_number) > 34:
                 continue
             data_line = {
                 'company_id': bank_account.partner_id.company_id,

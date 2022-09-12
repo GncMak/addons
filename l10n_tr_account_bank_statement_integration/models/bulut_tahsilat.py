@@ -293,10 +293,10 @@ class BulutTahsilatSettings(models.Model):
         pass
 
     def sub_firm_add(self, partners):
-        service = Client(self.service_url)
+        bulut_service = Client(self.service_url)
         for partner in partners:
-            sub_firm_model = service.factory.create('SubFirm')
-            enum_status = service.factory.create('EnumStatus')
+            sub_firm_model = bulut_service.factory.create('SubFirm')
+            enum_status = bulut_service.factory.create('EnumStatus')
             enum_status.__setitem__ = 'Active'
 
             contact_name = ''
@@ -305,8 +305,6 @@ class BulutTahsilatSettings(models.Model):
                 partner_child = partner.mapped('child_ids').filtered(lambda x: x.type == 'contact')[0] if partner.child_ids else None
             except:
                 pass
-            finally:
-                partner_child = None
 
             if partner_child:
                 contact_name = partner_child.name
@@ -338,17 +336,47 @@ class BulutTahsilatSettings(models.Model):
             sub_firm_model.AccountingCode = '120' if partner.customer else '320'
             sub_firm_model.ReservedField = ''
 
-            sub_firm_response = service.service.SubFirmAddNew(self.username, self.password, self.firm_code, sub_firm_model)
+            sub_firm_response = bulut_service.service.SubFirmAddNew(self.username, self.password, self.firm_code, sub_firm_model)
             if sub_firm_response.StatusCode == 0:
                 partner.write({
                     'bulut_sub_firm_id': sub_firm_response['SubFirmReturn']['FirmID'],
                     'bulut_sub_firm_code': sub_firm_response['SubFirmReturn']['FirmCode'],
                     'bulut_sub_payment_exp_code': sub_firm_response['SubFirmReturn']['PaymentExpCode'],
                 })
-                self._cr.commit()
+
+                # VKN Eşleştirme
+                vkn_response = bulut_service.service.SubFirmVKNAddNew(self.username, self.password, self.firm_code,
+                                                               partner.bulut_sub_payment_exp_code,
+                                                               partner.vat[2:] if partner.vat.lower().startswith(
+                                                                   'tr') else partner.vat)
+                if vkn_response.StatusCode == 0:
+                    partner.write({
+                        'bulut_sub_firm_vkn_id': vkn_response.SubFirmVKNID
+                    })
+                else:
+                    partner.message_post(body='Bulut Tahsilat VKN Eşleşme Error: {}'.format(vkn_response.StatusMessage))
+
+                # IBAN Eşleştirme
+                for bank_account in partner.mapped('bank_ids').filtered(lambda x: not x.bulut_sync):
+                    if len(bank_account.acc_number) < 20 or len(bank_account.acc_number) > 34:
+                        continue
+                    sub_firm_iban_add = bulut_service.service.SubFirmIBANAddNew(self.username, self.password, self.firm_code,
+                                                                         partner.bulut_sub_payment_exp_code,
+                                                                         bank_account.acc_number.replace(' ', ''),
+                                                                         str(int(
+                                                                             bank_account.acc_number.replace(' ', '')[
+                                                                             4:9])))
+                    if sub_firm_iban_add.StatusCode == 0:
+                        bank_account.write({
+                            'bulut_sync': True
+                        })
+                    else:
+                        partner.message_post(body='Bulut Tahsilat IBAN Eşleşme Error: {}'.format(sub_firm_iban_add.StatusMessage))
+
             else:
                 partner.message_post(body='Bulut Tahsilat : %s' % sub_firm_response.StatusMessage)
                 # raise UserError(sub_firm_response.StatusMessage)
+            self._cr.commit()
 
     def sub_firm_list(self):
         service = Client(self.service_url)
@@ -358,8 +386,8 @@ class BulutTahsilatSettings(models.Model):
             return
 
     def sub_firm_iban_add(self, data):
+        client = Client(self.service_url)
         for item in data:
-            client = Client(self.service_url)
             sub_firm_iban_add = client.service.SubFirmIBANAddNew(self.username, self.password, self.firm_code,
                                                                  item.get('paymentExpCode', False),
                                                                  item.get('iban', False), item.get('bankCode', False))
@@ -386,8 +414,8 @@ class BulutTahsilatSettings(models.Model):
             self._cr.commit()
 
     def sub_firm_vkn_add(self, data):
+        client = Client(self.service_url)
         for item in data:
-            client = Client(self.service_url)
             response = client.service.SubFirmVKNAddNew(self.username, self.password, self.firm_code,
                                                        item.get('paymentExpCode', False), item.get('vat', False))
             if response.StatusCode == 0:
