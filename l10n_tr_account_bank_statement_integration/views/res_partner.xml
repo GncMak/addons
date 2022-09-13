@@ -29,7 +29,7 @@
         <field name="interval_type">hours</field>
         <field name="numbercall">-1</field>
         <field name="doall" eval="False"/>
-        <field name="active" eval="False"/>
+        <field name="active" eval="True"/>
     </record>
 
     <record id="ir_cron_partner_iban_add" model="ir.cron">
@@ -41,7 +41,7 @@
         <field name="interval_type">hours</field>
         <field name="numbercall">-1</field>
         <field name="doall" eval="False"/>
-        <field name="active" eval="False"/>
+        <field name="active" eval="True"/>
     </record>
 
     <record id="ir_cron_partner_vkn_add" model="ir.cron">
@@ -53,7 +53,7 @@
         <field name="interval_type">hours</field>
         <field name="numbercall">-1</field>
         <field name="doall" eval="False"/>
-        <field name="active" eval="False"/>
+        <field name="active" eval="True"/>
     </record>
 
 </odoo>
