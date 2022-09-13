@@ -25,6 +25,7 @@ class BankPaymentList(models.Model):
     expense_id = fields.Many2one(comodel_name='hr.expense', string='Expense')
     account_id = fields.Many2one(comodel_name='account.account', string='Account', copy=False, help='')
     move_id = fields.Many2one(comodel_name='account.move', string='Account Move', copy='False', help='')
+    analytic_account_id = fields.Many2one('account.analytic.account', string='Analytic Account')
     name = fields.Char(string='Name', copy=False, help='')
     amount = fields.Monetary(digits=4, copy=False)
     date = fields.Date(required=True, copy=False, default=fields.Date.context_today, readonly=True)
@@ -253,6 +254,7 @@ class BankPaymentList(models.Model):
                     'credit': abs(self.amount) if self.amount < 0 else 0.0,
                     'account_id': self.journal_id.default_debit_account_id.id if self.amount > 0 else self.journal_id.default_credit_account_id.id,
                     'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
+                    'analytic_account_id': self.analytic_account_id.id if self.payment_type_id == 518 else None,
                 }),
                 (0, 0, {
                     'partner_id': self.partner_id.id if self.partner_id else None,
