@@ -122,7 +122,7 @@
 
 
 <!--    <menuitem id="menu_bulut_tahsilat_service" name="Bulut Tahsilat Service" parent="menu_bulut_tahsilat" action="action_bulut_tahsilat_service" sequence="20" groups="account.group_account_user"/>-->
-    <menuitem id="menu_bulut_tahsilat_service_main" name="Bulut Tahsilat Service" parent="account.menu_finance_entries" sequence="10" groups="account.group_account_user"/>
+    <menuitem id="menu_bulut_tahsilat_service_main" name="Bulut Tahsilat Service" parent="account.menu_finance_entries" sequence="90" groups="account.group_account_user"/>
     <menuitem id="menu_bulut_tahsilat_payment_line_form" action="action_bulut_tahsilat_payment_line_form" name="Bulut Tahsilat Payment Line" parent="menu_bulut_tahsilat_service_main" sequence="10" groups="account.group_account_user"/>
 
     <record id="ir_cron_bank_payment_line_add" model="ir.cron">
