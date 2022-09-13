@@ -75,9 +75,9 @@ class BankPaymentList(models.Model):
                 '%Y-%m-%dT%H:%M:%S') if last_bulut_payment_line else (
                         datetime.datetime.now() - datetime.timedelta(days=2)).strftime('%Y-%m-%dT%H:%M:%S')
             end_date = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
-            payment_list_534 = bulut_service.bank_payment_list_all(534, '2022-06-01T00:00:00', end_date)
+            payment_list_534 = bulut_service.bank_payment_list_all(534, start_date, end_date)
             # EŞLEŞME ler manuel yapılmalı.
-            payment_list_531 = bulut_service.bank_payment_list_all(531, '2022-06-01T00:00:00', end_date)
+            payment_list_531 = bulut_service.bank_payment_list_all(531, start_date, end_date)
 
             payment_list = []
             if payment_list_534:
@@ -105,7 +105,6 @@ class BankPaymentList(models.Model):
                     [('bulut_sub_firm_id', '=', str(transaction.get('SenderFirmID', False)))]) if transaction.get(
                     'SenderFirmID', False) else None
                 if not partner:
-
                     partner = self.env['res.partner'].search(
                         [('bulut_sub_firm_code', '=', transaction.get('SenderFirmCode', False))]) if transaction.get(
                         'SenderFirmCode', False) else None
@@ -157,8 +156,8 @@ class BankPaymentList(models.Model):
                     'balance_after_transaction': transaction.get('BalanceAfterTransaction', False),
                 })
                 self._cr.commit()
-                # if payment_line.payment_status_type_id == 531:
-                #     payment_line.company_id.bulut_tahsilat_id.update_payment_status_info(payment_line)
+                if payment_line.payment_status_type_id == 531:
+                    payment_line.company_id.bulut_tahsilat_id.update_payment_status_info(payment_line)
                 # if payment_line.payment_status_type_id == 534 and payment_line.payment_exp_code:
                 #     payment_line.company_id.bulut_tahsilat_id.update_payment_status_info_with_exp_code(payment_line)
 
@@ -168,7 +167,7 @@ class BankPaymentList(models.Model):
             # TODO: Bu durumda, yevmiye fişi oluşturmak mantıklı. (Sormak lazım)
             if not line.journal_id:
                 continue
-            if line.payment_type_id != 518:
+            if line.payment_type_id in [513, 515]:
                 partner_type = False
                 if line.partner_id:
                     partner_type = 'supplier' if line.amount < 0 else 'customer'
@@ -191,7 +190,7 @@ class BankPaymentList(models.Model):
                     'payment_date': line.date,
                     'state': 'draft',
                     'currency_id': line.currency_id.id,
-                    'amount': abs(line.amount),
+                    'amount': abs(line.amount) if line.amount < 0 else line.amount,
                     'communication': line.explanation,
                     'name': line.name
                 }
@@ -204,12 +203,16 @@ class BankPaymentList(models.Model):
                     pre_payment.update({
                         'partner_id': line.partner_id.id,
                     })
-
+                if not line.partner_id and not destination_journal:
+                    continue
                 payment = self.env['account.payment'].create(pre_payment)
                 payment.post()
+                move_id = payment.mapped('move_line_ids')[0].move_id
+
                 line.write({
                     'payment_id': payment.id,
-                    'state': 'done'
+                    'state': 'done',
+                    'move_id': move_id.id
                 })
 
     def expense_create(self):
@@ -235,15 +238,37 @@ class BankPaymentList(models.Model):
         # expense.action_sheet_move_create()
 
     def account_move_create(self):
-        # TODO:
-        pass
-        move_id = self.env['account.move'].create({
+        self.ensure_one()
 
-        })
+        values = {
+            'date': self.date,
+            'ref': '{} Nolu {}'.format(self.reference_number, self.payment_type_explantion),
+            'journal_id': self.journal_id.id,
+            'currency_id': self.currency_id.id,
+            'partner_id': self.partner_id.id if self.partner_id else None,
+            'line_ids': [
+                (0, 0, {
+                    'partner_id': self.partner_id.id if self.partner_id else None,
+                    'debit': self.amount if self.amount > 0 else 0.0,
+                    'credit': abs(self.amount) if self.amount < 0 else 0.0,
+                    'account_id': self.journal_id.default_debit_account_id.id if self.amount > 0 else self.journal_id.default_credit_account_id.id,
+                }),
+                (0, 0, {
+                    'partner_id': self.partner_id.id if self.partner_id else None,
+                    'debit': abs(self.amount) if self.amount < 0 else 0.0,
+                    'credit': self.amount if self.amount > 0 else 0.0,
+                    'account_id': self.account_id.id,
+                })
+            ]
+        }
+
+        move_id = self.env['account.move'].create(values)
         self.write({
             'move_id': move_id.id,
             'state': 'done'
         })
+        if move_id:
+            move_id.post()
 
 
 class BulutTahsilatSettings(models.Model):
@@ -360,12 +385,15 @@ class BulutTahsilatSettings(models.Model):
                 for bank_account in partner.mapped('bank_ids').filtered(lambda x: not x.bulut_sync):
                     if len(bank_account.acc_number) < 20 or len(bank_account.acc_number) > 34:
                         continue
-                    sub_firm_iban_add = bulut_service.service.SubFirmIBANAddNew(self.username, self.password, self.firm_code,
-                                                                         partner.bulut_sub_payment_exp_code,
-                                                                         bank_account.acc_number.replace(' ', ''),
-                                                                         str(int(
-                                                                             bank_account.acc_number.replace(' ', '')[
-                                                                             4:9])))
+                    sub_firm_iban_add = bulut_service.service.SubFirmIBANAddNew(self.username, self.password,
+                                                                                self.firm_code,
+                                                                                partner.bulut_sub_payment_exp_code,
+                                                                                bank_account.acc_number.replace(' ',
+                                                                                                                ''),
+                                                                                str(int(
+                                                                                    bank_account.acc_number.replace(' ',
+                                                                                                                    '')[
+                                                                                    4:9])))
                     if sub_firm_iban_add.StatusCode == 0:
                         bank_account.write({
                             'bulut_sync': True
@@ -379,11 +407,11 @@ class BulutTahsilatSettings(models.Model):
             self._cr.commit()
 
     def sub_firm_list(self):
-        service = Client(self.service_url)
-
-        firm_list = service.service.SubFirmList(self.username, self.password, self.firm_code)
-        for i in firm_list:
-            return
+        pass
+        # service = Client(self.service_url)
+        # firm_list = service.service.SubFirmList(self.username, self.password, self.firm_code)
+        # for i in firm_list:
+        #     return
 
     def sub_firm_iban_add(self, data):
         client = Client(self.service_url)

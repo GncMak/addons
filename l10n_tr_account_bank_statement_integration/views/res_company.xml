@@ -12,6 +12,6 @@
         </field>
     </record>
 
-    <menuitem id="menu_bulut_tahsilat" name="Bulut Tahsilat" parent="base.menu_administration" sequence="90"/>
+    <menuitem id="menu_bulut_tahsilat" name="Bulut Tahsilat" parent="base.menu_administration" sequence="90" groups="account.group_account_user"/>
 
 </odoo>

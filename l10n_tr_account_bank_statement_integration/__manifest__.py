@@ -8,7 +8,7 @@
     "website": "https://www.konien.com",
     'category': 'account',
     "version": "11.0.1",
-    'depends': ['account', 'hr_expense', 'account_payment_order'],
+    'depends': ['account'],
     'external_dependencies': {'python': ['phonenumbers', 'suds']},
     'data': [
         'security/ir.model.access.csv',

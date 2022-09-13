@@ -53,7 +53,7 @@
                 <header>
                     <field name="state" widget="statusbar"/>
 <!--                    <button string="Expense Create" name="expense_create" class="oe_highlight" type="object" attrs="{'invisible': ['|','|',('payment_type_id','!=', 518), ('state', '!=', 'draft'), ('expense_id', '!=', False)]}"/>-->
-                    <button string="Account Move Create" name="account_move_create" class="oe_highlight" type="object" attrs="{'invisible': ['|','|','|',('payment_type_id','=', 518),('partner_id','!=', False), ('state', '!=', 'draft'), ('move_id', '!=', False)]}"/>
+                    <button string="Account Move Create" name="account_move_create" class="oe_highlight" type="object" attrs="{'invisible': ['|','|',('state', '!=', 'draft'), ('move_id', '!=', False), ('account_id', '=', False)]}"/>
                 </header>
                 <sheet>
                     <group>
@@ -121,9 +121,9 @@
 
 
 
-    <menuitem id="menu_bulut_tahsilat_service" name="Bulut Tahsilat Service" parent="menu_bulut_tahsilat" action="action_bulut_tahsilat_service" sequence="20"/>
-    <menuitem id="menu_bulut_tahsilat_service_main" name="Bulut Tahsilat Service" parent="account.menu_finance" sequence="30"/>
-    <menuitem id="menu_bulut_tahsilat_payment_line_form" action="action_bulut_tahsilat_payment_line_form" name="Bulut Tahsilat Payment Line" parent="menu_bulut_tahsilat_service_main" sequence="10" groups="account.group_account_manager"/>
+<!--    <menuitem id="menu_bulut_tahsilat_service" name="Bulut Tahsilat Service" parent="menu_bulut_tahsilat" action="action_bulut_tahsilat_service" sequence="20" groups="account.group_account_user"/>-->
+    <menuitem id="menu_bulut_tahsilat_service_main" name="Bulut Tahsilat Service" parent="account.menu_finance_entries" sequence="10" groups="account.group_account_user"/>
+    <menuitem id="menu_bulut_tahsilat_payment_line_form" action="action_bulut_tahsilat_payment_line_form" name="Bulut Tahsilat Payment Line" parent="menu_bulut_tahsilat_service_main" sequence="10" groups="account.group_account_user"/>
 
     <record id="ir_cron_bank_payment_line_add" model="ir.cron">
         <field name="name">Bulut Bank Payment Line Add</field>
