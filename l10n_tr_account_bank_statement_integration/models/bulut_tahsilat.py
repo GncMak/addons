@@ -74,7 +74,7 @@ class BankPaymentList(models.Model):
             last_bulut_payment_line = self.search([], order='date desc', limit=1)
             start_date = datetime.datetime.strptime(last_bulut_payment_line.date, '%Y-%m-%d').strftime(
                 '%Y-%m-%dT%H:%M:%S') if last_bulut_payment_line else (
-                        datetime.datetime.now() - datetime.timedelta(days=2)).strftime('%Y-%m-%dT%H:%M:%S')
+                        datetime.datetime.now() - datetime.timedelta(days=100)).strftime('%Y-%m-%dT%H:%M:%S')
             end_date = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
             payment_list_534 = bulut_service.bank_payment_list_all(534, start_date, end_date)
             # EŞLEŞME ler manuel yapılmalı.
@@ -96,7 +96,7 @@ class BankPaymentList(models.Model):
                     continue
                 journal = self.env['account.journal'].search(
                     [('bank_account_id.acc_number', '=', str(transaction.get('FirmBankIBAN', False)).replace(' ', ''))])
-                if not journal or len(journal) > 1:
+                if not journal and len(journal) > 1:
                     continue
                 currency_id = self.env['res.currency'].search(
                     [('name', '=', transaction.get('AccountCurrencyCode', False))])
@@ -162,12 +162,63 @@ class BankPaymentList(models.Model):
                 # if payment_line.payment_status_type_id == 534 and payment_line.payment_exp_code:
                 #     payment_line.company_id.bulut_tahsilat_id.update_payment_status_info_with_exp_code(payment_line)
 
+    def create_payment(self):
+        self.ensure_one()
+        if self.payment_type_id in [513, 515]:
+            partner_type = False
+            if self.partner_id:
+                partner_type = 'supplier' if self.amount < 0 else 'customer'
+
+            destination_journal = self.env['account.journal'].search(
+                [('bank_account_id.acc_number', '=', self.sender_firm_bank_iban),
+                 ('company_id', '=', self.company_id.id)])
+            if destination_journal:
+                payment_type = 'transfer'
+            else:
+                payment_type = self.amount > 0 and 'inbound' or 'outbound'
+
+            payment_methods = (self.amount > 0) and self.journal_id.inbound_payment_method_ids or self.journal_id.outbound_payment_method_ids
+
+            pre_payment = {
+                'payment_method_id': payment_methods and payment_methods[0].id or False,  # TODO:
+                'payment_type': payment_type,
+                'partner_type': partner_type,
+                'journal_id': self.journal_id.id,
+                'payment_date': self.date,
+                'state': 'draft',
+                'currency_id': self.currency_id.id,
+                'amount': abs(self.amount) if self.amount < 0 else self.amount,
+                'communication': self.explanation,
+                'name': self.name
+            }
+
+            if destination_journal:
+                pre_payment.update({
+                    'destination_journal_id': destination_journal.id
+                })
+            if self.partner_id:
+                pre_payment.update({
+                    'partner_id': self.partner_id.id,
+                })
+            if not self.partner_id and not destination_journal:
+                return
+            payment = self.env['account.payment'].create(pre_payment)
+            payment.post()
+            move_id = payment.mapped('move_line_ids')[0].move_id
+
+            self.write({
+                'payment_id': payment.id,
+                'state': 'done',
+                'move_id': move_id.id
+            })
+
     def payment_line_process(self):
         for line in self.search([('state', '=', 'draft')]):
             # TODO: Eğer Partner ve destination_journal boş olursa o zaman kredi/senet/Çek vs ödemesi gibi bir şeydir.
             # TODO: Bu durumda, yevmiye fişi oluşturmak mantıklı. (Sormak lazım)
             if not line.journal_id:
                 continue
+            self.create_payment(line)
             if line.payment_type_id in [513, 515]:
                 partner_type = False
                 if line.partner_id:
@@ -255,7 +306,6 @@ class BankPaymentList(models.Model):
                     'account_id': self.journal_id.default_debit_account_id.id if self.amount > 0 else self.journal_id.default_credit_account_id.id,
                     'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
                     'currency_id': self.currency_id.id,
-                    'analytic_account_id': self.analytic_account_id.id if self.analytic_account_id else None,
                 }),
                 (0, 0, {
                     'partner_id': self.partner_id.id if self.partner_id else None,
@@ -264,6 +314,7 @@ class BankPaymentList(models.Model):
                     'account_id': self.account_id.id,
                     'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
                     'currency_id': self.currency_id.id,
+                    'analytic_account_id': self.analytic_account_id.id if self.analytic_account_id else None,
                 })
             ]
         }
