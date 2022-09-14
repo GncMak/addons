@@ -254,7 +254,7 @@ class BankPaymentList(models.Model):
                     'credit': abs(self.amount) if self.amount < 0 else 0.0,
                     'account_id': self.journal_id.default_debit_account_id.id if self.amount > 0 else self.journal_id.default_credit_account_id.id,
                     'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
-                    'analytic_account_id': self.analytic_account_id.id if self.payment_type_id == 518 else None,
+                    'analytic_account_id': self.analytic_account_id.id if self.analytic_account_id else None,
                 }),
                 (0, 0, {
                     'partner_id': self.partner_id.id if self.partner_id else None,
