@@ -12,6 +12,7 @@
     'external_dependencies': {'python': ['phonenumbers', 'suds']},
     'data': [
         'security/ir.model.access.csv',
+        'security/bulut_service_security.xml',
         'views/res_company.xml',
         'views/res_partner.xml',
         'views/bulut_tahsilat_service.xml',

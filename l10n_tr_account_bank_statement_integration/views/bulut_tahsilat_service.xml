@@ -21,11 +21,24 @@
         <field name="res_model">bulut.tahsilat.bank.payment.line</field>
         <field name="type">ir.actions.act_window</field>
         <field name="view_mode">tree,kanban,form</field>
+        <field name="filter_pre_domain">[('state','=','draft')]</field>
+        <field name="filter" eval="True"/>
     </record>
+
+<!--    <record id="action_bulut_tahsilat_payment_line_draft_tree" model="ir.actions.act_window">-->
+<!--        <field name="name">Draft statements</field>-->
+<!--        <field name="res_model">bulut.tahsilat.bank.payment.line</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="view_type">tree</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--        <field name="domain">[('state','=','draft')]</field>-->
+<!--        <field name="filter" eval="True"/>-->
+<!--    </record>-->
 
     <record id="view_bulut_payment_line_tree" model="ir.ui.view">
         <field name="name">view.bulut.payment.line.tree</field>
         <field name="model">bulut.tahsilat.bank.payment.line</field>
+        <field name="context">{'state': 'draft'}</field>
         <field name="arch" type="xml">
             <tree string="Bank Payment Line">
                 <field name="company_id" groups="base.group_multi_company"/>
@@ -120,13 +133,6 @@
             </form>
         </field>
     </record>
-
-            <act_window
-            id="action_bulut_payment_line_select"
-            name="Bulut Payment Line"
-            context="[('company_id', '!=', context.get('company_id'))]"
-            res_model="bulut.tahsilat.bank.payment.line"
-            view_type="tree" view_mode="tree"/>
 
 <!--    <menuitem id="menu_bulut_tahsilat_service" name="Bulut Tahsilat Service" parent="menu_bulut_tahsilat" action="action_bulut_tahsilat_service" sequence="20" groups="account.group_account_user"/>-->
     <menuitem id="menu_bulut_tahsilat_service_main" name="Bulut Tahsilat Service" parent="account.menu_finance_entries" sequence="90" groups="account.group_account_user"/>
