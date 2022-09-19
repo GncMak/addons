@@ -74,7 +74,7 @@ class BankPaymentList(models.Model):
             last_bulut_payment_line = self.search([], order='date desc', limit=1)
             start_date = datetime.datetime.strptime(last_bulut_payment_line.date, '%Y-%m-%d').strftime(
                 '%Y-%m-%dT%H:%M:%S') if last_bulut_payment_line else (
-                        datetime.datetime.now() - datetime.timedelta(days=100)).strftime('%Y-%m-%dT%H:%M:%S')
+                        datetime.datetime.now() - datetime.timedelta(days=3)).strftime('%Y-%m-%dT%H:%M:%S')
             end_date = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
             payment_list_534 = bulut_service.bank_payment_list_all(534, start_date, end_date)
             # EŞLEŞME ler manuel yapılmalı.
