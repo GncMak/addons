@@ -116,10 +116,15 @@ class BankPaymentList(models.Model):
                         'SenderFirmBankIBAN') else None
 
                 if transaction.get('PaymentTypeID', False) == 518:  # Masraf
-                    product = self.env['product.template'].search(
-                        [('bulut_tahsilat_expense_code', '=', transaction.get('FunctionCode1', False))])
+                    account = self.env['account.account'].search(
+                        [('code', '=', transaction.get('SenderFirmAccountingCode', False)),
+                         ('company_id', '=', journal.company_id)])
                 else:
-                    product = None
+                    account = None
+                #     product = self.env['product.template'].search(
+                #         [('bulut_tahsilat_expense_code', '=', transaction.get('FunctionCode1', False))])
+                # else:
+                #     product = None
 
                 payment_line = self.create({
                     'journal_id': journal.id,
@@ -129,7 +134,8 @@ class BankPaymentList(models.Model):
                     'amount': transaction.get('Amount', 0),
                     'currency_id': currency_id.id,
                     'partner_id': partner.id if partner else None,
-                    'product_id': product.id if product else None,
+                    # 'product_id': product.id if product else None,
+                    'account_id': account.id if account else None,
                     'note': '',
                     'state': 'draft',
                     'firm_bank_code': transaction.get('FirmBankCode', False),
@@ -157,8 +163,8 @@ class BankPaymentList(models.Model):
                     'balance_after_transaction': transaction.get('BalanceAfterTransaction', False),
                 })
                 self._cr.commit()
-                if payment_line.payment_status_type_id == 531:
-                    payment_line.company_id.bulut_tahsilat_id.update_payment_status_info(payment_line)
+                # if payment_line.payment_status_type_id == 531:
+                #     payment_line.company_id.bulut_tahsilat_id.update_payment_status_info(payment_line)
                 # if payment_line.payment_status_type_id == 534 and payment_line.payment_exp_code:
                 #     payment_line.company_id.bulut_tahsilat_id.update_payment_status_info_with_exp_code(payment_line)
 
@@ -377,6 +383,7 @@ class BulutTahsilatSettings(models.Model):
     def sub_firm_add(self, partners):
         bulut_service = Client(self.service_url)
         for partner in partners:
+
             sub_firm_model = bulut_service.factory.create('SubFirm')
             enum_status = bulut_service.factory.create('EnumStatus')
             enum_status.__setitem__ = 'Active'
