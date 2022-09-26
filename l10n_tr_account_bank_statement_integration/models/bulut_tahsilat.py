@@ -118,7 +118,7 @@ class BankPaymentList(models.Model):
                 if transaction.get('PaymentTypeID', False) == 518:  # Masraf
                     account = self.env['account.account'].search(
                         [('code', '=', transaction.get('SenderFirmAccountingCode', False)),
-                         ('company_id', '=', journal.company_id)])
+                         ('company_id', '=', journal.company_id.id)])
                 else:
                     account = None
                 #     product = self.env['product.template'].search(
