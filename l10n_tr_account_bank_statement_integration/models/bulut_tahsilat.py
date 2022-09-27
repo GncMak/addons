@@ -71,12 +71,15 @@ class BankPaymentList(models.Model):
     def payment_line_add(self):
         bulut_services = self.env['bulut.tahsilat.service'].search([('state', '=', 'Active')])
         for bulut_service in bulut_services:
-            last_bulut_payment_line = self.search([], order='date desc', limit=1)
-            start_date = datetime.datetime.strptime(last_bulut_payment_line.date, '%Y-%m-%d').strftime(
-                '%Y-%m-%dT%H:%M:%S') if last_bulut_payment_line else (
-                        datetime.datetime.now() - datetime.timedelta(days=3)).strftime('%Y-%m-%dT%H:%M:%S')
+            # last_bulut_payment_line = self.search([], order='date desc', limit=1)
+            # start_date = datetime.datetime.strptime(last_bulut_payment_line.date, '%Y-%m-%d').strftime(
+            #     '%Y-%m-%dT%H:%M:%S') if last_bulut_payment_line else (
+            #             datetime.datetime.now() - datetime.timedelta(days=3)).strftime('%Y-%m-%dT%H:%M:%S')
+
+            start_date = (datetime.datetime.now() - datetime.timedelta(days=bulut_service.period_day)).strftime(
+                '%Y-%m-%dT%H:%M:%S')
             end_date = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
-            payment_list_534 = bulut_service.bank_payment_list_all(534, '2022-09-12T00:00:00', end_date)
+            payment_list_534 = bulut_service.bank_payment_list_all(534, start_date, end_date)
             payment_list_531 = bulut_service.bank_payment_list_all(531, '2022-09-12T00:00:00', end_date)
 
             payment_list = []
@@ -348,6 +351,7 @@ class BulutTahsilatSettings(models.Model):
             ('Active', 'Active'),
             ('Passive', 'Passive')],
         string='State', help='', copy=False)
+    period_day = fields.Integer(string='Period Day', default=1)
 
     @staticmethod
     def phone_number_replace(param, country):
