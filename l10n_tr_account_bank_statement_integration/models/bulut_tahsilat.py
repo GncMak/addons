@@ -76,8 +76,8 @@ class BankPaymentList(models.Model):
                 '%Y-%m-%dT%H:%M:%S') if last_bulut_payment_line else (
                         datetime.datetime.now() - datetime.timedelta(days=3)).strftime('%Y-%m-%dT%H:%M:%S')
             end_date = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
-            payment_list_534 = bulut_service.bank_payment_list_all(534, '2022-09-01T00:00:00', end_date)
-            payment_list_531 = bulut_service.bank_payment_list_all(531, '2022-09-01T00:00:00', end_date)
+            payment_list_534 = bulut_service.bank_payment_list_all(534, '2022-09-12T00:00:00', end_date)
+            payment_list_531 = bulut_service.bank_payment_list_all(531, '2022-09-12T00:00:00', end_date)
 
             payment_list = []
             if payment_list_534:
