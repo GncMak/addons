@@ -24,8 +24,9 @@ class BankPaymentList(models.Model):
     payment_id = fields.Many2one(comodel_name='account.payment', string='Payment', copy=False, help='')
     expense_id = fields.Many2one(comodel_name='hr.expense', string='Expense')
     account_id = fields.Many2one(comodel_name='account.account', string='Account', copy=False, help='')
-    move_id = fields.Many2one(comodel_name='account.move', string='Account Move', copy='False', help='')
-    analytic_account_id = fields.Many2one('account.analytic.account', string='Analytic Account')
+    move_id = fields.Many2one(comodel_name='account.move', string='Account Move', copy=False, help='')
+    analytic_account_id = fields.Many2one('account.analytic.account', string='Analytic Account', copy=False, help='')
+    account_check_id = fields.Many2one(comodel_name='account.check', string='Account Check', copy=False, help='')
     name = fields.Char(string='Name', copy=False, help='')
     amount = fields.Monetary(digits=4, copy=False)
     date = fields.Date(required=True, copy=False, default=fields.Date.context_today, readonly=True)
@@ -334,6 +335,9 @@ class BankPaymentList(models.Model):
         })
         if move_id:
             move_id.post()
+
+    def check_payment(self):
+        self.account_check_id.action_credit()
 
 
 class BulutTahsilatSettings(models.Model):
