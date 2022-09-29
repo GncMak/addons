@@ -337,7 +337,14 @@ class BankPaymentList(models.Model):
             move_id.post()
 
     def check_payment(self):
-        self.account_check_id.action_credit()
+        account_check_action = self.env['account.check.action'].with_context(action_type='deposit')
+        context = dict(self.env.context)
+        context.setdefault('active_ids', [self.account_check_id.id])
+
+        # return super(account_check_action, account_check_action.with_context(context)).action_confirm()
+        account_check_action.with_context(context).action_confirm()
+        # account_check_action.action_confirm()
+        # self.account_check_id.action_credit()
 
 
 class BulutTahsilatSettings(models.Model):
@@ -390,7 +397,6 @@ class BulutTahsilatSettings(models.Model):
     def sub_firm_add(self, partners):
         bulut_service = Client(self.service_url)
         for partner in partners:
-
             sub_firm_model = bulut_service.factory.create('SubFirm')
             enum_status = bulut_service.factory.create('EnumStatus')
             enum_status.__setitem__ = 'Active'
