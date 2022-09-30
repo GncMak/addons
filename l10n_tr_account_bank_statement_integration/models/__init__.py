@@ -10,3 +10,4 @@ from . import res_company
 from . import bulut_tahsilat
 from . import product_template
 from . import partner_bank
+from . import account_check
