@@ -26,7 +26,7 @@ class BankPaymentList(models.Model):
     account_id = fields.Many2one(comodel_name='account.account', string='Account', copy=False, help='')
     move_id = fields.Many2one(comodel_name='account.move', string='Account Move', copy=False, help='')
     analytic_account_id = fields.Many2one('account.analytic.account', string='Analytic Account', copy=False, help='')
-    account_check_id = fields.Many2one(comodel_name='account.check', string='Account Check', copy=False, help='')
+    account_check_id = fields.Many2one('account.check', string='Account Check', copy=False, help='')
     name = fields.Char(string='Name', copy=False, help='')
     amount = fields.Monetary(digits=4, copy=False)
     date = fields.Date(required=True, copy=False, default=fields.Date.context_today, readonly=True)
