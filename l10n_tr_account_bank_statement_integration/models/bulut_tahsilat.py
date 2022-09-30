@@ -81,7 +81,7 @@ class BankPaymentList(models.Model):
                 '%Y-%m-%dT%H:%M:%S')
             end_date = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
             payment_list_534 = bulut_service.bank_payment_list_all(534, start_date, end_date)
-            payment_list_531 = bulut_service.bank_payment_list_all(531, '2022-09-12T00:00:00', end_date)
+            payment_list_531 = bulut_service.bank_payment_list_all(531, start_date, end_date)
 
             payment_list = []
             if payment_list_534:
@@ -337,13 +337,15 @@ class BankPaymentList(models.Model):
             move_id.post()
 
     def check_payment(self):
-        account_check_action = self.env['account.check.action'].with_context(action_type='deposit')
-        context = dict(self.env.context)
-        context.setdefault('active_ids', [self.account_check_id.id])
+        pass
+        # account_check_action = self.env['account.check.action'].with_context(action_type='deposit')
+        # context = dict(self.env.context)
+        # context.setdefault('active_ids', [self.account_check_id.id])
 
         # return super(account_check_action, account_check_action.with_context(context)).action_confirm()
-        account_check_action.with_context(context).action_confirm()
+        # account_check_action.with_context(context).action_confirm()
         # account_check_action.action_confirm()
+
         # self.account_check_id.action_credit()
 
 
