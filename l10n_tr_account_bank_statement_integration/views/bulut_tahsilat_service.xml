@@ -16,27 +16,34 @@
     </field>
     </record>
 
+    <record id="view_bulut_payment_line_filter" model="ir.ui.view">
+            <field name="name">bulut.payment.line.search</field>
+            <field name="model">bulut.tahsilat.bank.payment.line</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <filter string="Drafts" name="drafts" domain="[('state','=','draft')]"/>
+                    <separator />
+
+                    <group expand="0" string="Group By">
+                        <filter string="Journal" name="groupby_journal" domain="[]" context="{'group_by':'journal_id'}"/>
+                        <filter string="Payment Type" name="groupby_journal" domain="[]" context="{'group_by':'payment_type_explantion'}"/>
+                        <filter string="Currency" name="groupby_journal" domain="[]" context="{'group_by':'currency_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
     <record id="action_bulut_tahsilat_payment_line_form" model="ir.actions.act_window">
         <field name="name">Bulut Tahsilat Payment Line</field>
         <field name="res_model">bulut.tahsilat.bank.payment.line</field>
         <field name="type">ir.actions.act_window</field>
         <field name="view_mode">tree,kanban,form</field>
+        <field name="context">{'search_default_drafts': 1,}</field>
     </record>
-
-<!--    <record id="action_bulut_tahsilat_payment_line_draft_tree" model="ir.actions.act_window">-->
-<!--        <field name="name">Draft statements</field>-->
-<!--        <field name="res_model">bulut.tahsilat.bank.payment.line</field>-->
-<!--        <field name="type">ir.actions.act_window</field>-->
-<!--        <field name="view_type">tree</field>-->
-<!--        <field name="view_mode">tree,form</field>-->
-<!--        <field name="domain">[('state','=','draft')]</field>-->
-<!--        <field name="filter" eval="True"/>-->
-<!--    </record>-->
 
     <record id="view_bulut_payment_line_tree" model="ir.ui.view">
         <field name="name">view.bulut.payment.line.tree</field>
         <field name="model">bulut.tahsilat.bank.payment.line</field>
-        <field name="context">{'state': 'draft'}</field>
         <field name="arch" type="xml">
             <tree string="Bank Payment Line">
                 <field name="company_id" groups="base.group_multi_company"/>
@@ -50,12 +57,12 @@
                 <field name="amount"/>
                 <field name="currency_id"/>
                 <field name="reference_number"/>
-                <field name="function_code1"/>
-                <field name="reference_number"/>
+<!--                <field name="function_code1"/>-->
                 <field name="balance_after_transaction"/>
             </tree>
         </field>
     </record>
+
 
     <record id="view_bulut_payment_line_form" model="ir.ui.view">
         <field name="name">view.bulut.payment.line.form</field>
