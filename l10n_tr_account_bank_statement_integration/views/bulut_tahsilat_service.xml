@@ -112,7 +112,7 @@
                          <group>
                             <field name="payment_id" readonly="1"/>
                             <field name="move_id" readonly="1"/>
-<!--                             <field name="account_check_id" attrs="{'readonly': ['|',('partner_id', '!=', False),('account_id', '!=', False)]}"/>-->
+<!--                            <field name="account_check_id" attrs="{'readonly': ['|',('partner_id', '!=', False),('account_id', '!=', False)]}"/>-->
 <!--                            <field name="account_id" attrs="{'readonly': ['|',('partner_id', '!=', False), ('account_check_id', '!=', False)]}"/>-->
 <!--                            <field name="analytic_account_id" attrs="{'readonly': ['|',('partner_id', '!=', False), ('account_check_id', '!=', False)]}"/>-->
                              <field name="account_id" attrs="{'readonly': [('partner_id', '!=', False)]}"/>

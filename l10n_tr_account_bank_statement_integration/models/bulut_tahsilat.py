@@ -337,13 +337,23 @@ class BankPaymentList(models.Model):
             move_id.post()
 
     def check_payment(self):
-        pass
-        # account_check_action = self.env['account.check.action'].with_context(action_type='deposit')
-        # context = dict(self.env.context)
-        # context.setdefault('active_ids', [self.account_check_id.id])
+        account_check_action = self.env['account.check.action'].with_context(action_type='deposit')
+        context = dict(self.env.context)
+        context.setdefault('active_ids', [self.account_check_id.id])
+        # account_check_action.with_context(context).action_confirm()
+
+        return {
+            'type': 'ir.ui.view',
+            'res_model': 'check_action_form_view',
+            'view_mode': 'form',
+            'view_type': 'form',
+            'res_id': account_check_action.id,
+            'views': [(False, 'form')],
+            'target': 'new'
+        }
 
         # return super(account_check_action, account_check_action.with_context(context)).action_confirm()
-        # account_check_action.with_context(context).action_confirm()
+
         # account_check_action.action_confirm()
 
         # self.account_check_id.action_credit()
