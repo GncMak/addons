@@ -337,6 +337,13 @@ class BankPaymentList(models.Model):
             move_id.post()
 
     def check_payment(self):
+
+        bank_statement = self.env['account.bank.statement.line']
+        # data = {
+        #     'counterpart_aml_dicts': '',
+        #     'payment_aml_ids': self.account_check_id.deposit_account_move_id.line_ids
+        # }
+        # bank_statement.process_reconciliations(data)
         pass
         # account_check_action = self.env['account.check.action'].with_context(action_type='deposit')
         # context = dict(self.env.context)
