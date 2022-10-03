@@ -115,7 +115,7 @@ class BankPaymentList(models.Model):
                 if not partner:
                     # if transaction.get('SenderFirmBankIBAN', False):
                     partner = self.env['res.partner.bank'].search(
-                        [('acc_number', '=', transaction.get('SenderFirmBankIBAN'))]).partner_id if transaction.get(
+                        [('acc_number', '=', transaction.get('SenderFirmBankIBAN'))], limit=1).partner_id if transaction.get(
                         'SenderFirmBankIBAN') else None
 
                 if transaction.get('PaymentTypeID', False) == 518:  # Masraf
