@@ -107,12 +107,12 @@
 
                     <group>
                         <group>
-                            <field name="partner_id" attrs="{'invisible': [('payment_type_id','=', 518)], 'readonly': ['|',('account_id', '!=', False), ('account_check_id', '!=', False)]}"/>
+                            <field name="partner_id" attrs="{'readonly': [('account_id', '!=', False), ('account_check_id', '!=', False)]}"/>
 <!--                            <field name="partner_id" attrs="{'invisible': [('payment_type_id','=', 518)], 'readonly': [('account_id', '!=', False)]}"/>-->
-                            <field name="sender_firm_name" attrs="{'invisible': [('payment_type_id','=', 518)]}" readonly="1"/>
-                            <field name="sender_firm_id" attrs="{'invisible': [('payment_type_id','=', 518)]}" readonly="1"/>
-                            <field name="sender_firm_code" attrs="{'invisible': [('payment_type_id','=', 518)]}" readonly="1"/>
-                            <field name="sender_firm_bank_iban" attrs="{'invisible': [('payment_type_id','=', 518)]}" readonly="1"/>
+                            <field name="sender_firm_name" readonly="1"/>
+                            <field name="sender_firm_id" readonly="1"/>
+                            <field name="sender_firm_code" readonly="1"/>
+                            <field name="sender_firm_bank_iban" readonly="1"/>
                         </group>
 <!--                        <group>-->
 <!--                            <field name="expense_id" attrs="{'invisible': [('payment_type_id','!=', 518)]}" readonly="1" />-->
@@ -121,9 +121,9 @@
                          <group>
                             <field name="payment_id" readonly="1"/>
                             <field name="move_id" readonly="1"/>
-                            <field name="account_check_id" attrs="{'readonly': ['|',('partner_id', '!=', False),('account_id', '!=', False)]}"/>
-                            <field name="account_id" attrs="{'readonly': ['|',('partner_id', '!=', False), ('account_check_id', '!=', False)]}"/>
-                            <field name="analytic_account_id" attrs="{'readonly': ['|',('partner_id', '!=', False), ('account_check_id', '!=', False)]}"/>
+                            <field name="account_check_id" attrs="{'readonly': [('partner_id', '!=', False),('account_id', '!=', False)]}"/>
+                            <field name="account_id" attrs="{'readonly': [('partner_id', '!=', False), ('account_check_id', '!=', False)]}"/>
+                            <field name="analytic_account_id" attrs="{'readonly': [('partner_id', '!=', False), ('account_check_id', '!=', False)]}"/>
 <!--                             <field name="account_id" attrs="{'readonly': [('partner_id', '!=', False)]}"/>-->
 <!--                            <field name="analytic_account_id" attrs="{'readonly': [('partner_id', '!=', False)]}"/>-->
                         </group>

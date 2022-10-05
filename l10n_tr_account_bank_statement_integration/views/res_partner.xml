@@ -11,11 +11,13 @@
 <!--                    <button name="balance_payment_send" string="Balance Send" class="oe_highlight" type="object"/>-->
                 </header>
             </xpath>
-            <xpath expr="//field[@name='lang']" position="after">
+            <xpath expr="//field[@name='property_account_position_id']" position="after">
+                <group string="Bulut Tahsilat">
                 <field name="bulut_sub_firm_id"/>
                 <field name="bulut_sub_firm_code"/>
                 <field name="bulut_sub_payment_exp_code"/>
 <!--                <field name="bulut_sub_firm_vkn_id"/>-->
+                </group>
             </xpath>
         </field>
     </record>
