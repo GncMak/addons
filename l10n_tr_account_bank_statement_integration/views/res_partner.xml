@@ -3,7 +3,7 @@
     <record id="view_res_partner_bulut_tahsilat_button" model="ir.ui.view">
         <field name="name">res.partner.bulut.tahsilat.button</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
         <field name="arch" type="xml">
             <xpath expr="//sheet" position="before">
                 <header>
