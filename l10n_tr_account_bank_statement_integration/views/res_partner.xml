@@ -11,7 +11,7 @@
 <!--                    <button name="balance_payment_send" string="Balance Send" class="oe_highlight" type="object"/>-->
                 </header>
             </xpath>
-            <xpath expr="//field[@name='property_account_position_id']" position="after">
+            <xpath expr="//page[@name='accounting']" position="inside">
                 <group string="Bulut Tahsilat">
                 <field name="bulut_sub_firm_id"/>
                 <field name="bulut_sub_firm_code"/>
