@@ -183,6 +183,8 @@ class BankPaymentList(models.Model):
                  ('company_id', '=', self.company_id.id)])
             if destination_journal:
                 payment_type = 'transfer'
+                if destination_journal.currency_id.id != self.currency_id.id:
+                    self.account_move_create()
             else:
                 payment_type = self.amount > 0 and 'inbound' or 'outbound'
 
@@ -220,6 +222,7 @@ class BankPaymentList(models.Model):
                 'state': 'done',
                 'move_id': move_id.id
             })
+
 
     def payment_line_process(self):
         for line in self.search([('state', '=', 'draft')]):
@@ -298,7 +301,7 @@ class BankPaymentList(models.Model):
         # expense.approve_expense_sheets()
         # expense.action_sheet_move_create()
 
-    def account_move_create(self):
+    def account_move_create(self, **kwargs): # TODO : İç transferlerde doviz farklı ise ...
         self.ensure_one()
         values = {
             'date': self.date,

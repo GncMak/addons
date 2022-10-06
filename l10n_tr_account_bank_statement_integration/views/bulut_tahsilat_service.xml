@@ -83,6 +83,7 @@
                         <group>
                             <field name="company_id" readonly="0"/>
                             <field name="journal_id"/>
+                            <field name="firm_bank_iban" readonly="1"/>
                             <field name="date" readonly="1"/>
                             <field name="reference_number" readonly="1"/>
                         </group>
@@ -96,12 +97,11 @@
 
                     <group>
                         <group>
+                            <field name="payment_type_id" readonly="0"/>
                             <field name="payment_type_explantion" readonly="0"/>
-                            <field name="explanation" />
-                            <field name="note"/>
                         </group>
                         <group>
-
+                            <field name="explanation" />
                         </group>
                     </group>
 
@@ -131,8 +131,6 @@
 
                     <group>
                         <group>
-                            <field name="payment_type_id" readonly="0"/>
-                            <field name="payment_status_type_explantion" readonly="1"/>
                             <field name="payment_status_type_id" readonly="1"/>
                             <field name="payment_status_type_explantion" readonly="1"/>
                         </group>
@@ -141,6 +139,7 @@
                             <field name="function_code1" readonly="1"/>
                             <field name="function_code2" readonly="1"/>
                             <field name="balance_after_transaction" readonly="1"/>
+                            <field name="note"/>
                         </group>
                     </group>
                 </sheet>
