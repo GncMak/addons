@@ -301,7 +301,41 @@ class BankPaymentList(models.Model):
         # expense.approve_expense_sheets()
         # expense.action_sheet_move_create()
 
-    def account_move_create(self, **kwargs): # TODO : İç transferlerde doviz farklı ise ...
+    def account_move_create(self, **kwargs):
+        # TODO : İç transferlerde doviz farklı ise ...
+        values = {
+            'date': '2022-10-06',
+            'ref': '{} Nolu {}'.format(13456, 'Virman'),
+            'journal_id': 260,
+            # 'currency_id': 3,
+            'partner_id': None,
+            'company_id': 5,
+            'payment_subtype': 'bank',
+            'line_ids': [
+                (0, 0, {
+                    'partner_id': None,
+                    'debit': float('%.2f' % 178517),
+                    'credit': float('%.2f' % 0),
+                    'account_id': 4334,
+                    'company_id': 5,
+                    'currency_id': 32,
+                    'amount_currency': ('%.2f' % 0)
+                }),
+                (0, 0, {
+                    'partner_id': None,
+                    'debit': float('%.2f' % 0),
+                    'credit': float('%.2f' % 178517),
+                    'account_id': 4335,
+                    'company_id': 5,
+                    'currency_id': 3,
+                    'amount_currency': float('%.2f' % -10000)
+                    # 'analytic_account_id': self.analytic_account_id.id if self.analytic_account_id else None,
+                })
+            ]
+        }
+        # TODO: Kapanış.
+
+
         self.ensure_one()
         values = {
             'date': self.date,
