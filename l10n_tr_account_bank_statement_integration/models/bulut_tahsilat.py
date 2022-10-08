@@ -184,7 +184,7 @@ class BankPaymentList(models.Model):
             if destination_journal:
                 payment_type = 'transfer'
                 if destination_journal.currency_id.id != self.currency_id.id:
-                    self.account_move_create()
+                    return self.account_move_create()
             else:
                 payment_type = self.amount > 0 and 'inbound' or 'outbound'
 
@@ -222,7 +222,6 @@ class BankPaymentList(models.Model):
                 'state': 'done',
                 'move_id': move_id.id
             })
-
 
     def payment_line_process(self):
         for line in self.search([('state', '=', 'draft')]):
@@ -302,7 +301,8 @@ class BankPaymentList(models.Model):
         # expense.action_sheet_move_create()
 
     def account_move_create(self, **kwargs):
-        # TODO : İç transferlerde doviz farklı ise ...
+        # TODO: İç transferlerde doviz farklı ise ...
+        # TODO: Eğer döviz işlemi ise, (company_id.currency_id != ise o zaman account.move.line da amount_currency ye doviz tutarı yazılıp, currency_id ye de bankadan gelen currency yazılmalı.
         values = {
             'date': '2022-10-06',
             'ref': '{} Nolu {}'.format(13456, 'Virman'),
@@ -334,7 +334,6 @@ class BankPaymentList(models.Model):
             ]
         }
         # TODO: Kapanış.
-
 
         self.ensure_one()
         values = {
