@@ -362,7 +362,7 @@ class BankPaymentList(models.Model):
                     'account_id': self.journal_id.default_debit_account_id.id if self.amount > 0 else self.journal_id.default_credit_account_id.id,
                     'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
                     'currency_id': self.currency_id.id,
-                    'amount_currency': (self.amount if self.amount > 0 else abs(self.amount)) if self.company_id.currency_id != self.currency_id else 0
+                    'amount_currency': (abs(self.amount) if self.amount > 0 else -abs(self.amount)) if self.company_id.currency_id != self.currency_id else 0
                 }),
                 (0, 0, {
                     'partner_id': self.partner_id.id if self.partner_id else None,
@@ -373,10 +373,11 @@ class BankPaymentList(models.Model):
                     'currency_id': self.currency_id.id,
                     'analytic_account_id': self.analytic_account_id.id if self.analytic_account_id else None,
                     'amount_currency': (
-                        -abs(self.amount) if self.amount > 0 else self.amount) if self.company_id.currency_id != self.currency_id else 0
+                        -abs(self.amount) if self.amount > 0 else abs(self.amount)) if self.company_id.currency_id != self.currency_id else 0
                 })
             ]
         }
+        # raise UserError(json.dumps(values))
         move_id = self.env['account.move'].create(values)
         self.write({
             'move_id': move_id.id,
