@@ -183,7 +183,7 @@ class BankPaymentList(models.Model):
                  ('company_id', '=', self.company_id.id)])
             if destination_journal:
                 payment_type = 'transfer'
-                if destination_journal.currency_id.id != self.currency_id.id:
+                if destination_journal.currency_id.id != self.currency_id.id or self.company_id == destination_journal.company_id:
                     return self.account_move_create()
             else:
                 payment_type = self.amount > 0 and 'inbound' or 'outbound'
@@ -303,6 +303,13 @@ class BankPaymentList(models.Model):
     def account_move_create(self, **kwargs):
         # TODO: İç transferlerde doviz farklı ise ...
         # TODO: Eğer döviz işlemi ise, (company_id.currency_id != ise o zaman account.move.line da amount_currency ye doviz tutarı yazılıp, currency_id ye de bankadan gelen currency yazılmalı.
+
+        destination_journal = self.env['account.journal'].search(
+            [('bank_account_id.acc_number', '=', self.sender_firm_bank_iban),
+             ('company_id', '=', self.company_id.id)])
+        if destination_journal:
+            account_id = destination_journal.default_credit_account_id.id if self.amount < 0 else destination_journal.default_debit_account_id.id
+
         values = {
             'date': '2022-10-06',
             'ref': '{} Nolu {}'.format(13456, 'Virman'),
@@ -336,6 +343,9 @@ class BankPaymentList(models.Model):
         # TODO: Kapanış.
 
         self.ensure_one()
+
+        # res_currency = self.env['res.currency'].with_context(date=self.date)
+
         values = {
             'date': self.date,
             'ref': '{} Nolu {}'.format(self.reference_number, self.payment_type_explantion),
@@ -346,24 +356,27 @@ class BankPaymentList(models.Model):
             'line_ids': [
                 (0, 0, {
                     'partner_id': self.partner_id.id if self.partner_id else None,
-                    'debit': self.amount if self.amount > 0 else 0.0,
-                    'credit': abs(self.amount) if self.amount < 0 else 0.0,
+                    'debit': (self.amount if self.amount > 0 else 0.0) if self.company_id.currency_id != self.currency_id else 0,
+                    'credit': (abs(self.amount) if self.amount < 0 else 0.0) if self.company_id.currency_id != self.currency_id else 0,
                     'account_id': self.journal_id.default_debit_account_id.id if self.amount > 0 else self.journal_id.default_credit_account_id.id,
                     'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
                     'currency_id': self.currency_id.id,
+                    'amount_currency': (self.amount if self.amount > 0 else abs(self.amount)) if self.company_id.currency_id != self.currency_id else 0
                 }),
                 (0, 0, {
                     'partner_id': self.partner_id.id if self.partner_id else None,
-                    'debit': abs(self.amount) if self.amount < 0 else 0.0,
-                    'credit': self.amount if self.amount > 0 else 0.0,
-                    'account_id': self.account_id.id,
+                    'debit': (abs(self.amount) if self.amount < 0 else 0.0) if self.company_id.currency_id != self.currency_id else 0,
+                    'credit': (self.amount if self.amount > 0 else 0.0) if self.company_id.currency_id != self.currency_id else 0,
+                    'account_id': account_id if destination_journal else self.account_id.id,
                     'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
                     'currency_id': self.currency_id.id,
                     'analytic_account_id': self.analytic_account_id.id if self.analytic_account_id else None,
+                    'amount_currency': (
+                        -abs(self.amount) if self.amount > 0 else self.amount) if self.company_id.currency_id != self.currency_id else 0
                 })
             ]
         }
-
+        raise UserError(json.dumps(values))
         move_id = self.env['account.move'].create(values)
         self.write({
             'move_id': move_id.id,
