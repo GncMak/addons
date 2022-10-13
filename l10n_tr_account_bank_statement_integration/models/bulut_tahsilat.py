@@ -56,7 +56,8 @@ class BankPaymentList(models.Model):
     function_code1 = fields.Char(string='FunctionCode1', copy=False)
     function_code2 = fields.Char(string='FunctionCode2', copy=False)
     balance_after_transaction = fields.Monetary(string='BalanceAfterTransaction', copy=False)
-
+    # attrs = "{'readonly': ['|',('partner_id', '!=', False), ('account_check_id', '!=', False)]}" (Account)
+    # attrs="{'readonly': ['|',('account_id', '!=', False), ('account_check_id', '!=', False)]}"  (Partner)
     """
     Ödeme tipi
         512: KREDİ
