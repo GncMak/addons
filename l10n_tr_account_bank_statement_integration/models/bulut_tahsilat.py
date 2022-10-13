@@ -357,7 +357,7 @@ class BankPaymentList(models.Model):
                 (0, 0, {
                     'partner_id': self.partner_id.id if self.partner_id else None,
                     'debit': (self.amount if self.amount > 0 else 0.0) if self.company_id.currency_id == self.currency_id else (res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount) if self.amount > 0 else 0.0),
-                    'credit': (abs(self.amount) if self.amount < 0 else 0.0) if self.company_id.currency_id == self.currency_id else (res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount) if self.amount < 0 else 0.0),
+                    'credit': (abs(self.amount) if self.amount < 0 else 0.0) if self.company_id.currency_id == self.currency_id else (abs(res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount)) if self.amount < 0 else 0.0),
                     'account_id': self.journal_id.default_debit_account_id.id if self.amount > 0 else self.journal_id.default_credit_account_id.id,
                     'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
                     'currency_id': self.currency_id.id,
@@ -365,8 +365,8 @@ class BankPaymentList(models.Model):
                 }),
                 (0, 0, {
                     'partner_id': self.partner_id.id if self.partner_id else None,
-                    'debit': (abs(self.amount) if self.amount < 0 else 0.0) if self.company_id.currency_id == self.currency_id else (res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount) if self.amount > 0 else 0.0),
-                    'credit': (self.amount if self.amount > 0 else 0.0) if self.company_id.currency_id == self.currency_id else (res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount) if self.amount < 0 else 0.0),
+                    'debit': (abs(self.amount) if self.amount < 0 else 0.0) if self.company_id.currency_id == self.currency_id else (abs(res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount)) if self.amount < 0 else 0.0),
+                    'credit': (self.amount if self.amount > 0 else 0.0) if self.company_id.currency_id == self.currency_id else (res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount) if self.amount > 0 else 0.0),
                     'account_id': account_id if destination_journal else self.account_id.id,
                     'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
                     'currency_id': self.currency_id.id,
