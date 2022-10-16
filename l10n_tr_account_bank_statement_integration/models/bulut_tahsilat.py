@@ -224,6 +224,22 @@ class BankPaymentList(models.Model):
                 'move_id': move_id.id
             })
 
+            if payment_type == 'transfer':
+                self.transfer_payment_update(self.sender_firm_bank_iban, self.firm_bank_iban, self.amount,
+                                             self.currency_id, move_id.id, payment.id)
+
+    def transfer_payment_update(self, iban, counter_iban, amount, currency_id, move_id, payment_id):
+        amount = -abs(amount) if amount > 0 else abs(amount)
+        counter_line = self.search(
+            ['&', '&', '&', '&', ('state', '=', 'draft'), ('firm_bank_iban', '=', iban), ('sender_firm_bank_iban', '=', counter_iban),
+             ('amount', '=', amount), ('currency_id', '=', currency_id.id)])
+        if counter_line:
+            counter_line.write({
+                'move_id': move_id,
+                'state': 'done',
+                'payment_id': payment_id,
+            })
+
     def payment_line_process(self):
         for line in self.search([('state', '=', 'draft')]):
             # TODO: Eğer Partner ve destination_journal boş olursa o zaman kredi/senet/Çek vs ödemesi gibi bir şeydir.
@@ -301,49 +317,13 @@ class BankPaymentList(models.Model):
         # expense.approve_expense_sheets()
         # expense.action_sheet_move_create()
 
-    def account_move_create(self, **kwargs):
-        # TODO: İç transferlerde doviz farklı ise ...
-        # TODO: Eğer döviz işlemi ise, (company_id.currency_id != ise o zaman account.move.line da amount_currency ye doviz tutarı yazılıp, currency_id ye de bankadan gelen currency yazılmalı.
-
+    def account_move_create(self):
+        self.ensure_one()
         destination_journal = self.env['account.journal'].search(
             [('bank_account_id.acc_number', '=', self.sender_firm_bank_iban),
              ('company_id', '=', self.company_id.id)])
         if destination_journal:
             account_id = destination_journal.default_credit_account_id.id if self.amount < 0 else destination_journal.default_debit_account_id.id
-
-        values = {
-            'date': '2022-10-06',
-            'ref': '{} Nolu {}'.format(13456, 'Virman'),
-            'journal_id': 260,
-            # 'currency_id': 3,
-            'partner_id': None,
-            'company_id': 5,
-            'payment_subtype': 'bank',
-            'line_ids': [
-                (0, 0, {
-                    'partner_id': None,
-                    'debit': float('%.2f' % 178517),
-                    'credit': float('%.2f' % 0),
-                    'account_id': 4334,
-                    'company_id': 5,
-                    'currency_id': 32,
-                    'amount_currency': ('%.2f' % 0)
-                }),
-                (0, 0, {
-                    'partner_id': None,
-                    'debit': float('%.2f' % 0),
-                    'credit': float('%.2f' % 178517),
-                    'account_id': 4335,
-                    'company_id': 5,
-                    'currency_id': 3,
-                    'amount_currency': float('%.2f' % -10000)
-                    # 'analytic_account_id': self.analytic_account_id.id if self.analytic_account_id else None,
-                })
-            ]
-        }
-        # TODO: Kapanış.
-
-        self.ensure_one()
 
         res_currency = self.env['res.currency'].with_context(date=self.date)
 
@@ -357,23 +337,22 @@ class BankPaymentList(models.Model):
             'line_ids': [
                 (0, 0, {
                     'partner_id': self.partner_id.id if self.partner_id else None,
-                    'debit': (self.amount if self.amount > 0 else 0.0) if self.company_id.currency_id == self.currency_id else (res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount) if self.amount > 0 else 0.0),
-                    'credit': (abs(self.amount) if self.amount < 0 else 0.0) if self.company_id.currency_id == self.currency_id else (abs(res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount)) if self.amount < 0 else 0.0),
+                    'debit': 0, # (self.amount if self.amount > 0 else 0.0) if self.company_id.currency_id == self.currency_id else (res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount) if self.amount > 0 else 0.0),
+                    'credit': 0, # (abs(self.amount) if self.amount < 0 else 0.0) if self.company_id.currency_id == self.currency_id else (abs(res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount)) if self.amount < 0 else 0.0),
                     'account_id': self.journal_id.default_debit_account_id.id if self.amount > 0 else self.journal_id.default_credit_account_id.id,
                     'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
                     'currency_id': self.currency_id.id,
-                    'amount_currency': (abs(self.amount) if self.amount > 0 else -abs(self.amount)) if self.company_id.currency_id != self.currency_id else 0
+                    'amount_currency': 0  #(abs(self.amount) if self.amount > 0 else -abs(self.amount)) if self.company_id.currency_id != self.currency_id else 0
                 }),
                 (0, 0, {
                     'partner_id': self.partner_id.id if self.partner_id else None,
-                    'debit': (abs(self.amount) if self.amount < 0 else 0.0) if self.company_id.currency_id == self.currency_id else (abs(res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount)) if self.amount < 0 else 0.0),
-                    'credit': (self.amount if self.amount > 0 else 0.0) if self.company_id.currency_id == self.currency_id else (res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount) if self.amount > 0 else 0.0),
+                    'debit': 0, #(abs(self.amount) if self.amount < 0 else 0.0) if self.company_id.currency_id == self.currency_id else (abs(res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount)) if self.amount < 0 else 0.0),
+                    'credit': 0, #(self.amount if self.amount > 0 else 0.0) if self.company_id.currency_id == self.currency_id else (res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount) if self.amount > 0 else 0.0),
                     'account_id': account_id if destination_journal else self.account_id.id,
                     'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
-                    'currency_id': self.currency_id.id,
+                    'currency_id': 3, #  self.currency_id.id,
                     'analytic_account_id': self.analytic_account_id.id if self.analytic_account_id else None,
-                    'amount_currency': (
-                        -abs(self.amount) if self.amount > 0 else abs(self.amount)) if self.company_id.currency_id != self.currency_id else 0
+                    'amount_currency': 5 #(-abs(self.amount) if self.amount > 0 else abs(self.amount)) if self.company_id.currency_id != self.currency_id else 0
                 })
             ]
         }
@@ -385,6 +364,10 @@ class BankPaymentList(models.Model):
         })
         if move_id:
             move_id.post()
+
+        if destination_journal:
+            self.transfer_payment_update(self.sender_firm_bank_iban, self.firm_bank_iban, self.amount, self.currency_id,
+                                         move_id.id, None)
 
     def check_payment(self):
 
