@@ -323,7 +323,7 @@ class BankPaymentList(models.Model):
             [('bank_account_id.acc_number', '=', self.sender_firm_bank_iban),
              ('company_id', '=', self.company_id.id)])
         if destination_journal:
-            account_id = destination_journal.default_credit_account_id.id if self.amount < 0 else destination_journal.default_debit_account_id.id
+            account_id = destination_journal.default_credit_account_id if self.amount < 0 else destination_journal.default_debit_account_id
 
         res_currency = self.env['res.currency'].with_context(date=self.date)
 
@@ -337,22 +337,22 @@ class BankPaymentList(models.Model):
             'line_ids': [
                 (0, 0, {
                     'partner_id': self.partner_id.id if self.partner_id else None,
-                    'debit': 0, # (self.amount if self.amount > 0 else 0.0) if self.company_id.currency_id == self.currency_id else (res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount) if self.amount > 0 else 0.0),
-                    'credit': 0, # (abs(self.amount) if self.amount < 0 else 0.0) if self.company_id.currency_id == self.currency_id else (abs(res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount)) if self.amount < 0 else 0.0),
+                    'debit': (self.amount if self.amount > 0 else 0.0) if self.company_id.currency_id == self.currency_id else (res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount) if self.amount > 0 else 0.0),
+                    'credit': (abs(self.amount) if self.amount < 0 else 0.0) if self.company_id.currency_id == self.currency_id else (abs(res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount)) if self.amount < 0 else 0.0),
                     'account_id': self.journal_id.default_debit_account_id.id if self.amount > 0 else self.journal_id.default_credit_account_id.id,
                     'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
-                    'currency_id': self.currency_id.id,
-                    'amount_currency': 0  #(abs(self.amount) if self.amount > 0 else -abs(self.amount)) if self.company_id.currency_id != self.currency_id else 0
+                    'currency_id': self.currency_id.id if self.journal_id.default_debit_account_id.currency_id == self.company_id.currency_id else None,
+                    'amount_currency': (abs(self.amount) if self.amount > 0 else -abs(self.amount)) if self.company_id.currency_id != self.currency_id else 0
                 }),
                 (0, 0, {
                     'partner_id': self.partner_id.id if self.partner_id else None,
-                    'debit': 0, #(abs(self.amount) if self.amount < 0 else 0.0) if self.company_id.currency_id == self.currency_id else (abs(res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount)) if self.amount < 0 else 0.0),
-                    'credit': 0, #(self.amount if self.amount > 0 else 0.0) if self.company_id.currency_id == self.currency_id else (res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount) if self.amount > 0 else 0.0),
-                    'account_id': account_id if destination_journal else self.account_id.id,
+                    'debit': (abs(self.amount) if self.amount < 0 else 0.0) if self.company_id.currency_id == self.currency_id else (abs(res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount)) if self.amount < 0 else 0.0),
+                    'credit': (self.amount if self.amount > 0 else 0.0) if self.company_id.currency_id == self.currency_id else (res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount) if self.amount > 0 else 0.0),
+                    'account_id': account_id.id if destination_journal else self.account_id.id,
                     'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
-                    'currency_id': 3, #  self.currency_id.id,
+                    'currency_id': account_id.currency_id.id if destination_journal else self.account_id.currency_id.id,
                     'analytic_account_id': self.analytic_account_id.id if self.analytic_account_id else None,
-                    'amount_currency': 5 #(-abs(self.amount) if self.amount > 0 else abs(self.amount)) if self.company_id.currency_id != self.currency_id else 0
+                    'amount_currency': ((-abs(self.amount) if self.amount > 0 else abs(self.amount)) if destination_journal.currency_id != self.currency_id else 0) if destination_journal else 0
                 })
             ]
         }
