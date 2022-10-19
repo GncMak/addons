@@ -30,6 +30,7 @@ class BankPaymentList(models.Model):
     name = fields.Char(string='Name', copy=False, help='')
     amount = fields.Monetary(digits=4, copy=False)
     date = fields.Date(required=True, copy=False, default=fields.Date.context_today, readonly=True)
+    payment_date = fields.Datetime(string='Payment Date', copy=False, default=fields.Datetime.now())
     statement_line_id = fields.Many2one(comodel_name='account.bank.statement.line', string='Statement Line', copy=False)
     note = fields.Text(string='Notes', copy=False)
     state = fields.Selection(selection=[('draft', 'Draft'), ('cancel', 'Cancelled'), ('done', 'Done')], string='Status', readonly=True)
@@ -135,6 +136,7 @@ class BankPaymentList(models.Model):
                     'company_id': journal.company_id.id,
                     'name': '{}-{}'.format(transaction.get('PaymentID', ''), transaction.get('ReferenceNumber', '')),
                     'date': datetime.date.strftime(transaction.get('PaymentDate', datetime.datetime.now()), '%Y-%m-%d'),
+                    'payment_date': datetime.datetime.strptime(transaction.get('PaymentDate', str(datetime.datetime.now())[:19]), '%Y-%m-%d %H:%M:%S'),
                     'amount': transaction.get('Amount', 0),
                     'currency_id': currency_id.id,
                     'partner_id': partner.id if partner else None,
@@ -325,7 +327,59 @@ class BankPaymentList(models.Model):
         if destination_journal:
             account_id = destination_journal.default_credit_account_id if self.amount < 0 else destination_journal.default_debit_account_id
 
-        res_currency = self.env['res.currency'].with_context(date=self.date)
+        res_currency = self.env['res.currency'].with_context(date=self.date, )
+
+        journal_line = {
+            'partner_id': self.partner_id.id if self.partner_id else None,
+            'account_id': self.journal_id.default_debit_account_id.id if self.amount > 0 else self.journal_id.default_credit_account_id.id,
+            'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
+        }
+
+        destination_line = {
+            'partner_id': self.partner_id.id if self.partner_id else None,
+            'account_id': account_id.id if destination_journal else self.account_id.id,
+            'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
+            # 'currency_id': account_id.currency_id.id if destination_journal else self.account_id.currency_id.id,
+            'analytic_account_id': self.analytic_account_id.id if self.analytic_account_id else None,
+            # 'amount_currency': ((-abs(self.amount) if self.amount > 0 else abs(
+            #     self.amount)) if destination_journal.currency_id != self.currency_id else 0) if destination_journal else 0
+        }
+
+        if self.amount > 0:
+            amount = self.amount if self.currency_id == self.company_id.currency_id else res_currency._compute(
+                self.currency_id, self.company_id.currency_id, self.amount)
+            journal_line.update({
+                'debit': amount,
+                'credit': 0
+            })
+            destination_line.update({
+                'debit': 0,
+                'credit': amount
+            })
+        else:
+            amount = abs(self.amount) if self.currency_id == self.company_id.currency_id else res_currency._compute(
+                self.currency_id, self.company_id.currency_id, abs(self.amount))
+            journal_line.update({
+                'debit': 0,
+                'credit': amount
+            })
+            destination_line.update({
+                'debit': amount,
+                'credit': 0
+            })
+
+        if self.journal_id.currency_id != self.company_id.currency_id:
+            journal_line.update({
+                'currency_id': self.currency_id.id,
+                'amount_currency': abs(self.amount) if self.amount > 0 else -abs(self.amount)
+            })
+
+        if destination_journal.currency_id != self.company_id.currency_id:
+            # işlem tr ise burada self.amount u dövzie çevireceğiz.
+            destination_line.update({
+                'currency_id': destination_journal.currency_id.id,
+                'amount_currency': -abs(self.amount) if self.amount > 0 else abs(self.amount)
+            })
 
         values = {
             'date': self.date,
@@ -334,27 +388,8 @@ class BankPaymentList(models.Model):
             'currency_id': self.currency_id.id,
             'partner_id': self.partner_id.id if self.partner_id else None,
             'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
-            'line_ids': [
-                (0, 0, {
-                    'partner_id': self.partner_id.id if self.partner_id else None,
-                    'debit': (self.amount if self.amount > 0 else 0.0) if self.company_id.currency_id == self.currency_id else (res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount) if self.amount > 0 else 0.0),
-                    'credit': (abs(self.amount) if self.amount < 0 else 0.0) if self.company_id.currency_id == self.currency_id else (abs(res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount)) if self.amount < 0 else 0.0),
-                    'account_id': self.journal_id.default_debit_account_id.id if self.amount > 0 else self.journal_id.default_credit_account_id.id,
-                    'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
-                    'currency_id': self.currency_id.id if self.journal_id.default_debit_account_id.currency_id == self.company_id.currency_id else None,
-                    'amount_currency': (abs(self.amount) if self.amount > 0 else -abs(self.amount)) if self.company_id.currency_id != self.currency_id else 0
-                }),
-                (0, 0, {
-                    'partner_id': self.partner_id.id if self.partner_id else None,
-                    'debit': (abs(self.amount) if self.amount < 0 else 0.0) if self.company_id.currency_id == self.currency_id else (abs(res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount)) if self.amount < 0 else 0.0),
-                    'credit': (self.amount if self.amount > 0 else 0.0) if self.company_id.currency_id == self.currency_id else (res_currency._compute(self.currency_id, self.company_id.currency_id, self.amount) if self.amount > 0 else 0.0),
-                    'account_id': account_id.id if destination_journal else self.account_id.id,
-                    'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
-                    'currency_id': account_id.currency_id.id if destination_journal else self.account_id.currency_id.id,
-                    'analytic_account_id': self.analytic_account_id.id if self.analytic_account_id else None,
-                    'amount_currency': ((-abs(self.amount) if self.amount > 0 else abs(self.amount)) if destination_journal.currency_id != self.currency_id else 0) if destination_journal else 0
-                })
-            ]
+            'line_ids': [(0, 0, journal_line), (0, 0, destination_line)]
+
         }
         # raise UserError(json.dumps(values))
         move_id = self.env['account.move'].create(values)
