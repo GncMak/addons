@@ -130,13 +130,17 @@ class BankPaymentList(models.Model):
                 #         [('bulut_tahsilat_expense_code', '=', transaction.get('FunctionCode1', False))])
                 # else:
                 #     product = None
-
+                #  2022-11-09 10:10:00
+                #  2000-10-15 15:15:00
+                #  2022-11-09 10:10:00
+                # raise UserError(transaction.get('PaymentDate'))
+                bulut_payment_date = str(transaction.get('PaymentDate', str(datetime.datetime.now())[:19])).strip()
                 payment_line = self.create({
                     'journal_id': journal.id,
                     'company_id': journal.company_id.id,
                     'name': '{}-{}'.format(transaction.get('PaymentID', ''), transaction.get('ReferenceNumber', '')),
                     'date': datetime.date.strftime(transaction.get('PaymentDate', datetime.datetime.now()), '%Y-%m-%d'),
-                    'payment_date': datetime.datetime.strptime(transaction.get('PaymentDate', str(datetime.datetime.now())[:19]), '%Y-%m-%d %H:%M:%S'),
+                    'payment_date': datetime.datetime.strptime(bulut_payment_date, '%Y-%m-%d %H:%M:%S'), # datetime.datetime.strptime(transaction.get('PaymentDate', str(datetime.datetime.now())[:19]), '%Y-%m-%d %H:%M:%S'),
                     'amount': transaction.get('Amount', 0),
                     'currency_id': currency_id.id,
                     'partner_id': partner.id if partner else None,

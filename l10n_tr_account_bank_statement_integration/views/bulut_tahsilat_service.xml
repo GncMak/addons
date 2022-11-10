@@ -2,18 +2,19 @@
 
 <odoo>
     <record id="action_bulut_tahsilat_service" model="ir.actions.act_window">
-    <field name="name">bulut.tahsilat.service</field>
-    <field name="type">ir.actions.act_window</field>
-    <field name="res_model">bulut.tahsilat.service</field>
-    <field name="view_mode">tree,form</field>
-    <field name="help" type="html">
-        <p class="o_view_nocontent_smiling_face">
-            Create a new Bulut Tahsilat Service <br/>
-        </p>
-        <p class="oe_view_nocontent_create">
-            No Bulut Tahsilat Service Record
-        </p>
-    </field>
+        <field name="name">bulut.tahsilat.service</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bulut.tahsilat.service</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Bulut Tahsilat Service
+                <br/>
+            </p>
+            <p class="oe_view_nocontent_create">
+                No Bulut Tahsilat Service Record
+            </p>
+        </field>
     </record>
 
     <record id="view_bulut_payment_line_filter" model="ir.ui.view">
@@ -26,10 +27,11 @@
                 <filter string="Expense" name="expense" domain="[('payment_type_id','=', 518)]"/>
                 <filter string="Transfer" name="transfer" domain="[('payment_type_id','=', 515)]"/>
                 <filter string="Account Check" name="account_check" domain="[('payment_type_id','in', [516,519])]"/>
-                <separator />
+                <separator/>
                 <group expand="0" string="Group By">
                     <filter string="Journal" name="groupby_journal" domain="[]" context="{'group_by':'journal_id'}"/>
-                    <filter string="Payment Type" name="groupby_payment_type" domain="[]" context="{'group_by':'payment_type_explantion'}"/>
+                    <filter string="Payment Type" name="groupby_payment_type" domain="[]"
+                            context="{'group_by':'payment_type_explantion'}"/>
                     <filter string="Currency" name="groupby_currency" domain="[]" context="{'group_by':'currency_id'}"/>
                 </group>
             </search>
@@ -60,7 +62,7 @@
                 <field name="amount"/>
                 <field name="currency_id"/>
                 <field name="reference_number"/>
-<!--                <field name="function_code1"/>-->
+                <!--                <field name="function_code1"/>-->
                 <field name="balance_after_transaction"/>
             </tree>
         </field>
@@ -73,10 +75,13 @@
             <form string="Views">
                 <header>
                     <field name="state" widget="statusbar"/>
-<!--                    <button string="Expense Create" name="expense_create" class="oe_highlight" type="object" attrs="{'invisible': ['|','|',('payment_type_id','!=', 518), ('state', '!=', 'draft'), ('expense_id', '!=', False)]}"/>-->
-                    <button string="Account Move Create" name="account_move_create" class="oe_highlight" type="object" attrs="{'invisible': ['|','|',('state', '!=', 'draft'), ('move_id', '!=', False), ('account_id', '=', False)]}"/>
-                    <button string="Payment Create" name="create_payment" class="oe_highlight" type="object" attrs="{'invisible': ['|','|',('state', '!=', 'draft'), ('partner_id', '=', False), ('payment_type_id', 'not in', (513,515))]}"/>
-                    <button string="Check Payment" name="check_payment" class="oe_highlight" type="object" attrs="{'invisible': ['|','|',('state', '!=', 'draft'), ('account_check_id', '=', False), ('payment_type_id', 'not in', (513,515))]}"/>
+                    <!--                    <button string="Expense Create" name="expense_create" class="oe_highlight" type="object" attrs="{'invisible': ['|','|',('payment_type_id','!=', 518), ('state', '!=', 'draft'), ('expense_id', '!=', False)]}"/>-->
+                    <button string="Account Move Create" name="account_move_create" class="oe_highlight" type="object"
+                            attrs="{'invisible': ['|','|',('state', '!=', 'draft'), ('move_id', '!=', False), ('account_id', '=', False)]}"/>
+                    <button string="Payment Create" name="create_payment" class="oe_highlight" type="object"
+                            attrs="{'invisible': ['|','|',('state', '!=', 'draft'), ('partner_id', '=', False), ('payment_type_id', 'not in', (513,515))]}"/>
+                    <button string="Check Payment" name="check_payment" class="oe_highlight" type="object"
+                            attrs="{'invisible': ['|','|',('state', '!=', 'draft'), ('account_check_id', '=', False), ('payment_type_id', 'not in', (513,515))]}"/>
                 </header>
                 <sheet>
                     <group>
@@ -101,31 +106,35 @@
                             <field name="payment_type_explantion" readonly="0"/>
                         </group>
                         <group>
-                            <field name="explanation" />
+                            <field name="explanation"/>
                         </group>
                     </group>
 
                     <group>
                         <group>
-                            <field name="partner_id" attrs="{'readonly': ['|',('account_id', '!=', False), ('account_check_id', '!=', False)]}"/>
-<!--                            <field name="partner_id" attrs="{'invisible': [('payment_type_id','=', 518)], 'readonly': [('account_id', '!=', False)]}"/>-->
+                            <field name="partner_id"
+                                   attrs="{'readonly': ['|',('account_id', '!=', False), ('account_check_id', '!=', False)]}"/>
+                            <!--                            <field name="partner_id" attrs="{'invisible': [('payment_type_id','=', 518)], 'readonly': [('account_id', '!=', False)]}"/>-->
                             <field name="sender_firm_name" readonly="1"/>
                             <field name="sender_firm_id" readonly="1"/>
                             <field name="sender_firm_code" readonly="1"/>
                             <field name="sender_firm_bank_iban" readonly="1"/>
                         </group>
-<!--                        <group>-->
-<!--                            <field name="expense_id" attrs="{'invisible': [('payment_type_id','!=', 518)]}" readonly="1" />-->
-<!--                            <field name="product_id" attrs="{'invisible': [('payment_type_id','!=', 518)]}" domain="[('can_be_expensed', '=', True)]"/>-->
-<!--                        </group>-->
-                         <group>
+                        <!--                        <group>-->
+                        <!--                            <field name="expense_id" attrs="{'invisible': [('payment_type_id','!=', 518)]}" readonly="1" />-->
+                        <!--                            <field name="product_id" attrs="{'invisible': [('payment_type_id','!=', 518)]}" domain="[('can_be_expensed', '=', True)]"/>-->
+                        <!--                        </group>-->
+                        <group>
                             <field name="payment_id" readonly="1"/>
                             <field name="move_id" readonly="1"/>
-                            <field name="account_check_id" attrs="{'readonly': ['|',('partner_id', '!=', False),('account_id', '!=', False)]}"/>
-                            <field name="account_id" attrs="{'readonly': ['|',('partner_id', '!=', False), ('account_check_id', '!=', False)]}"/>
-                            <field name="analytic_account_id" attrs="{'readonly': ['|',('partner_id', '!=', False), ('account_check_id', '!=', False)]}"/>
-<!--                             <field name="account_id" attrs="{'readonly': [('partner_id', '!=', False)]}"/>-->
-<!--                            <field name="analytic_account_id" attrs="{'readonly': [('partner_id', '!=', False)]}"/>-->
+                            <field name="account_check_id"
+                                   attrs="{'readonly': ['|',('partner_id', '!=', False),('account_id', '!=', False)]}"/>
+                            <field name="account_id"
+                                   attrs="{'readonly': ['|',('partner_id', '!=', False), ('account_check_id', '!=', False)]}"/>
+                            <field name="analytic_account_id"
+                                   attrs="{'readonly': ['|',('partner_id', '!=', False), ('account_check_id', '!=', False)]}"/>
+                            <!--                             <field name="account_id" attrs="{'readonly': [('partner_id', '!=', False)]}"/>-->
+                            <!--                            <field name="analytic_account_id" attrs="{'readonly': [('partner_id', '!=', False)]}"/>-->
                         </group>
                     </group>
 
@@ -147,9 +156,13 @@
         </field>
     </record>
 
-    <menuitem id="menu_bulut_tahsilat_service" name="Bulut Tahsilat Service" parent="base.menu_administration" action="action_bulut_tahsilat_service" sequence="20" groups="account.group_account_user"/>
-    <menuitem id="menu_bulut_tahsilat_service_main" name="Bulut Tahsilat Service" parent="account.menu_finance_entries" sequence="90" groups="account.group_account_user"/>
-    <menuitem id="menu_bulut_tahsilat_payment_line_form" action="action_bulut_tahsilat_payment_line_form" name="Bulut Tahsilat Payment Line" parent="menu_bulut_tahsilat_service_main" sequence="10" groups="account.group_account_user"/>
+    <menuitem id="menu_bulut_tahsilat_service" name="Bulut Tahsilat Service" parent="base.menu_administration"
+              action="action_bulut_tahsilat_service" sequence="20" groups="account.group_account_user"/>
+    <menuitem id="menu_bulut_tahsilat_service_main" name="Bulut Tahsilat Service" parent="account.menu_finance_entries"
+              sequence="90" groups="account.group_account_user"/>
+    <menuitem id="menu_bulut_tahsilat_payment_line_form" action="action_bulut_tahsilat_payment_line_form"
+              name="Bulut Tahsilat Payment Line" parent="menu_bulut_tahsilat_service_main" sequence="10"
+              groups="account.group_account_user"/>
 
     <record id="ir_cron_bank_payment_line_add" model="ir.cron">
         <field name="name">Bulut Bank Payment Line Add</field>
