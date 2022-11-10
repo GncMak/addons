@@ -134,7 +134,7 @@ class BankPaymentList(models.Model):
                 #  2000-10-15 15:15:00
                 #  2022-11-09 10:10:00
                 # raise UserError(transaction.get('PaymentDate'))
-                bulut_payment_date = str(transaction.get('PaymentDate', str(datetime.datetime.now())[:19])).strip()
+                bulut_payment_date = str(transaction.get('PaymentDate', str(datetime.datetime.now())[:19])).strip()[:19]
                 payment_line = self.create({
                     'journal_id': journal.id,
                     'company_id': journal.company_id.id,
