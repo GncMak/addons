@@ -372,7 +372,7 @@ class BankPaymentList(models.Model):
                 'credit': 0
             })
 
-        if self.journal_id.currency_id != self.company_id.currency_id:
+        if self.journal_id.currency_id and self.journal_id.currency_id != self.company_id.currency_id:
             journal_line.update({
                 'currency_id': self.currency_id.id,
                 'amount_currency': abs(self.amount) if self.amount > 0 else -abs(self.amount)
