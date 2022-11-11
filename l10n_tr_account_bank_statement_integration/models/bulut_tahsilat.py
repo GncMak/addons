@@ -378,8 +378,8 @@ class BankPaymentList(models.Model):
                 'amount_currency': abs(self.amount) if self.amount > 0 else -abs(self.amount)
             })
 
-        if destination_journal.currency_id != self.company_id.currency_id:
-            # işlem tr ise burada self.amount u dövzie çevireceğiz.
+        if destination_journal and destination_journal.currency_id != self.company_id.currency_id:
+            # işlem tr ise burada self.amount u dövize çevireceğiz.
             destination_line.update({
                 'currency_id': destination_journal.currency_id.id,
                 'amount_currency': -abs(self.amount) if self.amount > 0 else abs(self.amount)
