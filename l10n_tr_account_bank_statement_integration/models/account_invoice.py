@@ -16,6 +16,7 @@ class AccountInvoice(models.Model):
     def bulut_tahsilat_payment(self):
         """
         Fatura için Bulut Tahsilat sisteminde ödeme linki oluşturma
+        BulutPOS u şimdilik kullanmayacakları için bu kısım aktif edilmedi.
         """
         self.ensure_one()
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')

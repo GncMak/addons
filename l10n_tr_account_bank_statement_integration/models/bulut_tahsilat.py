@@ -389,7 +389,7 @@ class BankPaymentList(models.Model):
             'date': self.date,
             'ref': '{} Nolu {}'.format(self.reference_number, self.payment_type_explantion),
             'journal_id': self.journal_id.id,
-            'currency_id': self.currency_id.id,
+            # 'currency_id': self.currency_id.id,
             'partner_id': self.partner_id.id if self.partner_id else None,
             'company_id': self.journal_id.company_id.id if self.journal_id.company_id else None,
             'line_ids': [(0, 0, journal_line), (0, 0, destination_line)]
@@ -409,24 +409,26 @@ class BankPaymentList(models.Model):
                                          move_id.id, None)
 
     def check_payment(self):
-
         bank_statement = self.env['account.bank.statement.line']
+        check = self.account_check_id
+        account_check_action = self.env['account.check.action'].with_context(action_type='deposit')
+
+
+
         # data = {
         #     'counterpart_aml_dicts': '',
         #     'payment_aml_ids': self.account_check_id.deposit_account_move_id.line_ids
         # }
         # bank_statement.process_reconciliations(data)
-        pass
+
         # account_check_action = self.env['account.check.action'].with_context(action_type='deposit')
         # context = dict(self.env.context)
         # context.setdefault('active_ids', [self.account_check_id.id])
         # account_check_action.with_context(context).action_confirm()
-
         # return super(account_check_action, account_check_action.with_context(context)).action_confirm()
-
         # account_check_action.action_confirm()
-
         # self.account_check_id.action_credit()
+        pass
 
 
 class BulutTahsilatSettings(models.Model):
