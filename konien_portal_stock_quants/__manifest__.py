@@ -15,7 +15,6 @@
         'views/res_config_settings_views.xml',
         'security/ir.model.access.csv'
     ],
-    'images': ['images/main_screenshot.png'],
     'demo': [],
     'price': 49,
     'currency': 'EUR',
