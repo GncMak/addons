@@ -1,0 +1,77 @@
+<odoo>
+    <template id="portal_my_home_menu_quants" name="Portal layout : quants menu entries"
+                inherit_id="portal.portal_layout" priority="30">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'quant'" class="active">
+                <a t-if="quant" t-attf-href="/my/quants?{{ keep_query() }}">Quants</a>
+                <t t-else="">Quants</t>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_quants" name="Portal My Home : stock quants" inherit_id="portal.portal_my_home"
+                priority="30">
+        <xpath expr="//ul[hasclass('o_portal_docs')]" position="inside">
+            <li t-if="quant_count" class="list-group-item">
+                <span class="badge" t-esc="quant_count"/>
+                <a href="/my/quants">Quants</a>
+            </li>
+            <li t-if="incoming_count" class="list-group-item">
+                <span class="badge" t-esc="incoming_count"/>
+                <a href="/my/incoming">Incoming Products</a>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_stock_quants" name="Stock Quants">
+        <t t-call="portal.portal_layout">
+            <h3><span t-esc="title"/>
+                <t t-call="portal.portal_searchbar"/>
+            </h3>
+            <t t-if="not stock_quants">
+                <p>There are currently no quants or incoming product.</p>
+            </t>
+            <div t-if="stock_quants" class="panel panel-default">
+                <div class="table-responsive"><table class="table table-hover o_portal_my_doc_table">
+                    <thead>
+                        <tr class="active">
+                            <th>Product</th>
+                            <th>Default Code</th>
+                            <th>Seri</th>
+                            <th>Quantity</th>
+                            <th>UOM</th>
+                        </tr>
+                    </thead>
+                    <t t-foreach="stock_quants" t-as="quant">
+                        <tr>
+                            <td>
+                                <a t-attf-href="/my/product/#{quant.product_id.id}?#{keep_query()}">
+                                    <t t-esc="quant.product_id.name"/>
+                                </a>
+                            </td>
+                            <td><span t-field="quant.product_id.default_code"/></td>
+                            <td>
+                                <t t-if="'lot_id' in quant">
+                                    <span t-field="quant.lot_id"/>
+                                </t>
+                                <t t-else=""> - </t>
+                            </td>
+                            <td>
+                                <t t-if="'quantity' in quant">
+                                    <span t-field="quant.quantity"/>
+                                </t>
+                                <t t-if="'product_qty' in quant">
+                                    <span t-field="quant.product_qty"/>
+                                </t>
+                            </td>
+                            <td><span t-field="quant.product_tmpl_id.uom_id.name"/></td>
+                        </tr>
+                    </t>
+                </table></div>
+                <div t-if="pager" class="o_portal_pager text-center">
+                    <t t-call="portal.pager"/>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

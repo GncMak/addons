@@ -1,0 +1,46 @@
+<odoo>
+    <template id="portal_my_product" name="Product">
+        <t t-call="portal.portal_layout">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <div class="row">
+                        <div class="col-md-10 text-justify">
+                            <h3>
+                                <span t-esc="product.name"/>
+                            </h3>
+                        </div>
+                        <div class="col-md-2">
+                            <span t-field="product.image_medium"
+                                  t-options='{"widget": "image", "class": "img-thumbnail", "alt-field": "name" }'/>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="o_event_table table table-striped">
+                            <tr>
+                                <td>Default Code</td>
+                                <td><span t-esc="product.default_code"/></td>
+                            </tr>
+                            <tr>
+                                <td>Barcode</td>
+                                <td><span t-esc="product.barcode"/></td>
+                            </tr>
+                            <t t-if="product.attribute_value_ids">
+                                <t t-foreach="product.attribute_value_ids" t-as="attr">
+                                    <tr>
+                                        <td colspan="2"><span t-esc="attr.display_name"/></td>
+                                    </tr>
+                                </t>
+                            </t>
+                            <tr>
+                                <td>Description</td>
+                                <td><span t-esc="product.description_sale"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
