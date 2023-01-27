@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="project_task_timer_action_wizard_form_view">
+        <field name="name">project.task.timer.action.wizard.form.view</field>
+        <field name="model">project.task.timer.action.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Timer Action">
+                <field name="action_type" invisible="1"/>
+                <group >
+                    <field name="process_type"  options="{'color_field': 'color', 'no_create_edit': True}"/>
+                </group>
+                <footer>
+                    <button string="Confirm" name="action_confirm" type="object" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_project_task_timer_action_wizard" model="ir.actions.act_window">
+        <field name="name">Timer Action</field>
+        <field name="res_model">project.task.timer.action.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <record id="view_project_task_timer_tree" model="ir.ui.view">
+        <field name="name">view.project.task.timer.tree</field>
+        <field name="model">task.timer</field>
+        <field name="arch" type="xml">
+            <tree string="Bank Payment Line">
+                <field name="task_id"/>
+                <field name="user_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="duration" widget="float_time"/>
+                <field name="process_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_project_task_timer_form" model="ir.ui.view">
+        <field name="name">view.project.task.timer.form</field>
+        <field name="model">task.timer</field>
+        <field name="arch" type="xml">
+            <form string="Views">
+                <sheet>
+                    <group>
+                    <field name="task_id"/>
+                    <field name="user_id"/>
+                    </group>
+                    <group>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="duration" widget="float_time"/>
+                    <field name="process_type"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="view_task_timer_process_type_tree">
+            <field name="name">view.task.timer.process.type.tree</field>
+            <field name="model">task.timer.process.type</field>
+            <field name="priority">100</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+    <record model="ir.actions.act_window" id="action_task_timer_process_types">
+            <field name="name">Task Process Types</field>
+            <field name="res_model">task.timer.process.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="" />
+            <field name="view_id" ref="view_task_timer_process_type_tree" />
+        </record>
+
+    <menuitem id="menu_task_timer_process_types" name="Task Timer Types" sequence="50" parent="hr_timesheet.hr_timesheet_menu_configuration" />
+
+    <menuitem action="action_task_timer_process_types" id="menu_task_timer_process_type" sequence="20" parent="menu_task_timer_process_types" />
+
+</odoo>
