@@ -14,7 +14,7 @@ class ProjectTaskTimerActionWizard(models.TransientModel):
 
     action_type = fields.Char('Action type passed on the context', required=True)
     end_date = fields.Datetime(string='End Date')
-    process_type = fields.Many2one('task.timer.process.type', 'Type')
+    process_type = fields.Many2one('task.timer.process.type', 'Type', required=True)
     task_timer_ids = fields.One2many('task.timer', 'task_id', 'task timers')
 
     def action_confirm(self):

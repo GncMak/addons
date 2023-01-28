@@ -14,8 +14,8 @@ class ProjectTask(models.Model):
     _inherit = 'project.task'
 
     task_timer_ids = fields.One2many('task.timer', 'task_id', 'task timers')
-    start_date_hide = fields.Boolean(string='hide start button', compute='_compute_hide_start_button')
-    end_date_hide = fields.Boolean(string='hide end button', compute='_compute_hide_end_button')
+    start_date_hide = fields.Boolean(string='hide start button', compute='_compute_hide_start_button', default=False)
+    end_date_hide = fields.Boolean(string='hide end button', compute='_compute_hide_end_button', default=False)
 
     # @api.model
     # def fields_view_get(self, view_id=None, view_type='form', toolbar=False, submenu=False):
@@ -42,12 +42,12 @@ class ProjectTask(models.Model):
     def _compute_hide_start_button(self):
         for task in self:
             task_timer = self.env['task.timer'].search([
-                ('task_id', '=', task.id),
+                # ('task_id', '=', task.id),
                 ('employee_id', '=', task.env.user.employee_ids[0].id),
                 ('end_date', '=', False),
                 ('time_sheet_include', '=', False)
             ])
-            if task_timer:
+            if not task_timer:
                 task.start_date_hide = True
                 task.end_date_hide = False
 
@@ -56,12 +56,15 @@ class ProjectTask(models.Model):
     def _compute_hide_end_button(self):
         for task in self:
             task_timer = self.env['task.timer'].search(
-                [('task_id', '=', task.id),('employee_id', '=', task.env.user.employee_ids[0].id), ('end_date', '=', False), ('time_sheet_include', '=', False)])
-            if not task_timer:
+                [('task_id', '=', task.id),
+                 ('employee_id', '=', task.env.user.employee_ids[0].id),
+                 ('end_date', '=', False),
+                 ('time_sheet_include', '=', False)])
+            if task_timer:
                 task.start_date_hide = False
                 task.end_date_hide = True
-            if task.id != task_timer.id:
-                task.end_date_hide = True
+            # if task.id != task_timer.id:
+            #     task.end_date_hide = True
 
     # ('task_id', '=', task.id),
     def start_task(self):
