@@ -30,7 +30,7 @@ class TaskTimer(models.Model):
     time_sheet_include = fields.Boolean(string='Time Sheet Include', default=False)
     timesheet_id = fields.Many2one('account.analytic.line', 'TimeSheet')
 
-    def unlink(self):
-        for timer in self:
-            timer.timesheet_id.unlink()
-        return super(TaskTimer, self).unlink()
+    # def unlink(self):
+    #     for timer in self:
+    #         timer.timesheet_id.unlink()
+    #     return super(TaskTimer, self).unlink()

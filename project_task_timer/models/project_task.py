@@ -10,12 +10,13 @@ _logger = logging.getLogger(__name__)
 # TODO : Personelin açık timer ı varsa, başka göreve start yapamasın.
 # access_account_analytic_line_user,access.account.analytic.line.user,model_account_analytic_line,project.group_project_user,1,1,1,0
 
+
 class ProjectTask(models.Model):
     _inherit = 'project.task'
 
     task_timer_ids = fields.One2many('task.timer', 'task_id', 'task timers')
-    start_date_hide = fields.Boolean(string='hide start button', compute='_compute_hide_start_button', default=False)
-    end_date_hide = fields.Boolean(string='hide end button', compute='_compute_hide_end_button', default=False)
+    start_date_hide = fields.Boolean(string='hide start button', default=False)
+    end_date_hide = fields.Boolean(string='hide end button', default=False)
 
     # @api.model
     # def fields_view_get(self, view_id=None, view_type='form', toolbar=False, submenu=False):
@@ -38,6 +39,7 @@ class ProjectTask(models.Model):
     #     res = super(ProjectTask, self).default_get(fields)
     #     return res
 
+    # ('task_id', '=', task.id),
     @api.depends('task_timer_ids')
     def _compute_hide_start_button(self):
         for task in self:
@@ -66,8 +68,30 @@ class ProjectTask(models.Model):
             # if task.id != task_timer.id:
             #     task.end_date_hide = True
 
+    def _open_task_timer(self):
+        task_timer = self.env['task.timer'].search([
+            # ('task_id', '=', task.id),
+            ('employee_id', '=', self.env.user.employee_ids[0].id),
+            ('end_date', '=', False),
+            ('start_date', '!=', False),
+            ('time_sheet_include', '=', False)
+        ], limit=1)
+        return task_timer
+
     # ('task_id', '=', task.id),
     def start_task(self):
+        open_task_timer = self.env['task.timer'].search([
+            # ('task_id', '=', task.id),
+            ('employee_id', '=', self.env.user.employee_ids[0].id),
+            ('end_date', '=', False),
+            ('start_date', '!=', False),
+            ('time_sheet_include', '=', False)
+        ], limit=1)
+        if open_task_timer:
+            # _compute etmeyelim. Methottan dönen duruma göre Use Warning Verelim.
+            raise UserError(f"""{open_task_timer.task_id.name} iş emrinde zamanı başlatmışsınız,
+            Öncelikle açık iş emrini sonlandırmalısınız.
+            Onu sonlandırdıktan sonra bu görevde zamanı başlatabilirsiniz""")
         self.ensure_one()
         task_timer = self.env['task.timer']
         timer = task_timer.search([('task_id', '=', self.id), ('employee_id', '=', self.env.user.employee_ids[0].id), ('end_date', '=', False)])
@@ -80,6 +104,17 @@ class ProjectTask(models.Model):
 
     def end_task(self):
         self.ensure_one()
+        open_task_timer = self.env['task.timer'].search([
+            ('task_id', '=', self.id),
+            ('employee_id', '=', self.env.user.employee_ids[0].id),
+            ('end_date', '=', False),
+            ('start_date', '!=', False),
+            ('time_sheet_include', '=', False)
+        ])
+
+        if open_task_timer.task_id.id != self.id:
+            raise UserError(f"""Henüz başlatılmamış iş emri için sonlandırma yapamazsınız.""")
+
         end_date = self._context.get('end_date')
         process_type = self._context.get('process_type')
         task_timer = self.env['task.timer']

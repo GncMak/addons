@@ -6,8 +6,8 @@
         <field name="inherit_id" ref="project.view_task_form2"/>
         <field name="arch" type="xml">
             <xpath expr="//header" position="inside">
-                <button name="start_task" type="object" string=" Start" class="btn text-success fa fa-play" style="background-color:#29B6F6;color:white" groups="base.group_user" attrs="{'invisible':[('start_date_hide', '=', False)]}"/>
-                <button context="{'default_action_type': 'end_task'}" name="%(action_project_task_timer_action_wizard)d" type="action" string="  End" class="btn text-danger fa fa-stop" style="background-color:#F44336;color:white" groups="base.group_user" attrs="{'invisible':[('end_date_hide', '=', False)]}"/>
+                <button name="start_task" type="object" string=" Start" class="btn text-success fa fa-play" style="background-color:#29B6F6;color:white" groups="base.group_user" />
+                <button context="{'default_action_type': 'end_task'}" name="%(action_project_task_timer_action_wizard)d" type="action" string="  End" class="btn text-danger fa fa-stop" style="background-color:#F44336;color:white" groups="base.group_user"/>
             </xpath>
 
             <xpath expr="//notebook/page[last()]" position="after">
@@ -28,4 +28,32 @@
 
         </field>
     </record>
+
+    <record id="view_project_task_timer_filter" model="ir.ui.view">
+        <field name="name">view.project.task.timer.filter</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_search_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='my_tasks']" position="before">
+                <filter string="Open Timer" name="open_timer" domain="[('task_timer_ids.time_sheet_include','!=','False')]"/>
+                <separator/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_project_task_timer_kanban_inherit" model="ir.ui.view">
+        <field name="name">view.project.task.timer.kanban.inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div/div/field[@name='activity_ids']" position="after">
+                <field name="start_date_hide" invisible="1"/>
+                <field name="end_date_hide" invisible="1"/>
+                <button name="start_task" type="object" string=" Start" class="btn text-success fa fa-play" attrs="{'invisible':[('start_date_hide', '=', False)]}" style="background-color:#29B6F6;color:white" groups="base.group_user" title="Run task" aria-label="Run task"/>
+                <button context="{'default_action_type': 'end_task'}" name="%(action_project_task_timer_action_wizard)d" type="action" string="  End" attrs="{'invisible':[('end_date_hide', '=', False)]}" class="btn text-danger fa fa-stop" style="background-color:#F44336;color:white" groups="base.group_user" title="End task" aria-label="End task"/>
+          </xpath>
+
+        </field>
+    </record>
+
 </odoo>
