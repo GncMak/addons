@@ -1,0 +1,223 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* project_task_timer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20210922\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-29 22:00+0000\n"
+"PO-Revision-Date: 2023-01-30 01:05+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 3.0\n"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_project_task_timer_action_wizard_action_type
+msgid "Action type passed on the context"
+msgstr "Gönderilen işlem tipi"
+
+#. module: project_task_timer
+#: model:ir.model,name:project_task_timer.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Analitik Satırı"
+
+#. module: project_task_timer
+#: model:ir.ui.view,arch_db:project_task_timer.view_project_task_timer_tree
+msgid "Bank Payment Line"
+msgstr "Banka Ödeme Satırı"
+
+#. module: project_task_timer
+#: model:ir.ui.view,arch_db:project_task_timer.project_task_timer_action_wizard_form_view
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: project_task_timer
+#: model:ir.ui.view,arch_db:project_task_timer.project_task_timer_action_wizard_form_view
+msgid "Confirm"
+msgstr "Onayla"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_project_task_timer_action_wizard_create_uid
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_create_uid
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_process_type_create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_project_task_timer_action_wizard_create_date
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_create_date
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_process_type_create_date
+msgid "Created on"
+msgstr "Oluşturulma Tarihi"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_project_task_timer_action_wizard_display_name
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_display_name
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_process_type_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_duration
+msgid "Duration"
+msgstr "Süre"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_employee_id
+msgid "Employee"
+msgstr "Personel"
+
+#. module: project_task_timer
+#: model:ir.ui.view,arch_db:project_task_timer.view_project_task_timer_form_inherit
+msgid "End"
+msgstr "Bitir"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_project_task_timer_action_wizard_end_date
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_end_date
+msgid "End Date"
+msgstr "Bitiş Tarihi"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_project_task_timer_action_wizard_id
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_id
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_process_type_id
+msgid "ID"
+msgstr "Kimlik"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_project_task_timer_action_wizard___last_update
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer___last_update
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_process_type___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_project_task_timer_action_wizard_write_uid
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_process_type_write_uid
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_project_task_timer_action_wizard_write_date
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_process_type_write_date
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_process_type_name
+msgid "Name"
+msgstr "İsim"
+
+#. module: project_task_timer
+#: model:ir.ui.view,arch_db:project_task_timer.view_project_task_timer_form_inherit
+msgid "Start"
+msgstr "Başla"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_start_date
+msgid "Start Date"
+msgstr "Başlangıç Tarihi"
+
+#. module: project_task_timer
+#: model:ir.model,name:project_task_timer.model_project_task
+msgid "Task"
+msgstr "Görev"
+
+#. module: project_task_timer
+#: model:ir.actions.act_window,name:project_task_timer.action_task_timer_process_types
+#: model:ir.ui.menu,name:project_task_timer.menu_task_timer_process_type
+msgid "Task Process Types"
+msgstr "Görev İşlem Türleri"
+
+#. module: project_task_timer
+#: model:ir.model,name:project_task_timer.model_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_account_analytic_line_task_timer_id
+msgid "Task Timer"
+msgstr "Görev Zamanlayıcısı"
+
+#. module: project_task_timer
+#: model:ir.model,name:project_task_timer.model_task_timer_process_type
+msgid "Task Timer Process Type"
+msgstr "Görev Zamanlayıcısı İşlem Türü"
+
+#. module: project_task_timer
+#: model:ir.ui.menu,name:project_task_timer.menu_task_timer_process_types
+msgid "Task Timer Types"
+msgstr "Zaman Türleri"
+
+#. module: project_task_timer
+#: model:ir.model,name:project_task_timer.model_project_task_timer_action_wizard
+msgid "Task Timer Wizard"
+msgstr "Görev Zamanlayıcı Sihirbazı"
+
+#. module: project_task_timer
+#: model:ir.ui.view,arch_db:project_task_timer.view_project_task_timer_form_inherit
+msgid "Task Timers"
+msgstr "Görev Zamanlayıcıları"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_time_sheet_include
+msgid "Time Sheet Include"
+msgstr "Zaman Çizelgesi Dahil"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_timesheet_id
+msgid "TimeSheet"
+msgstr "Zaman Çizelgesi"
+
+#. module: project_task_timer
+#: model:ir.actions.act_window,name:project_task_timer.action_project_task_timer_action_wizard
+#: model:ir.ui.view,arch_db:project_task_timer.project_task_timer_action_wizard_form_view
+msgid "Timer Action"
+msgstr "Zamanlayıcı Eylemi"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_project_task_timer_action_wizard_process_type
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_process_type
+msgid "Type"
+msgstr "Tür"
+
+#. module: project_task_timer
+#: model:ir.ui.view,arch_db:project_task_timer.view_project_task_timer_form
+msgid "Views"
+msgstr "Görünümler"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_project_task_end_date_hide
+msgid "hide end button"
+msgstr "Bitiş Düğmesini Gizle"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_project_task_start_date_hide
+msgid "hide start button"
+msgstr "Başlat Düğmesini Gizle"
+
+#. module: project_task_timer
+#: model:ir.ui.view,arch_db:project_task_timer.project_task_timer_action_wizard_form_view
+msgid "or"
+msgstr "veya"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_task_id
+msgid "task"
+msgstr "Görev"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_project_task_task_timer_ids
+#: model:ir.model.fields,field_description:project_task_timer.field_project_task_timer_action_wizard_task_timer_ids
+msgid "task timers"
+msgstr "Görev Zamanlayıcıları"
+
+#. module: project_task_timer
+#: model:ir.model.fields,field_description:project_task_timer.field_task_timer_user_id
+msgid "user"
+msgstr "Kullanıcı"
