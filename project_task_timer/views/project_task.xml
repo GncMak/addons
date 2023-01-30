@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//header" position="inside">
                 <button name="start_task" type="object" string=" Start" class="btn text-success fa fa-play" style="background-color:#29B6F6;color:white" groups="base.group_user" />
-                <button context="{'default_action_type': 'end_task'}" name="%(action_project_task_timer_action_wizard)d" type="action" string="  End" class="btn text-danger fa fa-stop" style="background-color:#F44336;color:white" groups="base.group_user"/>
+                <button context="{'default_action_type': 'end_task'}" name="%(action_project_task_timer_action_wizard)d" type="action" string="  End" class="btn text-danger fa fa-stop" style="background-color:#F44336;color:white" groups="base.group_user" attrs="{'invisible':[('end_date_hide', '=', False)]}"/>
             </xpath>
 
             <xpath expr="//notebook/page[last()]" position="after">
@@ -49,11 +49,14 @@
             <xpath expr="//div/div/field[@name='activity_ids']" position="after">
                 <field name="start_date_hide" invisible="1"/>
                 <field name="end_date_hide" invisible="1"/>
-                <button name="start_task" type="object" string=" Start" class="btn text-success fa fa-play" attrs="{'invisible':[('start_date_hide', '=', False)]}" style="background-color:#29B6F6;color:white" groups="base.group_user" title="Run task" aria-label="Run task"/>
+                <button name="start_task" type="object" string=" Start" class="btn text-success fa fa-play" style="background-color:#29B6F6;color:white" groups="base.group_user" title="Run task" aria-label="Run task"/>
                 <button context="{'default_action_type': 'end_task'}" name="%(action_project_task_timer_action_wizard)d" type="action" string="  End" attrs="{'invisible':[('end_date_hide', '=', False)]}" class="btn text-danger fa fa-stop" style="background-color:#F44336;color:white" groups="base.group_user" title="End task" aria-label="End task"/>
           </xpath>
 
         </field>
     </record>
+
+
+
 
 </odoo>

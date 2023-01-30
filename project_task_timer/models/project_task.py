@@ -15,8 +15,8 @@ class ProjectTask(models.Model):
     _inherit = 'project.task'
 
     task_timer_ids = fields.One2many('task.timer', 'task_id', 'task timers')
-    start_date_hide = fields.Boolean(string='hide start button', default=False)
-    end_date_hide = fields.Boolean(string='hide end button', default=False)
+    start_date_hide = fields.Boolean(string='hide start button', default=False, compute='_compute_hide_start_button')
+    end_date_hide = fields.Boolean(string='hide end button', default=False, compute='_compute_hide_end_button')
 
     # @api.model
     # def fields_view_get(self, view_id=None, view_type='form', toolbar=False, submenu=False):
