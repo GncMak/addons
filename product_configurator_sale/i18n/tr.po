@@ -1,0 +1,144 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_configurator_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-13 07:59+0000\n"
+"PO-Revision-Date: 2023-03-13 13:39+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 3.0\n"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_sale_order_line_config_ok
+msgid "Configurable"
+msgstr "Yapılandırılabilir"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_product_tmpl_id
+msgid "Configurable Template"
+msgstr "Yapılandırılabilir Şablon"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_name
+msgid "Configuration Session Number"
+msgstr "Yapılandırma Oturum Numarası"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_config_step_name
+msgid "Configuration Step"
+msgstr "Yapılandırma Adımı"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_config_step
+msgid "Configuration Step ID"
+msgstr "Yapılandırma Adımı Kimliği"
+
+#. module: product_configurator_sale
+#: model:ir.ui.view,arch_db:product_configurator_sale.sale_order_form_config
+msgid "Configure Product"
+msgstr "Ürünü Yapılandır"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_custom_value_ids
+#: model:ir.model.fields,field_description:product_configurator_sale.field_sale_order_line_custom_value_ids
+msgid "Custom Values"
+msgstr "Özel Değerler"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_id
+msgid "ID"
+msgstr "ID"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_order_id
+msgid "Order"
+msgstr "Sipariş"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_order_line_id
+msgid "Order Line"
+msgstr "Sipariş Satırı"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_product_preset_id
+msgid "Preset"
+msgstr "Miras"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_price
+msgid "Price"
+msgstr "Fiyat"
+
+#. module: product_configurator_sale
+#: model:ir.model,name:product_configurator_sale.model_sale_order
+msgid "Quotation"
+msgstr "Teklif"
+
+#. module: product_configurator_sale
+#: model:ir.ui.view,arch_db:product_configurator_sale.sale_order_form_config
+msgid "Reconfigure"
+msgstr "Ürünü Yeniden Yapılandırın"
+
+#. module: product_configurator_sale
+#: model:ir.model,name:product_configurator_sale.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Satış Sipariş Satırı"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_user_id
+msgid "User"
+msgstr "Kullanıcı"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_value_ids
+msgid "Value"
+msgstr "Değer"
+
+#. module: product_configurator_sale
+#: model:ir.model.fields,field_description:product_configurator_sale.field_product_configurator_sale_weight
+msgid "Weight"
+msgstr "Ağırlık"
+
+#. module: product_configurator_sale
+#: model:ir.model,name:product_configurator_sale.model_product_configurator_sale
+msgid "product.configurator.sale"
+msgstr "product.configurator.sale"
