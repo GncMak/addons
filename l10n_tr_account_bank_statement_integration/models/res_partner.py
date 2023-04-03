@@ -33,7 +33,7 @@ class Partners(models.Model):
         """
 
         partners = self.search([('is_company', '=', True), ('bulut_sub_firm_id', '=', False), ('vat', '!=', False),
-                                ('parent_id', '=', False)])
+                                ('parent_id', '=', False)], limit=100)
         # ('company_id.bulut_tahsilat_id', '!=', False)
         bulut_tahsilat = self.env['bulut.tahsilat.service'].search([('state', '=', 'Active')])
         if len(bulut_tahsilat) > 1:
@@ -55,7 +55,7 @@ class Partners(models.Model):
         """
         services = self.env['bulut.tahsilat.service'].search([('state', '=', 'Active')])
 
-        partners = self.env['res.partner'].search([('bulut_sub_firm_id', '!=', False)])
+        partners = self.env['res.partner'].search([('bulut_sub_firm_id', '!=', False), ('is_company', '=', True), ('parent_id', '=', False)], limit=100)
         data = []
         for bank_account in partners.mapped('bank_ids').filtered(lambda x: not x.bulut_sync):
             if len(bank_account.acc_number) < 20 or len(bank_account.acc_number) > 34:
@@ -89,7 +89,7 @@ class Partners(models.Model):
         services = self.env['bulut.tahsilat.service'].search([('state', '=', 'Active')])
 
         partners = self.env['res.partner'].search(
-            [('bulut_sub_firm_id', '!=', False), ('bulut_sub_firm_vkn_id', '=', False)])
+            [('bulut_sub_firm_id', '!=', False), ('bulut_sub_firm_vkn_id', '=', False)], limit=100)
         data = []
         for partner in partners:
             data_line = {

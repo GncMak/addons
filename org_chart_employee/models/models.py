@@ -3,6 +3,11 @@ from odoo import models, fields, api
 import base64
 import tempfile
 
+class HrEmployee(models.Model):
+	_inherit = 'hr.employee'
+
+	org_chart_invisible = fields.Boolean(string="Organizasyon Şemasında Görünmesin")
+
 class OrgChartEmployee(models.Model):
 	_name = 'org.chart.employee'
 
@@ -17,7 +22,7 @@ class OrgChartEmployee(models.Model):
 			'children': [],
 			'office': "<img src='/logo.png' />",
 		}
-		employees = self.env['hr.employee'].search([('parent_id','=',False)])
+		employees = self.env['hr.employee'].search([('parent_id','=',False),('org_chart_invisible','=',False)])
 		for employee in employees:
 			data['children'].append(self.get_children(employee, 'middle-level'))
 
@@ -28,9 +33,9 @@ class OrgChartEmployee(models.Model):
 	def get_children(self, emp, style=False):
 		data = []
 		emp_data = {'name': emp.name, 'title': self._get_position(emp), 'office': self._get_image(emp)}
-		childrens = self.env['hr.employee'].search([('parent_id','=',emp.id)])
+		childrens = self.env['hr.employee'].search([('parent_id','=',emp.id),('org_chart_invisible','=',False)])
 		for child in childrens:
-			sub_child = self.env['hr.employee'].search([('parent_id','=',child.id)])
+			sub_child = self.env['hr.employee'].search([('parent_id','=',child.id),('org_chart_invisible','=',False)])
 			next_style= self._get_style(style)
 			if not sub_child:
 				data.append({'name': child.name, 'title': self._get_position(child), 'className': next_style, 'office': self._get_image(child)})

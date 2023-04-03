@@ -324,6 +324,8 @@ class BankPaymentList(models.Model):
         # expense.action_sheet_move_create()
 
     def account_move_create(self):
+        # attrs="{'readonly': ['|',('account_id', '!=', False), ('account_check_id', '!=', False)]}"
+        # TR210006701000000085954039
         self.ensure_one()
         destination_journal = self.env['account.journal'].search(
             [('bank_account_id.acc_number', '=', self.sender_firm_bank_iban),
@@ -685,39 +687,12 @@ class BulutTahsilatSettings(models.Model):
             bank_payment_line.update({'note': e})
 
 
-# class BulutTahsilatService:
-#     def __init__(self, prod=False, params=None):
-#         self.url = params.get('url')
-#         self.userName = params.get('userName')
-#         self.userName = params.get('password')
-#         self.userName = params.get('firmCode')
-#
-#
-# class SubFirm:
-#     def __init__(self, params=None):
-#         self.userName = params.get('userName')
-#         self.password = params.get('password')
-#         self.firmCode = params.get('firmCode')
-#         self.FirmName = params.FirmName
-#         self.Address = params.Address
-#         self.County = params.County
-#         self.CityID = params.CityID
-#         self.Phone = params.Phone
-#         self.TaxOffice = params.TaxOffice
-#         self.TaxNumber = params.TaxNumber
-#         self.AuthPersName = params.AuthPersName
-#         self.AuthPersSurname = params.AuthPersSurname
-#         self.AuthPersGSM = params.AuthPersGSM
-#         self.AuthPersGenderID = params.AuthPersGenderID
-#         self.Status = params.Status
-#         self.DealerCode = params.DealerCode
-#         self.BusinessArea = params.BusinessArea
-#         self.AccountingCode = params.AccountingCode
-#         self.ReservedField = params.ReservedField
-#
-#
-# class SubFirmList:
-#     def __init__(self, params=None):
-#         self.userName = params.get('userName')
-#         self.password = params.get('password')
-#         self.firmCode = params.get('firmCode')
+class BulutRoles(models.Model):
+    _name = 'bulut.role'
+    _description = ''
+
+    name = fields.Char(string='Name')
+    account_id = fields.Many2one(comodel_name='account.account', string='Account', copy=False, help='')
+    analytic_account_id = fields.Many2one('account.analytic.account', string='Analytic Account', copy=False, help='')
+    bulut_sub_firm_code = fields.Char(string='Bulut Tahsilat Firm Code', help='')
+    bulut_used_type = fields.Char(string='Used Type')
