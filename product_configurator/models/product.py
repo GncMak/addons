@@ -433,7 +433,8 @@ class ProductProduct(models.Model):
         compute='_compute_product_price_extra',
         string='Variant Extra Price',
         help="This is the sum of the extra price of all attributes",
-        digits=dp.get_precision('Product Price')
+        digits=dp.get_precision('Product Price'),
+        copy=True
     )
     weight_extra = fields.Float(
         string='Weight Extra',

@@ -29,6 +29,9 @@
                 <!-- <field name="type" /> -->
                 <field name="search_ok" />
             </xpath>
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="code" />
+            </xpath>
         </field>
     </record>
 
@@ -48,15 +51,24 @@
                 <field name="create_variant" groups="base.group_no_one"/>
                 <field name="active"/>
             </xpath>
+            <xpath expr="//label[@for='name']" position="before">
+                <field name="code"/>
+            </xpath>
             <xpath expr="//group[@name='values_ids']" position="replace">
                 <notebook>
                     <page string="Attribute Values">
                         <field name="value_ids" widget="one2many_list" nolabel="1">
                             <tree string="Values" editable="bottom">
+                                <field name="code"/>
                                 <field name="name"/>
                             </tree>
                             <form string="Values">
-                                <field name="name"/>
+                              <group>
+                                <group>
+                                  <field name="code"/>
+                                  <field name="name"/>
+                                </group>
+                              </group>
                             </form>
                         </field>
                     </page>
@@ -112,6 +124,9 @@
             <xpath expr="//tree" position="attributes">
                 <attribute name="editable"/>
             </xpath>
+            <xpath expr="//tree/field[@name='name']" position="before">
+                <field name="code"/>
+            </xpath>
         </field>
     </record>
 
@@ -132,6 +147,7 @@
                     </div>
                     <group>
                         <group>
+                            <field name="code"/>
                             <field name="attribute_id"/>
                         </group>
                         <group>

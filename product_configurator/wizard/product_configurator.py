@@ -330,6 +330,7 @@ class ProductConfigurator(models.TransientModel):
         compute='_compute_attr_lines',
         string="Attributes",
         readonly=True,
+        copy=True,
         store=False
     )
     config_step_ids = fields.Many2many(

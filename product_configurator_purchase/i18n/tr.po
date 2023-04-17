@@ -1,51 +1,49 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* product_configurator_purchase
+#	* product_configurator_purchase
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-13 07:58+0000\n"
-"PO-Revision-Date: 2023-03-13 12:40+0300\n"
+"PO-Revision-Date: 2023-03-13 07:58+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: tr\n"
-"X-Generator: Poedit 3.0\n"
 
 #. module: product_configurator_purchase
 #: model:ir.model.fields,field_description:product_configurator_purchase.field_purchase_order_line_config_ok
 msgid "Configurable"
-msgstr "Yapılandırılabilir"
+msgstr "Configurable"
 
 #. module: product_configurator_purchase
 #: model:ir.model.fields,field_description:product_configurator_purchase.field_product_configurator_purchase_product_tmpl_id
 msgid "Configurable Template"
-msgstr "Yapılandırılabilir Şablon"
+msgstr "Configurable Template"
 
 #. module: product_configurator_purchase
 #: model:ir.model.fields,field_description:product_configurator_purchase.field_product_configurator_purchase_name
 msgid "Configuration Session Number"
-msgstr "Yapılandırma Oturum Numarası"
+msgstr "Configuration Session Number"
 
 #. module: product_configurator_purchase
 #: model:ir.model.fields,field_description:product_configurator_purchase.field_product_configurator_purchase_config_step_name
 msgid "Configuration Step"
-msgstr "Yapılandırma Adımı"
+msgstr "Configuration Step"
 
 #. module: product_configurator_purchase
 #: model:ir.model.fields,field_description:product_configurator_purchase.field_product_configurator_purchase_config_step
 msgid "Configuration Step ID"
-msgstr "Yapılandırma Adımı Kimliği"
+msgstr "Configuration Step ID"
 
 #. module: product_configurator_purchase
 #: model:ir.ui.view,arch_db:product_configurator_purchase.purchase_order_form
 msgid "Configure Product"
-msgstr "Ürünü Yapılandır"
+msgstr "Configure Product"
 
 #. module: product_configurator_purchase
 #: model:ir.model.fields,field_description:product_configurator_purchase.field_product_configurator_purchase_create_uid
@@ -61,7 +59,7 @@ msgstr "Oluşturulma"
 #: model:ir.model.fields,field_description:product_configurator_purchase.field_product_configurator_purchase_custom_value_ids
 #: model:ir.model.fields,field_description:product_configurator_purchase.field_purchase_order_line_custom_value_ids
 msgid "Custom Values"
-msgstr "Özel Değerler"
+msgstr "Custom Values"
 
 #. module: product_configurator_purchase
 #: model:ir.model.fields,field_description:product_configurator_purchase.field_product_configurator_purchase_display_name
@@ -91,17 +89,17 @@ msgstr "Son Güncelleme"
 #. module: product_configurator_purchase
 #: model:ir.model.fields,field_description:product_configurator_purchase.field_product_configurator_purchase_order_id
 msgid "Order"
-msgstr "Sipariş"
+msgstr "Order"
 
 #. module: product_configurator_purchase
 #: model:ir.model.fields,field_description:product_configurator_purchase.field_product_configurator_purchase_order_line_id
 msgid "Order Line"
-msgstr "Sipariş Satırı"
+msgstr "Order Line"
 
 #. module: product_configurator_purchase
 #: model:ir.model.fields,field_description:product_configurator_purchase.field_product_configurator_purchase_product_preset_id
 msgid "Preset"
-msgstr "Miras"
+msgstr "Preset"
 
 #. module: product_configurator_purchase
 #: model:ir.model.fields,field_description:product_configurator_purchase.field_product_configurator_purchase_price
@@ -121,7 +119,7 @@ msgstr "Satınalma Sipariş Satırı"
 #. module: product_configurator_purchase
 #: model:ir.ui.view,arch_db:product_configurator_purchase.purchase_order_form
 msgid "Reconfigure"
-msgstr "Ürünü Yeniden Yapılandırın"
+msgstr "Reconfigure"
 
 #. module: product_configurator_purchase
 #: model:ir.model.fields,field_description:product_configurator_purchase.field_product_configurator_purchase_user_id
@@ -142,3 +140,4 @@ msgstr "Ağırlık"
 #: model:ir.model,name:product_configurator_purchase.model_product_configurator_purchase
 msgid "product.configurator.purchase"
 msgstr "product.configurator.purchase"
+

@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import api, fields, models,_
 
 
 class PurchaseOrder(models.Model):
@@ -55,3 +55,13 @@ class PurchaseOrderLine(models.Model):
         return self.product_id.product_tmpl_id.create_config_wizard(
             model_name=wizard_model, extra_vals=extra_vals
         )
+
+    @api.onchange('product_id')
+    def product_name_change(self):
+        self.ensure_one()
+        if self.config_ok:
+            name = self.product_id.name + "\n"
+            for attrib_line in self.product_id.attribute_value_ids:
+                name += _(attrib_line.display_name) + "\n"
+            self.with_context({'name': name})
+            #self.name = name
