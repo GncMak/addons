@@ -17,7 +17,7 @@
 	'website': 'https://www.browseinfo.in',
 	'category': 'Product',
 	'version': '11.0.0.3',
-	'depends': ['base','stock'],
+	'depends': ['base','stock', 'product', 'product_brand'],
 	'data': [
 		'security/ir.model.access.csv',
 		'wizard/view_import_chart.xml',
