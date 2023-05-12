@@ -96,7 +96,7 @@ class SaleOrderLine(models.Model):
         if self.config_ok:
             convert_name = product.name + "\n"
             for attrib_line in product.attribute_value_ids:
-                convert_name += _(attrib_line.display_name) + "\n"
+                convert_name += _(f"- [{attrib_line.code}] {attrib_line.name}\n")
             vals['name'] = convert_name
         else:
             name = product.name_get()[0][1]
