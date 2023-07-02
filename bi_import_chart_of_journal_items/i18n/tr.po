@@ -1,0 +1,150 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bi_import_chart_of_journal_items
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-02 17:55+0000\n"
+"PO-Revision-Date: 2023-07-02 20:58+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 3.0\n"
+
+#. module: bi_import_chart_of_journal_items
+#: code:addons/bi_import_chart_of_journal_items/wizard/wiz_import_chart.py:91
+#, python-format
+msgid "Bu isimde bir analitik hesap bulunamamıştır. Analitik hesap ismini düzeltip tekrar deneyiniz."
+msgstr "Bu isimde bir analitik hesap bulunamamıştır. Analitik hesap ismini düzeltip tekrar deneyiniz."
+
+#. module: bi_import_chart_of_journal_items
+#: code:addons/bi_import_chart_of_journal_items/wizard/wiz_import_chart.py:86
+#, python-format
+msgid "Bu isimde bir personel bulunamamıştır. Personel ismini düzeltip tekrar deneyiniz."
+msgstr "Bu isimde bir personel bulunamamıştır. Personel ismini düzeltip tekrar deneyiniz."
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.ui.view,arch_db:bi_import_chart_of_journal_items.wizard_import_chart
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: bi_import_chart_of_journal_items
+#: code:addons/bi_import_chart_of_journal_items/wizard/wiz_import_chart.py:130
+#, python-format
+msgid "Code field cannot be empty."
+msgstr "Hesap kodu alanı boş geçilemez."
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.model.fields,field_description:bi_import_chart_of_journal_items.field_import_chart_journal_items_company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.model.fields,field_description:bi_import_chart_of_journal_items.field_import_chart_journal_items_create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.model.fields,field_description:bi_import_chart_of_journal_items.field_import_chart_journal_items_create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.model.fields,field_description:bi_import_chart_of_journal_items.field_import_chart_journal_items_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: bi_import_chart_of_journal_items
+#: code:addons/bi_import_chart_of_journal_items/wizard/wiz_import_chart.py:81
+#, python-format
+msgid "Girdiğiniz hesap kodu sistemde bulunamadı. Lütfen hesap kodunu inceleyin ve tekrar yüklemeyi deneyin."
+msgstr "Girdiğiniz hesap kodu sistemde bulunamadı. Lütfen hesap kodunu inceleyin ve tekrar yüklemeyi deneyin."
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.model.fields,field_description:bi_import_chart_of_journal_items.field_import_chart_journal_items_id
+msgid "ID"
+msgstr "ID"
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.ui.view,arch_db:bi_import_chart_of_journal_items.wizard_import_chart
+msgid "Import"
+msgstr "İçe Aktarma"
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.actions.act_window,name:bi_import_chart_of_journal_items.bi_act_chart_of_journal_items
+#: model:ir.ui.view,arch_db:bi_import_chart_of_journal_items.wizard_import_chart
+msgid "Import Chart Of Journal Items"
+msgstr "Yevmiye Kalemleri İçe Aktarım"
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.ui.menu,name:bi_import_chart_of_journal_items.menu_chart_of_journal_items
+msgid "Import Charts Of Journal Items"
+msgstr "Yevmiye Kalemleri İçe Aktarım"
+
+#. module: bi_import_chart_of_journal_items
+#: code:addons/bi_import_chart_of_journal_items/wizard/wiz_import_chart.py:58
+#, python-format
+msgid "Invalid file!"
+msgstr "Geçersiz dosya!"
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.model.fields,field_description:bi_import_chart_of_journal_items.field_import_chart_journal_items_journal_id
+msgid "Journal"
+msgstr "Yevmiye"
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.model.fields,field_description:bi_import_chart_of_journal_items.field_import_chart_journal_items___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.model.fields,field_description:bi_import_chart_of_journal_items.field_import_chart_journal_items_write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.model.fields,field_description:bi_import_chart_of_journal_items.field_import_chart_journal_items_write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: bi_import_chart_of_journal_items
+#: code:addons/bi_import_chart_of_journal_items/wizard/wiz_import_chart.py:110
+#, python-format
+msgid "Please select any one from xls formate!"
+msgstr "Lütfen xls formatından herhangi birini seçin!"
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.model.fields,field_description:bi_import_chart_of_journal_items.field_import_chart_journal_items_import_option
+msgid "Select"
+msgstr "Seçim"
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.model.fields,field_description:bi_import_chart_of_journal_items.field_import_chart_journal_items_File_select
+msgid "Select Excel File"
+msgstr "Excel Dosya Seçimi"
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.model.fields,field_description:bi_import_chart_of_journal_items.field_import_chart_journal_items_date
+msgid "Tarih"
+msgstr "Tarih"
+
+#. module: bi_import_chart_of_journal_items
+#: selection:import.chart.journal.items,import_option:0
+msgid "XLS File"
+msgstr "XLS File"
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.model,name:bi_import_chart_of_journal_items.model_import_chart_journal_items
+msgid "import.chart.journal.items"
+msgstr "import.chart.journal.items"
+
+#. module: bi_import_chart_of_journal_items
+#: model:ir.model,name:bi_import_chart_of_journal_items.model_import_chart_product
+msgid "import.chart.product"
+msgstr "import.chart.product"

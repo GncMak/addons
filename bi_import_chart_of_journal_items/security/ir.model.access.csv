@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_import_chart_of_journal_items,access.user.import.chart.journal_items,account.model_account_account_tag,,1,1,1,0
