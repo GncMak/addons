@@ -707,7 +707,27 @@ class ProductConfigSession(models.Model):
         product_obj = self.env['product.product'].sudo().with_context(
             mail_create_nolog=True
         )
+
         variant = product_obj.sudo().create(vals)
+        supplier_ids = self.env['product.supplierinfo'].search([('product_tmpl_id', '=', variant.product_tmpl_id.id), ('product_id', '=', variant.id)])
+        if not supplier_ids:
+            supplier = self.env['product.supplierinfo'].search([('product_tmpl_id', '=', variant.product_tmpl_id.id),('product_id', '=', False)], limit=1, order='sequence')
+            price = 0
+            for pr in variant.attribute_value_ids:
+                price += pr.price_extra
+            if supplier:
+                seller_id = self.env['product.supplierinfo'].create({
+                                                                    'name': supplier.name.id,
+                                                                    'delay': 1,
+                                                                    'min_qty': 0,
+                                                                    'price': supplier.price + price,
+                                                                    'currency_id': variant.product_tmpl_id.currency_id.id,
+                                                                    'company_id': None,
+                                                                    'product_tmpl_id': variant.product_tmpl_id.id,
+                                                                    'product_id': variant.id
+                                                                })
+                #variant.update({'variant_seller_ids': (0,0,[seller_id])})
+                variant.write({'variant_seller_ids': seller_id})
 
         variant.message_post(
             body=_('Product created via configuration wizard'),

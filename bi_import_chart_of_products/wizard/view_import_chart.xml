@@ -10,16 +10,18 @@
 					<group>
                     <field name="import_option" widget="radio" />
                 </group>
-              
+
                 <group>
                     <field name="File_select" filename="name"/>
-					<field name="product_type" options="{'no_create': True,'no_edit': True,'no_create_edit': True}"/>
-					<field name="brand_id" options="{'no_create': True,'no_edit': True,'no_create_edit': True}"/>
+                    <field name="product_type" options="{'no_create': True,'no_edit': True,'no_create_edit': True}"/>
+                    <field name="brand_id" options="{'no_create': True,'no_edit': True,'no_create_edit': True}"/>
                     <field name="uom_id" options="{'no_create': True,'no_edit': True,'no_create_edit': True}"/>
                     <field name="currency_id" options="{'no_create': True,'no_edit': True,'no_create_edit': True}"/>
-                </group>	
+					<field name="supplier_id" options="{'no_create': True,'no_edit': True,'no_create_edit': True}"/>
+					<field name="supplier_discount"/>
+                </group>
 					<footer>
-	
+
 						<button string="Import" name="import_file"
 							type="object" class="oe_highlight" />
 						<button string="Cancel" class="oe_link" special="cancel" />

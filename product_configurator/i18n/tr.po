@@ -1,19 +1,21 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* product_configurator
+# 	* product_configurator
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-13 07:45+0000\n"
-"PO-Revision-Date: 2023-03-13 07:45+0000\n"
+"POT-Creation-Date: 2023-07-04 08:53+0000\n"
+"PO-Revision-Date: 2023-07-04 13:16+0300\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 3.0\n"
 
 #. module: product_configurator
 #: model:product.template,name:product_configurator.bmw_2_series
@@ -107,46 +109,46 @@ msgstr "Aktif"
 #: code:addons/product_configurator/models/product.py:49
 #, python-format
 msgid "All attribute values used in attribute value lines must be defined in the attribute lines of the template"
-msgstr "All attribute values used in attribute value lines must be defined in the attribute lines of the template"
+msgstr "Nitelik değeri satırlarında kullanılan tüm nitelik değerleri, şablonun nitelik satırlarında tanımlanmalıdır"
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_attribute_val_custom
 msgid "Allow custom value for this attribute?"
-msgstr "Allow custom value for this attribute?"
+msgstr "Bu nitelik için özel değere izin ver?"
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_attribute_line_custom
 msgid "Allow custom values for this attribute?"
-msgstr "Allow custom values for this attribute?"
+msgstr "Bu nitelik için özel değerlere izin verilsin mi?"
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_attribute_line_multi
 #: model:ir.model.fields,help:product_configurator.field_product_attribute_multi
 msgid "Allow selection of multiple values for this attribute?"
-msgstr "Allow selection of multiple values for this attribute?"
+msgstr "Bu özellik için birden çok değer seçilmesine izin verilsin mi?"
 
 #. module: product_configurator
 #: code:addons/product_configurator/models/product_config.py:509
 #, python-format
 msgid "An error occursed while parsing value for attribute %s"
-msgstr "An error occursed while parsing value for attribute %s"
+msgstr "%s niteliği için değer ayrıştırılırken bir hata oluştu"
 
 #. module: product_configurator
 #: model:ir.ui.view,arch_db:product_configurator.product_configurator_form
 msgid "Are you sure? This will remove your current configuration for this template!"
-msgstr "Are you sure? This will remove your current configuration for this template!"
+msgstr "Emin misiniz? Bu, bu şablon için mevcut yapılandırmanızı kaldıracaktır!"
 
 #. module: product_configurator
 #: model:product.attribute.value,name:product_configurator.product_attribute_value_armrest
 #: model:product.product,name:product_configurator.product_2_series_armrest
 #: model:product.template,name:product_configurator.product_2_series_armrest_product_template
 msgid "Armrest"
-msgstr "Armrest"
+msgstr "Kolçak"
 
 #. module: product_configurator
 #: selection:product.attribute,custom_type:0
 msgid "Attachment"
-msgstr "Attachment"
+msgstr "Ek"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_value_custom_attachment_ids
@@ -169,40 +171,40 @@ msgstr "Nitelik"
 #: model:ir.model.fields,field_description:product_configurator.field_product_product_config_line_ids
 #: model:ir.model.fields,field_description:product_configurator.field_product_template_config_line_ids
 msgid "Attribute Dependencies"
-msgstr "Attribute Dependencies"
+msgstr "Nitelik Bağımlılıkları"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_line_attribute_line_id
 msgid "Attribute Line"
-msgstr "Attribute Line"
+msgstr "Nitelik Satırı"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_product_attribute_line_val_ids
 #: model:ir.model.fields,field_description:product_configurator.field_product_template_attribute_line_val_ids
 msgid "Attribute Line Val"
-msgstr "Attribute Line Val"
+msgstr "Nitelik Satır Değeri"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_value_attribute_line_ids
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_step_line_attribute_line_ids
 msgid "Attribute Lines"
-msgstr "Attribute Lines"
+msgstr "Nitelik Satırları"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_value_line_value_id
 msgid "Attribute Value"
-msgstr "Attribute Value"
+msgstr "Nitelik Değeri"
 
 #. module: product_configurator
 #: model:ir.ui.view,arch_db:product_configurator.product_template_form_view
 msgid "Attribute Value Dependencies"
-msgstr "Attribute Value Dependencies"
+msgstr "Nitelik Değer Bağımlılıkları"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_product_attribute_value_line_ids
 #: model:ir.model.fields,field_description:product_configurator.field_product_template_attribute_value_line_ids
 msgid "Attribute Value Lines"
-msgstr "Attribute Value Lines"
+msgstr "Nitelik Değer Satırları"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_line_attr_line_val_ids
@@ -214,44 +216,43 @@ msgstr "Nitelik Değerleri"
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_value_weight_extra
 msgid "Attribute Weight Extra"
-msgstr "Attribute Weight Extra"
+msgstr "Nitelik Ekstra Ağırlık"
 
 #. module: product_configurator
-#: code:addons/product_configurator/models/product_config.py:1528
+#: code:addons/product_configurator/models/product_config.py:1548
 #, python-format
 msgid "Attribute custom type is binary, attachments are the only accepted values with this custom field type"
-msgstr "Attribute custom type is binary, attachments are the only accepted values with this custom field type"
+msgstr "Nitelik özel türü ikili, ekler bu özel alan türüyle yalnızca kabul edilen değerlerdir"
 
 #. module: product_configurator
-#: code:addons/product_configurator/models/product_config.py:1533
+#: code:addons/product_configurator/models/product_config.py:1553
 #, python-format
 msgid "Attribute custom type must be 'binary' for saving attachments to custom value"
-msgstr "Attribute custom type must be 'binary' for saving attachments to custom value"
+msgstr "Ekleri özel değere kaydetmek için nitelik özel türü \"binary\" olmalıdır"
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_attribute_value_image
 msgid "Attribute value image (Display on website for radio buttons)"
-msgstr "Attribute value image (Display on website for radio buttons)"
+msgstr "Nitelik değeri görüntüsü (Radyo düğmeleri için web sitesinde görüntüleyin)"
 
 #. module: product_configurator
 #: model:ir.ui.view,arch_db:product_configurator.product_template_form_view
 msgid "Attribute value lines"
-msgstr "Attribute value lines"
+msgstr "Nitelik değer satırları"
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_attribute_value_image_medium
 msgid "Attribute value medium size image"
-msgstr "Attribute value medium size image"
+msgstr "Nitelik değeri orta boy resim"
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_attribute_value_image_small
 msgid "Attribute value small size image"
-msgstr "Attribute value small size image"
+msgstr "Nitelik değeri küçük boyutlu resim"
 
 #. module: product_configurator
 #: model:ir.actions.act_window,name:product_configurator.action_attributes_view
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_attribute_line_ids
-#: model:ir.model.fields,field_description:product_configurator.field_product_configurator_purchase_attribute_line_ids
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_sale_attribute_line_ids
 #: model:ir.ui.menu,name:product_configurator.menu_attribute_action_configuration
 msgid "Attributes"
@@ -260,18 +261,18 @@ msgstr "Nitelikler"
 #. module: product_configurator
 #: model:product.attribute.value,name:product_configurator.product_attribute_value_steptronic
 msgid "Automatic (Steptronic)"
-msgstr "Automatic (Steptronic)"
+msgstr "Otomatik (Steptronic)"
 
 #. module: product_configurator
 #: model:product.attribute.value,name:product_configurator.product_attribute_value_steptronic_sport
 msgid "Automatic Sport (Steptronic)"
-msgstr "Automatic Sport (Steptronic)"
+msgstr "Otomatik Spor (Steptronic)"
 
 #. module: product_configurator
 #: model:product.product,name:product_configurator.product_2_series_transmission_steptronic
 #: model:product.template,name:product_configurator.product_2_series_transmission_steptronic_product_template
 msgid "Automatic Transmission Steptronic"
-msgstr "Automatic Transmission Steptronic"
+msgstr "Otomatik Şanzıman Steptronik"
 
 #. module: product_configurator
 #: model:product.category,name:product_configurator.product_category_bmw
@@ -293,51 +294,58 @@ msgstr "Siyah"
 #: model:product.config.step,name:product_configurator.config_step_body
 #: model:product.config.step.line,name:product_configurator.2_series_config_step_body
 msgid "Body"
-msgstr "Body"
+msgstr "Gövde"
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_attribute_value_active
 msgid "By unchecking the active field you can disable a attribute value without deleting it"
-msgstr "By unchecking the active field you can disable a attribute value without deleting it"
+msgstr "Etkin alanın işaretini kaldırarak, bir nitelik değerini silmeden devre dışı bırakabilirsiniz."
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_attribute_active
 msgid "By unchecking the active field you can disable a attribute without deleting it"
-msgstr "By unchecking the active field you can disable a attribute without deleting it"
+msgstr "Etkin alanın işaretini kaldırarak, bir niteliği silmeden devre dışı bırakabilirsiniz."
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_product_config_ok
 #: model:ir.model.fields,field_description:product_configurator.field_product_template_config_ok
 msgid "Can be Configured"
-msgstr "Can be Configured"
+msgstr "Yapılandırılabilir"
 
 #. module: product_configurator
-#: code:addons/product_configurator/models/product_config.py:1350
+#: code:addons/product_configurator/models/product_config.py:1370
 #, python-format
 msgid "Cannot conduct search on an empty config session without product_tmpl_id kwarg"
-msgstr "Cannot conduct search on an empty config session without product_tmpl_id kwarg"
+msgstr "product_tmpl_id kwarg olmadan boş bir yapılandırma oturumunda arama yapılamaz"
 
 #. module: product_configurator
 #: code:addons/product_configurator/models/product_config.py:294
 #, python-format
 msgid "Cannot have a configuration step defined twice."
-msgstr "Cannot have a configuration step defined twice."
+msgstr "İki kez tanımlanmış bir konfigürasyon adımı olamaz."
 
 #. module: product_configurator
 #: sql_constraint:product.attribute.value.custom:0
 msgid "Cannot have two custom values for the same attribute"
-msgstr "Cannot have two custom values for the same attribute"
+msgstr "Aynı özellik için iki özel değer olamaz"
 
 #. module: product_configurator
 #: code:addons/product_configurator/wizard/product_configurator.py:121
 #, python-format
 msgid "Changing the product template while having an active configuration will erase reset/clear all values"
-msgstr "Changing the product template while having an active configuration will erase reset/clear all values"
+msgstr "Etkin bir yapılandırmaya sahipken ürün şablonunun değiştirilmesi, tüm değerleri sıfırlar/temizler"
 
 #. module: product_configurator
 #: selection:product.attribute,custom_type:0
 msgid "Char"
 msgstr "Char"
+
+#. module: product_configurator
+#: model:ir.model.fields,field_description:product_configurator.field_product_attribute_code
+#: model:ir.model.fields,field_description:product_configurator.field_product_attribute_line_code
+#: model:ir.model.fields,field_description:product_configurator.field_product_attribute_value_code
+msgid "Code"
+msgstr "Kod"
 
 #. module: product_configurator
 #: selection:product.attribute,custom_type:0
@@ -354,30 +362,30 @@ msgstr "Koşul"
 #: model:ir.ui.menu,name:product_configurator.menu_product_configurable_product_main
 #: model:ir.ui.view,arch_db:product_configurator.product_template_search_view
 msgid "Configurable Products"
-msgstr "Configurable Products"
+msgstr "Yapılandırılabilir Ürünler"
 
 #. module: product_configurator
 #: code:addons/product_configurator/models/product.py:363
 #, python-format
 msgid "Configurable Products cannot have duplicates (identical attribute values)"
-msgstr "Configurable Products cannot have duplicates (identical attribute values)"
+msgstr "Yapılandırılabilir Ürünlerin kopyaları olamaz (aynı özellik değerleri)"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_session_product_tmpl_id
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_product_tmpl_id
 msgid "Configurable Template"
-msgstr "Configurable Template"
+msgstr "Yapılandırılabilir Şablon"
 
 #. module: product_configurator
 #: model:ir.actions.act_window,name:product_configurator.product_configurable_template_action
 #: model:ir.ui.menu,name:product_configurator.menu_product_configurable_template_action
 msgid "Configurable Templates"
-msgstr "Configurable Templates"
+msgstr "Yapılandırılabilir Şablonlar"
 
 #. module: product_configurator
 #: model:ir.ui.menu,name:product_configurator.menu_product_configurable_variants_action
 msgid "Configurable Variants"
-msgstr "Configurable Variants"
+msgstr "Yapılandırılabilir Varyantlar"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_image_value_ids
@@ -389,13 +397,13 @@ msgstr "Yapılandırma"
 #: model:ir.model.fields,field_description:product_configurator.field_product_template_config_image_ids
 #: model:ir.ui.view,arch_db:product_configurator.product_template_form_view
 msgid "Configuration Images"
-msgstr "Configuration Images"
+msgstr "Yapılandırma Resimleri"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_product_config_step_line_ids
 #: model:ir.model.fields,field_description:product_configurator.field_product_template_config_step_line_ids
 msgid "Configuration Lines"
-msgstr "Configuration Lines"
+msgstr "Yapılandırma Satırları"
 
 #. module: product_configurator
 #: model:ir.actions.act_window,name:product_configurator.product_config_domain_action
@@ -403,20 +411,19 @@ msgstr "Configuration Lines"
 #: model:ir.ui.view,arch_db:product_configurator.product_config_domain_form_view
 #: model:ir.ui.view,arch_db:product_configurator.product_template_form_view
 msgid "Configuration Restrictions"
-msgstr "Configuration Restrictions"
+msgstr "Yapılandırma Kısıtlamaları"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_config_session_id
-#: model:ir.model.fields,field_description:product_configurator.field_product_configurator_purchase_config_session_id
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_sale_config_session_id
 msgid "Configuration Session"
-msgstr "Configuration Session"
+msgstr "Yapılandırma Oturumu"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_session_name
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_name
 msgid "Configuration Session Number"
-msgstr "Configuration Session Number"
+msgstr "Yapılandırma Oturum Numarası"
 
 #. module: product_configurator
 #: model:ir.actions.act_window,name:product_configurator.product_config_session
@@ -424,7 +431,7 @@ msgstr "Configuration Session Number"
 #: model:ir.ui.view,arch_db:product_configurator.product_config_session_form_view
 #: model:ir.ui.view,arch_db:product_configurator.product_config_session_tree_view
 msgid "Configuration Sessions"
-msgstr "Configuration Sessions"
+msgstr "Yapılandırma Oturumları"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_session_config_step_name
@@ -433,52 +440,51 @@ msgstr "Configuration Sessions"
 #: model:ir.ui.view,arch_db:product_configurator.config_step_form_view
 #: model:ir.ui.view,arch_db:product_configurator.config_step_tree_view
 msgid "Configuration Step"
-msgstr "Configuration Step"
+msgstr "Yapılandırma Adımı"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_session_config_step
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_config_step
 msgid "Configuration Step ID"
-msgstr "Configuration Step ID"
+msgstr "Yapılandırma Adımı Kimliği"
 
 #. module: product_configurator
 #: model:ir.actions.act_window,name:product_configurator.product_config_steps_action
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_config_step_ids
-#: model:ir.model.fields,field_description:product_configurator.field_product_configurator_purchase_config_step_ids
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_sale_config_step_ids
 #: model:ir.ui.menu,name:product_configurator.menu_product_config_steps_action
 #: model:ir.ui.view,arch_db:product_configurator.product_template_form_view
 msgid "Configuration Steps"
-msgstr "Configuration Steps"
+msgstr "Yapılandırma Adımları"
 
 #. module: product_configurator
 #: model:ir.ui.view,arch_db:product_configurator.product_attribute_value_custom_form
 #: model:ir.ui.view,arch_db:product_configurator.product_attribute_value_custom_tree
 msgid "Configuration Values"
-msgstr "Configuration Values"
+msgstr "Yapılandırma Değerleri"
 
 #. module: product_configurator
-#: code:addons/product_configurator/models/product_config.py:1509
+#: code:addons/product_configurator/models/product_config.py:1529
 #, python-format
 msgid "Configuration cannot have the same value inserted twice"
-msgstr "Configuration cannot have the same value inserted twice"
+msgstr "Konfigürasyonda aynı değer iki kez eklenemez."
 
 #. module: product_configurator
 #: model:ir.ui.menu,name:product_configurator.menu_product_configurable
 #: model:ir.ui.view,arch_db:product_configurator.product_attribute_form_view
 #: model:ir.ui.view,arch_db:product_configurator.product_template_form_view
 msgid "Configurator"
-msgstr "Configurator"
+msgstr "Konfigüratör"
 
 #. module: product_configurator
 #: model:ir.ui.view,arch_db:product_configurator.product_template_form_view
 msgid "Configure Product"
-msgstr "Configure Product"
+msgstr "Ürün Konfigüratörü"
 
 #. module: product_configurator
 #: model:ir.actions.act_window,name:product_configurator.product_configurable_variant_action
 msgid "Configured Variants"
-msgstr "Configured Variants"
+msgstr "Yapılandırılmış Varyantlar"
 
 #. module: product_configurator
 #: model:product.attribute.value,name:product_configurator.product_attribute_value_tapistry_coral_red_black
@@ -567,13 +573,13 @@ msgstr "Oluşturulma"
 #: model:product.attribute,name:product_configurator.custom_attribute
 #: model:product.attribute.value,name:product_configurator.custom_attribute_value
 msgid "Custom"
-msgstr "Custom"
+msgstr "Özel"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_val_custom
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_value_custom_value
 msgid "Custom Value"
-msgstr "Custom Value"
+msgstr "Özel Değer"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_session_custom_value_ids
@@ -583,22 +589,22 @@ msgstr "Custom Value"
 #: model:ir.ui.view,arch_db:product_configurator.product_config_session_form_view
 #: model:ir.ui.view,arch_db:product_configurator.product_form_view_custom_vals_inherit
 msgid "Custom Values"
-msgstr "Custom Values"
+msgstr "Özel Değerler"
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_config_session_custom_value_value
 msgid "Custom value held as string"
-msgstr "Custom value held as string"
+msgstr "Karakter olarak tutulan özel değer"
 
 #. module: product_configurator
 #: selection:product.attribute,custom_type:0
 msgid "Date"
-msgstr "Date"
+msgstr "Tarih"
 
 #. module: product_configurator
 #: selection:product.attribute,custom_type:0
 msgid "DateTime"
-msgstr "DateTime"
+msgstr "Tarih-Zaman"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_line_default_val
@@ -606,17 +612,17 @@ msgid "Default Value"
 msgstr "Varsayılan Değer"
 
 #. module: product_configurator
-#: code:addons/product_configurator/models/product_attribute.py:198
+#: code:addons/product_configurator/models/product_attribute.py:200
 #, python-format
 msgid "Default values for each attribute line must exist in the attribute values (%s: %s)"
-msgstr "Default values for each attribute line must exist in the attribute values (%s: %s)"
+msgstr "Her özellik satırı için varsayılan değerler, özellik değerlerinde bulunmalıdır (%s: %s)"
 
 #. module: product_configurator
 #: code:addons/product_configurator/models/product.py:168
 #: code:addons/product_configurator/models/product_config.py:657
 #, python-format
 msgid "Default values provided generate an invalid configuration"
-msgstr "Default values provided generate an invalid configuration"
+msgstr "Sağlanan varsayılan değerler geçersiz bir yapılandırma oluşturuyor"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_description
@@ -626,12 +632,12 @@ msgstr "Açıklama"
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_attribute_required
 msgid "Determines the required value of this attribute though it can be change on the template level"
-msgstr "Determines the required value of this attribute though it can be change on the template level"
+msgstr "Şablon düzeyinde değiştirilebilse de, bu niteliğin gerekli değerini belirler."
 
 #. module: product_configurator
 #: model:product.attribute.value,name:product_configurator.product_attribute_value_diesel
 msgid "Diesel"
-msgstr "Diesel"
+msgstr "Dizel"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_value_custom_display_name
@@ -652,7 +658,7 @@ msgstr "Görünüm Adı"
 #. module: product_configurator
 #: selection:product.config.session,state:0
 msgid "Done"
-msgstr "Done"
+msgstr "Biten"
 
 #. module: product_configurator
 #: model:product.attribute.value,name:product_configurator.product_attribute_value_rims_384
@@ -662,26 +668,26 @@ msgstr "Double-spoke 18\""
 #. module: product_configurator
 #: selection:product.config.session,state:0
 msgid "Draft"
-msgstr "Draft"
+msgstr "Taslak"
 
 #. module: product_configurator
 #: model:product.attribute,name:product_configurator.product_attribute_engine
 #: model:product.config.step,name:product_configurator.config_step_engine
 #: model:product.config.step.line,name:product_configurator.2_series_config_step_engine
 msgid "Engine"
-msgstr "Engine"
+msgstr "Motor"
 
 #. module: product_configurator
 #: code:addons/product_configurator/models/product.py:390
 #, python-format
 msgid "Error while calculating mako product name: %s"
-msgstr "Error while calculating mako product name: %s"
+msgstr "Ürün adı hesaplanırken hata oluştu: %s"
 
 #. module: product_configurator
 #: model:product.config.step,name:product_configurator.config_step_extras
 #: model:product.config.step.line,name:product_configurator.2_series_config_step_extras
 msgid "Extras"
-msgstr "Extras"
+msgstr "Opsiyonlar"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_custom_type
@@ -696,18 +702,18 @@ msgstr "Float"
 #. module: product_configurator
 #: model:product.attribute,name:product_configurator.product_attribute_fuel
 msgid "Fuel"
-msgstr "Fuel"
+msgstr "Yakıt"
 
 #. module: product_configurator
 #: model:product.attribute.value,name:product_configurator.product_attribute_value_gasoline
 msgid "Gasoline"
-msgstr "Gasoline"
+msgstr "Benzin"
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_product_mako_tmpl_name
 #: model:ir.model.fields,help:product_configurator.field_product_template_mako_tmpl_name
 msgid "Generate Name based on Mako Template"
-msgstr "Generate Name based on Mako Template"
+msgstr "Mako Şablonuna Dayalı İsim Oluştur"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_value_custom_id
@@ -747,24 +753,24 @@ msgstr "Integer"
 #: model:product.config.step,name:product_configurator.config_step_interior
 #: model:product.config.step.line,name:product_configurator.2_series_config_step_interior
 msgid "Interior"
-msgstr "Interior"
+msgstr "İç mekan"
 
 #. module: product_configurator
 #: code:addons/product_configurator/models/product_config.py:631
 #: code:addons/product_configurator/models/product_config.py:686
 #, python-format
 msgid "Invalid Configuration"
-msgstr "Invalid Configuration"
+msgstr "Geçersiz Yapılandırma"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_product_config_preset_ok
 msgid "Is Preset"
-msgstr "Is Preset"
+msgstr "Miras Alınabilir"
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_attribute_line_required
 msgid "Is this attribute required?"
-msgstr "Is this attribute required?"
+msgstr "Bu özellik zorunlu mu?"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_value_custom___last_update
@@ -819,7 +825,7 @@ msgstr "Son Güncelleme"
 #: model:product.config.step,name:product_configurator.config_step_lines
 #: model:product.config.step.line,name:product_configurator.2_series_config_step_lines
 msgid "Lines"
-msgstr "Lines"
+msgstr "Satırlar"
 
 #. module: product_configurator
 #: model:product.attribute.value,name:product_configurator.product_attribute_value_luxury_line
@@ -859,39 +865,39 @@ msgstr "Yönetici"
 #: model:ir.model.fields,field_description:product_configurator.field_product_product_weight_dummy
 #: model:ir.model.fields,field_description:product_configurator.field_product_template_weight_dummy
 msgid "Manual Weight"
-msgstr "Manual Weight"
+msgstr "Manuel Ağırlık"
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_template_weight_dummy
 msgid "Manual setting of product template weight"
-msgstr "Manual setting of product template weight"
+msgstr "Ürün şablon ağırlığının manuel olarak ayarlanması"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_max_val
 msgid "Max Value"
-msgstr "Max Value"
+msgstr "Max Değer"
 
 #. module: product_configurator
-#: code:addons/product_configurator/models/product_attribute.py:145
+#: code:addons/product_configurator/models/product_attribute.py:146
 #, python-format
 msgid "Maximum value must be greater than Minimum value"
-msgstr "Maximum value must be greater than Minimum value"
+msgstr "Maksimum değer, Minimum değerden büyük olmalıdır"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_value_image_medium
 msgid "Medium Image"
-msgstr "Medium Image"
+msgstr "Orta Boy Görüntü"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_min_val
 msgid "Min Value"
-msgstr "Min Value"
+msgstr "Min Değer"
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_attribute_max_val
 #: model:ir.model.fields,help:product_configurator.field_product_attribute_min_val
 msgid "Minimum value allowed"
-msgstr "Minimum value allowed"
+msgstr "İzin verilen minimum değer"
 
 #. module: product_configurator
 #: model:product.attribute.value,name:product_configurator.product_attribute_value_model_advantage
@@ -941,7 +947,7 @@ msgstr "İsim"
 #: code:addons/product_configurator/models/product_config.py:637
 #, python-format
 msgid "New"
-msgstr "New"
+msgstr "Yeni"
 
 #. module: product_configurator
 #: model:ir.ui.view,arch_db:product_configurator.product_configurator_form
@@ -951,12 +957,12 @@ msgstr "Sonraki"
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_domain_line_operator
 msgid "Operators"
-msgstr "Operators"
+msgstr "Operatörler"
 
 #. module: product_configurator
 #: model:product.attribute,name:product_configurator.product_attribute_options
 msgid "Options"
-msgstr "Options"
+msgstr "Seçenekler"
 
 #. module: product_configurator
 #: model:product.attribute.value,name:product_configurator.product_attribute_value_tapistry_oyster_black
@@ -967,7 +973,7 @@ msgstr "Oyster/Black"
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_session_product_preset_id
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_product_preset_id
 msgid "Preset"
-msgstr "Preset"
+msgstr "Miras"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_session_price
@@ -989,26 +995,25 @@ msgstr "Ürün Niteliği"
 #. module: product_configurator
 #: model:ir.ui.view,arch_db:product_configurator.product_attribute_value_form_view
 msgid "Product Attribute Values"
-msgstr "Product Attribute Values"
+msgstr "Ürün Nitelik Değerleri"
 
 #. module: product_configurator
 #: model:ir.module.category,name:product_configurator.product_config_category
 #: model:ir.ui.view,arch_db:product_configurator.configurator_settings_view_form
 #: model:ir.ui.view,arch_db:product_configurator.product_configurator_form
 msgid "Product Configurator"
-msgstr "Product Configurator"
+msgstr "Ürün Konfigüratörü"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_value_custom_product_id
 msgid "Product ID"
-msgstr "Product ID"
+msgstr "Ürün Kimliği"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_product_img
-#: model:ir.model.fields,field_description:product_configurator.field_product_configurator_purchase_product_img
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_sale_product_img
 msgid "Product Img"
-msgstr "Product Img"
+msgstr "Ürün Resmi"
 
 #. module: product_configurator
 #: model:ir.model,name:product_configurator.model_product_template
@@ -1019,33 +1024,32 @@ msgid "Product Template"
 msgstr "Ürün Şablonu"
 
 #. module: product_configurator
-#: code:addons/product_configurator/wizard/product_configurator.py:850
+#: code:addons/product_configurator/wizard/product_configurator.py:851
 #, python-format
 msgid "Product Template does not have any attribute lines defined"
-msgstr "Product Template does not have any attribute lines defined"
+msgstr "Ürün Şablonunda tanımlanmış herhangi bir nitelik satırı yok"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_value_line_product_value_ids
 msgid "Product Value"
-msgstr "Product Value"
+msgstr "Ürün Değeri"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_product_id
-#: model:ir.model.fields,field_description:product_configurator.field_product_configurator_purchase_product_id
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_sale_product_id
 msgid "Product Variant"
 msgstr "Ürün Varyantı"
 
 #. module: product_configurator
-#: code:addons/product_configurator/models/product_config.py:713
+#: code:addons/product_configurator/models/product_config.py:733
 #, python-format
 msgid "Product created via configuration wizard"
-msgstr "Product created via configuration wizard"
+msgstr "Yapılandırma sihirbazı aracılığıyla oluşturulan ürün"
 
 #. module: product_configurator
 #: model:ir.ui.view,arch_db:product_configurator.product_form_view_custom_vals_inherit
 msgid "Reconfigure Product"
-msgstr "Reconfigure Product"
+msgstr "Ürünü Yeniden Yapılandırın"
 
 #. module: product_configurator
 #: model:product.attribute.value,name:product_configurator.product_attribute_value_red
@@ -1064,39 +1068,41 @@ msgid "Required"
 msgstr "Zorunlu"
 
 #. module: product_configurator
-#: code:addons/product_configurator/models/product_config.py:1254
+#: code:addons/product_configurator/models/product_config.py:1274
 #, python-format
 msgid "Required attribute '%s' is empty"
-msgstr "Required attribute '%s' is empty"
+msgstr "Gerekli nitelik '%s' boş"
 
 #. module: product_configurator
 #: model:ir.ui.view,arch_db:product_configurator.product_configurator_form
 msgid "Reset"
-msgstr "Reset"
+msgstr "Sıfırla"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_domain_domain_line_ids
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_line_domain_id
 msgid "Restrictions"
-msgstr "Restrictions"
+msgstr "Kısıtlamalar"
 
 #. module: product_configurator
 #: code:addons/product_configurator/models/product.py:178
 #, python-format
-msgid "Restrictions added make the current default values generate an invalid configuration.                  \n"
+msgid ""
+"Restrictions added make the current default values generate an invalid configuration.                  \n"
 "%s"
-msgstr "Restrictions added make the current default values generate an invalid configuration.                  \n"
+msgstr ""
+"Eklenen kısıtlamalar, geçerli varsayılan değerlerin geçersiz bir yapılandırma oluşturmasına neden olur.\n"
 "%s"
 
 #. module: product_configurator
 #: model:product.attribute,name:product_configurator.product_attribute_rims
 msgid "Rims"
-msgstr "Rims"
+msgstr "Jantlar"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_domain_line_domain_id
 msgid "Rule"
-msgstr "Rule"
+msgstr "Kural"
 
 #. module: product_configurator
 #: model:ir.ui.view,arch_db:product_configurator.product_config_domain_form_view
@@ -1106,31 +1112,31 @@ msgstr "Kurallar"
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_search_ok
 msgid "Searchable"
-msgstr "Searchable"
+msgstr "Aranabilir"
 
 #. module: product_configurator
-#: code:addons/product_configurator/models/product_attribute.py:108
+#: code:addons/product_configurator/models/product_attribute.py:109
 #, python-format
 msgid "Selected custom field type '%s' is not searchable"
-msgstr "Selected custom field type '%s' is not searchable"
+msgstr "Seçili özel alan türü '%s' aranabilir değil"
 
 #. module: product_configurator
-#: code:addons/product_configurator/models/product_attribute.py:129
+#: code:addons/product_configurator/models/product_attribute.py:130
 #, python-format
 msgid "Selected custom value '%s' must be at least %s"
-msgstr "Selected custom value '%s' must be at least %s"
+msgstr "Seçilen '%s' özel değeri en az %s olmalıdır"
 
 #. module: product_configurator
-#: code:addons/product_configurator/models/product_attribute.py:124
+#: code:addons/product_configurator/models/product_attribute.py:125
 #, python-format
 msgid "Selected custom value '%s' must be between %s and %s"
-msgstr "Selected custom value '%s' must be between %s and %s"
+msgstr "Seçilen '%s' özel değeri, %s ile %s arasında olmalıdır"
 
 #. module: product_configurator
-#: code:addons/product_configurator/models/product_attribute.py:134
+#: code:addons/product_configurator/models/product_attribute.py:135
 #, python-format
 msgid "Selected custom value '%s' must be lower than %s"
-msgstr "Selected custom value '%s' must be lower than %s"
+msgstr "Seçilen '%s' özel değeri %s değerinden düşük olmalıdır"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_line_sequence
@@ -1145,19 +1151,18 @@ msgstr "Sıra"
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_session_custom_value_cfg_session_id
 msgid "Session"
-msgstr "Session"
+msgstr "Oturum"
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_configurator_product_id
-#: model:ir.model.fields,help:product_configurator.field_product_configurator_purchase_product_id
 #: model:ir.model.fields,help:product_configurator.field_product_configurator_sale_product_id
 msgid "Set only when re-configuring a existing variant"
-msgstr "Set only when re-configuring a existing variant"
+msgstr "Yalnızca mevcut bir varyantı yeniden yapılandırırken ayarlayın"
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_config_domain_line_sequence
 msgid "Set the order of operations for evaluation domain lines"
-msgstr "Set the order of operations for evaluation domain lines"
+msgstr "Değerlendirme etki alanı satırları için işlem sırasını ayarlayın"
 
 #. module: product_configurator
 #: model:ir.actions.act_window,name:product_configurator.action_general_configuration
@@ -1169,38 +1174,38 @@ msgstr "Ayarlar"
 #. module: product_configurator
 #: model:product.attribute.value,name:product_configurator.product_attribute_value_silver
 msgid "Silver"
-msgstr "Silver"
+msgstr "Gümüş"
 
 #. module: product_configurator
 #: model:product.product,name:product_configurator.product_paint_silver
 #: model:product.template,name:product_configurator.product_paint_silver_product_template
 msgid "Silver Paint"
-msgstr "Silver Paint"
+msgstr "Gümüş Boya"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_value_image_small
 msgid "Small Image"
-msgstr "Small Image"
+msgstr "Küçük Resim"
 
 #. module: product_configurator
 #: model:product.attribute.value,name:product_configurator.product_attribute_value_smoker_package
 #: model:product.product,name:product_configurator.product_2_series_smoker_package
 #: model:product.template,name:product_configurator.product_2_series_smoker_package_product_template
 msgid "Smoker Package"
-msgstr "Smoker Package"
+msgstr "Sigara İçen Paketi"
 
 #. module: product_configurator
 #: code:addons/product_configurator/models/product.py:305
-#: code:addons/product_configurator/models/product.py:556
+#: code:addons/product_configurator/models/product.py:557
 #, python-format
 msgid "Sorry, you are not allowed to create/change this kind of document. For more information please contact your manager."
-msgstr "Sorry, you are not allowed to create/change this kind of document. For more information please contact your manager."
+msgstr "Üzgünüz, bu tür bir belge oluşturmanıza/değiştirmenize izin verilmiyor. Daha fazla bilgi için lütfen yöneticinizle iletişime geçin."
 
 #. module: product_configurator
 #: model:product.product,name:product_configurator.product_2_series_transmission_steptronic_sport
 #: model:product.template,name:product_configurator.product_2_series_transmission_steptronic_sport_product_template
 msgid "Sport Automatic Transmission Steptronic"
-msgstr "Sport Automatic Transmission Steptronic"
+msgstr "Spor Otomatik Şanzıman Steptronic"
 
 #. module: product_configurator
 #: model:product.attribute.value,name:product_configurator.product_attribute_value_sport_line
@@ -1212,11 +1217,10 @@ msgstr "Sport Line"
 #. module: product_configurator
 #: model:ir.ui.view,arch_db:product_configurator.product_template_search_view
 msgid "Standard Products"
-msgstr "Standard Products"
+msgstr "Standart Ürünler"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_session_state
-#: model:ir.model.fields,field_description:product_configurator.field_product_configurator_purchase_state
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_sale_state
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_state
 msgid "State"
@@ -1237,54 +1241,58 @@ msgstr "Tapistry"
 #. module: product_configurator
 #: selection:product.attribute,custom_type:0
 msgid "Textarea"
-msgstr "Textarea"
+msgstr "Metin Alanı"
 
 #. module: product_configurator
-#: code:addons/product_configurator/models/product_config.py:1286
+#: code:addons/product_configurator/models/product_config.py:1306
 #, python-format
-msgid "The following custom values are not permitted according to the product template - %s.\n"
+msgid ""
+"The following custom values are not permitted according to the product template - %s.\n"
 "\n"
 "It is possible that a change has been made to allowed custom values while your configuration was in process. Please reset your current session and start over or contact your administrator in order to proceed."
-msgstr "The following custom values are not permitted according to the product template - %s.\n"
+msgstr ""
+"Ürün şablonuna göre aşağıdaki özel değerlere izin verilmez - %s.\n"
 "\n"
-"It is possible that a change has been made to allowed custom values while your configuration was in process. Please reset your current session and start over or contact your administrator in order to proceed."
+"Yapılandırmanız devam ederken izin verilen özel değerlerde bir değişiklik yapılmış olabilir. Lütfen mevcut oturumunuzu sıfırlayın ve baştan başlayın veya devam etmek için yöneticinizle iletişime geçin."
 
 #. module: product_configurator
-#: code:addons/product_configurator/models/product_config.py:1313
+#: code:addons/product_configurator/models/product_config.py:1333
 #, python-format
-msgid "The following multi values are not permitted according to the product template - %s.\n"
+msgid ""
+"The following multi values are not permitted according to the product template - %s.\n"
 "\n"
 "It is possible that a change has been made to allowed multi values while your configuration was in process. Please reset your current session and start over or contact your administrator in order to proceed."
-msgstr "The following multi values are not permitted according to the product template - %s.\n"
+msgstr ""
+"Ürün şablonuna göre aşağıdaki çoklu değerlere izin verilmez - %s.\n"
 "\n"
-"It is possible that a change has been made to allowed multi values while your configuration was in process. Please reset your current session and start over or contact your administrator in order to proceed."
+"Yapılandırmanız devam ederken izin verilen çoklu değerlerde bir değişiklik yapılmış olabilir. Lütfen mevcut oturumunuzu sıfırlayın ve baştan başlayın veya devam etmek için yöneticinizle iletişime geçin."
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_attribute_custom_type
 msgid "The type of the custom field generated in the frontend"
-msgstr "The type of the custom field generated in the frontend"
+msgstr "Ön yüzde oluşturulan özel alanın türü"
 
 #. module: product_configurator
-#: code:addons/product_configurator/wizard/product_configurator.py:551
+#: code:addons/product_configurator/wizard/product_configurator.py:552
 #, python-format
 msgid "There was a problem rendering the view (dynamic_form not found)"
-msgstr "There was a problem rendering the view (dynamic_form not found)"
+msgstr "Görünüm oluşturulurken bir sorun oluştu (dynamic_form bulunamadı)"
 
 #. module: product_configurator
 #: model:ir.ui.view,arch_db:product_configurator.product_configurator_form
 msgid "To reset/change the Preset Please close and start the configuration again"
-msgstr "To reset/change the Preset Please close and start the configuration again"
+msgstr "Ön Ayarı sıfırlamak/değiştirmek için Lütfen kapatın ve yapılandırmayı yeniden başlatın"
 
 #. module: product_configurator
 #: model:product.attribute.value,name:product_configurator.product_attribute_value_tow_hook
 msgid "Tow hook"
-msgstr "Tow hook"
+msgstr "Çeki kancası"
 
 #. module: product_configurator
 #: model:product.product,name:product_configurator.product_2_series_towhook
 #: model:product.template,name:product_configurator.product_2_series_towhook_product_template
 msgid "Towhook"
-msgstr "Towhook"
+msgstr "Çeki kancası"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_config_domain_trans_implied_ids
@@ -1294,7 +1302,7 @@ msgstr "Geçişler devralır"
 #. module: product_configurator
 #: model:product.attribute,name:product_configurator.product_attribute_transmission
 msgid "Transmission"
-msgstr "Transmission"
+msgstr "Vites"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_uom_id
@@ -1338,30 +1346,30 @@ msgstr "Değerler"
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_value_line_value_ids
 msgid "Values Configuration"
-msgstr "Values Configuration"
+msgstr "Değerler Yapılandırması"
 
 #. module: product_configurator
 #: code:addons/product_configurator/models/product_config.py:239
 #, python-format
 msgid "Values entered for line '%s' generate a incompatible configuration"
-msgstr "Values entered for line '%s' generate a incompatible configuration"
+msgstr "'%s' satırı için girilen değerler uyumsuz bir yapılandırma oluşturuyor"
 
 #. module: product_configurator
 #: code:addons/product_configurator/models/product_config.py:198
 #, python-format
 msgid "Values must belong to the attribute of the corresponding attribute_line set on the configuration line"
-msgstr "Values must belong to the attribute of the corresponding attribute_line set on the configuration line"
+msgstr "Değerler, yapılandırma satırında ayarlanan ilgili feature_line niteliğine ait olmalıdır"
 
 #. module: product_configurator
-#: code:addons/product_configurator/models/product_attribute.py:444
+#: code:addons/product_configurator/models/product_attribute.py:446
 #, python-format
 msgid "Values provided to the attribute value line are incompatible with the current rules"
-msgstr "Values provided to the attribute value line are incompatible with the current rules"
+msgstr "Nitelik değeri satırına sağlanan değerler, geçerli kurallarla uyumlu değil"
 
 #. module: product_configurator
 #: model:ir.ui.view,arch_db:product_configurator.product_template_form_view
 msgid "Variant Name"
-msgstr "Variant Name"
+msgstr "Varyant Adı"
 
 #. module: product_configurator
 #: model:ir.ui.view,arch_db:product_configurator.product_form_view_custom_vals_inherit
@@ -1373,7 +1381,7 @@ msgstr "Varyant Fiyatları"
 #: model:ir.model.fields,field_description:product_configurator.field_product_product_mako_tmpl_name
 #: model:ir.model.fields,field_description:product_configurator.field_product_template_mako_tmpl_name
 msgid "Variant name"
-msgstr "Variant name"
+msgstr "Varyant Adı"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_attribute_price_weight_extra
@@ -1385,17 +1393,17 @@ msgstr "Ağırlık"
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_product_weight_extra
 msgid "Weight Extra"
-msgstr "Weight Extra"
+msgstr "Ekstra Ağırlık"
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_attribute_value_weight_extra
 msgid "Weight Extra: Extra weight for the variant with this attributevalue on sale price. eg. 200 price extra, 1000 + 200 = 1200."
-msgstr "Weight Extra: Extra weight for the variant with this attributevalue on sale price. eg. 200 price extra, 1000 + 200 = 1200."
+msgstr "Ekstra Ağırlık: Satış fiyatındaki bu niteliğe sahip varyant için ekstra ağırlık. Örneğin. 200 ekstra fiyat, 1000 + 200 = 1200."
 
 #. module: product_configurator
 #: model:ir.model.fields,help:product_configurator.field_product_attribute_search_ok
 msgid "When checking for variants with the same configuration, do we include this field in the search?"
-msgstr "When checking for variants with the same configuration, do we include this field in the search?"
+msgstr "Aynı konfigürasyona sahip varyantları kontrol ederken, bu alanı aramaya dahil ediyor muyuz?"
 
 #. module: product_configurator
 #: model:ir.model.fields,field_description:product_configurator.field_product_configurator_custom_value_wizard_id
@@ -1406,14 +1414,14 @@ msgstr "Sihirbaz"
 #: code:addons/product_configurator/models/product.py:65
 #, python-format
 msgid "You cannot have a duplicate configuration for the same value"
-msgstr "You cannot have a duplicate configuration for the same value"
+msgstr "Aynı değer için yinelenen bir konfigürasyona sahip olamazsınız"
 
 #. module: product_configurator
-#: code:addons/product_configurator/models/product_config.py:912
-#: code:addons/product_configurator/models/product_config.py:936
+#: code:addons/product_configurator/models/product_config.py:932
+#: code:addons/product_configurator/models/product_config.py:956
 #, python-format
 msgid "You must select at least one attribute in order to configure a product"
-msgstr "You must select at least one attribute in order to configure a product"
+msgstr "Bir ürünü yapılandırmak için en az bir özellik seçmelisiniz"
 
 #. module: product_configurator
 #: model:ir.model,name:product_configurator.model_product_attribute_line
@@ -1489,4 +1497,3 @@ msgstr "product.configurator"
 #: model:ir.model,name:product_configurator.model_product_configurator_custom_value
 msgid "product.configurator.custom.value"
 msgstr "product.configurator.custom.value"
-

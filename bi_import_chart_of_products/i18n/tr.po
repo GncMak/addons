@@ -1,0 +1,201 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bi_import_chart_of_products
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-04 08:52+0000\n"
+"PO-Revision-Date: 2023-07-04 13:22+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 3.0\n"
+
+#. module: bi_import_chart_of_products
+#: code:addons/bi_import_chart_of_products/wizard/wiz_import_chart.py:165
+#, python-format
+msgid "Attribute active field cannot be empty."
+msgstr "Nitelik alanı boş olamaz."
+
+#. module: bi_import_chart_of_products
+#: code:addons/bi_import_chart_of_products/wizard/wiz_import_chart.py:168
+#, python-format
+msgid "Attribute value active field cannot be empty."
+msgstr "Nitelik değeri alanı boş olamaz."
+
+#. module: bi_import_chart_of_products
+#: model:ir.model.fields,field_description:bi_import_chart_of_products.field_import_chart_product_brand_id
+msgid "Brand"
+msgstr "Marka"
+
+#. module: bi_import_chart_of_products
+#: code:addons/bi_import_chart_of_products/wizard/wiz_import_chart.py:298
+#, python-format
+msgid "Bu nitelik değeri kodu sistemde var. Lütfen kontrol edip tekrar deneyiniz."
+msgstr "Bu nitelik değeri kodu sistemde var. Lütfen kontrol edip tekrar deneyiniz."
+
+#. module: bi_import_chart_of_products
+#: model:ir.ui.view,arch_db:bi_import_chart_of_products.wizard_import_chart
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: bi_import_chart_of_products
+#: code:addons/bi_import_chart_of_products/wizard/wiz_import_chart.py:147
+#, python-format
+msgid "Code field cannot be empty."
+msgstr "Kod alanı boş geçilemez."
+
+#. module: bi_import_chart_of_products
+#: model:ir.model.fields,field_description:bi_import_chart_of_products.field_import_chart_product_currency_id
+msgid "Currency"
+msgstr "Para Birimi"
+
+#. module: bi_import_chart_of_products
+#: model:ir.model.fields,field_description:bi_import_chart_of_products.field_import_chart_product_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: bi_import_chart_of_products
+#: model:ir.ui.view,arch_db:bi_import_chart_of_products.wizard_import_chart
+msgid "Import"
+msgstr "İçe Aktar"
+
+#. module: bi_import_chart_of_products
+#: model:ir.actions.act_window,name:bi_import_chart_of_products.bi_act_chart_of_product
+#: model:ir.ui.view,arch_db:bi_import_chart_of_products.wizard_import_chart
+msgid "Import Chart Of Products"
+msgstr "Ürün Kartları Excel Aktarımı"
+
+#. module: bi_import_chart_of_products
+#: model:ir.ui.menu,name:bi_import_chart_of_products.menu_chart_of_product
+msgid "Import Charts Of Product"
+msgstr "Ürün Kartları Excel Aktarımı"
+
+#. module: bi_import_chart_of_products
+#: code:addons/bi_import_chart_of_products/wizard/wiz_import_chart.py:71
+#: code:addons/bi_import_chart_of_products/wizard/wiz_import_chart.py:97
+#, python-format
+msgid "Invalid file!"
+msgstr "Geçersiz dosya!"
+
+#. module: bi_import_chart_of_products
+#: model:ir.model.fields,field_description:bi_import_chart_of_products.field_import_chart_product___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: bi_import_chart_of_products
+#: model:ir.model.fields,field_description:bi_import_chart_of_products.field_product_product_main_default_code
+#: model:ir.model.fields,field_description:bi_import_chart_of_products.field_product_template_main_default_code
+msgid "Main Default Code"
+msgstr "Ana Ürün Kodu"
+
+#. module: bi_import_chart_of_products
+#: code:addons/bi_import_chart_of_products/wizard/wiz_import_chart.py:174
+#, python-format
+msgid "Main category definition field cannot be empty."
+msgstr "Main category definition field cannot be empty."
+
+#. module: bi_import_chart_of_products
+#: code:addons/bi_import_chart_of_products/wizard/wiz_import_chart.py:171
+#, python-format
+msgid "Main category field cannot be empty."
+msgstr "Ana kategori alanı boş geçilemez."
+
+#. module: bi_import_chart_of_products
+#: code:addons/bi_import_chart_of_products/wizard/wiz_import_chart.py:150
+#, python-format
+msgid "Name Field cannot be empty."
+msgstr "Ad alanı boş olamaz."
+
+#. module: bi_import_chart_of_products
+#: code:addons/bi_import_chart_of_products/wizard/wiz_import_chart.py:139
+#, python-format
+msgid "Please select any one from xls or csv formate!"
+msgstr "Lütfen excel formatını seçin!"
+
+#. module: bi_import_chart_of_products
+#: model:ir.model,name:bi_import_chart_of_products.model_product_template
+msgid "Product Template"
+msgstr "Ürün Şablonu"
+
+#. module: bi_import_chart_of_products
+#: model:ir.model.fields,field_description:bi_import_chart_of_products.field_import_chart_product_product_type
+msgid "Product Type"
+msgstr "Ürün Türü"
+
+#. module: bi_import_chart_of_products
+#: model:ir.model.fields,field_description:bi_import_chart_of_products.field_import_chart_product_uom_id
+msgid "Product Uom"
+msgstr "Ölçü Birimi"
+
+#. module: bi_import_chart_of_products
+#: model:ir.model.fields,field_description:bi_import_chart_of_products.field_import_chart_product_import_option
+msgid "Select"
+msgstr "Seçim"
+
+#. module: bi_import_chart_of_products
+#: model:ir.model.fields,field_description:bi_import_chart_of_products.field_import_chart_product_File_select
+msgid "Select Excel File"
+msgstr "Excel Dosya Seçimi"
+
+#. module: bi_import_chart_of_products
+#: code:addons/bi_import_chart_of_products/wizard/wiz_import_chart.py:180
+#, python-format
+msgid "Sub category definition field cannot be empty."
+msgstr "Alt kategori tanımı alanı boş geçilemez."
+
+#. module: bi_import_chart_of_products
+#: model:ir.model.fields,field_description:bi_import_chart_of_products.field_import_chart_product_supplier_id
+msgid "Supplier"
+msgstr "Tedarikçi"
+
+#. module: bi_import_chart_of_products
+#: model:ir.model.fields,field_description:bi_import_chart_of_products.field_import_chart_product_supplier_discount
+msgid "Supplier Discount"
+msgstr "Varsayılan Tedarikçi İndirimi (%)"
+
+#. module: bi_import_chart_of_products
+#: selection:import.chart.product,import_option:0
+msgid "XLS File"
+msgstr "XLS Dosya"
+
+#. module: bi_import_chart_of_products
+#: code:addons/bi_import_chart_of_products/wizard/wiz_import_chart.py:153
+#, python-format
+msgid "attribute_code field cannot be empty."
+msgstr "Nitelik Kodu alanı boş olamaz."
+
+#. module: bi_import_chart_of_products
+#: code:addons/bi_import_chart_of_products/wizard/wiz_import_chart.py:156
+#, python-format
+msgid "attribute_name field cannot be empty."
+msgstr "Nitelik Adı alanı boş olamaz."
+
+#. module: bi_import_chart_of_products
+#: code:addons/bi_import_chart_of_products/wizard/wiz_import_chart.py:159
+#, python-format
+msgid "attribute_value_code field cannot be empty."
+msgstr "Nitelik değeri kodu alanı boş olamaz."
+
+#. module: bi_import_chart_of_products
+#: code:addons/bi_import_chart_of_products/wizard/wiz_import_chart.py:162
+#, python-format
+msgid "attribute_value_name field cannot be empty."
+msgstr "Nitelik değeri adı alanı boş olamaz."
+
+#. module: bi_import_chart_of_products
+#: model:ir.model,name:bi_import_chart_of_products.model_import_chart_product
+msgid "import.chart.product"
+msgstr "import.chart.product"
+
+#. module: bi_import_chart_of_products
+#: code:addons/bi_import_chart_of_products/wizard/wiz_import_chart.py:177
+#, python-format
+msgid "sub category field cannot be empty."
+msgstr "Alt kategori alanı boş geçilemez."

@@ -10,6 +10,7 @@ from datetime import date, datetime
 from odoo.exceptions import Warning, UserError
 from odoo import models, fields, exceptions, api, _
 import logging
+
 _logger = logging.getLogger(__name__)
 import io
 
@@ -30,6 +31,13 @@ try:
 except ImportError:
     _logger.debug('Cannot `import base64`.')
 
+
+class ProductTemplate(models.Model):
+    _inherit = 'product.template'
+
+    main_default_code = fields.Char(string="Main Default Code")
+
+
 class ImportChartProduct(models.TransientModel):
     _name = "import.chart.product"
 
@@ -39,6 +47,8 @@ class ImportChartProduct(models.TransientModel):
     uom_id = fields.Many2one('product.uom', string="Product Uom", required=True)
     currency_id = fields.Many2one('res.currency', string="Currency", required=True, default=3)
     product_type = fields.Many2one('product.product.type', string="Product Type", required=True)
+    supplier_id = fields.Many2one('res.partner', string="Supplier", required=True)
+    supplier_discount = fields.Float(string='Supplier Discount')
 
     @api.multi
     def import_file(self):
@@ -92,7 +102,9 @@ class ImportChartProduct(models.TransientModel):
                     fields = map(lambda row: row.value.encode('utf-8'), sheet.row(row_no))
                 else:
 
-                    line = list(map(lambda row:isinstance(row.value, bytes) and row.value.encode('utf-8') or str(row.value), sheet.row(row_no)))
+                    line = list(
+                        map(lambda row: isinstance(row.value, bytes) and row.value.encode('utf-8') or str(row.value),
+                            sheet.row(row_no)))
 
                     values.update({
                         'default_code': str(line[0]),
@@ -177,16 +189,22 @@ class ImportChartProduct(models.TransientModel):
 
         main_category = self.env['x_main_category'].search([('x_name', '=', values.get('main_category'))])
         if not main_category:
-            main_category = self.env['x_main_category'].create({'x_name': values.get('main_category'), 'x_studio_field_151WL': '99'})
+            main_category = self.env['x_main_category'].create(
+                {'x_name': values.get('main_category'), 'x_studio_field_151WL': '99'})
 
-        main_category_definition = self.env['x_main_category_definition'].search([('x_name', '=', values.get('main_category_definition')), ('x_studio_field_j5lhE', '=', main_category.id)])
+        main_category_definition = self.env['x_main_category_definition'].search(
+            [('x_name', '=', values.get('main_category_definition')), ('x_studio_field_j5lhE', '=', main_category.id)])
         if not main_category_definition:
-            main_category_definition = self.env['x_main_category_definition'].create({'x_name': values.get('main_category_definition'), 'x_studio_field_H40pY': '99','x_studio_field_j5lhE': main_category.id})
+            main_category_definition = self.env['x_main_category_definition'].create(
+                {'x_name': values.get('main_category_definition'), 'x_studio_field_H40pY': '99',
+                 'x_studio_field_j5lhE': main_category.id})
 
         sub_category = self.env['x_sub_category'].search([('x_name', '=', values.get(
             'sub_category')), ('x_studio_field_B0Urb', '=', main_category_definition.id)])
         if not sub_category:
-            sub_category = self.env['x_sub_category'].create({'x_name': values.get('sub_category'), 'x_studio_field_SjpPe': '99','x_studio_field_B0Urb': main_category_definition.id})
+            sub_category = self.env['x_sub_category'].create(
+                {'x_name': values.get('sub_category'), 'x_studio_field_SjpPe': '99',
+                 'x_studio_field_B0Urb': main_category_definition.id})
 
         sub_category_definition = self.env['x_sub_category_definition'].search([('x_name', '=', values.get(
             'sub_category_definition')), ('x_studio_field_NGvMM', '=', sub_category.id)])
@@ -196,14 +214,14 @@ class ImportChartProduct(models.TransientModel):
                  'x_studio_field_NGvMM': sub_category.id})
 
         product_tmpl = self.env['product.template'].search([
-            ('default_code', '=', values.get('default_code'))
+            ('main_default_code', '=', values.get('default_code'))
         ])
         if not product_tmpl:
             routes = [(6, 0, {1, 11})]
             product_tmpl = self.env['product.template'].create({
                 'name': values.get('name'),
-                'default_code': values.get('default_code'),
-                'list_price': float(values.get('list_price')),
+                'main_default_code': values.get('default_code'),
+                'list_price': (float(values.get('list_price')) * (1 - (self.supplier_discount / 100))),
                 'sale_delay': values.get('sale_delay'),
                 'type': 'product',
                 'product_type': self.product_type.id,
@@ -228,11 +246,38 @@ class ImportChartProduct(models.TransientModel):
             })
             product_tmpl.update({'route_ids': routes})
             product_tmpl.with_context(lang='en_US').write({'name': values.get('name_eng')})
+            product_supplier = self.env['product.supplierinfo'].create({
+                'name': self.supplier_id.id,
+                'delay': 1,
+                'min_qty': 0,
+                'price': float(values.get('list_price')) * (1 - (self.supplier_discount / 100)),
+                'currency_id': self.currency_id.id,
+                'product_tmpl_id': product_tmpl.id,
+                'company_id': None
+            })
 
         else:
-            product_tmpl.write({'config_ok': True, 'list_price': values.get('list_price')})
+            product_tmpl.write({'config_ok': True,
+                                'list_price': float(values.get('list_price')) * (1 - (self.supplier_discount / 100))})
 
-        attrib_name = self.env['product.attribute'].search([('code', '=', values.get('attribute_code')), ('active', '=', values.get('attribute_active'))])
+            supplier_list = product_tmpl.mapped('seller_ids').filtered(
+                lambda x: x.product_tmpl_id.id == product_tmpl.id and x.name.id == self.supplier_id.id)
+            if supplier_list:
+                for supplier in supplier_list:
+                    supplier.write({'price': float(values.get('list_price')) * (1 - (self.supplier_discount / 100))})
+            else:
+                product_supplier = self.env['product.supplierinfo'].create({
+                    'name': self.supplier_id.id,
+                    'delay': 1,
+                    'min_qty': 0,
+                    'price': float(values.get('list_price')) * (1 - (self.supplier_discount / 100)),
+                    'currency_id': self.currency_id.id,
+                    'product_tmpl_id': product_tmpl.id,
+                    'company_id': None
+                })
+
+        attrib_name = self.env['product.attribute'].search(
+            [('code', '=', values.get('attribute_code')), ('active', '=', values.get('attribute_active'))])
         if not attrib_name:
             attrib_name = self.env['product.attribute'].create({
                 'name': values.get('attribute_name'),
@@ -241,11 +286,14 @@ class ImportChartProduct(models.TransientModel):
             })
             attrib_name.with_context(lang='en_US').write({'name': values.get('attribute_name_eng')})
 
-        orj_attrib_value = self.env['product.attribute.value'].search([('code', '=', values.get('attribute_value_code')), ('attribute_id', '=', attrib_name.id),('active', '=', values.get('attribute_value_active'))])
+        orj_attrib_value = self.env['product.attribute.value'].search(
+            [('code', '=', values.get('attribute_value_code')), ('attribute_id', '=', attrib_name.id),
+             ('active', '=', values.get('attribute_value_active'))])
 
         if not orj_attrib_value:
             attrib_value_code = self.env['product.attribute.value'].search(
-                [('code', '=', values.get('attribute_value_code')),('active', '=', values.get('attribute_value_active'))])
+                [('code', '=', values.get('attribute_value_code')),
+                 ('active', '=', values.get('attribute_value_active'))])
             if attrib_value_code:
                 raise Warning(_('Bu nitelik değeri kodu sistemde var. Lütfen kontrol edip tekrar deneyiniz.'))
             else:
@@ -257,18 +305,30 @@ class ImportChartProduct(models.TransientModel):
                 })
             orj_attrib_value.with_context(lang='en_US').write({'name': values.get('attribute_value_name_eng')})
         else:
-            product_attribute_price = self.env['product.attribute.price'].search([('product_tmpl_id', '=', product_tmpl.id), ('value_id', '=', orj_attrib_value.id)])
-            product_attribute_price.write({
-                'price_extra': values.get('attribute_value_price'),
-            })
+            product_attribute_price = self.env['product.attribute.price'].search(
+                [('product_tmpl_id', '=', product_tmpl.id), ('value_id', '=', orj_attrib_value.id)])
+            product_attribute_price.write(
+                {'price_extra': float(values.get('attribute_value_price')) * (1 - (self.supplier_discount / 100)),
+                 })
+            supplier_variant_ids = product_tmpl.mapped('seller_ids').filtered(
+                lambda x: x.product_id.id != False and x.product_tmpl_id.id == product_tmpl.id)
 
-        product_attribute_lines = product_tmpl.mapped('attribute_line_val_ids').filtered(lambda x: x.id == orj_attrib_value.id)
+            for sp_variant in supplier_variant_ids:
+                price = 0
+                for pr in sp_variant.product_id.attribute_value_ids:
+                    price += pr.price_extra
+                sp_variant.update({'price': sp_variant.product_id.lst_price + price})
+
+        product_attribute_lines = product_tmpl.mapped('attribute_line_val_ids').filtered(
+            lambda x: x.id == orj_attrib_value.id)
 
         if not product_attribute_lines:
-            product_attribute_line_id = product_tmpl.mapped('attribute_line_ids').filtered(lambda x: x.code == attrib_name.code)
+            product_attribute_line_id = product_tmpl.mapped('attribute_line_ids').filtered(
+                lambda x: x.code == attrib_name.code)
             if product_attribute_line_id:
                 product_tmpl.write({'attribute_line_ids': [
-                    (1, product_attribute_line_id.id,{'value_ids': [(4, orj_attrib_value.id)], 'code': attrib_name.code})]})
+                    (1, product_attribute_line_id.id,
+                     {'value_ids': [(4, orj_attrib_value.id)], 'code': attrib_name.code})]})
             else:
                 product_tmpl.update({
                     'attribute_line_ids': [(0, 0, {
@@ -281,7 +341,7 @@ class ImportChartProduct(models.TransientModel):
                 })
 
             self.env['product.attribute.price'].create({
-                'price_extra': values.get('attribute_value_price'),
+                'price_extra': float(values.get('attribute_value_price')) * (1 - (self.supplier_discount / 100)),
                 'product_tmpl_id': product_tmpl.id,
                 'value_id': orj_attrib_value.id
             })

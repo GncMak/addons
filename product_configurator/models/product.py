@@ -564,6 +564,7 @@ class ProductProduct(models.Model):
         config_ok = vals.get('config_ok', False)
         if config_ok:
             self.check_config_user_access(mode='create')
+
         return super(ProductProduct, self).create(vals)
 
     @api.multi
