@@ -80,6 +80,7 @@ class ImportChartJournalItems(models.TransientModel):
 					if not account_id:
 						raise Warning(_('Girdiğiniz hesap kodu sistemde bulunamadı. Lütfen hesap kodunu inceleyin ve tekrar yüklemeyi deneyin.'))
 
+					partner_id = None
 					if values.get('partner'):
 						partner_id = self.env['res.partner'].search([('name', '=', values.get('partner')), ('active', '=', True)], limit=1)
 						if not partner_id:
@@ -98,7 +99,7 @@ class ImportChartJournalItems(models.TransientModel):
 						'account_id': account_id.id,
 						'company_id': self.company_id.id,
 						'journal_id': self.journal_id.id,
-						'partner_id': partner_id.id,
+						'partner_id': partner_id.id if partner_id else None,
 						'analytic_account_id': analytic_account_id.id if analytic_account_id else None,
 						'name': values.get('description'),
 						'debit': float(values.get('debit')),
