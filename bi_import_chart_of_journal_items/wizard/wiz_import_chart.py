@@ -84,13 +84,13 @@ class ImportChartJournalItems(models.TransientModel):
 					if values.get('partner'):
 						partner_id = self.env['res.partner'].search([('name', '=', values.get('partner')), ('active', '=', True), ('employee', '=', True)], limit=1)
 						if not partner_id:
-							raise Warning(_(f"{values.get('partner')} bir personel bulunamamıştır. Personel ismini düzeltip tekrar deneyiniz."))
+							raise Warning(_(f"{values.get('partner')} isimli bir personel bulunamamıştır. Personel ismini düzeltip tekrar deneyiniz."))
 
 					analytic_account_id = None
 					if values.get('analytic_account'):
 						analytic_account_id = self.env['account.analytic.account'].search([('name', '=', values.get('analytic_account')), ('active', '=', True)], limit=1)
 						if not analytic_account_id:
-							raise Warning(_('Bu isimde bir analitik hesap bulunamamıştır. Analitik hesap ismini düzeltip tekrar deneyiniz.'))
+							raise Warning(_(f"{values.get('analytic_account')} isimde bir analitik hesap bulunamamıştır. Analitik hesap ismini düzeltip tekrar deneyiniz."))
 
 					res = self.create_chart_journal_items(values)
 
