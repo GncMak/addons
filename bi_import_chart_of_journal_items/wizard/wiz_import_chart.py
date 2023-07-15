@@ -98,7 +98,7 @@ class ImportChartJournalItems(models.TransientModel):
 						'account_id': account_id.id,
 						'company_id': self.company_id.id,
 						'journal_id': self.journal_id.id,
-						'partner': partner_id.id,
+						'partner_id': partner_id.id,
 						'analytic_account_id': analytic_account_id.id if analytic_account_id else None,
 						'name': values.get('description'),
 						'debit': float(values.get('debit')),
