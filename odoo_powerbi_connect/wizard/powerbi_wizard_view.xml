@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <data>
+
+        <record id="id_powerbi_wizard_view_form" model="ir.ui.view">
+            <field name="name">powerbi.wizard.form.view</field>
+            <field name="model">powerbi.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Import">
+                    <group>
+                        <field name="workspace_id"/>
+                    </group>
+                    <footer>
+						<button name="action_import_report"
+                            string="Import"
+                            type="object"
+                            class="oe_highlight"
+                            invisible="not context.get('report') == True"/>
+                        <button name="action_import_dashboard"
+                            string="Import"
+                            type="object"
+                            class="oe_highlight"
+                            invisible="not context.get('dashboard') == True"/>
+
+                            or
+
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="id_powerbi_wizard_reporting_form" model="ir.ui.view">
+            <field name="name">powerbi.wizard.reporting.form</field>
+            <field name="model">powerbi.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Reporting">
+                    <group>
+                        <field name="workspace_id"/>
+                        <field name="report_id" invisible="not context.get('report') == True"/>
+                        <field name="dashboard_id" invisible="not context.get('dashboard') == True"/>
+                    </group>
+                    <footer>
+						<button name="fetch_powerbi_report"
+                            string="View Report"
+                            type="object"
+                            class="oe_highlight"
+                            invisible="not context.get('report') == True"/>
+                        <button name="fetch_powerbi_dashboard"
+                            string="View Dashboard"
+                            type="object"
+                            class="oe_highlight"
+                            invisible="not context.get('dashboard') == True"/>
+
+                            or
+
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="id_powerbi_wizard_export_data_form" model="ir.ui.view">
+            <field name="name">powerbi.wizard.export.data.view</field>
+            <field name="model">powerbi.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Export">
+                    <group>
+                        <field name="exp_workspace_id" attrs="{'required': True}"/>
+                        <field name="exp_table_id"
+                            attrs="{'invisible': [('exp_workspace_id', '=', False)], 'required': [('exp_workspace_id', '!=', False)]}"/>
+                    </group>
+                    <footer>
+						<button name="action_export"
+                            string="Export"
+                            type="object"
+                            class="oe_highlight"
+                        />
+
+                            or
+
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="powerbi_wizard_report_view_action" model="ir.actions.act_window">
+            <field name="name">Powerbi Report</field>
+            <field name="res_model">powerbi.wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="context">{'report': True}</field>
+            <field name="view_id" ref="id_powerbi_wizard_reporting_form"/>
+        </record>
+
+        <record id="powerbi_wizard_dashboard_view_action" model="ir.actions.act_window">
+            <field name="name">Powerbi Dashboard</field>
+            <field name="res_model">powerbi.wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="context">{'dashboard': True}</field>
+            <field name="view_id" ref="id_powerbi_wizard_reporting_form"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <data>
+
+        <record id="powerbi_table_view_form" model="ir.ui.view">
+            <field name="name">powerbi.table.view.form</field>
+            <field name="model">powerbi.table</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Powerbi Table">
+                    <header>
+                        <button name="action_export"
+                                type="object"
+                                string="Export Data"
+                                class="btn"
+                                attrs="{'invisible': [('state','!=','published')]}"/>
+                        <button name="action_delete"
+                                type="object"
+                                string="Delete Data"
+                                class="btn"
+                                attrs="{'invisible': [('state','!=','published')]}"/>
+                        <button name="action_update_schema"
+                                type="object"
+                                string="Update Schema"
+                                class="btn"
+                                attrs="{'invisible': [('state','!=','published')]}"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+							<button type="object"
+								name="create_server_action"
+								string = 'Create Server Action'
+								class="oe_stat_button"
+                                icon="fa-server"/>
+                            <button type="object"
+								name="delete_server_action"
+								string = 'Delete Server Action'
+								class="oe_stat_button"
+                                icon="fa-server"/>
+                            <button type="object"
+								name="configure_cron"
+								string = 'Configure Cron'
+								class="oe_stat_button"
+                                icon="fa-cogs"/>
+						</div>
+
+                        <group>
+                            <field name="name"/>
+                            <field name="dataset_id"/>
+                            <field name="model_id" options="{'no_create':True}"/>
+                            <field name="model_name" invisible="1"/>
+                            <field name="run_cron"/>
+                        </group>
+                        <notebook>
+                            <page string="Columns" name="columns">
+                                <button name="open_column_wizard"
+                                    type="object"
+                                    string="Add Column"/>
+                                <field name="column_ids">
+                                    <tree create="false" edit="false">
+                                        <field name="name"/>
+                                        <field name="field_id"/>
+                                        <field name="field_type"/>
+                                        <field name="child_field_ids" widget="many2many_tags"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Filter Detail">
+                                <group>
+                                    <field name="filter_domain" widget="domain" options="{'model': 'model_name'}"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="powerbi_table_view_tree" model="ir.ui.view">
+            <field name="name">powerbi.table.view.tree</field>
+            <field name="model">powerbi.table</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Powerbi Table">
+                    <field name="name"/>
+                    <field name="dataset_id"/>
+                    <field name="model_id"/>
+                    <field name="is_published"/>
+                    <field name="create_date"/>
+                    <field name="create_uid" widget="many2one_avatar_user"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="powerbi_table_action_tree" model="ir.actions.act_window">
+            <field name="name">Powerbi Table</field>
+            <field name="res_model">powerbi.table</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="powerbi_table_view_tree"/>
+        </record>
+
+    </data>
+</odoo>

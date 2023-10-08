@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <data>
+
+        <!--====================    Synchronization History ==================-->
+
+        <record id="powerbi_sync_history_form" model="ir.ui.view">
+            <field name="name">powerbi.sync.history.form</field>
+            <field name="model">powerbi.sync.history</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Powerbi synchronization History" create="false" edit="false">
+                    <group>
+                        <field name="status" readonly="1"/>
+                        <field name="action_on" readonly="1"/>
+                        <field name="action" readonly="1"/>
+                        <field name="create_date" readonly="1"/>
+                        <field name="error_message" readonly="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="powerbi_sync_history_tree" model="ir.ui.view">
+            <field name="name">powerbi.sync.history.tree</field>
+            <field name="model">powerbi.sync.history</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Powerbi synchronization History" create="false" decoration-danger="status=='no'" decoration-success="status=='yes'">
+                    <field name="status" />
+                    <field name="action_on"/>
+                    <field name="action" />
+                    <field name="create_date" />
+                    <field name="error_message" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="powerbi_sync_history_search" model="ir.ui.view">
+            <field name="name">powerbi.sync.history.search</field>
+            <field name="model">powerbi.sync.history</field>
+            <field name="arch" type="xml">
+                <search string="History">
+                    <field name="action_on"/>
+                    <filter string="Successful" name="success" domain="[('status','=','yes')]"/>
+                    <filter string="Un-Successful" name="failure" domain="[('status','=','no')]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Entity" name="group_by_entity" context="{'group_by':'action_on'}"/>
+                        <filter string="Action" name="group_by_action" context="{'group_by':'action'}"/>
+                        <filter string="Status" name="group_by_status" context="{'group_by':'status'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="powerbi_sync_history_action" model="ir.actions.act_window">
+            <field name="name">Powerbi Synchronization History</field>
+            <field name="res_model">powerbi.sync.history</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"search_default_group_by_entity":1,"search_default_group_by_action":1}</field>
+            <field name="search_view_id" ref="powerbi_sync_history_search"/>
+            <field name="view_id" ref="powerbi_sync_history_tree"/>
+        </record>
+
+    </data>
+</odoo>

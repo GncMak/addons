@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <data noupdate="1">
+
+        <record model="powerbi.workspace" id="id_default_workspace">
+            <field name="name">My Workspace</field>
+            <field name="default_workspace" eval="True"/>
+            <field name="is_published" eval="True"/>
+        </record>
+
+        <function model="powerbi.workspace" name="_create_sale_order_data"/>
+
+        <function model="powerbi.workspace" name="_create_invoice_data"/>
+
+        <function model="powerbi.workspace" name="_create_stock_data"/>
+
+        <function model="powerbi.workspace" name="_create_purchase_data"/>
+
+        <function model="powerbi.workspace" name="_create_pos_data"/>
+    </data>
+</odoo>

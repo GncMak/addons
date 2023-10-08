@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <data>
+
+        <record id="powerbi_export_data_bulk" model="ir.actions.server">
+            <field name="name">Export Data to Powerbi</field>
+            <field name="model_id" ref="odoo_powerbi_connect.model_powerbi_table"/>
+            <field name="binding_model_id" ref="odoo_powerbi_connect.model_powerbi_table"/>
+            <field name="state">code</field>
+            <field name="code">action = records.export_to_powerbi()</field>
+        </record>
+
+        <record id="powerbi_delete_data_bulk" model="ir.actions.server">
+            <field name="name">Delete Powerbi Data</field>
+            <field name="model_id" ref="odoo_powerbi_connect.model_powerbi_table"/>
+            <field name="binding_model_id" ref="odoo_powerbi_connect.model_powerbi_table"/>
+            <field name="state">code</field>
+            <field name="code">action = records.delete_powerbi_data()</field>
+        </record>
+
+        <record id="powerbi_update_table_bulk" model="ir.actions.server">
+            <field name="name">Update Table Schema</field>
+            <field name="model_id" ref="odoo_powerbi_connect.model_powerbi_table"/>
+            <field name="binding_model_id" ref="odoo_powerbi_connect.model_powerbi_table"/>
+            <field name="state">code</field>
+            <field name="code">action = records.update_table_schema()</field>
+        </record>
+
+        <record id="powerbi_publish_workspace_bulk" model="ir.actions.server">
+            <field name="name">Publish to Powerbi</field>
+            <field name="model_id" ref="odoo_powerbi_connect.model_powerbi_workspace"/>
+            <field name="binding_model_id" ref="odoo_powerbi_connect.model_powerbi_workspace"/>
+            <field name="state">code</field>
+            <field name="code">action = records.publish_to_powerbi()</field>
+        </record>
+
+        <record id="powerbi_publish_dataset_bulk" model="ir.actions.server">
+            <field name="name">Publish to Powerbi</field>
+            <field name="model_id" ref="odoo_powerbi_connect.model_powerbi_dataset"/>
+            <field name="binding_model_id" ref="odoo_powerbi_connect.model_powerbi_dataset"/>
+            <field name="state">code</field>
+            <field name="code">action = records.publish_to_powerbi()</field>
+        </record>
+
+    </data>
+</odoo>

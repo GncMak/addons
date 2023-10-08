@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <data>
+
+    <menuitem   id="powerbi_parent_menu" 
+                name="Powerbi Connector" groups="odoo_powerbi_connect.group_powerbi_manager"
+                web_icon="odoo_powerbi_connect,static/description/icon.png"/>
+            <menuitem   id="menu_powerbi_connection" 
+                        name="Connection" parent="odoo_powerbi_connect.powerbi_parent_menu"
+                        action="odoo_powerbi_connect.powerbi_connection_tree_action" sequence="1"/>
+
+            <menuitem   id="menu_powerbi_sync_history" 
+                        name="History" parent="odoo_powerbi_connect.powerbi_parent_menu"
+                        action="odoo_powerbi_connect.powerbi_sync_history_action" sequence="2"/>
+
+            <menuitem   id="menu_powerbi_reporting"
+                        name="Reporting" parent="odoo_powerbi_connect.powerbi_parent_menu" sequence="5"/>
+                    <menuitem   id="menu_powerbi_dashboard_view" 
+                                name="View Dashboards" parent="odoo_powerbi_connect.menu_powerbi_reporting"
+                                action="odoo_powerbi_connect.powerbi_wizard_dashboard_view_action" sequence="4"/>
+
+                    <menuitem   id="menu_powerbi_report_view" 
+                                name="View Reports" parent="odoo_powerbi_connect.menu_powerbi_reporting"
+                                action="odoo_powerbi_connect.powerbi_wizard_report_view_action" sequence="8"/>
+
+            <menuitem   id="menu_powerbi_configuration"
+                        name="Configuration" parent="odoo_powerbi_connect.powerbi_parent_menu" sequence="9"/>
+                    <menuitem   id="menu_powerbi_workspace" 
+                                name="Workspaces" parent="odoo_powerbi_connect.menu_powerbi_configuration"
+                                action="odoo_powerbi_connect.powerbi_workspace_action_tree" sequence="4"/>
+
+                    <menuitem   id="menu_powerbi_dataset" 
+                                name="Datasets" parent="odoo_powerbi_connect.menu_powerbi_configuration"
+                                action="odoo_powerbi_connect.powerbi_dataset_action_tree" sequence="8"/>
+
+                    <menuitem   id="menu_powerbi_table"
+                                name="Tables" parent="odoo_powerbi_connect.menu_powerbi_configuration"
+                                action="odoo_powerbi_connect.powerbi_table_action_tree" sequence="12"/>
+
+                    <menuitem   id="menu_powerbi_dashboard" 
+                                name="Dashboards" parent="odoo_powerbi_connect.menu_powerbi_configuration"
+                                action="odoo_powerbi_connect.powerbi_dashboard_action_tree" sequence="16"/>
+
+                    <menuitem   id="menu_powerbi_report" 
+                                name="Reports" parent="odoo_powerbi_connect.menu_powerbi_configuration"
+                                action="odoo_powerbi_connect.powerbi_report_action_tree" sequence="20"/>
+
+    </data>
+</odoo>
