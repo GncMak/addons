@@ -245,7 +245,9 @@ class ImportChartProduct(models.TransientModel):
                 'x_warranty_control': values.get('control_unit_warranty')
             })
             product_tmpl.update({'route_ids': routes})
-            product_tmpl.with_context(lang='en_US').write({'name': values.get('name_eng')})
+            # product_tmpl.with_context(lang='en_US').write({'name': values.get('name_eng')})
+            self.add_language(product_tmpl, 'name', _(values.get('name')), _(values.get('name_eng')), 'en_US')
+
             product_supplier = self.env['product.supplierinfo'].create({
                 'name': self.supplier_id.id,
                 'delay': 1,
@@ -284,7 +286,9 @@ class ImportChartProduct(models.TransientModel):
                 'code': values.get('attribute_code'),
                 'active': values.get('attribute_active')
             })
-            attrib_name.with_context(lang='en_US').write({'name': values.get('attribute_name_eng')})
+            # attrib_name.with_context(lang='en_US').write({'name': values.get('attribute_name_eng')})
+            self.add_language(attrib_name, 'name', _(values.get('attribute_name')), _(values.get('attribute_name_eng')),
+                              'en_US')
 
         orj_attrib_value = self.env['product.attribute.value'].search(
             [('code', '=', values.get('attribute_value_code')), ('attribute_id', '=', attrib_name.id),
@@ -303,7 +307,9 @@ class ImportChartProduct(models.TransientModel):
                     'active': values.get('attribute_value_active'),
                     'attribute_id': attrib_name.id,
                 })
-            orj_attrib_value.with_context(lang='en_US').write({'name': values.get('attribute_value_name_eng')})
+            # orj_attrib_value.with_context(lang='en_US').write({'name': values.get('attribute_value_name_eng')})
+            self.add_language(orj_attrib_value, 'name', _(values.get('attribute_value_name')),
+                              _(values.get('attribute_value_name_eng')), 'en_US')
         else:
             product_attribute_price = self.env['product.attribute.price'].search(
                 [('product_tmpl_id', '=', product_tmpl.id), ('value_id', '=', orj_attrib_value.id)])
@@ -345,3 +351,14 @@ class ImportChartProduct(models.TransientModel):
                 'product_tmpl_id': product_tmpl.id,
                 'value_id': orj_attrib_value.id
             })
+
+    def add_language(self, source_model, source_field, source_terms, value_terms, to_lang):
+        self.env['ir.translation'].create({
+            'name': f"{source_model._name},{source_field}",
+            'source': source_terms,
+            'value': value_terms,
+            'lang': to_lang,
+            'state': 'translated',
+            'type': 'model',
+            'res_id': source_model.id
+        })

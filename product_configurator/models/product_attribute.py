@@ -70,7 +70,7 @@ class ProductAttribute(models.Model):
     )
 
     description = fields.Text(string='Description', translate=True)
-    code = fields.Char(string='Code', translate=True)
+    code = fields.Char(string='Code')
 
     search_ok = fields.Boolean(
         string='Searchable',
@@ -167,7 +167,7 @@ class ProductAttributeLine(models.Model):
         string='Custom',
         help="Allow custom values for this attribute?"
     )
-    code = fields.Char(string='Code', translate=True)
+    code = fields.Char(string='Code')
     required = fields.Boolean(
         string='Required',
         help="Is this attribute required?"
@@ -285,7 +285,7 @@ class ProductAttributeValue(models.Model):
         attachment=True,
         help="Attribute value small size image"
     )
-    code = fields.Char(string='Code', translate=True)
+    code = fields.Char(string='Code')
     # prevent to add new attr-value from adding
     # in already created template
     product_ids = fields.Many2many(
