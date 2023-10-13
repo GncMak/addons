@@ -252,6 +252,7 @@ class ImportChartProduct(models.TransientModel):
                 'name': self.supplier_id.id,
                 'delay': 1,
                 'min_qty': 0,
+                'sequence': 999,
                 'price': float(values.get('list_price')) * (1 - (self.supplier_discount / 100)),
                 'currency_id': self.currency_id.id,
                 'product_tmpl_id': product_tmpl.id,
