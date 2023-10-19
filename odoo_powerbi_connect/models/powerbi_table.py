@@ -29,6 +29,7 @@ class PowerbiTable(models.Model):
         "ir.model",
         string="Model",
         ondelete="set null",
+        domain=lambda self: [('id', 'in', [x.model_id.id for x in self.env['bi.sql.view'].search([('x_is_powerbi_published', '=', True)])])]
     )
     model_name = fields.Char(string="Model Name")
     column_ids = fields.One2many(
