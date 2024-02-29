@@ -1,0 +1,763 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* crm_salesperson_planner
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-29 06:58+0000\n"
+"PO-Revision-Date: 2024-02-29 11:41+0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: tr\n"
+"X-Generator: Poedit 3.0\n"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_maintenance_application_steps_active
+msgid "Active"
+msgstr "Aktif"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_form_view
+msgid "Add a description..."
+msgstr "Bir açıklama ekle..."
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_allday
+msgid "All Day"
+msgstr "Tüm Gün"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.menu,name:crm_salesperson_planner.menu_crm_salesperson_planner_visits
+msgid "All Visits"
+msgstr "Tüm Ziyaretler"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_wiz_allow_reschedule
+msgid "Allow Reschedule"
+msgstr "Yeniden Planlamaya İzin Ver"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_maintenance_application_steps_name
+msgid "Application Step"
+msgstr "Uygulama Adımı"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_auto_validate
+msgid "Auto Validate"
+msgstr "Otomatik Doğrulama"
+
+#. module: crm_salesperson_planner
+#: model:ir.actions.server,name:crm_salesperson_planner.ir_cron_create_visits_ir_actions_server
+#: model:ir.cron,cron_name:crm_salesperson_planner.ir_cron_create_visits
+#: model:ir.cron,name:crm_salesperson_planner.ir_cron_create_visits
+msgid "CRM: Create salesperson visits"
+msgstr "CRM: Satış elemanı ziyaretleri oluşturun"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_calendar_event_id
+msgid "Calendar Event"
+msgstr "Takvim Etkinliği"
+
+#. module: crm_salesperson_planner
+#: selection:crm.salesperson.planner.visit.close.reason,close_type:0
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_close_wiz_view_form
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_form_view
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_template_create_view_form
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_template_form_view
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: crm_salesperson_planner
+#: selection:crm.salesperson.planner.visit,state:0
+#: selection:crm.salesperson.planner.visit.template,state:0
+msgid "Cancelled"
+msgstr "İptal Edildi"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_form_view
+msgid "Checkup Application Form"
+msgstr "Check-up Uygulama Formu"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_form_line_ids
+msgid "Checkup Application Form Line"
+msgstr "Check-up Uygulama Form Satırı"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_form_view
+msgid "Close Info"
+msgstr "İptal Açıklaması"
+
+#. module: crm_salesperson_planner
+#: model:ir.actions.act_window,name:crm_salesperson_planner.crm_salesperson_planner_visit_close_reason_action
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_reason_id
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_close_reason_form_view
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_close_wiz_view_form
+msgid "Close Reason"
+msgstr "İptal Nedeni"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_reason_image
+msgid "Close Reason Image"
+msgstr "İptal Nedeni Resmi"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_reason_notes
+msgid "Close Reason Notes"
+msgstr "İptal Nedeni Notları"
+
+#. module: crm_salesperson_planner
+#: model:ir.actions.act_window,name:crm_salesperson_planner.crm_salesperson_planner_visit_close_wiz_action
+#: model:ir.ui.menu,name:crm_salesperson_planner.menu_crm_config_salesperson_planner_close_reason
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_close_reason_tree_view
+msgid "Close Reasons"
+msgstr "İptal Nedenleri"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_checkup_application_form_line_company_id
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_company_id
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_company_id
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_filter
+msgid "Company"
+msgstr "Şirket"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_form_view
+msgid "Confirm"
+msgstr "Onayla"
+
+#. module: crm_salesperson_planner
+#: model:ir.model,name:crm_salesperson_planner.model_res_partner
+msgid "Contact"
+msgstr "Kontak"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_checkup_application_form_line_corrected
+msgid "Corrected"
+msgstr "Düzeltilen"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_template_create_view_form
+msgid "Create"
+msgstr "Oluştur"
+
+#. module: crm_salesperson_planner
+#: model:ir.actions.act_window,name:crm_salesperson_planner.crm_salesperson_planner_visit_template_create_action
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_template_create_view_form
+msgid "Create Visits"
+msgstr "Ziyaret Oluştur"
+
+#. module: crm_salesperson_planner
+#: model:ir.actions.act_window,help:crm_salesperson_planner.crm_salesperson_planner_visit_template_action
+msgid "Create and plan commercial visit templates"
+msgstr "Ziyaret şablonları oluşturun ve planlayın"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_checkup_application_form_line_create_uid
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_maintenance_application_steps_create_uid
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_reason_create_uid
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_wiz_create_uid
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_create_uid
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_create_create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_checkup_application_form_line_create_date
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_maintenance_application_steps_create_date
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_reason_create_date
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_wiz_create_date
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_create_date
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_create_create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_checkup_application_form_line_visit_id
+msgid "Crm Salesperson Planner Visit"
+msgstr "Satış Temsilcisi Ziyaret Planlayıcısı"
+
+#. module: crm_salesperson_planner
+#: model:ir.model,name:crm_salesperson_planner.model_crm_salesperson_planner_visit_template
+msgid "Crm Salesperson Planner Visit Template"
+msgstr "Satış Temsilcisi Ziyaret Planlayıcısı Şablonu"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_partner_id
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_partner_ids
+msgid "Customer"
+msgstr "Müşteri"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_date
+msgid "Date"
+msgstr "Tarih"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_create_date_to
+msgid "Date to"
+msgstr "Başlangıç Tarihi"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_template_form_view
+msgid "Day of Month"
+msgstr "Ayın Günü"
+
+#. module: crm_salesperson_planner
+#: selection:crm.salesperson.planner.visit.template,rrule_type:0
+msgid "Day(s)"
+msgstr "Gün(ler)"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_reason_name
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_description
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_template_form_view
+msgid "Description"
+msgstr "Açıklama"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_checkup_application_form_line_display_name
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_maintenance_application_steps_display_name
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_reason_display_name
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_wiz_display_name
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_display_name
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_create_display_name
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: crm_salesperson_planner
+#: selection:crm.salesperson.planner.visit.template,state:0
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_form_view
+msgid "Done"
+msgstr "Transfer"
+
+#. module: crm_salesperson_planner
+#: selection:crm.salesperson.planner.visit,state:0
+#: selection:crm.salesperson.planner.visit.template,state:0
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_form_view
+msgid "Draft"
+msgstr "Taslak"
+
+#. module: crm_salesperson_planner
+#: model:ir.actions.act_window,help:crm_salesperson_planner.crm_salesperson_planner_maintenance_application_steps_action
+msgid "Enter the Maintenance Application steps."
+msgstr "Bakım Uygulaması adımlarına girin."
+
+#. module: crm_salesperson_planner
+#: model:ir.model,name:crm_salesperson_planner.model_calendar_event
+msgid "Event"
+msgstr "Aktivite"
+
+#. module: crm_salesperson_planner
+#: code:addons/crm_salesperson_planner/models/calendar_event.py:62
+#, python-format
+msgid "Event %s is related to salesperson visit %s. Cancel it to delete this event.\n"
+msgstr "%s olayı satış temsilcisinin %s ziyaretiyle ilgilidir. Bu etkinliği silmek için iptal edin.\n"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_filter
+msgid "Future Visits"
+msgstr "Gelecek Ziyaretler"
+
+#. module: crm_salesperson_planner
+#: model:ir.model,name:crm_salesperson_planner.model_crm_salesperson_planner_visit_close_wiz
+msgid "Get Close Reason"
+msgstr "İptal Nedenini bul"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_filter
+msgid "Group By"
+msgstr "Grupla"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_checkup_application_form_line_id
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_maintenance_application_steps_id
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_reason_id_7551
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_wiz_id
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_id
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_create_id
+msgid "ID"
+msgstr "ID"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_wiz_image
+msgid "Image"
+msgstr "Görsel"
+
+#. module: crm_salesperson_planner
+#: selection:crm.salesperson.planner.visit.template,state:0
+msgid "In Progress"
+msgstr "Devam Etmekte"
+
+#. module: crm_salesperson_planner
+#: selection:crm.salesperson.planner.visit,state:0
+#: selection:crm.salesperson.planner.visit.close.reason,close_type:0
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_form_view
+msgid "Incident"
+msgstr "Olay"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_form_view
+msgid "Internal Notes"
+msgstr "İç Notlar"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_checkup_application_form_line___last_update
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_maintenance_application_steps___last_update
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit___last_update
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_reason___last_update
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_wiz___last_update
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template___last_update
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_create___last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_checkup_application_form_line_write_uid
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_maintenance_application_steps_write_uid
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_reason_write_uid
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_wiz_write_uid
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_create_write_uid
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_checkup_application_form_line_write_date
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_maintenance_application_steps_write_date
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_reason_write_date
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_wiz_write_date
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_create_write_date
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_last_visit_date
+msgid "Last Visit Date"
+msgstr "Son Ziyaret Tarihi"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_filter
+msgid "Late Visits"
+msgstr "Son Ziyaretler"
+
+#. module: crm_salesperson_planner
+#: model:ir.model,name:crm_salesperson_planner.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Aday/Fırsat"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,help:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_rrule_type
+msgid "Let the event automatically repeat at that interval"
+msgstr "Belirli aralıklarla olayın kendiliğinden tekrarlamasına izin ver"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_product_tmpl_id
+msgid "Machine Model"
+msgstr "Makine Modeli"
+
+#. module: crm_salesperson_planner
+#: model:ir.actions.act_window,name:crm_salesperson_planner.crm_salesperson_planner_maintenance_application_steps_action
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_checkup_application_form_line_maintenance_application_steps_id
+#: model:ir.ui.menu,name:crm_salesperson_planner.menu_crm_config_salesperson_planner_maintenance_application_steps
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_maintenance_application_steps_form_view
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_maintenance_application_steps_tree_view
+msgid "Maintenance Application Steps"
+msgstr "Bakım Uygulama Adımları"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_template_form_view
+msgid "Manually Create Visits"
+msgstr "Ziyaretleri Manuel Olarak Oluşturun"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_checkup_application_form_line_measured
+msgid "Measured"
+msgstr "Ölçülen"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_partner_mobile
+msgid "Mobile"
+msgstr "Mobil"
+
+#. module: crm_salesperson_planner
+#: selection:crm.salesperson.planner.visit.template,rrule_type:0
+msgid "Month(s)"
+msgstr "Ay(lar)"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.menu,name:crm_salesperson_planner.menu_crm_salesperson_planner_my_visits
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_filter
+msgid "My Visits"
+msgstr "Ziyaretlerim"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_wiz_new_date
+msgid "New Date"
+msgstr "Yeni Tarih"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_checkup_application_form_line_notes
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_wiz_notes
+msgid "Notes"
+msgstr "Notlar"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_visit_ids_count
+msgid "Number of Sales Person Visits"
+msgstr "Satış Elemanı Ziyaret Sayısı"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_res_partner_salesperson_planner_visit_count
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_res_users_salesperson_planner_visit_count
+msgid "Number of Salesperson Visits"
+msgstr "Satış Elemanı Ziyaret Sayısı"
+
+#. module: crm_salesperson_planner
+#: code:addons/crm_salesperson_planner/models/crm_salesperson_planner_visit_template.py:159
+#, python-format
+msgid "Only one customer is allowed"
+msgstr "Yalnızca bir müşteriye izin verilir"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_filter
+msgid "Partner"
+msgstr "İş Ortağı"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_partner_phone
+msgid "Phone"
+msgstr "Telefon"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_wiz_reason_id
+msgid "Reason"
+msgstr "Sebep"
+
+#. module: crm_salesperson_planner
+#: model:ir.actions.act_window,help:crm_salesperson_planner.all_crm_salesperson_planner_visit_action
+msgid "Record and track all sales commercial visits."
+msgstr "Tüm satış ziyaretlerini kaydedin ve takip edin."
+
+#. module: crm_salesperson_planner
+#: model:ir.actions.act_window,help:crm_salesperson_planner.my_crm_salesperson_planner_visit_action
+msgid "Record and track my sales commercial visits."
+msgstr "Satış ziyaretlerimi kaydedin ve takip edin."
+
+#. module: crm_salesperson_planner
+#: model:ir.actions.act_window,help:crm_salesperson_planner.crm_salesperson_planner_visit_close_reason_action
+msgid "Record reason for close commercial visits."
+msgstr "Yakın ziyaretlerin nedenini kaydedin."
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_rrule_type
+msgid "Recurrence"
+msgstr "Periyot"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_recurrency
+msgid "Recurrent"
+msgstr "Yinelenen"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,help:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_recurrency
+msgid "Recurrent Meeting"
+msgstr "Yinelenen Toplantı"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_alarm_ids
+msgid "Reminders"
+msgstr "Hatırlatmalar"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_final_date
+msgid "Repeat Until"
+msgstr "Buna Kadar Tekrarla"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_reason_require_image
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_wiz_require_image
+msgid "Require Image"
+msgstr "Resim Gerekir"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_reason_reschedule
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_wiz_reschedule
+msgid "Reschedule"
+msgstr "Yeniden planlamak"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_template_form_view
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.partner_view_crm_salesperson_planner
+msgid "Sales Visits"
+msgstr "Satış Ziyaretleri"
+
+#. module: crm_salesperson_planner
+#: model:ir.model,name:crm_salesperson_planner.model_crm_salesperson_planner_visit_close_reason
+msgid "SalesPerson Planner Visit Close Reason"
+msgstr "Satış Temsilcisi Planlayıcısı Ziyaret Kapatma Nedeni"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_user_id
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_user_id
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_filter
+msgid "Salesperson"
+msgstr "Satış Temsilcisi"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.menu,name:crm_salesperson_planner.menu_crm_config_salesperson_planner
+#: model:ir.ui.menu,name:crm_salesperson_planner.menu_salesperson_planner
+msgid "Salesperson Planner"
+msgstr "Satış Temsilcisi Planlayıcısı"
+
+#. module: crm_salesperson_planner
+#: model:ir.model,name:crm_salesperson_planner.model_crm_salesperson_planner_checkup_application_form_line
+msgid "Salesperson Planner Checkup Application Form Line"
+msgstr "Satış Temsilcisi Planlayıcısı Checkup Başvuru Formu Satırı"
+
+#. module: crm_salesperson_planner
+#: model:ir.model,name:crm_salesperson_planner.model_crm_salesperson_planner_maintenance_application_steps
+msgid "Salesperson Planner Maintenance Application Steps"
+msgstr "Satış Temsilcisi Planlayıcı Bakım Uygulama Adımları"
+
+#. module: crm_salesperson_planner
+#: model:ir.model,name:crm_salesperson_planner.model_crm_salesperson_planner_visit
+msgid "Salesperson Planner Visit"
+msgstr "Satış Temsilcisi Planlayıcı Ziyareti"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_calendar_event_salesperson_planner_visit_ids
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_salesperson_planner_visit_ids
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_lead_crm_salesperson_planner
+msgid "Salesperson Visits"
+msgstr "Satış Temsilcisi Ziyaretleri"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_filter
+msgid "Search Visits"
+msgstr "Arama Ziyaretleri"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_template_form_view
+msgid "Send to Draft"
+msgstr "Taslağa Gönder"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_checkup_application_form_line_sequence
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_wiz_new_sequence
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_sequence
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_sequence
+msgid "Sequence"
+msgstr "Sıra"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_lot_id
+msgid "Serial No"
+msgstr "Seri No"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_signature
+msgid "Signature"
+msgstr "İmza"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_signature_filename
+msgid "Signature File Name"
+msgstr "İmza Dosyası"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_filter
+msgid "State"
+msgstr "İl/Eyalet"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_state
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_state
+msgid "Status"
+msgstr "Durumu"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_close_wiz_view_form
+msgid "Submit"
+msgstr "Gönder"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_categ_ids
+msgid "Tags"
+msgstr "Etiketler"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_template_form_view
+msgid "The"
+msgstr "Bu"
+
+#. module: crm_salesperson_planner
+#: code:addons/crm_salesperson_planner/wizards/crm_salesperson_planner_visit_close_wiz.py:64
+#, python-format
+msgid "The close reason type haven't a function."
+msgstr "Kapatma nedeni türünün bir işlevi yoktur."
+
+#. module: crm_salesperson_planner
+#: code:addons/crm_salesperson_planner/wizards/crm_salesperson_planner_visit_template_create.py:36
+#, python-format
+msgid "The date can't be earlier than today"
+msgstr "Tarih bugünden erken olamaz"
+
+#. module: crm_salesperson_planner
+#: code:addons/crm_salesperson_planner/models/crm_salesperson_planner_visit.py:123
+#, python-format
+msgid "The visit must be in cancelled, incident or visited state"
+msgstr "Ziyaret iptal edilmiş, olay veya ziyaret edilmiş durumda olmalıdır"
+
+#. module: crm_salesperson_planner
+#: code:addons/crm_salesperson_planner/models/crm_salesperson_planner_visit.py:138
+#, python-format
+msgid "The visit must be in confirmed state"
+msgstr "Ziyaret onaylanmış durumda olmalıdır"
+
+#. module: crm_salesperson_planner
+#: code:addons/crm_salesperson_planner/models/crm_salesperson_planner_visit.py:143
+#: code:addons/crm_salesperson_planner/models/crm_salesperson_planner_visit.py:183
+#, python-format
+msgid "The visit must be in draft or validated state"
+msgstr "Ziyaret taslak halinde veya onaylanmış durumda olmalıdır"
+
+#. module: crm_salesperson_planner
+#: code:addons/crm_salesperson_planner/models/crm_salesperson_planner_visit.py:131
+#, python-format
+msgid "The visit must be in draft state"
+msgstr "Ziyaret taslak halinde olmalı"
+
+#. module: crm_salesperson_planner
+#: sql_constraint:crm.salesperson.planner.visit:0
+msgid "The visit number must be unique!"
+msgstr "Ziyaret numarası benzersiz olmalıdır!"
+
+#. module: crm_salesperson_planner
+#: sql_constraint:crm.salesperson.planner.visit.template:0
+msgid "The visit template number must be unique!"
+msgstr "Ziyaret şablonu numarası benzersiz olmalıdır!"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_calendar_event_event_tz
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_event_tz
+msgid "Timezone"
+msgstr "Saat Dilimi"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_filter
+msgid "Today Visits"
+msgstr "Bugünkü Ziyaretler"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_reason_close_type
+msgid "Type"
+msgstr "Tür"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_template_form_view
+msgid "Until"
+msgstr "Bitiş"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,help:crm_salesperson_planner.field_crm_salesperson_planner_visit_close_wiz_new_sequence
+#: model:ir.model.fields,help:crm_salesperson_planner.field_crm_salesperson_planner_visit_sequence
+#: model:ir.model.fields,help:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_sequence
+msgid "Used to order Visits in the different views"
+msgstr "Farklı görünümlerdeki Ziyaretleri sıralamak için kullanılır"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_template_form_view
+msgid "Validate"
+msgstr "Doğrula"
+
+#. module: crm_salesperson_planner
+#: selection:crm.salesperson.planner.visit,state:0
+msgid "Validated"
+msgstr "Doğrulandı"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_form_view
+msgid "Visit"
+msgstr "Ziyaret"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_name
+msgid "Visit Number"
+msgstr "Ziyaret Numarası"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_visit_ids
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_visit_template_id
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_template_form_view
+msgid "Visit Template"
+msgstr "Ziyaret Şablonu"
+
+#. module: crm_salesperson_planner
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_salesperson_planner_visit_template_name
+msgid "Visit Template Number"
+msgstr "Ziyaret Şablon Numarası"
+
+#. module: crm_salesperson_planner
+#: model:ir.actions.act_window,name:crm_salesperson_planner.crm_salesperson_planner_visit_template_action
+#: model:ir.ui.menu,name:crm_salesperson_planner.menu_crm_salesperson_planner_visit_template
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_template_tree_view
+msgid "Visit Templates"
+msgstr "Ziyaret Şablonları"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_filter
+msgid "Visit by Date"
+msgstr "Tarihe Göre Ziyaret"
+
+#. module: crm_salesperson_planner
+#: selection:crm.salesperson.planner.visit,state:0
+msgid "Visited"
+msgstr "Ziyaret"
+
+#. module: crm_salesperson_planner
+#: model:ir.actions.act_window,name:crm_salesperson_planner.all_crm_salesperson_planner_visit_action
+#: model:ir.actions.act_window,name:crm_salesperson_planner.my_crm_salesperson_planner_visit_action
+#: model:ir.model.fields,field_description:crm_salesperson_planner.field_crm_lead_crm_salesperson_planner_visit_ids
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_tree_view
+msgid "Visits"
+msgstr "Ziyaretler"
+
+#. module: crm_salesperson_planner
+#: code:addons/crm_salesperson_planner/models/crm_salesperson_planner_visit.py:195
+#, python-format
+msgid "Visits must be in cancelled state"
+msgstr "Ziyaretler iptal edilmiş durumda olmalıdır"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_filter
+msgid "Visits that are assigned to me"
+msgstr "Bana atanan ziyaretler"
+
+#. module: crm_salesperson_planner
+#: selection:crm.salesperson.planner.visit.template,rrule_type:0
+msgid "Week(s)"
+msgstr "Hafta(lar)"
+
+#. module: crm_salesperson_planner
+#: selection:crm.salesperson.planner.visit.template,rrule_type:0
+msgid "Year(s)"
+msgstr "Yıl(lar)"
+
+#. module: crm_salesperson_planner
+#: model:ir.model,name:crm_salesperson_planner.model_crm_salesperson_planner_visit_template_create
+msgid "crm salesperson planner visit template create"
+msgstr "crm satış elemanı planlayıcısı ziyaret şablonu oluştur"
+
+#. module: crm_salesperson_planner
+#: model:ir.ui.view,arch_db:crm_salesperson_planner.crm_salesperson_planner_visit_form_view
+msgid "İmza"
+msgstr "İmza"
